@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  const SearchBarWidget({Key key}) : super(key: key);
+  const SearchBarWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

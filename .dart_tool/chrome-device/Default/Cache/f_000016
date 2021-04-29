@@ -1,39 +1,49 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/rendering/layout_helper.dart'], (function load__packages__flutter__src__rendering__stack_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__rendering__layout_helper$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/foundation/key.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/semantics/semantics.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__rendering__custom_paint_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__foundation__key$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__semantics__semantics$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
   const ui = dart_sdk.ui;
-  const _interceptors = dart_sdk._interceptors;
   const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const debug = packages__flutter__src__foundation__debug$46dart.src__foundation__debug;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const semantics = packages__flutter__src__semantics__semantics$46dart.src__semantics__semantics;
   const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const layout_helper = packages__flutter__src__rendering__layout_helper$46dart.src__rendering__layout_helper;
-  var stack = Object.create(dart.library);
-  var $toStringAsFixed = dartx.toStringAsFixed;
-  var $add = dartx.add;
-  var $isEmpty = dartx.isEmpty;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
+  var custom_paint = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $runtimeType = dartx.runtimeType;
+  var $isFinite = dartx.isFinite;
+  var $isNotEmpty = dartx.isNotEmpty;
   var $join = dartx.join;
-  dart._checkModuleNullSafetyMode(false);
+  var $addAll = dartx.addAll;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $containsKey = dartx.containsKey;
+  var $add = dartx.add;
+  var $_set = dartx._set;
+  var $insert = dartx.insert;
+  var $remove = dartx.remove;
+  var $cast = dartx.cast;
+  dart._checkModuleNullSafetyMode(true);
   var T = {
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
-    StackFitL: () => (T.StackFitL = dart.constFn(dart.legacy(stack.StackFit)))(),
-    OverflowL: () => (T.OverflowL = dart.constFn(dart.legacy(stack.Overflow)))(),
-    RenderBoxTodouble: () => (T.RenderBoxTodouble = dart.constFn(dart.fnType(core.double, [box.RenderBox])))(),
-    VoidTodouble: () => (T.VoidTodouble = dart.constFn(dart.fnType(core.double, [])))(),
-    doubleTodynamic: () => (T.doubleTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.double])))(),
-    RenderBoxAndBoxConstraintsToSize: () => (T.RenderBoxAndBoxConstraintsToSize = dart.constFn(dart.fnType(ui.Size, [box.RenderBox, box.BoxConstraints])))(),
-    DiagnosticsPropertyOfAlignmentGeometry: () => (T.DiagnosticsPropertyOfAlignmentGeometry = dart.constFn(diagnostics.DiagnosticsProperty$(alignment.AlignmentGeometry)))(),
-    EnumPropertyOfTextDirection: () => (T.EnumPropertyOfTextDirection = dart.constFn(diagnostics.EnumProperty$(ui.TextDirection)))(),
-    EnumPropertyOfStackFit: () => (T.EnumPropertyOfStackFit = dart.constFn(diagnostics.EnumProperty$(stack.StackFit)))(),
-    EnumPropertyOfClip: () => (T.EnumPropertyOfClip = dart.constFn(diagnostics.EnumProperty$(ui.Clip)))(),
-    OffsetN: () => (T.OffsetN = dart.constFn(dart.nullable(ui.Offset)))(),
-    BoxHitTestResultAndOffsetNTobool: () => (T.BoxHitTestResultAndOffsetNTobool = dart.constFn(dart.fnType(core.bool, [box.BoxHitTestResult, T.OffsetN()])))()
+    VoidToint: () => (T.VoidToint = dart.constFn(dart.fnType(core.int, [])))(),
+    intTodynamic: () => (T.intTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.int])))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    JSArrayOfSemanticsNode: () => (T.JSArrayOfSemanticsNode = dart.constFn(_interceptors.JSArray$(semantics.SemanticsNode)))(),
+    LinkedMapOfKey$int: () => (T.LinkedMapOfKey$int = dart.constFn(_js_helper.LinkedMap$(key.Key, core.int)))(),
+    SemanticsNodeN: () => (T.SemanticsNodeN = dart.constFn(dart.nullable(semantics.SemanticsNode)))(),
+    ListOfSemanticsNodeN: () => (T.ListOfSemanticsNodeN = dart.constFn(core.List$(T.SemanticsNodeN())))(),
+    MapOfKey$SemanticsNode: () => (T.MapOfKey$SemanticsNode = dart.constFn(core.Map$(key.Key, semantics.SemanticsNode)))(),
+    VoidToMapOfKey$SemanticsNode: () => (T.VoidToMapOfKey$SemanticsNode = dart.constFn(dart.fnType(T.MapOfKey$SemanticsNode(), [])))(),
+    MapOfKey$SemanticsNodeTodynamic: () => (T.MapOfKey$SemanticsNodeTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.MapOfKey$SemanticsNode()])))(),
+    LinkedMapOfKey$SemanticsNode: () => (T.LinkedMapOfKey$SemanticsNode = dart.constFn(_js_helper.LinkedMap$(key.Key, semantics.SemanticsNode)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -50,835 +60,720 @@ define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flut
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: stack.RelativeRect.prototype,
-        [bottom$]: 0,
-        [right$]: 0,
-        [top$]: 0,
-        [left$]: 0
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
       });
     },
     get C1() {
-      return C[1] = dart.const({
-        __proto__: stack.StackFit.prototype,
-        [_name$]: "StackFit.loose",
-        index: 0
-      });
+      return C[1] = dart.constList([], custom_paint.CustomPainterSemantics);
     },
     get C2() {
-      return C[2] = dart.const({
-        __proto__: stack.StackFit.prototype,
-        [_name$]: "StackFit.expand",
-        index: 1
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: stack.StackFit.prototype,
-        [_name$]: "StackFit.passthrough",
-        index: 2
-      });
-    },
-    get C4() {
-      return C[4] = dart.constList([C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], T.StackFitL());
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: stack.Overflow.prototype,
-        [_name$]: "Overflow.visible",
-        index: 0
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: stack.Overflow.prototype,
-        [_name$]: "Overflow.clip",
-        index: 1
-      });
-    },
-    get C7() {
-      return C[7] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], T.OverflowL());
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: alignment.AlignmentDirectional.prototype,
-        [AlignmentDirectional_y]: -1,
-        [AlignmentDirectional_start]: -1
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: ui.Clip.prototype,
-        [_name]: "Clip.hardEdge",
-        index: 1
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: box.BoxConstraints.prototype,
-        [BoxConstraints_maxHeight]: 1 / 0,
-        [BoxConstraints_minHeight]: 0,
-        [BoxConstraints_maxWidth]: 1 / 0,
-        [BoxConstraints_minWidth]: 0
-      });
-    },
-    get C11() {
-      return C[11] = dart.fn(layout_helper.ChildLayoutHelper.dryLayoutChild, T.RenderBoxAndBoxConstraintsToSize());
-    },
-    get C12() {
-      return C[12] = dart.fn(layout_helper.ChildLayoutHelper.layoutChild, T.RenderBoxAndBoxConstraintsToSize());
+      return C[2] = dart.constList([], semantics.SemanticsNode);
     }
   }, false);
-  var C = Array(13).fill(void 0);
+  var C = Array(3).fill(void 0);
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/rendering/stack.dart",
-    "package:flutter/src/rendering/stack.dart"
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/rendering/custom_paint.dart",
+    "package:flutter/src/rendering/custom_paint.dart"
   ];
-  var left$ = dart.privateName(stack, "RelativeRect.left");
-  var top$ = dart.privateName(stack, "RelativeRect.top");
-  var right$ = dart.privateName(stack, "RelativeRect.right");
-  var bottom$ = dart.privateName(stack, "RelativeRect.bottom");
-  stack.RelativeRect = class RelativeRect extends core.Object {
-    get left() {
-      return this[left$];
+  var _repaint = dart.privateName(custom_paint, "CustomPainter._repaint");
+  var _repaint$ = dart.privateName(custom_paint, "_repaint");
+  custom_paint.CustomPainter = class CustomPainter extends change_notifier.Listenable {
+    get [_repaint$]() {
+      return this[_repaint];
     }
-    set left(value) {
-      super.left = value;
+    set [_repaint$](value) {
+      super[_repaint$] = value;
     }
-    get top() {
-      return this[top$];
+    addListener(listener) {
+      let t0;
+      if (listener == null) dart.nullFailed(I[0], 145, 33, "listener");
+      t0 = this[_repaint$];
+      return t0 == null ? null : t0.addListener(listener);
     }
-    set top(value) {
-      super.top = value;
+    removeListener(listener) {
+      let t0;
+      if (listener == null) dart.nullFailed(I[0], 154, 36, "listener");
+      t0 = this[_repaint$];
+      return t0 == null ? null : t0.removeListener(listener);
     }
-    get right() {
-      return this[right$];
+    get semanticsBuilder() {
+      return null;
     }
-    set right(value) {
-      super.right = value;
+    shouldRebuildSemantics(oldDelegate) {
+      custom_paint.CustomPainter.as(oldDelegate);
+      if (oldDelegate == null) dart.nullFailed(I[0], 226, 55, "oldDelegate");
+      return this.shouldRepaint(oldDelegate);
     }
-    get bottom() {
-      return this[bottom$];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    static fromSize(rect, container) {
-      if (rect == null) dart.nullFailed(I[0], 34, 38, "rect");
-      if (container == null) dart.nullFailed(I[0], 34, 49, "container");
-      return new stack.RelativeRect.fromLTRB(rect.left, rect.top, dart.notNull(container.width) - dart.notNull(rect.right), dart.notNull(container.height) - dart.notNull(rect.bottom));
-    }
-    static fromRect(rect, container) {
-      if (rect == null) dart.nullFailed(I[0], 50, 38, "rect");
-      if (container == null) dart.nullFailed(I[0], 50, 49, "container");
-      return new stack.RelativeRect.fromLTRB(dart.notNull(rect.left) - dart.notNull(container.left), dart.notNull(rect.top) - dart.notNull(container.top), dart.notNull(container.right) - dart.notNull(rect.right), dart.notNull(container.bottom) - dart.notNull(rect.bottom));
-    }
-    get hasInsets() {
-      return dart.notNull(this.left) > 0.0 || dart.notNull(this.top) > 0.0 || dart.notNull(this.right) > 0.0 || dart.notNull(this.bottom) > 0.0;
-    }
-    shift(offset) {
-      if (offset == null) dart.nullFailed(I[0], 89, 29, "offset");
-      return new stack.RelativeRect.fromLTRB(dart.notNull(this.left) + dart.notNull(offset.dx), dart.notNull(this.top) + dart.notNull(offset.dy), dart.notNull(this.right) - dart.notNull(offset.dx), dart.notNull(this.bottom) - dart.notNull(offset.dy));
-    }
-    inflate(delta) {
-      if (delta == null) dart.nullFailed(I[0], 94, 31, "delta");
-      return new stack.RelativeRect.fromLTRB(dart.notNull(this.left) - dart.notNull(delta), dart.notNull(this.top) - dart.notNull(delta), dart.notNull(this.right) - dart.notNull(delta), dart.notNull(this.bottom) - dart.notNull(delta));
-    }
-    deflate(delta) {
-      if (delta == null) dart.nullFailed(I[0], 99, 31, "delta");
-      return this.inflate(-dart.notNull(delta));
-    }
-    intersect(other) {
-      if (other == null) dart.nullFailed(I[0], 104, 39, "other");
-      return new stack.RelativeRect.fromLTRB(math.max(core.double, this.left, other.left), math.max(core.double, this.top, other.top), math.max(core.double, this.right, other.right), math.max(core.double, this.bottom, other.bottom));
-    }
-    toRect(container) {
-      if (container == null) dart.nullFailed(I[0], 119, 20, "container");
-      return new ui.Rect.fromLTRB(this.left, this.top, dart.notNull(container.width) - dart.notNull(this.right), dart.notNull(container.height) - dart.notNull(this.bottom));
-    }
-    toSize(container) {
-      if (container == null) dart.nullFailed(I[0], 128, 20, "container");
-      return new ui.Size.new(dart.notNull(container.width) - dart.notNull(this.left) - dart.notNull(this.right), dart.notNull(container.height) - dart.notNull(this.top) - dart.notNull(this.bottom));
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 137, 70, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 138, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return new stack.RelativeRect.fromLTRB(dart.notNull(dart.nullCheck(b).left) * dart.notNull(t), dart.notNull(b.top) * dart.notNull(t), dart.notNull(b.right) * dart.notNull(t), dart.notNull(b.bottom) * dart.notNull(t));
-      if (b == null) {
-        let k = 1.0 - dart.notNull(t);
-        return new stack.RelativeRect.fromLTRB(dart.notNull(dart.nullCheck(b).left) * k, dart.notNull(b.top) * k, dart.notNull(b.right) * k, dart.notNull(b.bottom) * k);
-      }
-      return new stack.RelativeRect.fromLTRB(dart.nullCheck(ui.lerpDouble(a.left, b.left, t)), dart.nullCheck(ui.lerpDouble(a.top, b.top, t)), dart.nullCheck(ui.lerpDouble(a.right, b.right, t)), dart.nullCheck(ui.lerpDouble(a.bottom, b.bottom, t)));
-    }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      return stack.RelativeRect.is(other) && other.left == this.left && other.top == this.top && other.right == this.right && other.bottom == this.bottom;
-    }
-    get hashCode() {
-      return ui.hashValues(this.left, this.top, this.right, this.bottom);
+    hitTest(position) {
+      if (position == null) dart.nullFailed(I[0], 268, 24, "position");
+      return null;
     }
     toString() {
-      return "RelativeRect.fromLTRB(" + this.left[$toStringAsFixed](1) + ", " + this.top[$toStringAsFixed](1) + ", " + this.right[$toStringAsFixed](1) + ", " + this.bottom[$toStringAsFixed](1) + ")";
+      let t0, t0$;
+      return dart.str(diagnostics.describeIdentity(this)) + "(" + dart.str((t0$ = (t0 = this[_repaint$], t0 == null ? null : dart.toString(t0)), t0$ == null ? "" : t0$)) + ")";
     }
   };
-  (stack.RelativeRect.fromLTRB = function(left, top, right, bottom) {
-    if (left == null) dart.nullFailed(I[0], 28, 36, "left");
-    if (top == null) dart.nullFailed(I[0], 28, 47, "top");
-    if (right == null) dart.nullFailed(I[0], 28, 57, "right");
-    if (bottom == null) dart.nullFailed(I[0], 28, 69, "bottom");
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    if (!(left != null && top != null && right != null && bottom != null)) dart.assertFailed(null, I[0], 29, 14, "left != null && top != null && right != null && bottom != null");
+  (custom_paint.CustomPainter.new = function(opts) {
+    let repaint = opts && 'repaint' in opts ? opts.repaint : null;
+    this[_repaint] = repaint;
+    custom_paint.CustomPainter.__proto__.new.call(this);
     ;
-  }).prototype = stack.RelativeRect.prototype;
-  dart.addTypeTests(stack.RelativeRect);
-  dart.addTypeCaches(stack.RelativeRect);
-  dart.setMethodSignature(stack.RelativeRect, () => ({
-    __proto__: dart.getMethods(stack.RelativeRect.__proto__),
-    shift: dart.fnType(stack.RelativeRect, [ui.Offset]),
-    inflate: dart.fnType(stack.RelativeRect, [core.double]),
-    deflate: dart.fnType(stack.RelativeRect, [core.double]),
-    intersect: dart.fnType(stack.RelativeRect, [stack.RelativeRect]),
-    toRect: dart.fnType(ui.Rect, [ui.Rect]),
-    toSize: dart.fnType(ui.Size, [ui.Size])
+  }).prototype = custom_paint.CustomPainter.prototype;
+  dart.addTypeTests(custom_paint.CustomPainter);
+  dart.addTypeCaches(custom_paint.CustomPainter);
+  dart.setMethodSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getMethods(custom_paint.CustomPainter.__proto__),
+    addListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    removeListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
+    shouldRebuildSemantics: dart.fnType(core.bool, [dart.nullable(core.Object)]),
+    hitTest: dart.fnType(dart.nullable(core.bool), [ui.Offset])
   }));
-  dart.setGetterSignature(stack.RelativeRect, () => ({
-    __proto__: dart.getGetters(stack.RelativeRect.__proto__),
-    hasInsets: core.bool
+  dart.setGetterSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getGetters(custom_paint.CustomPainter.__proto__),
+    semanticsBuilder: dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))
   }));
-  dart.setLibraryUri(stack.RelativeRect, I[1]);
-  dart.setFieldSignature(stack.RelativeRect, () => ({
-    __proto__: dart.getFields(stack.RelativeRect.__proto__),
-    left: dart.finalFieldType(core.double),
-    top: dart.finalFieldType(core.double),
-    right: dart.finalFieldType(core.double),
-    bottom: dart.finalFieldType(core.double)
+  dart.setLibraryUri(custom_paint.CustomPainter, I[1]);
+  dart.setFieldSignature(custom_paint.CustomPainter, () => ({
+    __proto__: dart.getFields(custom_paint.CustomPainter.__proto__),
+    [_repaint$]: dart.finalFieldType(dart.nullable(change_notifier.Listenable))
   }));
-  dart.defineExtensionMethods(stack.RelativeRect, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(stack.RelativeRect, ['hashCode']);
-  dart.defineLazy(stack.RelativeRect, {
-    /*stack.RelativeRect.fill*/get fill() {
-      return C[0] || CT.C0;
+  dart.defineExtensionMethods(custom_paint.CustomPainter, ['toString']);
+  var key$ = dart.privateName(custom_paint, "CustomPainterSemantics.key");
+  var rect$ = dart.privateName(custom_paint, "CustomPainterSemantics.rect");
+  var transform$ = dart.privateName(custom_paint, "CustomPainterSemantics.transform");
+  var properties$ = dart.privateName(custom_paint, "CustomPainterSemantics.properties");
+  var tags$ = dart.privateName(custom_paint, "CustomPainterSemantics.tags");
+  custom_paint.CustomPainterSemantics = class CustomPainterSemantics extends core.Object {
+    get key() {
+      return this[key$];
     }
-  }, false);
-  var top = dart.privateName(stack, "StackParentData.top");
-  var right = dart.privateName(stack, "StackParentData.right");
-  var bottom = dart.privateName(stack, "StackParentData.bottom");
-  var left = dart.privateName(stack, "StackParentData.left");
-  var width = dart.privateName(stack, "StackParentData.width");
-  var height = dart.privateName(stack, "StackParentData.height");
-  stack.StackParentData = class StackParentData extends box.ContainerBoxParentData$(box.RenderBox) {
-    get top() {
-      return this[top];
-    }
-    set top(value) {
-      this[top] = value;
-    }
-    get right() {
-      return this[right];
-    }
-    set right(value) {
-      this[right] = value;
-    }
-    get bottom() {
-      return this[bottom];
-    }
-    set bottom(value) {
-      this[bottom] = value;
-    }
-    get left() {
-      return this[left];
-    }
-    set left(value) {
-      this[left] = value;
-    }
-    get width() {
-      return this[width];
-    }
-    set width(value) {
-      this[width] = value;
-    }
-    get height() {
-      return this[height];
-    }
-    set height(value) {
-      this[height] = value;
+    set key(value) {
+      super.key = value;
     }
     get rect() {
-      return new stack.RelativeRect.fromLTRB(dart.nullCheck(this.left), dart.nullCheck(this.top), dart.nullCheck(this.right), dart.nullCheck(this.bottom));
+      return this[rect$];
     }
     set rect(value) {
-      if (value == null) dart.nullFailed(I[0], 199, 25, "value");
-      this.top = value.top;
-      this.right = value.right;
-      this.bottom = value.bottom;
-      this.left = value.left;
+      super.rect = value;
     }
-    get isPositioned() {
-      return this.top != null || this.right != null || this.bottom != null || this.left != null || this.width != null || this.height != null;
+    get transform() {
+      return this[transform$];
     }
-    toString() {
-      let values = (() => {
-        let t0 = T.JSArrayOfString().of([]);
-        if (this.top != null) t0[$add]("top=" + dart.str(debug.debugFormatDouble(this.top)));
-        if (this.right != null) t0[$add]("right=" + dart.str(debug.debugFormatDouble(this.right)));
-        if (this.bottom != null) t0[$add]("bottom=" + dart.str(debug.debugFormatDouble(this.bottom)));
-        if (this.left != null) t0[$add]("left=" + dart.str(debug.debugFormatDouble(this.left)));
-        if (this.width != null) t0[$add]("width=" + dart.str(debug.debugFormatDouble(this.width)));
-        if (this.height != null) t0[$add]("height=" + dart.str(debug.debugFormatDouble(this.height)));
-        return t0;
-      })();
-      if (dart.test(values[$isEmpty])) values[$add]("not positioned");
-      values[$add](super.toString());
-      return values[$join]("; ");
+    set transform(value) {
+      super.transform = value;
+    }
+    get properties() {
+      return this[properties$];
+    }
+    set properties(value) {
+      super.properties = value;
+    }
+    get tags() {
+      return this[tags$];
+    }
+    set tags(value) {
+      super.tags = value;
     }
   };
-  (stack.StackParentData.new = function() {
-    this[top] = null;
-    this[right] = null;
-    this[bottom] = null;
-    this[left] = null;
-    this[width] = null;
-    this[height] = null;
-    stack.StackParentData.__proto__.new.call(this);
+  (custom_paint.CustomPainterSemantics.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let rect = opts && 'rect' in opts ? opts.rect : null;
+    if (rect == null) dart.nullFailed(I[0], 296, 19, "rect");
+    let properties = opts && 'properties' in opts ? opts.properties : null;
+    if (properties == null) dart.nullFailed(I[0], 297, 19, "properties");
+    let transform = opts && 'transform' in opts ? opts.transform : null;
+    let tags = opts && 'tags' in opts ? opts.tags : null;
+    this[key$] = key;
+    this[rect$] = rect;
+    this[properties$] = properties;
+    this[transform$] = transform;
+    this[tags$] = tags;
+    if (!(rect != null)) dart.assertFailed(null, I[0], 300, 15, "rect != null");
+    if (!(properties != null)) dart.assertFailed(null, I[0], 301, 15, "properties != null");
     ;
-  }).prototype = stack.StackParentData.prototype;
-  dart.addTypeTests(stack.StackParentData);
-  dart.addTypeCaches(stack.StackParentData);
-  dart.setGetterSignature(stack.StackParentData, () => ({
-    __proto__: dart.getGetters(stack.StackParentData.__proto__),
-    rect: stack.RelativeRect,
-    isPositioned: core.bool
+  }).prototype = custom_paint.CustomPainterSemantics.prototype;
+  dart.addTypeTests(custom_paint.CustomPainterSemantics);
+  dart.addTypeCaches(custom_paint.CustomPainterSemantics);
+  dart.setLibraryUri(custom_paint.CustomPainterSemantics, I[1]);
+  dart.setFieldSignature(custom_paint.CustomPainterSemantics, () => ({
+    __proto__: dart.getFields(custom_paint.CustomPainterSemantics.__proto__),
+    key: dart.finalFieldType(dart.nullable(key.Key)),
+    rect: dart.finalFieldType(ui.Rect),
+    transform: dart.finalFieldType(dart.nullable(vector_math_64.Matrix4)),
+    properties: dart.finalFieldType(semantics.SemanticsProperties),
+    tags: dart.finalFieldType(dart.nullable(core.Set$(semantics.SemanticsTag)))
   }));
-  dart.setSetterSignature(stack.StackParentData, () => ({
-    __proto__: dart.getSetters(stack.StackParentData.__proto__),
-    rect: stack.RelativeRect
-  }));
-  dart.setLibraryUri(stack.StackParentData, I[1]);
-  dart.setFieldSignature(stack.StackParentData, () => ({
-    __proto__: dart.getFields(stack.StackParentData.__proto__),
-    top: dart.fieldType(dart.nullable(core.double)),
-    right: dart.fieldType(dart.nullable(core.double)),
-    bottom: dart.fieldType(dart.nullable(core.double)),
-    left: dart.fieldType(dart.nullable(core.double)),
-    width: dart.fieldType(dart.nullable(core.double)),
-    height: dart.fieldType(dart.nullable(core.double))
-  }));
-  dart.defineExtensionMethods(stack.StackParentData, ['toString']);
-  var _name$ = dart.privateName(stack, "_name");
-  stack.StackFit = class StackFit extends core.Object {
-    toString() {
-      return this[_name$];
+  var isComplex$ = dart.privateName(custom_paint, "RenderCustomPaint.isComplex");
+  var willChange$ = dart.privateName(custom_paint, "RenderCustomPaint.willChange");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var _backgroundSemanticsBuilder = dart.privateName(custom_paint, "_backgroundSemanticsBuilder");
+  var _foregroundSemanticsBuilder = dart.privateName(custom_paint, "_foregroundSemanticsBuilder");
+  var _backgroundSemanticsNodes = dart.privateName(custom_paint, "_backgroundSemanticsNodes");
+  var _foregroundSemanticsNodes = dart.privateName(custom_paint, "_foregroundSemanticsNodes");
+  var _painter = dart.privateName(custom_paint, "_painter");
+  var _foregroundPainter = dart.privateName(custom_paint, "_foregroundPainter");
+  var _preferredSize = dart.privateName(custom_paint, "_preferredSize");
+  var _didUpdatePainter = dart.privateName(custom_paint, "_didUpdatePainter");
+  var _paintWithPainter = dart.privateName(custom_paint, "_paintWithPainter");
+  var _setRasterCacheHints = dart.privateName(custom_paint, "_setRasterCacheHints");
+  custom_paint.RenderCustomPaint = class RenderCustomPaint extends proxy_box.RenderProxyBox {
+    get isComplex() {
+      return this[isComplex$];
     }
-  };
-  (stack.StackFit.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 241, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 241, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = stack.StackFit.prototype;
-  dart.addTypeTests(stack.StackFit);
-  dart.addTypeCaches(stack.StackFit);
-  dart.setLibraryUri(stack.StackFit, I[1]);
-  dart.setFieldSignature(stack.StackFit, () => ({
-    __proto__: dart.getFields(stack.StackFit.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(stack.StackFit, ['toString']);
-  stack.StackFit.loose = C[1] || CT.C1;
-  stack.StackFit.expand = C[2] || CT.C2;
-  stack.StackFit.passthrough = C[3] || CT.C3;
-  stack.StackFit.values = C[4] || CT.C4;
-  stack.Overflow = class Overflow extends core.Object {
-    toString() {
-      return this[_name$];
+    set isComplex(value) {
+      this[isComplex$] = value;
     }
-  };
-  (stack.Overflow.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 281, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 281, 6, "_name");
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = stack.Overflow.prototype;
-  dart.addTypeTests(stack.Overflow);
-  dart.addTypeCaches(stack.Overflow);
-  dart.setLibraryUri(stack.Overflow, I[1]);
-  dart.setFieldSignature(stack.Overflow, () => ({
-    __proto__: dart.getFields(stack.Overflow.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(stack.Overflow, ['toString']);
-  stack.Overflow.visible = C[5] || CT.C5;
-  stack.Overflow.clip = C[6] || CT.C6;
-  stack.Overflow.values = C[7] || CT.C7;
-  var AlignmentDirectional_y = dart.privateName(alignment, "AlignmentDirectional.y");
-  var AlignmentDirectional_start = dart.privateName(alignment, "AlignmentDirectional.start");
-  var _name = dart.privateName(ui, "_name");
-  var _hasVisualOverflow = dart.privateName(stack, "_hasVisualOverflow");
-  var _resolvedAlignment = dart.privateName(stack, "_resolvedAlignment");
-  var _clipBehavior = dart.privateName(stack, "_clipBehavior");
-  var _clipRectLayer = dart.privateName(stack, "_clipRectLayer");
-  var _alignment = dart.privateName(stack, "_alignment");
-  var _textDirection = dart.privateName(stack, "_textDirection");
-  var _fit = dart.privateName(stack, "_fit");
-  var _resolve = dart.privateName(stack, "_resolve");
-  var _markNeedResolution = dart.privateName(stack, "_markNeedResolution");
-  var BoxConstraints_maxHeight = dart.privateName(box, "BoxConstraints.maxHeight");
-  var BoxConstraints_minHeight = dart.privateName(box, "BoxConstraints.minHeight");
-  var BoxConstraints_maxWidth = dart.privateName(box, "BoxConstraints.maxWidth");
-  var BoxConstraints_minWidth = dart.privateName(box, "BoxConstraints.minWidth");
-  var _computeSize = dart.privateName(stack, "_computeSize");
-  const RenderBox_ContainerRenderObjectMixin$36 = class RenderBox_ContainerRenderObjectMixin extends box.RenderBox {};
-  (RenderBox_ContainerRenderObjectMixin$36.new = function() {
-    object.ContainerRenderObjectMixin$(box.RenderBox, stack.StackParentData)[dart.mixinNew].call(this);
-    RenderBox_ContainerRenderObjectMixin$36.__proto__.new.call(this);
-  }).prototype = RenderBox_ContainerRenderObjectMixin$36.prototype;
-  dart.applyMixin(RenderBox_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, stack.StackParentData));
-  const RenderBox_RenderBoxContainerDefaultsMixin$36 = class RenderBox_RenderBoxContainerDefaultsMixin extends RenderBox_ContainerRenderObjectMixin$36 {};
-  (RenderBox_RenderBoxContainerDefaultsMixin$36.new = function() {
-    RenderBox_RenderBoxContainerDefaultsMixin$36.__proto__.new.call(this);
-  }).prototype = RenderBox_RenderBoxContainerDefaultsMixin$36.prototype;
-  dart.applyMixin(RenderBox_RenderBoxContainerDefaultsMixin$36, box.RenderBoxContainerDefaultsMixin$(box.RenderBox, stack.StackParentData));
-  stack.RenderStack = class RenderStack extends RenderBox_RenderBoxContainerDefaultsMixin$36 {
-    setupParentData(child) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[0], 353, 34, "child");
-      if (!stack.StackParentData.is(child.parentData)) child.parentData = new stack.StackParentData.new();
+    get willChange() {
+      return this[willChange$];
     }
-    [_resolve]() {
-      if (this[_resolvedAlignment] != null) return;
-      this[_resolvedAlignment] = this.alignment.resolve(this.textDirection);
+    set willChange(value) {
+      this[willChange$] = value;
     }
-    [_markNeedResolution]() {
-      this[_resolvedAlignment] = null;
-      this.markNeedsLayout();
+    get painter() {
+      return this[_painter];
     }
-    get alignment() {
-      return this[_alignment];
+    set painter(value) {
+      if (dart.equals(this[_painter], value)) return;
+      let oldPainter = this[_painter];
+      this[_painter] = value;
+      this[_didUpdatePainter](this[_painter], oldPainter);
     }
-    set alignment(value) {
-      if (value == null) dart.nullFailed(I[0], 388, 35, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 389, 12, "value != null");
-      if (dart.equals(this[_alignment], value)) return;
-      this[_alignment] = value;
-      this[_markNeedResolution]();
+    get foregroundPainter() {
+      return this[_foregroundPainter];
     }
-    get textDirection() {
-      return this[_textDirection];
+    set foregroundPainter(value) {
+      if (dart.equals(this[_foregroundPainter], value)) return;
+      let oldPainter = this[_foregroundPainter];
+      this[_foregroundPainter] = value;
+      this[_didUpdatePainter](this[_foregroundPainter], oldPainter);
     }
-    set textDirection(value) {
-      if (this[_textDirection] == value) return;
-      this[_textDirection] = value;
-      this[_markNeedResolution]();
-    }
-    get fit() {
-      return this[_fit];
-    }
-    set fit(value) {
-      if (value == null) dart.nullFailed(I[0], 416, 20, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 417, 12, "value != null");
-      if (this[_fit] != value) {
-        this[_fit] = value;
-        this.markNeedsLayout();
-      }
-    }
-    get clipBehavior() {
-      return this[_clipBehavior];
-    }
-    set clipBehavior(value) {
-      if (value == null) dart.nullFailed(I[0], 429, 25, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 430, 12, "value != null");
-      if (value != this[_clipBehavior]) {
-        this[_clipBehavior] = value;
+    [_didUpdatePainter](newPainter, oldPainter) {
+      let t0, t0$;
+      if (newPainter == null) {
+        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 436, 14, "oldPainter != null");
         this.markNeedsPaint();
+      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRepaint(oldPainter))) {
+        this.markNeedsPaint();
+      }
+      if (dart.test(this.attached)) {
+        t0 = oldPainter;
+        t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
+        t0$ = newPainter;
+        t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
+      }
+      if (newPainter == null) {
+        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 450, 14, "oldPainter != null");
+        if (dart.test(this.attached)) this.markNeedsSemanticsUpdate();
+      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRebuildSemantics(oldPainter))) {
         this.markNeedsSemanticsUpdate();
       }
     }
-    static getIntrinsicDimension(firstChild, mainChildSizeGetter) {
-      if (mainChildSizeGetter == null) dart.nullFailed(I[0], 439, 69, "mainChildSizeGetter");
-      let extent = 0.0;
-      let child = firstChild;
-      while (child != null) {
-        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-        if (!dart.test(childParentData.isPositioned)) extent = math.max(core.double, extent, mainChildSizeGetter(child));
-        if (!dart.equals(child.parentData, childParentData)) dart.assertFailed(null, I[0], 446, 14, "child.parentData == childParentData");
-        child = childParentData.nextSibling;
-      }
-      return extent;
+    get preferredSize() {
+      return this[_preferredSize];
+    }
+    set preferredSize(value) {
+      if (value == null) dart.nullFailed(I[0], 469, 26, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 470, 12, "value != null");
+      if (dart.equals(this.preferredSize, value)) return;
+      this[_preferredSize] = value;
+      this.markNeedsLayout();
     }
     computeMinIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 453, 42, "height");
-      return stack.RenderStack.getIntrinsicDimension(this.firstChild, dart.fn(child => {
-        if (child == null) dart.nullFailed(I[0], 454, 57, "child");
-        return child.getMinIntrinsicWidth(height);
-      }, T.RenderBoxTodouble()));
+      if (height == null) dart.nullFailed(I[0], 491, 42, "height");
+      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
+      return super.computeMinIntrinsicWidth(height);
     }
     computeMaxIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 458, 42, "height");
-      return stack.RenderStack.getIntrinsicDimension(this.firstChild, dart.fn(child => {
-        if (child == null) dart.nullFailed(I[0], 459, 57, "child");
-        return child.getMaxIntrinsicWidth(height);
-      }, T.RenderBoxTodouble()));
+      if (height == null) dart.nullFailed(I[0], 498, 42, "height");
+      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
+      return super.computeMaxIntrinsicWidth(height);
     }
     computeMinIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 463, 43, "width");
-      return stack.RenderStack.getIntrinsicDimension(this.firstChild, dart.fn(child => {
-        if (child == null) dart.nullFailed(I[0], 464, 57, "child");
-        return child.getMinIntrinsicHeight(width);
-      }, T.RenderBoxTodouble()));
+      if (width == null) dart.nullFailed(I[0], 505, 43, "width");
+      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
+      return super.computeMinIntrinsicHeight(width);
     }
     computeMaxIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 468, 43, "width");
-      return stack.RenderStack.getIntrinsicDimension(this.firstChild, dart.fn(child => {
-        if (child == null) dart.nullFailed(I[0], 469, 57, "child");
-        return child.getMaxIntrinsicHeight(width);
-      }, T.RenderBoxTodouble()));
+      if (width == null) dart.nullFailed(I[0], 512, 43, "width");
+      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
+      return super.computeMaxIntrinsicHeight(width);
     }
-    computeDistanceToActualBaseline(baseline) {
-      if (baseline == null) dart.nullFailed(I[0], 473, 56, "baseline");
-      return this.defaultComputeDistanceToHighestActualBaseline(baseline);
+    attach(owner) {
+      let t0, t0$;
+      object.PipelineOwner.as(owner);
+      if (owner == null) dart.nullFailed(I[0], 519, 29, "owner");
+      super.attach(owner);
+      t0 = this[_painter];
+      t0 == null ? null : t0.addListener(dart.bind(this, 'markNeedsPaint'));
+      t0$ = this[_foregroundPainter];
+      t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
     }
-    static layoutPositionedChild(child, childParentData, size, alignment) {
-      if (child == null) dart.nullFailed(I[0], 480, 47, "child");
-      if (childParentData == null) dart.nullFailed(I[0], 480, 70, "childParentData");
-      if (size == null) dart.nullFailed(I[0], 480, 92, "size");
-      if (alignment == null) dart.nullFailed(I[0], 480, 108, "alignment");
-      if (!dart.test(childParentData.isPositioned)) dart.assertFailed(null, I[0], 481, 12, "childParentData.isPositioned");
-      if (!dart.equals(child.parentData, childParentData)) dart.assertFailed(null, I[0], 482, 12, "child.parentData == childParentData");
-      let hasVisualOverflow = false;
-      let childConstraints = C[10] || CT.C10;
-      if (childParentData.left != null && childParentData.right != null)
-        childConstraints = childConstraints.tighten({width: dart.notNull(size.width) - dart.nullCheck(childParentData.right) - dart.nullCheck(childParentData.left)});
-      else if (childParentData.width != null) childConstraints = childConstraints.tighten({width: childParentData.width});
-      if (childParentData.top != null && childParentData.bottom != null)
-        childConstraints = childConstraints.tighten({height: dart.notNull(size.height) - dart.nullCheck(childParentData.bottom) - dart.nullCheck(childParentData.top)});
-      else if (childParentData.height != null) childConstraints = childConstraints.tighten({height: childParentData.height});
-      child.layout(childConstraints, {parentUsesSize: true});
-      let x = null;
-      let x$35isSet = false;
-      function x$35get() {
-        return x$35isSet ? x : dart.throw(new _internal.LateError.localNI("x"));
-      }
-      dart.fn(x$35get, T.VoidTodouble());
-      function x$35set(t4) {
-        if (t4 == null) dart.nullFailed(I[0], 499, 23, "null");
-        if (x$35isSet)
-          dart.throw(new _internal.LateError.localAI("x"));
-        else {
-          x$35isSet = true;
-          return x = t4;
-        }
-      }
-      dart.fn(x$35set, T.doubleTodynamic());
-      if (childParentData.left != null) {
-        x$35set(dart.nullCheck(childParentData.left));
-      } else if (childParentData.right != null) {
-        x$35set(dart.notNull(size.width) - dart.nullCheck(childParentData.right) - dart.notNull(child.size.width));
-      } else {
-        x$35set(alignment.alongOffset(ui.Offset.as(size['-'](child.size))).dx);
-      }
-      if (dart.notNull(x$35get()) < 0.0 || dart.notNull(x$35get()) + dart.notNull(child.size.width) > dart.notNull(size.width)) hasVisualOverflow = true;
-      let y = null;
-      let y$35isSet = false;
-      function y$35get() {
-        return y$35isSet ? y : dart.throw(new _internal.LateError.localNI("y"));
-      }
-      dart.fn(y$35get, T.VoidTodouble());
-      function y$35set(t9) {
-        if (t9 == null) dart.nullFailed(I[0], 511, 23, "null");
-        if (y$35isSet)
-          dart.throw(new _internal.LateError.localAI("y"));
-        else {
-          y$35isSet = true;
-          return y = t9;
-        }
-      }
-      dart.fn(y$35set, T.doubleTodynamic());
-      if (childParentData.top != null) {
-        y$35set(dart.nullCheck(childParentData.top));
-      } else if (childParentData.bottom != null) {
-        y$35set(dart.notNull(size.height) - dart.nullCheck(childParentData.bottom) - dart.notNull(child.size.height));
-      } else {
-        y$35set(alignment.alongOffset(ui.Offset.as(size['-'](child.size))).dy);
-      }
-      if (dart.notNull(y$35get()) < 0.0 || dart.notNull(y$35get()) + dart.notNull(child.size.height) > dart.notNull(size.height)) hasVisualOverflow = true;
-      childParentData.offset = new ui.Offset.new(x$35get(), y$35get());
-      return hasVisualOverflow;
+    detach() {
+      let t0, t0$;
+      t0 = this[_painter];
+      t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
+      t0$ = this[_foregroundPainter];
+      t0$ == null ? null : t0$.removeListener(dart.bind(this, 'markNeedsPaint'));
+      super.detach();
     }
-    computeDryLayout(constraints) {
-      if (constraints == null) dart.nullFailed(I[0], 529, 40, "constraints");
-      return this[_computeSize]({constraints: constraints, layoutChild: C[11] || CT.C11});
+    hitTestChildren(result, opts) {
+      let t0;
+      if (result == null) dart.nullFailed(I[0], 533, 41, "result");
+      let position = opts && 'position' in opts ? opts.position : null;
+      if (position == null) dart.nullFailed(I[0], 533, 67, "position");
+      if (this[_foregroundPainter] != null && dart.test((t0 = dart.nullCheck(this[_foregroundPainter]).hitTest(position), t0 == null ? false : t0))) return true;
+      return super.hitTestChildren(result, {position: position});
     }
-    [_computeSize](opts) {
-      let constraints = opts && 'constraints' in opts ? opts.constraints : null;
-      if (constraints == null) dart.nullFailed(I[0], 536, 46, "constraints");
-      let layoutChild = opts && 'layoutChild' in opts ? opts.layoutChild : null;
-      if (layoutChild == null) dart.nullFailed(I[0], 536, 82, "layoutChild");
-      this[_resolve]();
-      if (!(this[_resolvedAlignment] != null)) dart.assertFailed(null, I[0], 538, 12, "_resolvedAlignment != null");
-      let hasNonPositionedChildren = false;
-      if (this.childCount === 0) {
-        if (!dart.test(constraints.biggest.isFinite)) dart.assertFailed(null, I[0], 541, 14, "constraints.biggest.isFinite");
-        return constraints.biggest;
-      }
-      let width = constraints.minWidth;
-      let height = constraints.minHeight;
-      let nonPositionedConstraints = null;
-      if (!(this.fit != null)) dart.assertFailed(null, I[0], 549, 12, "fit != null");
-      switch (this.fit) {
-        case C[1] || CT.C1:
-        {
-          nonPositionedConstraints = constraints.loosen();
-          break;
-        }
-        case C[2] || CT.C2:
-        {
-          nonPositionedConstraints = new box.BoxConstraints.tight(constraints.biggest);
-          break;
-        }
-        case C[3] || CT.C3:
-        {
-          nonPositionedConstraints = constraints;
-          break;
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
-      }
-      if (!(nonPositionedConstraints != null)) dart.assertFailed(null, I[0], 561, 12, "nonPositionedConstraints != null");
-      let child = this.firstChild;
-      while (child != null) {
-        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-        if (!dart.test(childParentData.isPositioned)) {
-          hasNonPositionedChildren = true;
-          let childSize = layoutChild(child, nonPositionedConstraints);
-          width = math.max(core.double, width, childSize.width);
-          height = math.max(core.double, height, childSize.height);
-        }
-        child = childParentData.nextSibling;
-      }
-      let size = null;
-      if (hasNonPositionedChildren) {
-        size = new ui.Size.new(width, height);
-        if (!(size.width == constraints.constrainWidth(width))) dart.assertFailed(null, I[0], 582, 14, "size.width == constraints.constrainWidth(width)");
-        if (!(size.height == constraints.constrainHeight(height))) dart.assertFailed(null, I[0], 583, 14, "size.height == constraints.constrainHeight(height)");
-      } else {
-        size = constraints.biggest;
-      }
-      if (!dart.test(size.isFinite)) dart.assertFailed(null, I[0], 588, 12, "size.isFinite");
-      return size;
+    hitTestSelf(position) {
+      let t0;
+      if (position == null) dart.nullFailed(I[0], 540, 27, "position");
+      return this[_painter] != null && dart.test((t0 = dart.nullCheck(this[_painter]).hitTest(position), t0 == null ? true : t0));
     }
     performLayout() {
-      let constraints = this.constraints;
-      this[_hasVisualOverflow] = false;
-      this.size = this[_computeSize]({constraints: constraints, layoutChild: C[12] || CT.C12});
-      if (!(this[_resolvedAlignment] != null)) dart.assertFailed(null, I[0], 602, 12, "_resolvedAlignment != null");
-      let child = this.firstChild;
-      while (child != null) {
-        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-        if (!dart.test(childParentData.isPositioned)) {
-          childParentData.offset = dart.nullCheck(this[_resolvedAlignment]).alongOffset(ui.Offset.as(this.size['-'](child.size)));
-        } else {
-          this[_hasVisualOverflow] = dart.test(stack.RenderStack.layoutPositionedChild(child, childParentData, this.size, dart.nullCheck(this[_resolvedAlignment]))) || dart.test(this[_hasVisualOverflow]);
-        }
-        if (!dart.equals(child.parentData, childParentData)) dart.assertFailed(null, I[0], 613, 14, "child.parentData == childParentData");
-        child = childParentData.nextSibling;
+      super.performLayout();
+      this.markNeedsSemanticsUpdate();
+    }
+    computeSizeForNoChild(constraints) {
+      if (constraints == null) dart.nullFailed(I[0], 551, 45, "constraints");
+      return constraints.constrain(this.preferredSize);
+    }
+    [_paintWithPainter](canvas, offset, painter) {
+      if (canvas == null) dart.nullFailed(I[0], 555, 33, "canvas");
+      if (offset == null) dart.nullFailed(I[0], 555, 48, "offset");
+      if (painter == null) dart.nullFailed(I[0], 555, 70, "painter");
+      let debugPreviousCanvasSaveCount = null;
+      function debugPreviousCanvasSaveCount$35get() {
+        let t1;
+        t1 = debugPreviousCanvasSaveCount;
+        return t1 == null ? dart.throw(new _internal.LateError.localNI("debugPreviousCanvasSaveCount")) : t1;
       }
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 619, 41, "result");
-      let position = opts && 'position' in opts ? opts.position : null;
-      if (position == null) dart.nullFailed(I[0], 619, 67, "position");
-      return this.defaultHitTestChildren(result, {position: position});
-    }
-    paintStack(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 628, 35, "context");
-      if (offset == null) dart.nullFailed(I[0], 628, 51, "offset");
-      this.defaultPaint(context, offset);
+      dart.fn(debugPreviousCanvasSaveCount$35get, T.VoidToint());
+      function debugPreviousCanvasSaveCount$35set(t2) {
+        if (t2 == null) dart.nullFailed(I[0], 556, 14, "null");
+        return debugPreviousCanvasSaveCount = t2;
+      }
+      dart.fn(debugPreviousCanvasSaveCount$35set, T.intTodynamic());
+      canvas.save();
+      if (!dart.test(dart.fn(() => {
+        debugPreviousCanvasSaveCount$35set(canvas.getSaveCount());
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 558, 12, "() {\r\n      debugPreviousCanvasSaveCount = canvas.getSaveCount();\r\n      return true;\r\n    }()");
+      if (!dart.equals(offset, ui.Offset.zero)) canvas.translate(offset.dx, offset.dy);
+      painter.paint(canvas, this.size);
+      if (!dart.test(dart.fn(() => {
+        let debugNewCanvasSaveCount = canvas.getSaveCount();
+        if (dart.notNull(debugNewCanvasSaveCount) > dart.notNull(debugPreviousCanvasSaveCount$35get())) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.save() or canvas.saveLayer() at least " + dart.str(dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get())) + " more " + "time" + (dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get()) === 1 ? "" : "s") + " " + "than it called canvas.restore()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will probably result in a broken display."), new assertions.ErrorHint.new("You must pair each call to save()/saveLayer() with a later matching call to restore().")])));
+        }
+        if (dart.notNull(debugNewCanvasSaveCount) < dart.notNull(debugPreviousCanvasSaveCount$35get())) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.restore() " + dart.str(dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount)) + " more " + "time" + (dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount) === 1 ? "" : "s") + " " + "than it called canvas.save() or canvas.saveLayer()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will result in a broken display."), new assertions.ErrorHint.new("You should only call restore() if you first called save() or saveLayer().")])));
+        }
+        return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount$35get();
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 565, 12, "() {\r\n      // This isn't perfect. For example, we can't catch the case of\r\n      // someone first restoring, then setting a transform or whatnot,\r\n      // then saving.\r\n      // If this becomes a real problem, we could add logic to the\r\n      // Canvas class to lock the canvas at a particular save count\r\n      // such that restore() fails if it would take the lock count\r\n      // below that number.\r\n      final int debugNewCanvasSaveCount = canvas.getSaveCount();\r\n      if (debugNewCanvasSaveCount > debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            'The $painter custom painter called canvas.save() or canvas.saveLayer() at least '\r\n            '${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount} more '\r\n            'time${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.restore().'\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will probably result in a broken display.'),\r\n          ErrorHint('You must pair each call to save()/saveLayer() with a later matching call to restore().')\r\n        ]);\r\n      }\r\n      if (debugNewCanvasSaveCount < debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('The $painter custom painter called canvas.restore() '\r\n            '${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount} more '\r\n            'time${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.save() or canvas.saveLayer().'\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will result in a broken display.'),\r\n          ErrorHint('You should only call restore() if you first called save() or saveLayer().')\r\n        ]);\r\n      }\r\n      return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount;\r\n    }()");
+      canvas.restore();
     }
     paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 633, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 633, 46, "offset");
-      if (this.clipBehavior != ui.Clip.none && dart.test(this[_hasVisualOverflow])) {
-        this[_clipRectLayer] = context.pushClipRect(this.needsCompositing, offset, ui.Offset.zero['&'](this.size), dart.bind(this, 'paintStack'), {clipBehavior: this.clipBehavior, oldLayer: this[_clipRectLayer]});
-      } else {
-        this[_clipRectLayer] = null;
-        this.paintStack(context, offset);
+      if (context == null) dart.nullFailed(I[0], 603, 30, "context");
+      if (offset == null) dart.nullFailed(I[0], 603, 46, "offset");
+      if (this[_painter] != null) {
+        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_painter]));
+        this[_setRasterCacheHints](context);
+      }
+      super.paint(context, offset);
+      if (this[_foregroundPainter] != null) {
+        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_foregroundPainter]));
+        this[_setRasterCacheHints](context);
       }
     }
-    describeApproximatePaintClip(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[0], 646, 51, "child");
-      return dart.test(this[_hasVisualOverflow]) ? ui.Offset.zero['&'](this.size) : null;
+    [_setRasterCacheHints](context) {
+      if (context == null) dart.nullFailed(I[0], 615, 45, "context");
+      if (dart.test(this.isComplex)) context.setIsComplexHint();
+      if (dart.test(this.willChange)) context.setWillChangeHint();
     }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 649, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfAlignmentGeometry()).new("alignment", this.alignment));
-      properties.add(new (T.EnumPropertyOfTextDirection()).new("textDirection", this.textDirection));
-      properties.add(new (T.EnumPropertyOfStackFit()).new("fit", this.fit));
-      properties.add(new (T.EnumPropertyOfClip()).new("clipBehavior", this.clipBehavior, {defaultValue: ui.Clip.hardEdge}));
+    describeSemanticsConfiguration(config) {
+      let t4, t4$;
+      if (config == null) dart.nullFailed(I[0], 629, 62, "config");
+      super.describeSemanticsConfiguration(config);
+      this[_backgroundSemanticsBuilder] = (t4 = this.painter, t4 == null ? null : t4.semanticsBuilder);
+      this[_foregroundSemanticsBuilder] = (t4$ = this.foregroundPainter, t4$ == null ? null : t4$.semanticsBuilder);
+      config.isSemanticBoundary = this[_backgroundSemanticsBuilder] != null || this[_foregroundSemanticsBuilder] != null;
+    }
+    assembleSemanticsNode(node, config, children) {
+      if (node == null) dart.nullFailed(I[0], 644, 19, "node");
+      if (config == null) dart.nullFailed(I[0], 645, 28, "config");
+      if (children == null) dart.nullFailed(I[0], 646, 29, "children");
+      if (!dart.test(dart.fn(() => {
+        if (this.child == null && dart.test(children[$isNotEmpty])) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " does not have a child widget but received a non-empty list of child SemanticsNode:\n" + dart.str(children[$join]("\n")))])));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 648, 12, "() {\r\n      if (child == null && children.isNotEmpty) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            '$runtimeType does not have a child widget but received a non-empty list of child SemanticsNode:\\n'\r\n            '${children.join('\\n')}'\r\n          )\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
+      let backgroundSemantics = this[_backgroundSemanticsBuilder] != null ? dart.nullCheck(this[_backgroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
+      this[_backgroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_backgroundSemanticsNodes], backgroundSemantics);
+      let foregroundSemantics = this[_foregroundSemanticsBuilder] != null ? dart.nullCheck(this[_foregroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
+      this[_foregroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_foregroundSemanticsNodes], foregroundSemantics);
+      let hasBackgroundSemantics = this[_backgroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_backgroundSemanticsNodes])[$isNotEmpty]);
+      let hasForegroundSemantics = this[_foregroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_foregroundSemanticsNodes])[$isNotEmpty]);
+      let finalChildren = (() => {
+        let t4 = T.JSArrayOfSemanticsNode().of([]);
+        if (hasBackgroundSemantics) t4[$addAll](dart.nullCheck(this[_backgroundSemanticsNodes]));
+        t4[$addAll](children);
+        if (hasForegroundSemantics) t4[$addAll](dart.nullCheck(this[_foregroundSemanticsNodes]));
+        return t4;
+      })();
+      super.assembleSemanticsNode(node, config, finalChildren);
+    }
+    clearSemantics() {
+      super.clearSemantics();
+      this[_backgroundSemanticsNodes] = null;
+      this[_foregroundSemanticsNodes] = null;
+    }
+    static _updateSemanticsChildren(oldSemantics, newChildSemantics) {
+      let t5, t5$;
+      oldSemantics = (t5 = oldSemantics, t5 == null ? C[2] || CT.C2 : t5);
+      newChildSemantics = (t5$ = newChildSemantics, t5$ == null ? C[1] || CT.C1 : t5$);
+      if (!dart.test(dart.fn(() => {
+        let keys = new (T.LinkedMapOfKey$int()).new();
+        let information = T.JSArrayOfDiagnosticsNode().of([]);
+        for (let i = 0; i < dart.notNull(dart.nullCheck(newChildSemantics)[$length]); i = i + 1) {
+          let child = newChildSemantics[$_get](i);
+          if (child.key != null) {
+            if (dart.test(keys[$containsKey](child.key))) {
+              information[$add](new assertions.ErrorDescription.new("- duplicate key " + dart.str(child.key) + " found at position " + dart.str(i)));
+            }
+            keys[$_set](dart.nullCheck(child.key), i);
+          }
+        }
+        if (dart.test(information[$isNotEmpty])) {
+          information[$insert](0, new assertions.ErrorSummary.new("Failed to update the list of CustomPainterSemantics:"));
+          dart.throw(new assertions.FlutterError.fromParts(information));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 716, 12, "() {\r\n      final Map<Key, int> keys = HashMap<Key, int>();\r\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[];\r\n      for (int i = 0; i < newChildSemantics!.length; i += 1) {\r\n        final CustomPainterSemantics child = newChildSemantics[i];\r\n        if (child.key != null) {\r\n          if (keys.containsKey(child.key)) {\r\n            information.add(ErrorDescription('- duplicate key ${child.key} found at position $i'));\r\n          }\r\n          keys[child.key!] = i;\r\n        }\r\n      }\r\n\r\n      if (information.isNotEmpty) {\r\n        information.insert(0, ErrorSummary('Failed to update the list of CustomPainterSemantics:'));\r\n        throw FlutterError.fromParts(information);\r\n      }\r\n\r\n      return true;\r\n    }()");
+      let newChildrenTop = 0;
+      let oldChildrenTop = 0;
+      let newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
+      let oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
+      let newChildren = T.ListOfSemanticsNodeN().filled(newChildSemantics[$length], null, {growable: false});
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenTop);
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) break;
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+        oldChildrenTop = oldChildrenTop + 1;
+      }
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenBottom);
+        let newChild = newChildSemantics[$_get](newChildrenBottom);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newChild))) break;
+        oldChildrenBottom = oldChildrenBottom - 1;
+        newChildrenBottom = newChildrenBottom - 1;
+      }
+      let haveOldChildren = oldChildrenTop <= oldChildrenBottom;
+      let oldKeyedChildren = null;
+      function oldKeyedChildren$35get() {
+        let t6;
+        t6 = oldKeyedChildren;
+        return t6 == null ? dart.throw(new _internal.LateError.localNI("oldKeyedChildren")) : t6;
+      }
+      dart.fn(oldKeyedChildren$35get, T.VoidToMapOfKey$SemanticsNode());
+      function oldKeyedChildren$35set(t7) {
+        if (t7 == null) dart.nullFailed(I[0], 768, 40, "null");
+        if (oldKeyedChildren == null)
+          return oldKeyedChildren = t7;
+        else
+          dart.throw(new _internal.LateError.localAI("oldKeyedChildren"));
+      }
+      dart.fn(oldKeyedChildren$35set, T.MapOfKey$SemanticsNodeTodynamic());
+      if (haveOldChildren) {
+        oldKeyedChildren$35set(new (T.LinkedMapOfKey$SemanticsNode()).new());
+        while (oldChildrenTop <= oldChildrenBottom) {
+          let oldChild = oldSemantics[$_get](oldChildrenTop);
+          if (oldChild.key != null) oldKeyedChildren$35get()[$_set](dart.nullCheck(oldChild.key), oldChild);
+          oldChildrenTop = oldChildrenTop + 1;
+        }
+      }
+      while (newChildrenTop <= newChildrenBottom) {
+        let oldChild = null;
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (haveOldChildren) {
+          let key = newSemantics.key;
+          if (key != null) {
+            oldChild = oldKeyedChildren$35get()[$_get](key);
+            if (oldChild != null) {
+              if (dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) {
+                oldKeyedChildren$35get()[$remove](key);
+              } else {
+                oldChild = null;
+              }
+            }
+          }
+        }
+        if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 799, 14, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        if (!(dart.equals(oldChild, newChild) || oldChild == null)) dart.assertFailed(null, I[0], 801, 14, "oldChild == newChild || oldChild == null");
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+      }
+      if (!(oldChildrenTop === oldChildrenBottom + 1)) dart.assertFailed(null, I[0], 807, 12, "oldChildrenTop == oldChildrenBottom + 1");
+      if (!(newChildrenTop === newChildrenBottom + 1)) dart.assertFailed(null, I[0], 808, 12, "newChildrenTop == newChildrenBottom + 1");
+      if (!(dart.notNull(newChildSemantics[$length]) - newChildrenTop === dart.notNull(oldSemantics[$length]) - oldChildrenTop)) dart.assertFailed(null, I[0], 809, 12, "newChildSemantics.length - newChildrenTop == oldSemantics.length - oldChildrenTop");
+      newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
+      oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
+      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
+        let oldChild = oldSemantics[$_get](oldChildrenTop);
+        let newSemantics = newChildSemantics[$_get](newChildrenTop);
+        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) dart.assertFailed(null, I[0], 817, 14, "_canUpdateSemanticsChild(oldChild, newSemantics)");
+        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
+        if (!dart.equals(oldChild, newChild)) dart.assertFailed(null, I[0], 819, 14, "oldChild == newChild");
+        newChildren[$_set](newChildrenTop, newChild);
+        newChildrenTop = newChildrenTop + 1;
+        oldChildrenTop = oldChildrenTop + 1;
+      }
+      if (!dart.test(dart.fn(() => {
+        for (let node of newChildren) {
+          if (!(node != null)) dart.assertFailed(null, I[0], 827, 16, "node != null");
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 825, 12, "() {\r\n      for (final SemanticsNode? node in newChildren) {\r\n        assert(node != null);\r\n      }\r\n      return true;\r\n    }()");
+      return newChildren[$cast](semantics.SemanticsNode);
+    }
+    static _canUpdateSemanticsChild(oldChild, newSemantics) {
+      if (oldChild == null) dart.nullFailed(I[0], 839, 54, "oldChild");
+      if (newSemantics == null) dart.nullFailed(I[0], 839, 87, "newSemantics");
+      return dart.equals(oldChild.key, newSemantics.key);
+    }
+    static _updateSemanticsChild(oldChild, newSemantics) {
+      let t9, t9$;
+      if (newSemantics == null) dart.nullFailed(I[0], 847, 94, "newSemantics");
+      if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 848, 12, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
+      let newChild = (t9 = oldChild, t9 == null ? new semantics.SemanticsNode.new({key: newSemantics.key}) : t9);
+      let properties = newSemantics.properties;
+      let config = new semantics.SemanticsConfiguration.new();
+      if (properties.sortKey != null) {
+        config.sortKey = properties.sortKey;
+      }
+      if (properties.checked != null) {
+        config.isChecked = properties.checked;
+      }
+      if (properties.selected != null) {
+        config.isSelected = dart.nullCheck(properties.selected);
+      }
+      if (properties.button != null) {
+        config.isButton = dart.nullCheck(properties.button);
+      }
+      if (properties.link != null) {
+        config.isLink = dart.nullCheck(properties.link);
+      }
+      if (properties.textField != null) {
+        config.isTextField = dart.nullCheck(properties.textField);
+      }
+      if (properties.slider != null) {
+        config.isSlider = dart.nullCheck(properties.slider);
+      }
+      if (properties.readOnly != null) {
+        config.isReadOnly = dart.nullCheck(properties.readOnly);
+      }
+      if (properties.focusable != null) {
+        config.isFocusable = dart.nullCheck(properties.focusable);
+      }
+      if (properties.focused != null) {
+        config.isFocused = dart.nullCheck(properties.focused);
+      }
+      if (properties.enabled != null) {
+        config.isEnabled = properties.enabled;
+      }
+      if (properties.inMutuallyExclusiveGroup != null) {
+        config.isInMutuallyExclusiveGroup = dart.nullCheck(properties.inMutuallyExclusiveGroup);
+      }
+      if (properties.obscured != null) {
+        config.isObscured = dart.nullCheck(properties.obscured);
+      }
+      if (properties.multiline != null) {
+        config.isMultiline = dart.nullCheck(properties.multiline);
+      }
+      if (properties.hidden != null) {
+        config.isHidden = dart.nullCheck(properties.hidden);
+      }
+      if (properties.header != null) {
+        config.isHeader = dart.nullCheck(properties.header);
+      }
+      if (properties.scopesRoute != null) {
+        config.scopesRoute = dart.nullCheck(properties.scopesRoute);
+      }
+      if (properties.namesRoute != null) {
+        config.namesRoute = dart.nullCheck(properties.namesRoute);
+      }
+      if (properties.liveRegion != null) {
+        config.liveRegion = dart.nullCheck(properties.liveRegion);
+      }
+      if (properties.maxValueLength != null) {
+        config.maxValueLength = properties.maxValueLength;
+      }
+      if (properties.currentValueLength != null) {
+        config.currentValueLength = properties.currentValueLength;
+      }
+      if (properties.toggled != null) {
+        config.isToggled = properties.toggled;
+      }
+      if (properties.image != null) {
+        config.isImage = dart.nullCheck(properties.image);
+      }
+      if (properties.label != null) {
+        config.label = dart.nullCheck(properties.label);
+      }
+      if (properties.value != null) {
+        config.value = dart.nullCheck(properties.value);
+      }
+      if (properties.increasedValue != null) {
+        config.increasedValue = dart.nullCheck(properties.increasedValue);
+      }
+      if (properties.decreasedValue != null) {
+        config.decreasedValue = dart.nullCheck(properties.decreasedValue);
+      }
+      if (properties.hint != null) {
+        config.hint = dart.nullCheck(properties.hint);
+      }
+      if (properties.textDirection != null) {
+        config.textDirection = properties.textDirection;
+      }
+      if (properties.onTap != null) {
+        config.onTap = properties.onTap;
+      }
+      if (properties.onLongPress != null) {
+        config.onLongPress = properties.onLongPress;
+      }
+      if (properties.onScrollLeft != null) {
+        config.onScrollLeft = properties.onScrollLeft;
+      }
+      if (properties.onScrollRight != null) {
+        config.onScrollRight = properties.onScrollRight;
+      }
+      if (properties.onScrollUp != null) {
+        config.onScrollUp = properties.onScrollUp;
+      }
+      if (properties.onScrollDown != null) {
+        config.onScrollDown = properties.onScrollDown;
+      }
+      if (properties.onIncrease != null) {
+        config.onIncrease = properties.onIncrease;
+      }
+      if (properties.onDecrease != null) {
+        config.onDecrease = properties.onDecrease;
+      }
+      if (properties.onCopy != null) {
+        config.onCopy = properties.onCopy;
+      }
+      if (properties.onCut != null) {
+        config.onCut = properties.onCut;
+      }
+      if (properties.onPaste != null) {
+        config.onPaste = properties.onPaste;
+      }
+      if (properties.onMoveCursorForwardByCharacter != null) {
+        config.onMoveCursorForwardByCharacter = properties.onMoveCursorForwardByCharacter;
+      }
+      if (properties.onMoveCursorBackwardByCharacter != null) {
+        config.onMoveCursorBackwardByCharacter = properties.onMoveCursorBackwardByCharacter;
+      }
+      if (properties.onMoveCursorForwardByWord != null) {
+        config.onMoveCursorForwardByWord = properties.onMoveCursorForwardByWord;
+      }
+      if (properties.onMoveCursorBackwardByWord != null) {
+        config.onMoveCursorBackwardByWord = properties.onMoveCursorBackwardByWord;
+      }
+      if (properties.onSetSelection != null) {
+        config.onSetSelection = properties.onSetSelection;
+      }
+      if (properties.onDidGainAccessibilityFocus != null) {
+        config.onDidGainAccessibilityFocus = properties.onDidGainAccessibilityFocus;
+      }
+      if (properties.onDidLoseAccessibilityFocus != null) {
+        config.onDidLoseAccessibilityFocus = properties.onDidLoseAccessibilityFocus;
+      }
+      if (properties.onDismiss != null) {
+        config.onDismiss = properties.onDismiss;
+      }
+      newChild.updateWith({config: config, childrenInInversePaintOrder: C[2] || CT.C2});
+      t9$ = newChild;
+      (() => {
+        t9$.rect = newSemantics.rect;
+        t9$.transform = newSemantics.transform;
+        t9$.tags = newSemantics.tags;
+        return t9$;
+      })();
+      return newChild;
     }
   };
-  (stack.RenderStack.new = function(opts) {
-    let children = opts && 'children' in opts ? opts.children : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[8] || CT.C8;
-    if (alignment == null) dart.nullFailed(I[0], 336, 23, "alignment");
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    let fit = opts && 'fit' in opts ? opts.fit : C[1] || CT.C1;
-    if (fit == null) dart.nullFailed(I[0], 338, 14, "fit");
-    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[9] || CT.C9;
-    if (clipBehavior == null) dart.nullFailed(I[0], 339, 10, "clipBehavior");
-    this[_hasVisualOverflow] = false;
-    this[_resolvedAlignment] = null;
-    this[_clipBehavior] = ui.Clip.hardEdge;
-    this[_clipRectLayer] = null;
-    if (!(alignment != null)) dart.assertFailed(null, I[0], 340, 15, "alignment != null");
-    if (!(fit != null)) dart.assertFailed(null, I[0], 341, 15, "fit != null");
-    if (!(clipBehavior != null)) dart.assertFailed(null, I[0], 342, 15, "clipBehavior != null");
-    this[_alignment] = alignment;
-    this[_textDirection] = textDirection;
-    this[_fit] = fit;
-    this[_clipBehavior] = clipBehavior;
-    stack.RenderStack.__proto__.new.call(this);
-    this.addAll(children);
-  }).prototype = stack.RenderStack.prototype;
-  dart.addTypeTests(stack.RenderStack);
-  dart.addTypeCaches(stack.RenderStack);
-  dart.setMethodSignature(stack.RenderStack, () => ({
-    __proto__: dart.getMethods(stack.RenderStack.__proto__),
-    [_resolve]: dart.fnType(dart.void, []),
-    [_markNeedResolution]: dart.fnType(dart.void, []),
-    [_computeSize]: dart.fnType(ui.Size, [], {}, {constraints: box.BoxConstraints, layoutChild: dart.fnType(ui.Size, [box.RenderBox, box.BoxConstraints])}),
-    paintStack: dart.fnType(dart.void, [object.PaintingContext, ui.Offset])
-  }));
-  dart.setGetterSignature(stack.RenderStack, () => ({
-    __proto__: dart.getGetters(stack.RenderStack.__proto__),
-    alignment: alignment.AlignmentGeometry,
-    textDirection: dart.nullable(ui.TextDirection),
-    fit: stack.StackFit,
-    clipBehavior: ui.Clip
-  }));
-  dart.setSetterSignature(stack.RenderStack, () => ({
-    __proto__: dart.getSetters(stack.RenderStack.__proto__),
-    alignment: alignment.AlignmentGeometry,
-    textDirection: dart.nullable(ui.TextDirection),
-    fit: stack.StackFit,
-    clipBehavior: ui.Clip
-  }));
-  dart.setLibraryUri(stack.RenderStack, I[1]);
-  dart.setFieldSignature(stack.RenderStack, () => ({
-    __proto__: dart.getFields(stack.RenderStack.__proto__),
-    [_hasVisualOverflow]: dart.fieldType(core.bool),
-    [_resolvedAlignment]: dart.fieldType(dart.nullable(alignment.Alignment)),
-    [_alignment]: dart.fieldType(alignment.AlignmentGeometry),
-    [_textDirection]: dart.fieldType(dart.nullable(ui.TextDirection)),
-    [_fit]: dart.fieldType(stack.StackFit),
-    [_clipBehavior]: dart.fieldType(ui.Clip),
-    [_clipRectLayer]: dart.fieldType(dart.nullable(layer.ClipRectLayer))
-  }));
-  var _index = dart.privateName(stack, "_index");
-  var _childAtIndex = dart.privateName(stack, "_childAtIndex");
-  stack.RenderIndexedStack = class RenderIndexedStack extends stack.RenderStack {
-    visitChildrenForSemantics(visitor) {
-      if (visitor == null) dart.nullFailed(I[0], 680, 54, "visitor");
-      if (this.index != null && this.firstChild != null) visitor(this[_childAtIndex]());
-    }
-    get index() {
-      return this[_index];
-    }
-    set index(value) {
-      if (this[_index] != value) {
-        this[_index] = value;
-        this.markNeedsLayout();
-      }
-    }
-    [_childAtIndex]() {
-      if (!(this.index != null)) dart.assertFailed(null, I[0], 696, 12, "index != null");
-      let child = this.firstChild;
-      let i = 0;
-      while (child != null && i < dart.nullCheck(this.index)) {
-        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-        child = childParentData.nextSibling;
-        i = i + 1;
-      }
-      if (!(i === this.index)) dart.assertFailed(null, I[0], 704, 12, "i == index");
-      if (!(child != null)) dart.assertFailed(null, I[0], 705, 12, "child != null");
-      return dart.nullCheck(child);
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[0], 710, 41, "result");
-      let position = opts && 'position' in opts ? opts.position : null;
-      if (position == null) dart.nullFailed(I[0], 710, 67, "position");
-      if (this.firstChild == null || this.index == null) return false;
-      if (!(position != null)) dart.assertFailed(null, I[0], 713, 12, "position != null");
-      let child = this[_childAtIndex]();
-      let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-      return result.addWithPaintOffset({offset: childParentData.offset, position: position, hitTest: dart.fn((result, transformed) => {
-          if (result == null) dart.nullFailed(I[0], 719, 34, "result");
-          if (!dart.equals(transformed, position['-'](childParentData.offset))) dart.assertFailed(null, I[0], 720, 16, "transformed == position - childParentData.offset");
-          return child.hitTest(result, {position: dart.nullCheck(transformed)});
-        }, T.BoxHitTestResultAndOffsetNTobool())});
-    }
-    paintStack(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 727, 35, "context");
-      if (offset == null) dart.nullFailed(I[0], 727, 51, "offset");
-      if (this.firstChild == null || this.index == null) return;
-      let child = this[_childAtIndex]();
-      let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
-      context.paintChild(child, childParentData.offset['+'](offset));
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 736, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.IntProperty.new("index", this.index));
-    }
-  };
-  (stack.RenderIndexedStack.new = function(opts) {
-    let children = opts && 'children' in opts ? opts.children : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[8] || CT.C8;
-    if (alignment == null) dart.nullFailed(I[0], 669, 23, "alignment");
-    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-    let index = opts && 'index' in opts ? opts.index : 0;
-    this[_index] = index;
-    stack.RenderIndexedStack.__proto__.new.call(this, {children: children, alignment: alignment, textDirection: textDirection});
+  (custom_paint.RenderCustomPaint.new = function(opts) {
+    let painter = opts && 'painter' in opts ? opts.painter : null;
+    let foregroundPainter = opts && 'foregroundPainter' in opts ? opts.foregroundPainter : null;
+    let preferredSize = opts && 'preferredSize' in opts ? opts.preferredSize : C[0] || CT.C0;
+    if (preferredSize == null) dart.nullFailed(I[0], 373, 10, "preferredSize");
+    let isComplex = opts && 'isComplex' in opts ? opts.isComplex : false;
+    if (isComplex == null) dart.nullFailed(I[0], 374, 10, "isComplex");
+    let willChange = opts && 'willChange' in opts ? opts.willChange : false;
+    if (willChange == null) dart.nullFailed(I[0], 375, 10, "willChange");
+    let child = opts && 'child' in opts ? opts.child : null;
+    this[_backgroundSemanticsBuilder] = null;
+    this[_foregroundSemanticsBuilder] = null;
+    this[_backgroundSemanticsNodes] = null;
+    this[_foregroundSemanticsNodes] = null;
+    this[isComplex$] = isComplex;
+    this[willChange$] = willChange;
+    if (!(preferredSize != null)) dart.assertFailed(null, I[0], 377, 15, "preferredSize != null");
+    this[_painter] = painter;
+    this[_foregroundPainter] = foregroundPainter;
+    this[_preferredSize] = preferredSize;
+    custom_paint.RenderCustomPaint.__proto__.new.call(this, child);
     ;
-  }).prototype = stack.RenderIndexedStack.prototype;
-  dart.addTypeTests(stack.RenderIndexedStack);
-  dart.addTypeCaches(stack.RenderIndexedStack);
-  dart.setMethodSignature(stack.RenderIndexedStack, () => ({
-    __proto__: dart.getMethods(stack.RenderIndexedStack.__proto__),
-    [_childAtIndex]: dart.fnType(box.RenderBox, [])
+  }).prototype = custom_paint.RenderCustomPaint.prototype;
+  dart.addTypeTests(custom_paint.RenderCustomPaint);
+  dart.addTypeCaches(custom_paint.RenderCustomPaint);
+  dart.setMethodSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getMethods(custom_paint.RenderCustomPaint.__proto__),
+    [_didUpdatePainter]: dart.fnType(dart.void, [dart.nullable(custom_paint.CustomPainter), dart.nullable(custom_paint.CustomPainter)]),
+    [_paintWithPainter]: dart.fnType(dart.void, [ui.Canvas, ui.Offset, custom_paint.CustomPainter]),
+    [_setRasterCacheHints]: dart.fnType(dart.void, [object.PaintingContext])
   }));
-  dart.setGetterSignature(stack.RenderIndexedStack, () => ({
-    __proto__: dart.getGetters(stack.RenderIndexedStack.__proto__),
-    index: dart.nullable(core.int)
+  dart.setGetterSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getGetters(custom_paint.RenderCustomPaint.__proto__),
+    painter: dart.nullable(custom_paint.CustomPainter),
+    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
+    preferredSize: ui.Size
   }));
-  dart.setSetterSignature(stack.RenderIndexedStack, () => ({
-    __proto__: dart.getSetters(stack.RenderIndexedStack.__proto__),
-    index: dart.nullable(core.int)
+  dart.setSetterSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getSetters(custom_paint.RenderCustomPaint.__proto__),
+    painter: dart.nullable(custom_paint.CustomPainter),
+    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
+    preferredSize: ui.Size
   }));
-  dart.setLibraryUri(stack.RenderIndexedStack, I[1]);
-  dart.setFieldSignature(stack.RenderIndexedStack, () => ({
-    __proto__: dart.getFields(stack.RenderIndexedStack.__proto__),
-    [_index]: dart.fieldType(dart.nullable(core.int))
+  dart.setLibraryUri(custom_paint.RenderCustomPaint, I[1]);
+  dart.setFieldSignature(custom_paint.RenderCustomPaint, () => ({
+    __proto__: dart.getFields(custom_paint.RenderCustomPaint.__proto__),
+    [_painter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
+    [_foregroundPainter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
+    [_preferredSize]: dart.fieldType(ui.Size),
+    isComplex: dart.fieldType(core.bool),
+    willChange: dart.fieldType(core.bool),
+    [_backgroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
+    [_foregroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
+    [_backgroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode))),
+    [_foregroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode)))
   }));
-  dart.trackLibraries("packages/flutter/src/rendering/stack.dart", {
-    "package:flutter/src/rendering/stack.dart": stack
+  dart.trackLibraries("packages/flutter/src/rendering/custom_paint.dart", {
+    "package:flutter/src/rendering/custom_paint.dart": custom_paint
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["stack.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/rendering/stack.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["custom_paint.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/rendering/custom_paint.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__stack: stack
+    src__rendering__custom_paint: custom_paint
   };
 }));
 
-//# sourceMappingURL=stack.dart.lib.js.map
+//# sourceMappingURL=custom_paint.dart.lib.js.map

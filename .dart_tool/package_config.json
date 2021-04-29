@@ -143,10 +143,10 @@
       "name": "animelife",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-04-26T02:48:05.518888Z",
+  "generated": "2021-04-28T18:13:14.421684Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }

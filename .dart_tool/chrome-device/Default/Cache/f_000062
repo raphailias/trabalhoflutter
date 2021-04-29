@@ -1,34 +1,22 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__foundation__stack_frame_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__flutter__src__material__tab_controller_dart(dart_sdk, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__widgets__widget_span$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var stack_frame = Object.create(dart.library);
-  var $trim = dartx.trim;
-  var $split = dartx.split;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $where = dartx.where;
-  var $map = dartx.map;
-  var $whereType = dartx.whereType;
-  var $toList = dartx.toList;
-  var $startsWith = dartx.startsWith;
-  var $_get = dartx._get;
-  var $replaceFirst = dartx.replaceFirst;
-  var $length = dartx.length;
-  var $first = dartx.first;
-  var $skip = dartx.skip;
-  var $join = dartx.join;
-  var $single = dartx.single;
-  var $replaceAll = dartx.replaceAll;
-  var $contains = dartx.contains;
-  var $runtimeType = dartx.runtimeType;
-  dart._checkModuleNullSafetyMode(false);
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  var tab_controller = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
+  dart._checkModuleNullSafetyMode(true);
   var T = {
-    StringTobool: () => (T.StringTobool = dart.constFn(dart.fnType(core.bool, [core.String])))(),
-    StackFrameN: () => (T.StackFrameN = dart.constFn(dart.nullable(stack_frame.StackFrame)))(),
-    StringToStackFrameN: () => (T.StringToStackFrameN = dart.constFn(dart.fnType(T.StackFrameN(), [core.String])))()
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -44,300 +32,423 @@ define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function lo
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.fn(stack_frame.StackFrame.fromStackTraceLine, T.StringToStackFrameN());
+      return C[0] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 300000
+      });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "asynchronous suspension",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "<asynchronous suspension>"
+        __proto__: curves.Cubic.prototype,
+        [Cubic_d]: 1,
+        [Cubic_c]: 0.25,
+        [Cubic_b]: 0.1,
+        [Cubic_a]: 0.25
       });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 7,
+        [_Location_line]: 441,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "enabled",
+        [_Location_column]: 7,
+        [_Location_line]: 442,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 443,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: stack_frame.StackFrame.prototype,
-        [isConstructor$]: false,
-        [method$]: "...",
-        [className$]: "",
-        [column$]: -1,
-        [line$]: -1,
-        [packagePath$]: "",
-        [$package$]: "",
-        [packageScheme$]: "",
-        [number$]: -1,
-        [source$]: "..."
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 440,
+        [_Location_file]: "file:///D:/flutter2/flutter/packages/flutter/lib/src/material/tab_controller.dart"
       });
     }
   }, false);
-  var C = Array(3).fill(void 0);
+  var C = Array(7).fill(void 0);
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/foundation/stack_frame.dart",
-    "package:flutter/src/foundation/stack_frame.dart"
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/material/tab_controller.dart",
+    "package:flutter/src/material/tab_controller.dart"
   ];
-  var source$ = dart.privateName(stack_frame, "StackFrame.source");
-  var number$ = dart.privateName(stack_frame, "StackFrame.number");
-  var packageScheme$ = dart.privateName(stack_frame, "StackFrame.packageScheme");
-  var $package$ = dart.privateName(stack_frame, "StackFrame.package");
-  var packagePath$ = dart.privateName(stack_frame, "StackFrame.packagePath");
-  var line$ = dart.privateName(stack_frame, "StackFrame.line");
-  var column$ = dart.privateName(stack_frame, "StackFrame.column");
-  var className$ = dart.privateName(stack_frame, "StackFrame.className");
-  var method$ = dart.privateName(stack_frame, "StackFrame.method");
-  var isConstructor$ = dart.privateName(stack_frame, "StackFrame.isConstructor");
-  stack_frame.StackFrame = class StackFrame extends core.Object {
-    get source() {
-      return this[source$];
+  var length$ = dart.privateName(tab_controller, "TabController.length");
+  var _indexIsChangingCount = dart.privateName(tab_controller, "_indexIsChangingCount");
+  var _index = dart.privateName(tab_controller, "_index");
+  var _previousIndex = dart.privateName(tab_controller, "_previousIndex");
+  var _animationController = dart.privateName(tab_controller, "_animationController");
+  var _copyWith = dart.privateName(tab_controller, "_copyWith");
+  var _changeIndex = dart.privateName(tab_controller, "_changeIndex");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var Cubic_d = dart.privateName(curves, "Cubic.d");
+  var Cubic_c = dart.privateName(curves, "Cubic.c");
+  var Cubic_b = dart.privateName(curves, "Cubic.b");
+  var Cubic_a = dart.privateName(curves, "Cubic.a");
+  tab_controller.TabController = class TabController extends change_notifier.ChangeNotifier {
+    get length() {
+      return this[length$];
     }
-    set source(value) {
-      super.source = value;
+    set length(value) {
+      super.length = value;
     }
-    get number() {
-      return this[number$];
+    [_copyWith](opts) {
+      let t0, t0$, t0$0;
+      let index = opts && 'index' in opts ? opts.index : null;
+      let length = opts && 'length' in opts ? opts.length : null;
+      let previousIndex = opts && 'previousIndex' in opts ? opts.previousIndex : null;
+      return new tab_controller.TabController.__({index: (t0 = index, t0 == null ? this[_index] : t0), length: (t0$ = length, t0$ == null ? this.length : t0$), animationController: this[_animationController], previousIndex: (t0$0 = previousIndex, t0$0 == null ? this[_previousIndex] : t0$0)});
     }
-    set number(value) {
-      super.number = value;
+    get animation() {
+      let t0;
+      t0 = this[_animationController];
+      return t0 == null ? null : t0.view;
     }
-    get packageScheme() {
-      return this[packageScheme$];
-    }
-    set packageScheme(value) {
-      super.packageScheme = value;
-    }
-    get package() {
-      return this[$package$];
-    }
-    set package(value) {
-      super.package = value;
-    }
-    get packagePath() {
-      return this[packagePath$];
-    }
-    set packagePath(value) {
-      super.packagePath = value;
-    }
-    get line() {
-      return this[line$];
-    }
-    set line(value) {
-      super.line = value;
-    }
-    get column() {
-      return this[column$];
-    }
-    set column(value) {
-      super.column = value;
-    }
-    get className() {
-      return this[className$];
-    }
-    set className(value) {
-      super.className = value;
-    }
-    get method() {
-      return this[method$];
-    }
-    set method(value) {
-      super.method = value;
-    }
-    get isConstructor() {
-      return this[isConstructor$];
-    }
-    set isConstructor(value) {
-      super.isConstructor = value;
-    }
-    static fromStackTrace(stack) {
-      if (stack == null) dart.nullFailed(I[0], 78, 53, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 79, 12, "stack != null");
-      return stack_frame.StackFrame.fromStackString(dart.toString(stack));
-    }
-    static fromStackString(stack) {
-      if (stack == null) dart.nullFailed(I[0], 84, 50, "stack");
-      if (!(stack != null)) dart.assertFailed(null, I[0], 85, 12, "stack != null");
-      return stack[$trim]()[$split]("\n")[$where](dart.fn(line => {
-        if (line == null) dart.nullFailed(I[0], 89, 24, "line");
-        return line[$isNotEmpty];
-      }, T.StringTobool()))[$map](T.StackFrameN(), C[0] || CT.C0)[$whereType](stack_frame.StackFrame)[$toList]();
-    }
-    static _parseWebFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 98, 44, "line");
-      if (true) {
-        return stack_frame.StackFrame._parseWebDebugFrame(line);
+    [_changeIndex](value, opts) {
+      if (value == null) dart.nullFailed(I[0], 210, 25, "value");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : null;
+      if (!(value != null)) dart.assertFailed(null, I[0], 211, 12, "value != null");
+      if (!(dart.notNull(value) >= 0 && (dart.notNull(value) < dart.notNull(this.length) || this.length === 0))) dart.assertFailed(null, I[0], 212, 12, "value >= 0 && (value < length || length == 0)");
+      if (!(duration != null || curve == null)) dart.assertFailed(null, I[0], 213, 12, "duration != null || curve == null");
+      if (!(dart.notNull(this[_indexIsChangingCount]) >= 0)) dart.assertFailed(null, I[0], 214, 12, "_indexIsChangingCount >= 0");
+      if (value == this[_index] || dart.notNull(this.length) < 2) return;
+      this[_previousIndex] = this.index;
+      this[_index] = value;
+      if (duration != null) {
+        this[_indexIsChangingCount] = dart.notNull(this[_indexIsChangingCount]) + 1;
+        this.notifyListeners();
+        dart.nullCheck(this[_animationController]).animateTo(this[_index][$toDouble](), {duration: duration, curve: dart.nullCheck(curve)}).whenCompleteOrCancel(dart.fn(() => {
+          if (this[_animationController] != null) {
+            this[_indexIsChangingCount] = dart.notNull(this[_indexIsChangingCount]) - 1;
+            this.notifyListeners();
+          }
+        }, T.VoidTovoid()));
       } else {
-        return stack_frame.StackFrame._parseWebNonDebugFrame(line);
+        this[_indexIsChangingCount] = dart.notNull(this[_indexIsChangingCount]) + 1;
+        dart.nullCheck(this[_animationController]).value = this[_index][$toDouble]();
+        this[_indexIsChangingCount] = dart.notNull(this[_indexIsChangingCount]) - 1;
+        this.notifyListeners();
       }
     }
-    static _parseWebDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 106, 48, "line");
-      let hasPackage = line[$startsWith]("package");
-      let parser = hasPackage ? core.RegExp.new("^(package.+) (\\d+):(\\d+)\\s+(.+)$") : core.RegExp.new("^(.+) (\\d+):(\\d+)\\s+(.+)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 114, 12, "match != null");
-      match = dart.nullCheck(match);
-      let $package = "<unknown>";
-      let packageScheme = "<unknown>";
-      let packagePath = "<unknown>";
-      if (hasPackage) {
-        packageScheme = "package";
-        let packageUri = core.Uri.parse(dart.nullCheck(match.group(1)));
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
-      }
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: packageScheme, package: $package, packagePath: packagePath, line: core.int.parse(dart.nullCheck(match.group(2))), column: core.int.parse(dart.nullCheck(match.group(3))), className: "<unknown>", method: dart.nullCheck(match.group(4)), source: line});
+    get index() {
+      return this[_index];
     }
-    static _parseWebNonDebugFrame(line) {
-      if (line == null) dart.nullFailed(I[0], 148, 52, "line");
-      let match = stack_frame.StackFrame._webNonDebugFramePattern.firstMatch(line);
-      if (match == null) {
-        return null;
-      }
-      let classAndMethod = dart.nullCheck(match.group(1))[$split](".");
-      let className = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$first] : "<unknown>";
-      let method = dart.notNull(classAndMethod[$length]) > 1 ? classAndMethod[$skip](1)[$join](".") : classAndMethod[$single];
-      return new stack_frame.StackFrame.new({number: -1, packageScheme: "<unknown>", package: "<unknown>", packagePath: "<unknown>", line: -1, column: -1, className: className, method: method, source: line});
+    set index(value) {
+      if (value == null) dart.nullFailed(I[0], 249, 17, "value");
+      this[_changeIndex](value);
     }
-    static fromStackTraceLine(line) {
-      if (line == null) dart.nullFailed(I[0], 185, 48, "line");
-      if (!(line != null)) dart.assertFailed(null, I[0], 186, 12, "line != null");
-      if (line === "<asynchronous suspension>") {
-        return stack_frame.StackFrame.asynchronousSuspension;
-      } else if (line === "...") {
-        return stack_frame.StackFrame.stackOverFlowElision;
-      }
-      if (!(line !== "===== asynchronous gap ===========================")) dart.assertFailed("Got a stack frame from package:stack_trace, where a vm or web frame was expected. " + "This can happen if FlutterError.demangleStackTrace was not set in an environment " + "that propagates non-standard stack traces to the framework, such as during tests.", I[0], 194, 7, "line != '===== asynchronous gap ==========================='");
-      if (!line[$startsWith]("#")) {
-        return stack_frame.StackFrame._parseWebFrame(line);
-      }
-      let parser = core.RegExp.new("^#(\\d+) +(.+) \\((.+?):?(\\d+){0,1}:?(\\d+){0,1}\\)$");
-      let match = parser.firstMatch(line);
-      if (!(match != null)) dart.assertFailed("Expected " + dart.str(line) + " to match " + dart.str(parser) + ".", I[0], 207, 12, "match != null");
-      match = dart.nullCheck(match);
-      let isConstructor = false;
-      let className = "";
-      let method = dart.nullCheck(match.group(2))[$replaceAll](".<anonymous closure>", "");
-      if (method[$startsWith]("new")) {
-        let methodParts = method[$split](" ");
-        className = dart.notNull(methodParts[$length]) > 1 ? method[$split](" ")[$_get](1) : "<unknown>";
-        method = "";
-        if (className[$contains](".")) {
-          let parts = className[$split](".");
-          className = parts[$_get](0);
-          method = parts[$_get](1);
-        }
-        isConstructor = true;
-      } else if (method[$contains](".")) {
-        let parts = method[$split](".");
-        className = parts[$_get](0);
-        method = parts[$_get](1);
-      }
-      let packageUri = core.Uri.parse(dart.nullCheck(match.group(3)));
-      let $package = "<unknown>";
-      let packagePath = packageUri.path;
-      if (packageUri.scheme === "dart" || packageUri.scheme === "package") {
-        $package = packageUri.pathSegments[$_get](0);
-        packagePath = packageUri.path[$replaceFirst](dart.notNull(packageUri.pathSegments[$_get](0)) + "/", "");
-      }
-      return new stack_frame.StackFrame.new({number: core.int.parse(dart.nullCheck(match.group(1))), className: className, method: method, packageScheme: packageUri.scheme, package: $package, packagePath: packagePath, line: match.group(4) == null ? -1 : core.int.parse(dart.nullCheck(match.group(4))), column: match.group(5) == null ? -1 : core.int.parse(dart.nullCheck(match.group(5))), isConstructor: isConstructor, source: line});
+    get previousIndex() {
+      return this[_previousIndex];
     }
-    get hashCode() {
-      return ui.hashValues(this.number, this.package, this.line, this.column, this.className, this.method, this.source);
+    get indexIsChanging() {
+      return this[_indexIsChangingCount] !== 0;
     }
-    _equals(other) {
-      if (other == null) return false;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return stack_frame.StackFrame.is(other) && other.number == this.number && other.package == this.package && other.line == this.line && other.column == this.column && other.className == this.className && other.method == this.method && other.source == this.source;
+    animateTo(value, opts) {
+      if (value == null) dart.nullFailed(I[0], 273, 22, "value");
+      let duration = opts && 'duration' in opts ? opts.duration : C[0] || CT.C0;
+      if (duration == null) dart.nullFailed(I[0], 273, 40, "duration");
+      let curve = opts && 'curve' in opts ? opts.curve : C[1] || CT.C1;
+      if (curve == null) dart.nullFailed(I[0], 273, 77, "curve");
+      this[_changeIndex](value, {duration: duration, curve: curve});
     }
-    toString() {
-      return dart.str(object.objectRuntimeType(this, "StackFrame")) + "(#" + dart.str(this.number) + ", " + dart.str(this.packageScheme) + ":" + dart.str(this.package) + "/" + dart.str(this.packagePath) + ":" + dart.str(this.line) + ":" + dart.str(this.column) + ", className: " + dart.str(this.className) + ", method: " + dart.str(this.method) + ")";
+    get offset() {
+      return dart.notNull(dart.nullCheck(this[_animationController]).value) - this[_index][$toDouble]();
+    }
+    set offset(value) {
+      if (value == null) dart.nullFailed(I[0], 286, 21, "value");
+      if (!(value != null)) dart.assertFailed(null, I[0], 287, 12, "value != null");
+      if (!(dart.notNull(value) >= -1.0 && dart.notNull(value) <= 1.0)) dart.assertFailed(null, I[0], 288, 12, "value >= -1.0 && value <= 1.0");
+      if (!!dart.test(this.indexIsChanging)) dart.assertFailed(null, I[0], 289, 12, "!indexIsChanging");
+      if (value == this.offset) return;
+      dart.nullCheck(this[_animationController]).value = dart.notNull(value) + this[_index][$toDouble]();
+    }
+    dispose() {
+      let t0;
+      t0 = this[_animationController];
+      t0 == null ? null : t0.dispose();
+      this[_animationController] = null;
+      super.dispose();
     }
   };
-  (stack_frame.StackFrame.new = function(opts) {
-    let number = opts && 'number' in opts ? opts.number : null;
-    if (number == null) dart.nullFailed(I[0], 30, 19, "number");
-    let column = opts && 'column' in opts ? opts.column : null;
-    if (column == null) dart.nullFailed(I[0], 31, 19, "column");
-    let line = opts && 'line' in opts ? opts.line : null;
-    if (line == null) dart.nullFailed(I[0], 32, 19, "line");
-    let packageScheme = opts && 'packageScheme' in opts ? opts.packageScheme : null;
-    if (packageScheme == null) dart.nullFailed(I[0], 33, 19, "packageScheme");
-    let $package = opts && 'package' in opts ? opts.package : null;
-    if ($package == null) dart.nullFailed(I[0], 34, 19, "package");
-    let packagePath = opts && 'packagePath' in opts ? opts.packagePath : null;
-    if (packagePath == null) dart.nullFailed(I[0], 35, 19, "packagePath");
-    let className = opts && 'className' in opts ? opts.className : "";
-    if (className == null) dart.nullFailed(I[0], 36, 10, "className");
-    let method = opts && 'method' in opts ? opts.method : null;
-    if (method == null) dart.nullFailed(I[0], 37, 19, "method");
-    let isConstructor = opts && 'isConstructor' in opts ? opts.isConstructor : false;
-    if (isConstructor == null) dart.nullFailed(I[0], 38, 10, "isConstructor");
-    let source = opts && 'source' in opts ? opts.source : null;
-    if (source == null) dart.nullFailed(I[0], 39, 19, "source");
-    this[number$] = number;
-    this[column$] = column;
-    this[line$] = line;
-    this[packageScheme$] = packageScheme;
-    this[$package$] = $package;
-    this[packagePath$] = packagePath;
-    this[className$] = className;
-    this[method$] = method;
-    this[isConstructor$] = isConstructor;
-    this[source$] = source;
-    if (!(number != null)) dart.assertFailed(null, I[0], 40, 16, "number != null");
-    if (!(column != null)) dart.assertFailed(null, I[0], 41, 16, "column != null");
-    if (!(line != null)) dart.assertFailed(null, I[0], 42, 16, "line != null");
-    if (!(method != null)) dart.assertFailed(null, I[0], 43, 16, "method != null");
-    if (!(packageScheme != null)) dart.assertFailed(null, I[0], 44, 16, "packageScheme != null");
-    if (!($package != null)) dart.assertFailed(null, I[0], 45, 16, "package != null");
-    if (!(packagePath != null)) dart.assertFailed(null, I[0], 46, 16, "packagePath != null");
-    if (!(className != null)) dart.assertFailed(null, I[0], 47, 16, "className != null");
-    if (!(isConstructor != null)) dart.assertFailed(null, I[0], 48, 16, "isConstructor != null");
-    if (!(source != null)) dart.assertFailed(null, I[0], 49, 16, "source != null");
+  (tab_controller.TabController.new = function(opts) {
+    let initialIndex = opts && 'initialIndex' in opts ? opts.initialIndex : 0;
+    if (initialIndex == null) dart.nullFailed(I[0], 149, 23, "initialIndex");
+    let length = opts && 'length' in opts ? opts.length : null;
+    if (length == null) dart.nullFailed(I[0], 149, 55, "length");
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 149, 87, "vsync");
+    this[_indexIsChangingCount] = 0;
+    this[length$] = length;
+    if (!(length != null && dart.notNull(length) >= 0)) dart.assertFailed(null, I[0], 150, 14, "length != null && length >= 0");
+    if (!(initialIndex != null && dart.notNull(initialIndex) >= 0 && (length === 0 || dart.notNull(initialIndex) < dart.notNull(length)))) dart.assertFailed(null, I[0], 151, 14, "initialIndex != null && initialIndex >= 0 && (length == 0 || initialIndex < length)");
+    this[_index] = initialIndex;
+    this[_previousIndex] = initialIndex;
+    this[_animationController] = new animation_controller.AnimationController.unbounded({value: initialIndex[$toDouble](), vsync: vsync});
+    tab_controller.TabController.__proto__.new.call(this);
     ;
-  }).prototype = stack_frame.StackFrame.prototype;
-  dart.addTypeTests(stack_frame.StackFrame);
-  dart.addTypeCaches(stack_frame.StackFrame);
-  dart.setLibraryUri(stack_frame.StackFrame, I[1]);
-  dart.setFieldSignature(stack_frame.StackFrame, () => ({
-    __proto__: dart.getFields(stack_frame.StackFrame.__proto__),
-    source: dart.finalFieldType(core.String),
-    number: dart.finalFieldType(core.int),
-    packageScheme: dart.finalFieldType(core.String),
-    package: dart.finalFieldType(core.String),
-    packagePath: dart.finalFieldType(core.String),
-    line: dart.finalFieldType(core.int),
-    column: dart.finalFieldType(core.int),
-    className: dart.finalFieldType(core.String),
-    method: dart.finalFieldType(core.String),
-    isConstructor: dart.finalFieldType(core.bool)
+  }).prototype = tab_controller.TabController.prototype;
+  (tab_controller.TabController.__ = function(opts) {
+    let index = opts && 'index' in opts ? opts.index : null;
+    if (index == null) dart.nullFailed(I[0], 162, 18, "index");
+    let previousIndex = opts && 'previousIndex' in opts ? opts.previousIndex : null;
+    if (previousIndex == null) dart.nullFailed(I[0], 163, 18, "previousIndex");
+    let animationController = opts && 'animationController' in opts ? opts.animationController : null;
+    let length = opts && 'length' in opts ? opts.length : null;
+    if (length == null) dart.nullFailed(I[0], 165, 19, "length");
+    this[_indexIsChangingCount] = 0;
+    this[length$] = length;
+    this[_index] = index;
+    this[_previousIndex] = previousIndex;
+    this[_animationController] = animationController;
+    tab_controller.TabController.__proto__.new.call(this);
+    ;
+  }).prototype = tab_controller.TabController.prototype;
+  dart.addTypeTests(tab_controller.TabController);
+  dart.addTypeCaches(tab_controller.TabController);
+  dart.setMethodSignature(tab_controller.TabController, () => ({
+    __proto__: dart.getMethods(tab_controller.TabController.__proto__),
+    [_copyWith]: dart.fnType(tab_controller.TabController, [], {}, {index: dart.nullable(core.int), length: dart.nullable(core.int), previousIndex: dart.nullable(core.int)}),
+    [_changeIndex]: dart.fnType(dart.void, [core.int], {curve: dart.nullable(curves.Curve), duration: dart.nullable(core.Duration)}, {}),
+    animateTo: dart.fnType(dart.void, [core.int], {curve: curves.Curve, duration: core.Duration}, {})
   }));
-  dart.defineExtensionMethods(stack_frame.StackFrame, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(stack_frame.StackFrame, ['hashCode']);
-  dart.defineLazy(stack_frame.StackFrame, {
-    /*stack_frame.StackFrame.asynchronousSuspension*/get asynchronousSuspension() {
-      return C[1] || CT.C1;
-    },
-    /*stack_frame.StackFrame.stackOverFlowElision*/get stackOverFlowElision() {
-      return C[2] || CT.C2;
-    },
-    /*stack_frame.StackFrame._webNonDebugFramePattern*/get _webNonDebugFramePattern() {
-      return core.RegExp.new("^\\s*at ([^\\s]+).*$");
+  dart.setGetterSignature(tab_controller.TabController, () => ({
+    __proto__: dart.getGetters(tab_controller.TabController.__proto__),
+    animation: dart.nullable(animation.Animation$(core.double)),
+    index: core.int,
+    previousIndex: core.int,
+    indexIsChanging: core.bool,
+    offset: core.double
+  }));
+  dart.setSetterSignature(tab_controller.TabController, () => ({
+    __proto__: dart.getSetters(tab_controller.TabController.__proto__),
+    index: core.int,
+    offset: core.double
+  }));
+  dart.setLibraryUri(tab_controller.TabController, I[1]);
+  dart.setFieldSignature(tab_controller.TabController, () => ({
+    __proto__: dart.getFields(tab_controller.TabController.__proto__),
+    [_animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    length: dart.finalFieldType(core.int),
+    [_index]: dart.fieldType(core.int),
+    [_previousIndex]: dart.fieldType(core.int),
+    [_indexIsChangingCount]: dart.fieldType(core.int)
+  }));
+  var controller$ = dart.privateName(tab_controller, "_TabControllerScope.controller");
+  var enabled$ = dart.privateName(tab_controller, "_TabControllerScope.enabled");
+  tab_controller._TabControllerScope = class _TabControllerScope extends framework.InheritedWidget {
+    get controller() {
+      return this[controller$];
     }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/foundation/stack_frame.dart", {
-    "package:flutter/src/foundation/stack_frame.dart": stack_frame
+    set controller(value) {
+      super.controller = value;
+    }
+    get enabled() {
+      return this[enabled$];
+    }
+    set enabled(value) {
+      super.enabled = value;
+    }
+    updateShouldNotify(old) {
+      tab_controller._TabControllerScope.as(old);
+      if (old == null) dart.nullFailed(I[0], 315, 47, "old");
+      return this.enabled != old.enabled || !dart.equals(this.controller, old.controller);
+    }
+  };
+  (tab_controller._TabControllerScope.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let controller = opts && 'controller' in opts ? opts.controller : null;
+    if (controller == null) dart.nullFailed(I[0], 306, 19, "controller");
+    let enabled = opts && 'enabled' in opts ? opts.enabled : null;
+    if (enabled == null) dart.nullFailed(I[0], 307, 19, "enabled");
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 308, 21, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[controller$] = controller;
+    this[enabled$] = enabled;
+    tab_controller._TabControllerScope.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = tab_controller._TabControllerScope.prototype;
+  dart.addTypeTests(tab_controller._TabControllerScope);
+  dart.addTypeCaches(tab_controller._TabControllerScope);
+  dart.setMethodSignature(tab_controller._TabControllerScope, () => ({
+    __proto__: dart.getMethods(tab_controller._TabControllerScope.__proto__),
+    updateShouldNotify: dart.fnType(core.bool, [dart.nullable(core.Object)])
+  }));
+  dart.setLibraryUri(tab_controller._TabControllerScope, I[1]);
+  dart.setFieldSignature(tab_controller._TabControllerScope, () => ({
+    __proto__: dart.getFields(tab_controller._TabControllerScope.__proto__),
+    controller: dart.finalFieldType(tab_controller.TabController),
+    enabled: dart.finalFieldType(core.bool)
+  }));
+  var length$0 = dart.privateName(tab_controller, "DefaultTabController.length");
+  var initialIndex$ = dart.privateName(tab_controller, "DefaultTabController.initialIndex");
+  var child$ = dart.privateName(tab_controller, "DefaultTabController.child");
+  tab_controller.DefaultTabController = class DefaultTabController extends framework.StatefulWidget {
+    get length() {
+      return this[length$0];
+    }
+    set length(value) {
+      super.length = value;
+    }
+    get initialIndex() {
+      return this[initialIndex$];
+    }
+    set initialIndex(value) {
+      super.initialIndex = value;
+    }
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    static of(context) {
+      let t0;
+      if (context == null) dart.nullFailed(I[0], 410, 41, "context");
+      let scope = context.dependOnInheritedWidgetOfExactType(tab_controller._TabControllerScope);
+      t0 = scope;
+      return t0 == null ? null : t0.controller;
+    }
+    createState() {
+      return new tab_controller._DefaultTabControllerState.new();
+    }
+  };
+  (tab_controller.DefaultTabController.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let length = opts && 'length' in opts ? opts.length : null;
+    if (length == null) dart.nullFailed(I[0], 375, 19, "length");
+    let initialIndex = opts && 'initialIndex' in opts ? opts.initialIndex : 0;
+    if (initialIndex == null) dart.nullFailed(I[0], 376, 10, "initialIndex");
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 377, 19, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[length$0] = length;
+    this[initialIndex$] = initialIndex;
+    this[child$] = child;
+    if (!(initialIndex != null)) dart.assertFailed(null, I[0], 378, 15, "initialIndex != null");
+    if (!(dart.notNull(length) >= 0)) dart.assertFailed(null, I[0], 379, 15, "length >= 0");
+    if (!(length === 0 || dart.notNull(initialIndex) >= 0 && dart.notNull(initialIndex) < dart.notNull(length))) dart.assertFailed(null, I[0], 380, 15, "length == 0 || (initialIndex >= 0 && initialIndex < length)");
+    tab_controller.DefaultTabController.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = tab_controller.DefaultTabController.prototype;
+  dart.addTypeTests(tab_controller.DefaultTabController);
+  dart.addTypeCaches(tab_controller.DefaultTabController);
+  dart.setMethodSignature(tab_controller.DefaultTabController, () => ({
+    __proto__: dart.getMethods(tab_controller.DefaultTabController.__proto__),
+    createState: dart.fnType(tab_controller._DefaultTabControllerState, [])
+  }));
+  dart.setLibraryUri(tab_controller.DefaultTabController, I[1]);
+  dart.setFieldSignature(tab_controller.DefaultTabController, () => ({
+    __proto__: dart.getFields(tab_controller.DefaultTabController.__proto__),
+    length: dart.finalFieldType(core.int),
+    initialIndex: dart.finalFieldType(core.int),
+    child: dart.finalFieldType(framework.Widget)
+  }));
+  var ___DefaultTabControllerState__controller = dart.privateName(tab_controller, "_#_DefaultTabControllerState#_controller");
+  var _controller = dart.privateName(tab_controller, "_controller");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(tab_controller.DefaultTabController) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(tab_controller.DefaultTabController)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(tab_controller.DefaultTabController));
+  tab_controller._DefaultTabControllerState = class _DefaultTabControllerState extends State_SingleTickerProviderStateMixin$36 {
+    get [_controller]() {
+      let t0;
+      t0 = this[___DefaultTabControllerState__controller];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t0;
+    }
+    set [_controller](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 420, 22, "null");
+      this[___DefaultTabControllerState__controller] = t0;
+    }
+    initState() {
+      super.initState();
+      this[_controller] = new tab_controller.TabController.new({vsync: this, length: this.widget.length, initialIndex: this.widget.initialIndex});
+    }
+    dispose() {
+      this[_controller].dispose();
+      super.dispose();
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 439, 29, "context");
+      return new tab_controller._TabControllerScope.new({controller: this[_controller], enabled: ticker_provider.TickerMode.of(context), child: this.widget.child, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+    }
+    didUpdateWidget(oldWidget) {
+      tab_controller.DefaultTabController.as(oldWidget);
+      if (oldWidget == null) dart.nullFailed(I[0], 448, 45, "oldWidget");
+      super.didUpdateWidget(oldWidget);
+      if (oldWidget.length != this.widget.length) {
+        let newIndex = null;
+        let previousIndex = this[_controller].previousIndex;
+        if (dart.notNull(this[_controller].index) >= dart.notNull(this.widget.length)) {
+          newIndex = math.max(core.int, 0, dart.notNull(this.widget.length) - 1);
+          previousIndex = this[_controller].index;
+        }
+        this[_controller] = this[_controller][_copyWith]({length: this.widget.length, index: newIndex, previousIndex: previousIndex});
+      }
+    }
+  };
+  (tab_controller._DefaultTabControllerState.new = function() {
+    this[___DefaultTabControllerState__controller] = null;
+    tab_controller._DefaultTabControllerState.__proto__.new.call(this);
+    ;
+  }).prototype = tab_controller._DefaultTabControllerState.prototype;
+  dart.addTypeTests(tab_controller._DefaultTabControllerState);
+  dart.addTypeCaches(tab_controller._DefaultTabControllerState);
+  dart.setMethodSignature(tab_controller._DefaultTabControllerState, () => ({
+    __proto__: dart.getMethods(tab_controller._DefaultTabControllerState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(tab_controller._DefaultTabControllerState, () => ({
+    __proto__: dart.getGetters(tab_controller._DefaultTabControllerState.__proto__),
+    [_controller]: tab_controller.TabController
+  }));
+  dart.setSetterSignature(tab_controller._DefaultTabControllerState, () => ({
+    __proto__: dart.getSetters(tab_controller._DefaultTabControllerState.__proto__),
+    [_controller]: tab_controller.TabController
+  }));
+  dart.setLibraryUri(tab_controller._DefaultTabControllerState, I[1]);
+  dart.setFieldSignature(tab_controller._DefaultTabControllerState, () => ({
+    __proto__: dart.getFields(tab_controller._DefaultTabControllerState.__proto__),
+    [___DefaultTabControllerState__controller]: dart.fieldType(dart.nullable(tab_controller.TabController))
+  }));
+  dart.trackLibraries("packages/flutter/src/material/tab_controller.dart", {
+    "package:flutter/src/material/tab_controller.dart": tab_controller
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["stack_frame.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/foundation/stack_frame.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["tab_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/material/tab_controller.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__stack_frame: stack_frame
+    src__material__tab_controller: tab_controller
   };
 }));
 
-//# sourceMappingURL=stack_frame.dart.lib.js.map
+//# sourceMappingURL=tab_controller.dart.lib.js.map

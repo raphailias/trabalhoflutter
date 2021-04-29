@@ -30,11 +30,10 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   const icon_theme_data = packages__flutter__src__widgets__icon_theme_data$46dart.src__widgets__icon_theme_data;
   const tap = packages__flutter__src__gestures__tap$46dart.src__gestures__tap;
   var button = Object.create(dart.library);
-  dart._checkModuleNullSafetyMode(false);
+  dart._checkModuleNullSafetyMode(true);
   var T = {
     TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
-    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))(),
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
+    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -149,7 +148,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C11() {
-      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13], T._LocationL());
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13], widget_inspector._Location);
     },
     get C10() {
       return C[10] = dart.const({
@@ -182,7 +181,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C15() {
-      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], widget_inspector._Location);
     },
     get C14() {
       return C[14] = dart.const({
@@ -235,7 +234,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C19() {
-      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
     },
     get C18() {
       return C[18] = dart.const({
@@ -268,7 +267,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C25() {
-      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], T._LocationL());
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], widget_inspector._Location);
     },
     get C24() {
       return C[24] = dart.const({
@@ -301,7 +300,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C29() {
-      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], widget_inspector._Location);
     },
     get C28() {
       return C[28] = dart.const({
@@ -334,7 +333,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C33() {
-      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], T._LocationL());
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
     },
     get C32() {
       return C[32] = dart.const({
@@ -367,7 +366,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C37() {
-      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], T._LocationL());
+      return C[37] = dart.constList([C[38] || CT.C38, C[39] || CT.C39], widget_inspector._Location);
     },
     get C36() {
       return C[36] = dart.const({
@@ -400,7 +399,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C41() {
-      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43], T._LocationL());
+      return C[41] = dart.constList([C[42] || CT.C42, C[43] || CT.C43], widget_inspector._Location);
     },
     get C40() {
       return C[40] = dart.const({
@@ -473,7 +472,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
       });
     },
     get C45() {
-      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], T._LocationL());
+      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], widget_inspector._Location);
     },
     get C44() {
       return C[44] = dart.const({
@@ -712,9 +711,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   }));
   var _opacityTween = dart.privateName(button, "_opacityTween");
   var ___CupertinoButtonState__animationController = dart.privateName(button, "_#_CupertinoButtonState#_animationController");
-  var ___CupertinoButtonState__animationController_isSet = dart.privateName(button, "_#_CupertinoButtonState#_animationController#isSet");
   var ___CupertinoButtonState__opacityAnimation = dart.privateName(button, "_#_CupertinoButtonState#_opacityAnimation");
-  var ___CupertinoButtonState__opacityAnimation_isSet = dart.privateName(button, "_#_CupertinoButtonState#_opacityAnimation#isSet");
   var _buttonHeldDown = dart.privateName(button, "_buttonHeldDown");
   var _animationController = dart.privateName(button, "_animationController");
   var _opacityAnimation = dart.privateName(button, "_opacityAnimation");
@@ -742,20 +739,20 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   button._CupertinoButtonState = class _CupertinoButtonState extends State_SingleTickerProviderStateMixin$36 {
     get [_animationController]() {
       let t0;
-      return dart.test(this[___CupertinoButtonState__animationController_isSet]) ? (t0 = this[___CupertinoButtonState__animationController], t0) : dart.throw(new _internal.LateError.fieldNI("_animationController"));
+      t0 = this[___CupertinoButtonState__animationController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_animationController")) : t0;
     }
     set [_animationController](t0) {
       if (t0 == null) dart.nullFailed(I[0], 155, 28, "null");
-      this[___CupertinoButtonState__animationController_isSet] = true;
       this[___CupertinoButtonState__animationController] = t0;
     }
     get [_opacityAnimation]() {
       let t1;
-      return dart.test(this[___CupertinoButtonState__opacityAnimation_isSet]) ? (t1 = this[___CupertinoButtonState__opacityAnimation], t1) : dart.throw(new _internal.LateError.fieldNI("_opacityAnimation"));
+      t1 = this[___CupertinoButtonState__opacityAnimation];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_opacityAnimation")) : t1;
     }
     set [_opacityAnimation](t1) {
       if (t1 == null) dart.nullFailed(I[0], 156, 26, "null");
-      this[___CupertinoButtonState__opacityAnimation_isSet] = true;
       this[___CupertinoButtonState__opacityAnimation] = t1;
     }
     initState() {
@@ -821,9 +818,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   (button._CupertinoButtonState.new = function() {
     this[_opacityTween] = new (T.TweenOfdouble()).new({begin: 1.0});
     this[___CupertinoButtonState__animationController] = null;
-    this[___CupertinoButtonState__animationController_isSet] = false;
     this[___CupertinoButtonState__opacityAnimation] = null;
-    this[___CupertinoButtonState__opacityAnimation_isSet] = false;
     this[_buttonHeldDown] = false;
     button._CupertinoButtonState.__proto__.new.call(this);
     ;
@@ -854,9 +849,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
     __proto__: dart.getFields(button._CupertinoButtonState.__proto__),
     [_opacityTween]: dart.finalFieldType(tween.Tween$(core.double)),
     [___CupertinoButtonState__animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    [___CupertinoButtonState__animationController_isSet]: dart.fieldType(core.bool),
     [___CupertinoButtonState__opacityAnimation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
-    [___CupertinoButtonState__opacityAnimation_isSet]: dart.fieldType(core.bool),
     [_buttonHeldDown]: dart.fieldType(core.bool)
   }));
   dart.defineLazy(button._CupertinoButtonState, {
@@ -882,7 +875,7 @@ define(['dart_sdk', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/
   dart.trackLibraries("packages/flutter/src/cupertino/button.dart", {
     "package:flutter/src/cupertino/button.dart": button
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["button.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/cupertino/button.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["button.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA4Ee;;;;;;IAKa;;;;;;IAQb;;;;;;IAQD;;;;;;IAKQ;;;;;;IAMN;;;;;;IAOA;;;;;;IAKM;;;;;;IAUI;;;;;;IAEb;;;;;;;AAIS,YAAA,AAAU;IAAO;;AAGE;IAAuB;;UAGT;AACd,MAA/B,0BAAoB,UAAU;AACwC,MAA5E,AAAW,UAAD,KAAK,iCAAa,mBAAkB,uBAAkB;IAClE;;;QA/GO;QACS;;QACT;QACA;QACA;;QACA;QACA;QACA;QACA;;QACS;;IARA;IACT;IACA;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACR,gBAAE;AACV,0DAAW,GAAG;;EAAC;;QASb;QACS;;QACT;QACA;;QACA;QACA;QACA;QACA;;QACS;;IAPA;IACT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAe,AAAQ,cAAT,YAA4B,aAAf,cAAc,KAAI,OAAsB,aAAf,cAAc,KAAI;UACtE,AAAc,aAAD;UACb,AAAU,SAAD;IACV,eAAE;IACA,gBAAE;AACV,0DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmFK;;IAAoB;;;AAApB;IAAoB;;;AACtB;;IAAiB;;;AAAjB;IAAiB;;AAIrB,MAAX;AAKL,MAJD,6BAAuB,kFAEd,YACA;AAIc,MAFvB,0BAAoB,AACjB,AACA,8CADM,iCAAyB,+CACzB;AACE,MAAX;IACF;;gCAGqC;;AACT,MAApB,sBAAgB,GAAG;AACd,MAAX;IACF;;;AAGkD,MAAhD,AAAc,2BAA4B,KAAtB,AAAO,4BAAA,aAAkB;IAC/C;;AAIgC,MAA9B,AAAqB;AACN,MAAT;IACR;;UAImC;AACjC,qBAAK;AACmB,QAAtB,wBAAkB;AACR,QAAV;;IAEJ;;UAE+B;AAC7B,oBAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,oBAAI;AACqB,QAAvB,wBAAkB;AACR,QAAV;;IAEJ;;AAGE,oBAAI,AAAqB,yCACvB;AACS,wBAAc;AACN,6BAAS,yBACtB,AAAqB,qCAAU,gBAAe,kDAC9C,AAAqB,qCAAU,gBAAe;AAIlD,MAHF,AAAO,MAAD,iBAAY,QAAM;AACtB,sBAAI,iBAAW,AAAY,WAAD,IAAI,uBAC5B,AAAU;;IAEhB;UAG0B;;;AACb,oBAAU,AAAO;AACH,sBAA2B,wBAAG,OAAO;AAClD,yBAAe,AAAU,SAAD;AACvB,4BAAkB,AAAO,AAAM,sCACvC,AAAO,yBAAU,YAAY,GAAG,OACX,0CAAa,AAAO,mBAAO,OAAO;AAEhD,4BAAkB,AAAgB,eAAD,WACzC,AAAU,SAAD,qCACT,OAAO,IACL,YAAY,GACU,qCAAwB,wCAAiB,OAAO;AAE5D,sBAAY,AAAU,AAAU,AAAU,SAArB,sCAAqC,eAAe;AAEzF,YAAO,qDACqB,uDACf,OAAO,cAAG,wBAAiB,yBAC7B,OAAO,cAAG,sBAAe,6BACrB,OAAO,cAAG,0BAAmB,aACnC,AAAO,8BACP,iCACG,aACD,2CACQ,AAAO,AAAQ,8CAExB,sCAC0B,eAAd,AAAO,iCACQ,eAAd,AAAO,+BAEjB,6CACI,gCACF,4CACO,oDACI,AAAO,iCACd,AAAgB,AAAQ,eAAT,uBAAa,OAAO,IAChB,qCAAQ,AAAO,2BAAe,OAAO,IAC3D,eAAe,WAEd,iCACmB,KAAf,AAAO,qBAAA,aAAY,AAAgB,eAAD,WACvC,mCACA,qCACG,gCACM,AAAO,oCACL,mBACC,YACP,sCACE,SAAS,SACT,oCACC,8CAAqB,eAAe,WACnC,AAAO;IAUlC;;;IAtIoB,sBAAgB,oCAAqB;yDAEhC;sDACF;IAgClB,wBAAkB;;;EAoGzB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAzIwB,6CAAgB;;;MAChB,4CAAe;;;;;;;;;MA3ItB,sBAAe;;;MACf,gCAAyB","file":"../../../../../../../../C:/packages/flutter/src/cupertino/button.dart.lib.js"}');
   // Exports:
   return {
     src__cupertino__button: button

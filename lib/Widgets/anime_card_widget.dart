@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 class AnimeCardWidget extends StatelessWidget {
   final String url;
   final String nome;
-  const AnimeCardWidget({Key key, @required this.url, @required this.nome})
+  const AnimeCardWidget({Key? key, required this.url, required this.nome})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
-      width: 50,
+      width: 150,
       child: GestureDetector(
         onTap: () => null,
         child: Card(

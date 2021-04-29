@@ -1,31 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TopBarWidget extends StatelessWidget {
-  const TopBarWidget({Key key}) : super(key: key);
-
+class TopBarWidget extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+  final double? toolbarHeight;
+  TopBarWidget({Key? key, this.toolbarHeight})
+      : preferredSize = Size.fromHeight((toolbarHeight ?? kToolbarHeight) + 16),
+        super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: ClipRRect(
-          borderRadius: BorderRadius.circular(24),
-          child: Image.network(
-            'https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619399400',
-            width: 48,
-            height: 48,
-          )),
-      title: Text(
-        "Bom dia",
-        style: TextStyle(color: Colors.grey),
-      ),
-      subtitle: Text("raphailias"),
-      trailing: IconButton(
-        icon: Icon(Icons.menu),
-        onPressed: null,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: AppBar(
+          automaticallyImplyLeading: true,
+          leading: IconButton(
+            iconSize: 40,
+            icon: new Image.network(
+                'https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619633400'),
+            onPressed: () => null,
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
       ),
     );
   }
 }
+
 // Container(
 //         margin: const EdgeInsets.all(32),
 //         height: 128,

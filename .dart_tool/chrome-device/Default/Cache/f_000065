@@ -1,37 +1,17 @@
-define(['dart_sdk', 'packages/typed_data/src/typed_buffer.dart'], (function load__packages__flutter__src__foundation__serialization_dart(dart_sdk, packages__typed_data__src__typed_buffer$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__material__floating_action_button_theme_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _native_typed_data = dart_sdk._native_typed_data;
-  const _internal = dart_sdk._internal;
-  const typed_data = dart_sdk.typed_data;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const typed_buffer = packages__typed_data__src__typed_buffer$46dart.src__typed_buffer;
-  var serialization = Object.create(dart.library);
-  var $buffer = dartx.buffer;
-  var $asUint8List = dartx.asUint8List;
-  var $setUint16 = dartx.setUint16;
-  var $setUint32 = dartx.setUint32;
-  var $setInt32 = dartx.setInt32;
-  var $setInt64 = dartx.setInt64;
-  var $setFloat64 = dartx.setFloat64;
-  var $offsetInBytes = dartx.offsetInBytes;
-  var $length = dartx.length;
-  var $modulo = dartx['%'];
-  var $asByteData = dartx.asByteData;
-  var $lengthInBytes = dartx.lengthInBytes;
-  var $getUint8 = dartx.getUint8;
-  var $getUint16 = dartx.getUint16;
-  var $getUint32 = dartx.getUint32;
-  var $getInt32 = dartx.getInt32;
-  var $getInt64 = dartx.getInt64;
-  var $getFloat64 = dartx.getFloat64;
-  var $asInt32List = dartx.asInt32List;
-  var $asInt64List = dartx.asInt64List;
-  var $asFloat64List = dartx.asFloat64List;
-  dart._checkModuleNullSafetyMode(false);
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const colors = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var floating_action_button_theme = Object.create(dart.library);
+  var $runtimeType = dartx.runtimeType;
+  dart._checkModuleNullSafetyMode(true);
   var T = {
-    _: () => T
+    DiagnosticsPropertyOfShapeBorder: () => (T.DiagnosticsPropertyOfShapeBorder = dart.constFn(diagnostics.DiagnosticsProperty$(borders.ShapeBorder)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -45,266 +25,215 @@ define(['dart_sdk', 'packages/typed_data/src/typed_buffer.dart'], (function load
   const CT = Object.create({
     _: () => (C, CT)
   });
-  var C = [];
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: floating_action_button_theme.FloatingActionButtonThemeData.prototype,
+        [shape$]: null,
+        [highlightElevation$]: null,
+        [disabledElevation$]: null,
+        [hoverElevation$]: null,
+        [focusElevation$]: null,
+        [elevation$]: null,
+        [splashColor$]: null,
+        [hoverColor$]: null,
+        [focusColor$]: null,
+        [backgroundColor$]: null,
+        [foregroundColor$]: null
+      });
+    }
+  }, false);
+  var C = [void 0];
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/foundation/serialization.dart",
-    "package:flutter/src/foundation/serialization.dart"
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/material/floating_action_button_theme.dart",
+    "package:flutter/src/material/floating_action_button_theme.dart"
   ];
-  var __WriteBuffer__eightBytesAsList = dart.privateName(serialization, "_#WriteBuffer#_eightBytesAsList");
-  var __WriteBuffer__eightBytesAsList_isSet = dart.privateName(serialization, "_#WriteBuffer#_eightBytesAsList#isSet");
-  var _buffer = dart.privateName(serialization, "_buffer");
-  var _eightBytes = dart.privateName(serialization, "_eightBytes");
-  var _eightBytesAsList = dart.privateName(serialization, "_eightBytesAsList");
-  var _alignTo = dart.privateName(serialization, "_alignTo");
-  serialization.WriteBuffer = class WriteBuffer extends core.Object {
-    get [_eightBytesAsList]() {
-      let t0;
-      return dart.test(this[__WriteBuffer__eightBytesAsList_isSet]) ? (t0 = this[__WriteBuffer__eightBytesAsList], t0) : dart.throw(new _internal.LateError.fieldNI("_eightBytesAsList"));
+  var foregroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.foregroundColor");
+  var backgroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.backgroundColor");
+  var focusColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusColor");
+  var hoverColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverColor");
+  var splashColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.splashColor");
+  var elevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.elevation");
+  var focusElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusElevation");
+  var hoverElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverElevation");
+  var disabledElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.disabledElevation");
+  var highlightElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.highlightElevation");
+  var shape$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.shape");
+  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
+  (Object_Diagnosticable$36.new = function() {
+  }).prototype = Object_Diagnosticable$36.prototype;
+  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
+  floating_action_button_theme.FloatingActionButtonThemeData = class FloatingActionButtonThemeData extends Object_Diagnosticable$36 {
+    get foregroundColor() {
+      return this[foregroundColor$];
     }
-    set [_eightBytesAsList](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 25, 18, "null");
-      this[__WriteBuffer__eightBytesAsList_isSet] = true;
-      this[__WriteBuffer__eightBytesAsList] = t0;
+    set foregroundColor(value) {
+      super.foregroundColor = value;
     }
-    putUint8(byte) {
-      if (byte == null) dart.nullFailed(I[0], 28, 21, "byte");
-      dart.nullCheck(this[_buffer]).add(byte);
+    get backgroundColor() {
+      return this[backgroundColor$];
     }
-    putUint16(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 33, 22, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setUint16](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 2);
+    set backgroundColor(value) {
+      super.backgroundColor = value;
     }
-    putUint32(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 39, 22, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setUint32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
+    get focusColor() {
+      return this[focusColor$];
     }
-    putInt32(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 45, 21, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setInt32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
+    set focusColor(value) {
+      super.focusColor = value;
     }
-    putInt64(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 51, 21, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_eightBytes][$setInt64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 8);
+    get hoverColor() {
+      return this[hoverColor$];
     }
-    putFloat64(value, opts) {
-      let t1;
-      if (value == null) dart.nullFailed(I[0], 57, 26, "value");
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_alignTo](8);
-      this[_eightBytes][$setFloat64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList]);
+    set hoverColor(value) {
+      super.hoverColor = value;
     }
-    putUint8List(list) {
-      if (list == null) dart.nullFailed(I[0], 64, 31, "list");
-      dart.nullCheck(this[_buffer]).addAll(list);
+    get splashColor() {
+      return this[splashColor$];
     }
-    putInt32List(list) {
-      if (list == null) dart.nullFailed(I[0], 69, 31, "list");
-      this[_alignTo](4);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 4 * dart.notNull(list[$length])));
+    set splashColor(value) {
+      super.splashColor = value;
     }
-    putInt64List(list) {
-      if (list == null) dart.nullFailed(I[0], 75, 31, "list");
-      this[_alignTo](8);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
+    get elevation() {
+      return this[elevation$];
     }
-    putFloat64List(list) {
-      if (list == null) dart.nullFailed(I[0], 81, 35, "list");
-      this[_alignTo](8);
-      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
+    set elevation(value) {
+      super.elevation = value;
     }
-    [_alignTo](alignment) {
-      if (alignment == null) dart.nullFailed(I[0], 86, 21, "alignment");
-      let mod = dart.nullCheck(this[_buffer]).length[$modulo](alignment);
-      if (mod !== 0) {
-        for (let i = 0; i < dart.notNull(alignment) - mod; i = i + 1)
-          dart.nullCheck(this[_buffer]).add(0);
-      }
+    get focusElevation() {
+      return this[focusElevation$];
     }
-    done() {
-      let result = dart.nullCheck(this[_buffer]).buffer[$asByteData](0, dart.nullCheck(this[_buffer]).lengthInBytes);
-      this[_buffer] = null;
-      return result;
+    set focusElevation(value) {
+      super.focusElevation = value;
     }
-  };
-  (serialization.WriteBuffer.new = function() {
-    this[__WriteBuffer__eightBytesAsList] = null;
-    this[__WriteBuffer__eightBytesAsList_isSet] = false;
-    this[_buffer] = new typed_buffer.Uint8Buffer.new();
-    this[_eightBytes] = _native_typed_data.NativeByteData.new(8);
-    this[_eightBytesAsList] = this[_eightBytes][$buffer][$asUint8List]();
-  }).prototype = serialization.WriteBuffer.prototype;
-  dart.addTypeTests(serialization.WriteBuffer);
-  dart.addTypeCaches(serialization.WriteBuffer);
-  dart.setMethodSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getMethods(serialization.WriteBuffer.__proto__),
-    putUint8: dart.fnType(dart.void, [core.int]),
-    putUint16: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putUint32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putInt32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putInt64: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putFloat64: dart.fnType(dart.void, [core.double], {endian: dart.nullable(typed_data.Endian)}, {}),
-    putUint8List: dart.fnType(dart.void, [typed_data.Uint8List]),
-    putInt32List: dart.fnType(dart.void, [typed_data.Int32List]),
-    putInt64List: dart.fnType(dart.void, [typed_data.Int64List]),
-    putFloat64List: dart.fnType(dart.void, [typed_data.Float64List]),
-    [_alignTo]: dart.fnType(dart.void, [core.int]),
-    done: dart.fnType(typed_data.ByteData, [])
-  }));
-  dart.setGetterSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getGetters(serialization.WriteBuffer.__proto__),
-    [_eightBytesAsList]: typed_data.Uint8List
-  }));
-  dart.setSetterSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getSetters(serialization.WriteBuffer.__proto__),
-    [_eightBytesAsList]: typed_data.Uint8List
-  }));
-  dart.setLibraryUri(serialization.WriteBuffer, I[1]);
-  dart.setFieldSignature(serialization.WriteBuffer, () => ({
-    __proto__: dart.getFields(serialization.WriteBuffer.__proto__),
-    [_buffer]: dart.fieldType(dart.nullable(typed_buffer.Uint8Buffer)),
-    [_eightBytes]: dart.finalFieldType(typed_data.ByteData),
-    [__WriteBuffer__eightBytesAsList]: dart.fieldType(dart.nullable(typed_data.Uint8List)),
-    [__WriteBuffer__eightBytesAsList_isSet]: dart.fieldType(core.bool)
-  }));
-  var data$ = dart.privateName(serialization, "ReadBuffer.data");
-  var _position = dart.privateName(serialization, "_position");
-  serialization.ReadBuffer = class ReadBuffer extends core.Object {
-    get data() {
-      return this[data$];
+    get hoverElevation() {
+      return this[hoverElevation$];
     }
-    set data(value) {
-      super.data = value;
+    set hoverElevation(value) {
+      super.hoverElevation = value;
     }
-    get hasRemaining() {
-      return dart.notNull(this[_position]) < dart.notNull(this.data[$lengthInBytes]);
+    get disabledElevation() {
+      return this[disabledElevation$];
     }
-    getUint8() {
-      let t1;
-      return this.data[$getUint8]((t1 = this[_position], this[_position] = dart.notNull(t1) + 1, t1));
+    set disabledElevation(value) {
+      super.disabledElevation = value;
     }
-    getUint16(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getUint16](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 2;
-      return value;
+    get highlightElevation() {
+      return this[highlightElevation$];
     }
-    getUint32(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getUint32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 4;
-      return value;
+    set highlightElevation(value) {
+      super.highlightElevation = value;
     }
-    getInt32(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getInt32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 4;
-      return value;
+    get shape() {
+      return this[shape$];
     }
-    getInt64(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      let value = this.data[$getInt64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 8;
-      return value;
+    set shape(value) {
+      super.shape = value;
     }
-    getFloat64(opts) {
-      let t1;
-      let endian = opts && 'endian' in opts ? opts.endian : null;
-      this[_alignTo](8);
-      let value = this.data[$getFloat64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
-      this[_position] = dart.notNull(this[_position]) + 8;
-      return value;
+    copyWith(opts) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8;
+      let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
+      let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+      let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
+      let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
+      let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
+      let elevation = opts && 'elevation' in opts ? opts.elevation : null;
+      let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
+      let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
+      let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
+      let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
+      let shape = opts && 'shape' in opts ? opts.shape : null;
+      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: (t0 = foregroundColor, t0 == null ? this.foregroundColor : t0), backgroundColor: (t0$ = backgroundColor, t0$ == null ? this.backgroundColor : t0$), focusColor: (t0$0 = focusColor, t0$0 == null ? this.focusColor : t0$0), hoverColor: (t0$1 = hoverColor, t0$1 == null ? this.hoverColor : t0$1), splashColor: (t0$2 = splashColor, t0$2 == null ? this.splashColor : t0$2), elevation: (t0$3 = elevation, t0$3 == null ? this.elevation : t0$3), focusElevation: (t0$4 = focusElevation, t0$4 == null ? this.focusElevation : t0$4), hoverElevation: (t0$5 = hoverElevation, t0$5 == null ? this.hoverElevation : t0$5), disabledElevation: (t0$6 = disabledElevation, t0$6 == null ? this.disabledElevation : t0$6), highlightElevation: (t0$7 = highlightElevation, t0$7 == null ? this.highlightElevation : t0$7), shape: (t0$8 = shape, t0$8 == null ? this.shape : t0$8)});
     }
-    getUint8List(length) {
-      if (length == null) dart.nullFailed(I[0], 161, 30, "length");
-      let list = this.data[$buffer][$asUint8List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + dart.notNull(length);
-      return list;
+    static lerp(a, b, t) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9, t0$10, t0$11, t0$12, t0$13, t0$14, t0$15, t0$16, t0$17, t0$18, t0$19;
+      if (t == null) dart.nullFailed(I[0], 127, 121, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 128, 12, "t != null");
+      if (a == null && b == null) return null;
+      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: ui.Color.lerp((t0 = a, t0 == null ? null : t0.foregroundColor), (t0$ = b, t0$ == null ? null : t0$.foregroundColor), t), backgroundColor: ui.Color.lerp((t0$0 = a, t0$0 == null ? null : t0$0.backgroundColor), (t0$1 = b, t0$1 == null ? null : t0$1.backgroundColor), t), focusColor: ui.Color.lerp((t0$2 = a, t0$2 == null ? null : t0$2.focusColor), (t0$3 = b, t0$3 == null ? null : t0$3.focusColor), t), hoverColor: ui.Color.lerp((t0$4 = a, t0$4 == null ? null : t0$4.hoverColor), (t0$5 = b, t0$5 == null ? null : t0$5.hoverColor), t), splashColor: ui.Color.lerp((t0$6 = a, t0$6 == null ? null : t0$6.splashColor), (t0$7 = b, t0$7 == null ? null : t0$7.splashColor), t), elevation: ui.lerpDouble((t0$8 = a, t0$8 == null ? null : t0$8.elevation), (t0$9 = b, t0$9 == null ? null : t0$9.elevation), t), focusElevation: ui.lerpDouble((t0$10 = a, t0$10 == null ? null : t0$10.focusElevation), (t0$11 = b, t0$11 == null ? null : t0$11.focusElevation), t), hoverElevation: ui.lerpDouble((t0$12 = a, t0$12 == null ? null : t0$12.hoverElevation), (t0$13 = b, t0$13 == null ? null : t0$13.hoverElevation), t), disabledElevation: ui.lerpDouble((t0$14 = a, t0$14 == null ? null : t0$14.disabledElevation), (t0$15 = b, t0$15 == null ? null : t0$15.disabledElevation), t), highlightElevation: ui.lerpDouble((t0$16 = a, t0$16 == null ? null : t0$16.highlightElevation), (t0$17 = b, t0$17 == null ? null : t0$17.highlightElevation), t), shape: borders.ShapeBorder.lerp((t0$18 = a, t0$18 == null ? null : t0$18.shape), (t0$19 = b, t0$19 == null ? null : t0$19.shape), t)});
     }
-    getInt32List(length) {
-      if (length == null) dart.nullFailed(I[0], 168, 30, "length");
-      this[_alignTo](4);
-      let list = this.data[$buffer][$asInt32List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 4 * dart.notNull(length);
-      return list;
+    get hashCode() {
+      return ui.hashValues(this.foregroundColor, this.backgroundColor, this.focusColor, this.hoverColor, this.splashColor, this.elevation, this.focusElevation, this.hoverElevation, this.disabledElevation, this.highlightElevation, this.shape);
     }
-    getInt64List(length) {
-      if (length == null) dart.nullFailed(I[0], 176, 30, "length");
-      this[_alignTo](8);
-      let list = this.data[$buffer][$asInt64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
-      return list;
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return floating_action_button_theme.FloatingActionButtonThemeData.is(other) && dart.equals(other.foregroundColor, this.foregroundColor) && dart.equals(other.backgroundColor, this.backgroundColor) && dart.equals(other.focusColor, this.focusColor) && dart.equals(other.hoverColor, this.hoverColor) && dart.equals(other.splashColor, this.splashColor) && other.elevation == this.elevation && other.focusElevation == this.focusElevation && other.hoverElevation == this.hoverElevation && other.disabledElevation == this.disabledElevation && other.highlightElevation == this.highlightElevation && dart.equals(other.shape, this.shape);
     }
-    getFloat64List(length) {
-      if (length == null) dart.nullFailed(I[0], 184, 34, "length");
-      this[_alignTo](8);
-      let list = this.data[$buffer][$asFloat64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
-      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
-      return list;
-    }
-    [_alignTo](alignment) {
-      if (alignment == null) dart.nullFailed(I[0], 191, 21, "alignment");
-      let mod = this[_position][$modulo](alignment);
-      if (mod !== 0) this[_position] = dart.notNull(this[_position]) + (dart.notNull(alignment) - mod);
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 184, 56, "properties");
+      super.debugFillProperties(properties);
+      let defaultData = C[0] || CT.C0;
+      properties.add(new colors.ColorProperty.new("foregroundColor", this.foregroundColor, {defaultValue: defaultData.foregroundColor}));
+      properties.add(new colors.ColorProperty.new("backgroundColor", this.backgroundColor, {defaultValue: defaultData.backgroundColor}));
+      properties.add(new colors.ColorProperty.new("focusColor", this.focusColor, {defaultValue: defaultData.focusColor}));
+      properties.add(new colors.ColorProperty.new("hoverColor", this.hoverColor, {defaultValue: defaultData.hoverColor}));
+      properties.add(new colors.ColorProperty.new("splashColor", this.splashColor, {defaultValue: defaultData.splashColor}));
+      properties.add(new diagnostics.DoubleProperty.new("elevation", this.elevation, {defaultValue: defaultData.elevation}));
+      properties.add(new diagnostics.DoubleProperty.new("focusElevation", this.focusElevation, {defaultValue: defaultData.focusElevation}));
+      properties.add(new diagnostics.DoubleProperty.new("hoverElevation", this.hoverElevation, {defaultValue: defaultData.hoverElevation}));
+      properties.add(new diagnostics.DoubleProperty.new("disabledElevation", this.disabledElevation, {defaultValue: defaultData.disabledElevation}));
+      properties.add(new diagnostics.DoubleProperty.new("highlightElevation", this.highlightElevation, {defaultValue: defaultData.highlightElevation}));
+      properties.add(new (T.DiagnosticsPropertyOfShapeBorder()).new("shape", this.shape, {defaultValue: defaultData.shape}));
     }
   };
-  (serialization.ReadBuffer.new = function(data) {
-    if (data == null) dart.nullFailed(I[0], 107, 19, "data");
-    this[_position] = 0;
-    this[data$] = data;
-    if (!(data != null)) dart.assertFailed(null, I[0], 108, 14, "data != null");
+  (floating_action_button_theme.FloatingActionButtonThemeData.new = function(opts) {
+    let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
+    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
+    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
+    let elevation = opts && 'elevation' in opts ? opts.elevation : null;
+    let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
+    let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
+    let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
+    let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
+    let shape = opts && 'shape' in opts ? opts.shape : null;
+    this[foregroundColor$] = foregroundColor;
+    this[backgroundColor$] = backgroundColor;
+    this[focusColor$] = focusColor;
+    this[hoverColor$] = hoverColor;
+    this[splashColor$] = splashColor;
+    this[elevation$] = elevation;
+    this[focusElevation$] = focusElevation;
+    this[hoverElevation$] = hoverElevation;
+    this[disabledElevation$] = disabledElevation;
+    this[highlightElevation$] = highlightElevation;
+    this[shape$] = shape;
     ;
-  }).prototype = serialization.ReadBuffer.prototype;
-  dart.addTypeTests(serialization.ReadBuffer);
-  dart.addTypeCaches(serialization.ReadBuffer);
-  dart.setMethodSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getMethods(serialization.ReadBuffer.__proto__),
-    getUint8: dart.fnType(core.int, []),
-    getUint16: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getUint32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getInt32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getInt64: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getFloat64: dart.fnType(core.double, [], {endian: dart.nullable(typed_data.Endian)}, {}),
-    getUint8List: dart.fnType(typed_data.Uint8List, [core.int]),
-    getInt32List: dart.fnType(typed_data.Int32List, [core.int]),
-    getInt64List: dart.fnType(typed_data.Int64List, [core.int]),
-    getFloat64List: dart.fnType(typed_data.Float64List, [core.int]),
-    [_alignTo]: dart.fnType(dart.void, [core.int])
+  }).prototype = floating_action_button_theme.FloatingActionButtonThemeData.prototype;
+  dart.addTypeTests(floating_action_button_theme.FloatingActionButtonThemeData);
+  dart.addTypeCaches(floating_action_button_theme.FloatingActionButtonThemeData);
+  dart.setMethodSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
+    __proto__: dart.getMethods(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
+    copyWith: dart.fnType(floating_action_button_theme.FloatingActionButtonThemeData, [], {backgroundColor: dart.nullable(ui.Color), disabledElevation: dart.nullable(core.double), elevation: dart.nullable(core.double), focusColor: dart.nullable(ui.Color), focusElevation: dart.nullable(core.double), foregroundColor: dart.nullable(ui.Color), highlightElevation: dart.nullable(core.double), hoverColor: dart.nullable(ui.Color), hoverElevation: dart.nullable(core.double), shape: dart.nullable(borders.ShapeBorder), splashColor: dart.nullable(ui.Color)}, {})
   }));
-  dart.setGetterSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getGetters(serialization.ReadBuffer.__proto__),
-    hasRemaining: core.bool
+  dart.setLibraryUri(floating_action_button_theme.FloatingActionButtonThemeData, I[1]);
+  dart.setFieldSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
+    __proto__: dart.getFields(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
+    foregroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    backgroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    focusColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    hoverColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    splashColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    elevation: dart.finalFieldType(dart.nullable(core.double)),
+    focusElevation: dart.finalFieldType(dart.nullable(core.double)),
+    hoverElevation: dart.finalFieldType(dart.nullable(core.double)),
+    disabledElevation: dart.finalFieldType(dart.nullable(core.double)),
+    highlightElevation: dart.finalFieldType(dart.nullable(core.double)),
+    shape: dart.finalFieldType(dart.nullable(borders.ShapeBorder))
   }));
-  dart.setLibraryUri(serialization.ReadBuffer, I[1]);
-  dart.setFieldSignature(serialization.ReadBuffer, () => ({
-    __proto__: dart.getFields(serialization.ReadBuffer.__proto__),
-    data: dart.finalFieldType(typed_data.ByteData),
-    [_position]: dart.fieldType(core.int)
-  }));
-  dart.trackLibraries("packages/flutter/src/foundation/serialization.dart", {
-    "package:flutter/src/foundation/serialization.dart": serialization
+  dart.defineExtensionMethods(floating_action_button_theme.FloatingActionButtonThemeData, ['_equals']);
+  dart.defineExtensionAccessors(floating_action_button_theme.FloatingActionButtonThemeData, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/material/floating_action_button_theme.dart", {
+    "package:flutter/src/material/floating_action_button_theme.dart": floating_action_button_theme
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["serialization.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/foundation/serialization.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["floating_action_button_theme.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/material/floating_action_button_theme.dart.lib.js"}');
   // Exports:
   return {
-    src__foundation__serialization: serialization
+    src__material__floating_action_button_theme: floating_action_button_theme
   };
 }));
 
-//# sourceMappingURL=serialization.dart.lib.js.map
+//# sourceMappingURL=floating_action_button_theme.dart.lib.js.map

@@ -1,23 +1,36 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/foundation/print.dart'], (function load__packages__flutter__src__gestures__force_press_dart(dart_sdk, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__foundation__print$46dart) {
+define(['dart_sdk', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/semantics/binding.dart', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/physics/spring_simulation.dart', 'packages/flutter/src/physics/simulation.dart', 'packages/flutter/src/physics/tolerance.dart'], (function load__packages__flutter__src__animation__animation_controller_dart(dart_sdk, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__semantics__binding$46dart, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__physics__spring_simulation$46dart, packages__flutter__src__physics__simulation$46dart, packages__flutter__src__physics__tolerance$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
-  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
-  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
-  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
-  var force_press = Object.create(dart.library);
-  var $toString = dartx.toString;
-  var $isNaN = dartx.isNaN;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const listener_helpers = packages__flutter__src__animation__listener_helpers$46dart.src__animation__listener_helpers;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const binding = packages__flutter__src__semantics__binding$46dart.src__semantics__binding;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const spring_simulation = packages__flutter__src__physics__spring_simulation$46dart.src__physics__spring_simulation;
+  const simulation = packages__flutter__src__physics__simulation$46dart.src__physics__simulation;
+  const tolerance = packages__flutter__src__physics__tolerance$46dart.src__physics__tolerance;
+  var animation_controller = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
   var $clamp = dartx.clamp;
-  dart._checkModuleNullSafetyMode(false);
+  var $isFinite = dartx.isFinite;
+  var $abs = dartx.abs;
+  var $runtimeType = dartx.runtimeType;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $modulo = dartx['%'];
+  var $isOdd = dartx.isOdd;
+  var $truncate = dartx.truncate;
+  dart._checkModuleNullSafetyMode(true);
   var T = {
-    _ForceStateL: () => (T._ForceStateL = dart.constFn(dart.legacy(force_press._ForceState)))(),
-    doubleAnddoubleAnddoubleTodouble: () => (T.doubleAnddoubleAnddoubleTodouble = dart.constFn(dart.fnType(core.double, [core.double, core.double, core.double])))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    DiagnosticsPropertyOfAnimationController: () => (T.DiagnosticsPropertyOfAnimationController = dart.constFn(diagnostics.DiagnosticsProperty$(animation_controller.AnimationController)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -34,362 +47,730 @@ define(['dart_sdk', 'packages/flutter/src/gestures/events.dart', 'packages/flutt
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: force_press._ForceState.prototype,
-        [_name$]: "_ForceState.ready",
+        __proto__: animation_controller._AnimationDirection.prototype,
+        [_name$]: "_AnimationDirection.forward",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: force_press._ForceState.prototype,
-        [_name$]: "_ForceState.possible",
+        __proto__: animation_controller._AnimationDirection.prototype,
+        [_name$]: "_AnimationDirection.reverse",
         index: 1
       });
     },
     get C2() {
-      return C[2] = dart.const({
-        __proto__: force_press._ForceState.prototype,
-        [_name$]: "_ForceState.accepted",
-        index: 2
-      });
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], animation_controller._AnimationDirection);
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: force_press._ForceState.prototype,
-        [_name$]: "_ForceState.started",
-        index: 3
+        __proto__: animation_controller.AnimationBehavior.prototype,
+        [_name$]: "AnimationBehavior.normal",
+        index: 0
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: force_press._ForceState.prototype,
-        [_name$]: "_ForceState.peaked",
-        index: 4
+        __proto__: animation_controller.AnimationBehavior.prototype,
+        [_name$]: "AnimationBehavior.preserve",
+        index: 1
       });
     },
     get C5() {
-      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T._ForceStateL());
+      return C[5] = dart.constList([C[3] || CT.C3, C[4] || CT.C4], animation_controller.AnimationBehavior);
     },
     get C6() {
-      return C[6] = dart.fn(force_press.ForcePressGestureRecognizer._inverseLerp, T.doubleAnddoubleAnddoubleTodouble());
+      return C[6] = dart.const({
+        __proto__: curves._Linear.prototype
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: tolerance.Tolerance.prototype,
+        [Tolerance_velocity]: 1 / 0,
+        [Tolerance_time]: 0.001,
+        [Tolerance_distance]: 0.01
+      });
     }
   }, false);
-  var C = Array(7).fill(void 0);
+  var C = Array(8).fill(void 0);
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/gestures/force_press.dart",
-    "package:flutter/src/gestures/force_press.dart"
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/animation/animation_controller.dart",
+    "package:flutter/src/animation/animation_controller.dart"
   ];
-  var _name$ = dart.privateName(force_press, "_name");
-  force_press._ForceState = class _ForceState extends core.Object {
+  var _name$ = dart.privateName(animation_controller, "_name");
+  animation_controller._AnimationDirection = class _AnimationDirection extends core.Object {
     toString() {
       return this[_name$];
     }
   };
-  (force_press._ForceState.new = function(index, _name) {
-    if (index == null) dart.nullFailed(I[0], 11, 6, "index");
-    if (_name == null) dart.nullFailed(I[0], 11, 6, "_name");
+  (animation_controller._AnimationDirection.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 25, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 25, 6, "_name");
     this.index = index;
     this[_name$] = _name;
     ;
-  }).prototype = force_press._ForceState.prototype;
-  dart.addTypeTests(force_press._ForceState);
-  dart.addTypeCaches(force_press._ForceState);
-  dart.setLibraryUri(force_press._ForceState, I[1]);
-  dart.setFieldSignature(force_press._ForceState, () => ({
-    __proto__: dart.getFields(force_press._ForceState.__proto__),
+  }).prototype = animation_controller._AnimationDirection.prototype;
+  dart.addTypeTests(animation_controller._AnimationDirection);
+  dart.addTypeCaches(animation_controller._AnimationDirection);
+  dart.setLibraryUri(animation_controller._AnimationDirection, I[1]);
+  dart.setFieldSignature(animation_controller._AnimationDirection, () => ({
+    __proto__: dart.getFields(animation_controller._AnimationDirection.__proto__),
     index: dart.finalFieldType(core.int),
     [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.defineExtensionMethods(force_press._ForceState, ['toString']);
-  force_press._ForceState.ready = C[0] || CT.C0;
-  force_press._ForceState.possible = C[1] || CT.C1;
-  force_press._ForceState.accepted = C[2] || CT.C2;
-  force_press._ForceState.started = C[3] || CT.C3;
-  force_press._ForceState.peaked = C[4] || CT.C4;
-  force_press._ForceState.values = C[5] || CT.C5;
-  var globalPosition$ = dart.privateName(force_press, "ForcePressDetails.globalPosition");
-  var localPosition$ = dart.privateName(force_press, "ForcePressDetails.localPosition");
-  var pressure$ = dart.privateName(force_press, "ForcePressDetails.pressure");
-  force_press.ForcePressDetails = class ForcePressDetails extends core.Object {
-    get globalPosition() {
-      return this[globalPosition$];
-    }
-    set globalPosition(value) {
-      super.globalPosition = value;
-    }
-    get localPosition() {
-      return this[localPosition$];
-    }
-    set localPosition(value) {
-      super.localPosition = value;
-    }
-    get pressure() {
-      return this[pressure$];
-    }
-    set pressure(value) {
-      super.pressure = value;
+  dart.defineExtensionMethods(animation_controller._AnimationDirection, ['toString']);
+  animation_controller._AnimationDirection.forward = C[0] || CT.C0;
+  animation_controller._AnimationDirection.reverse = C[1] || CT.C1;
+  animation_controller._AnimationDirection.values = C[2] || CT.C2;
+  animation_controller.AnimationBehavior = class AnimationBehavior extends core.Object {
+    toString() {
+      return this[_name$];
     }
   };
-  (force_press.ForcePressDetails.new = function(opts) {
-    let t0;
-    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : null;
-    if (globalPosition == null) dart.nullFailed(I[0], 49, 19, "globalPosition");
-    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
-    let pressure = opts && 'pressure' in opts ? opts.pressure : null;
-    if (pressure == null) dart.nullFailed(I[0], 51, 19, "pressure");
-    this[globalPosition$] = globalPosition;
-    this[pressure$] = pressure;
-    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 52, 15, "globalPosition != null");
-    if (!(pressure != null)) dart.assertFailed(null, I[0], 53, 15, "pressure != null");
-    this[localPosition$] = (t0 = localPosition, t0 == null ? globalPosition : t0);
+  (animation_controller.AnimationBehavior.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 56, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 56, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
     ;
-  }).prototype = force_press.ForcePressDetails.prototype;
-  dart.addTypeTests(force_press.ForcePressDetails);
-  dart.addTypeCaches(force_press.ForcePressDetails);
-  dart.setLibraryUri(force_press.ForcePressDetails, I[1]);
-  dart.setFieldSignature(force_press.ForcePressDetails, () => ({
-    __proto__: dart.getFields(force_press.ForcePressDetails.__proto__),
-    globalPosition: dart.finalFieldType(ui.Offset),
-    localPosition: dart.finalFieldType(ui.Offset),
-    pressure: dart.finalFieldType(core.double)
+  }).prototype = animation_controller.AnimationBehavior.prototype;
+  dart.addTypeTests(animation_controller.AnimationBehavior);
+  dart.addTypeCaches(animation_controller.AnimationBehavior);
+  dart.setLibraryUri(animation_controller.AnimationBehavior, I[1]);
+  dart.setFieldSignature(animation_controller.AnimationBehavior, () => ({
+    __proto__: dart.getFields(animation_controller.AnimationBehavior.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  var onStart = dart.privateName(force_press, "ForcePressGestureRecognizer.onStart");
-  var onUpdate = dart.privateName(force_press, "ForcePressGestureRecognizer.onUpdate");
-  var onPeak = dart.privateName(force_press, "ForcePressGestureRecognizer.onPeak");
-  var onEnd = dart.privateName(force_press, "ForcePressGestureRecognizer.onEnd");
-  var startPressure$ = dart.privateName(force_press, "ForcePressGestureRecognizer.startPressure");
-  var peakPressure$ = dart.privateName(force_press, "ForcePressGestureRecognizer.peakPressure");
-  var interpolation$ = dart.privateName(force_press, "ForcePressGestureRecognizer.interpolation");
-  var __ForcePressGestureRecognizer__lastPosition = dart.privateName(force_press, "_#ForcePressGestureRecognizer#_lastPosition");
-  var __ForcePressGestureRecognizer__lastPosition_isSet = dart.privateName(force_press, "_#ForcePressGestureRecognizer#_lastPosition#isSet");
-  var __ForcePressGestureRecognizer__lastPressure = dart.privateName(force_press, "_#ForcePressGestureRecognizer#_lastPressure");
-  var __ForcePressGestureRecognizer__lastPressure_isSet = dart.privateName(force_press, "_#ForcePressGestureRecognizer#_lastPressure#isSet");
-  var _state = dart.privateName(force_press, "_state");
-  var _lastPosition = dart.privateName(force_press, "_lastPosition");
-  var _lastPressure = dart.privateName(force_press, "_lastPressure");
-  force_press.ForcePressGestureRecognizer = class ForcePressGestureRecognizer extends recognizer.OneSequenceGestureRecognizer {
-    get onStart() {
-      return this[onStart];
+  dart.defineExtensionMethods(animation_controller.AnimationBehavior, ['toString']);
+  animation_controller.AnimationBehavior.normal = C[3] || CT.C3;
+  animation_controller.AnimationBehavior.preserve = C[4] || CT.C4;
+  animation_controller.AnimationBehavior.values = C[5] || CT.C5;
+  var lowerBound$ = dart.privateName(animation_controller, "AnimationController.lowerBound");
+  var upperBound$ = dart.privateName(animation_controller, "AnimationController.upperBound");
+  var debugLabel$ = dart.privateName(animation_controller, "AnimationController.debugLabel");
+  var animationBehavior$ = dart.privateName(animation_controller, "AnimationController.animationBehavior");
+  var duration$ = dart.privateName(animation_controller, "AnimationController.duration");
+  var reverseDuration$ = dart.privateName(animation_controller, "AnimationController.reverseDuration");
+  var _ticker = dart.privateName(animation_controller, "_ticker");
+  var _simulation = dart.privateName(animation_controller, "_simulation");
+  var __AnimationController__value = dart.privateName(animation_controller, "_#AnimationController#_value");
+  var _lastElapsedDuration = dart.privateName(animation_controller, "_lastElapsedDuration");
+  var __AnimationController__status = dart.privateName(animation_controller, "_#AnimationController#_status");
+  var _lastReportedStatus = dart.privateName(animation_controller, "_lastReportedStatus");
+  var _direction = dart.privateName(animation_controller, "_direction");
+  var _tick = dart.privateName(animation_controller, "_tick");
+  var _internalSetValue = dart.privateName(animation_controller, "_internalSetValue");
+  var _value = dart.privateName(animation_controller, "_value");
+  var _checkStatusChanged = dart.privateName(animation_controller, "_checkStatusChanged");
+  var _status = dart.privateName(animation_controller, "_status");
+  var _animateToInternal = dart.privateName(animation_controller, "_animateToInternal");
+  var _startSimulation = dart.privateName(animation_controller, "_startSimulation");
+  var _directionSetter = dart.privateName(animation_controller, "_directionSetter");
+  const Animation_AnimationEagerListenerMixin$36 = class Animation_AnimationEagerListenerMixin extends animation.Animation$(core.double) {};
+  (Animation_AnimationEagerListenerMixin$36.new = function() {
+    Animation_AnimationEagerListenerMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationEagerListenerMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationEagerListenerMixin$36, listener_helpers.AnimationEagerListenerMixin);
+  const Animation_AnimationLocalListenersMixin$36 = class Animation_AnimationLocalListenersMixin extends Animation_AnimationEagerListenerMixin$36 {};
+  (Animation_AnimationLocalListenersMixin$36.new = function() {
+    listener_helpers.AnimationLocalListenersMixin[dart.mixinNew].call(this);
+    Animation_AnimationLocalListenersMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationLocalListenersMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationLocalListenersMixin$36, listener_helpers.AnimationLocalListenersMixin);
+  const Animation_AnimationLocalStatusListenersMixin$36 = class Animation_AnimationLocalStatusListenersMixin extends Animation_AnimationLocalListenersMixin$36 {};
+  (Animation_AnimationLocalStatusListenersMixin$36.new = function() {
+    listener_helpers.AnimationLocalStatusListenersMixin[dart.mixinNew].call(this);
+    Animation_AnimationLocalStatusListenersMixin$36.__proto__.new.call(this);
+  }).prototype = Animation_AnimationLocalStatusListenersMixin$36.prototype;
+  dart.applyMixin(Animation_AnimationLocalStatusListenersMixin$36, listener_helpers.AnimationLocalStatusListenersMixin);
+  animation_controller.AnimationController = class AnimationController extends Animation_AnimationLocalStatusListenersMixin$36 {
+    get lowerBound() {
+      return this[lowerBound$];
     }
-    set onStart(value) {
-      this[onStart] = value;
+    set lowerBound(value) {
+      super.lowerBound = value;
     }
-    get onUpdate() {
-      return this[onUpdate];
+    get upperBound() {
+      return this[upperBound$];
     }
-    set onUpdate(value) {
-      this[onUpdate] = value;
+    set upperBound(value) {
+      super.upperBound = value;
     }
-    get onPeak() {
-      return this[onPeak];
+    get debugLabel() {
+      return this[debugLabel$];
     }
-    set onPeak(value) {
-      this[onPeak] = value;
+    set debugLabel(value) {
+      super.debugLabel = value;
     }
-    get onEnd() {
-      return this[onEnd];
+    get animationBehavior() {
+      return this[animationBehavior$];
     }
-    set onEnd(value) {
-      this[onEnd] = value;
+    set animationBehavior(value) {
+      super.animationBehavior = value;
     }
-    get startPressure() {
-      return this[startPressure$];
+    get duration() {
+      return this[duration$];
     }
-    set startPressure(value) {
-      super.startPressure = value;
+    set duration(value) {
+      this[duration$] = value;
     }
-    get peakPressure() {
-      return this[peakPressure$];
+    get reverseDuration() {
+      return this[reverseDuration$];
     }
-    set peakPressure(value) {
-      super.peakPressure = value;
+    set reverseDuration(value) {
+      this[reverseDuration$] = value;
     }
-    get interpolation() {
-      return this[interpolation$];
+    get view() {
+      return this;
     }
-    set interpolation(value) {
-      super.interpolation = value;
+    resync(vsync) {
+      if (vsync == null) dart.nullFailed(I[0], 322, 30, "vsync");
+      let oldTicker = dart.nullCheck(this[_ticker]);
+      this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+      dart.nullCheck(this[_ticker]).absorbTicker(oldTicker);
     }
-    get [_lastPosition]() {
+    get value() {
+      return this[_value];
+    }
+    get [_value]() {
       let t0;
-      return dart.test(this[__ForcePressGestureRecognizer__lastPosition_isSet]) ? (t0 = this[__ForcePressGestureRecognizer__lastPosition], t0) : dart.throw(new _internal.LateError.fieldNI("_lastPosition"));
+      t0 = this[__AnimationController__value];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_value")) : t0;
     }
-    set [_lastPosition](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 207, 19, "null");
-      this[__ForcePressGestureRecognizer__lastPosition_isSet] = true;
-      this[__ForcePressGestureRecognizer__lastPosition] = t0;
+    set [_value](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 340, 15, "null");
+      this[__AnimationController__value] = t0;
     }
-    get [_lastPressure]() {
-      let t1;
-      return dart.test(this[__ForcePressGestureRecognizer__lastPressure_isSet]) ? (t1 = this[__ForcePressGestureRecognizer__lastPressure], t1) : dart.throw(new _internal.LateError.fieldNI("_lastPressure"));
+    set value(newValue) {
+      if (newValue == null) dart.nullFailed(I[0], 362, 20, "newValue");
+      if (!(newValue != null)) dart.assertFailed(null, I[0], 363, 12, "newValue != null");
+      this.stop();
+      this[_internalSetValue](newValue);
+      this.notifyListeners();
+      this[_checkStatusChanged]();
     }
-    set [_lastPressure](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 208, 15, "null");
-      this[__ForcePressGestureRecognizer__lastPressure_isSet] = true;
-      this[__ForcePressGestureRecognizer__lastPressure] = t1;
+    reset() {
+      this.value = this.lowerBound;
     }
-    addAllowedPointer(event) {
-      if (event == null) dart.nullFailed(I[0], 212, 39, "event");
-      if (!events.PointerUpEvent.is(event) && dart.notNull(event.pressureMax) <= 1.0) {
-        this.resolve(arena.GestureDisposition.rejected);
+    get velocity() {
+      if (!dart.test(this.isAnimating)) return 0.0;
+      return dart.nullCheck(this[_simulation]).dx(dart.nullCheck(this.lastElapsedDuration).inMicroseconds[$toDouble]() / 1000000);
+    }
+    [_internalSetValue](newValue) {
+      if (newValue == null) dart.nullFailed(I[0], 398, 33, "newValue");
+      this[_value] = newValue[$clamp](this.lowerBound, this.upperBound);
+      if (this[_value] == this.lowerBound) {
+        this[_status] = animation.AnimationStatus.dismissed;
+      } else if (this[_value] == this.upperBound) {
+        this[_status] = animation.AnimationStatus.completed;
       } else {
-        this.startTrackingPointer(event.pointer, event.transform);
-        if (this[_state] == force_press._ForceState.ready) {
-          this[_state] = force_press._ForceState.possible;
-          this[_lastPosition] = recognizer.OffsetPair.fromEventPosition(event);
-        }
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
       }
     }
-    handleEvent(event) {
-      let t4, t3, t2;
-      if (event == null) dart.nullFailed(I[0], 228, 33, "event");
-      if (!(this[_state] != force_press._ForceState.ready)) dart.assertFailed(null, I[0], 229, 12, "_state != _ForceState.ready");
-      if (events.PointerMoveEvent.is(event) || events.PointerDownEvent.is(event)) {
-        if (dart.notNull(event.pressure) > dart.notNull(event.pressureMax) || dart.notNull(event.pressure) < dart.notNull(event.pressureMin)) {
-          print.debugPrint("The reported device pressure " + dart.toString(event.pressure) + " is outside of the device pressure range where: " + dart.toString(event.pressureMin) + " <= pressure <= " + dart.toString(event.pressureMax));
+    get lastElapsedDuration() {
+      return this[_lastElapsedDuration];
+    }
+    get isAnimating() {
+      return this[_ticker] != null && dart.test(dart.nullCheck(this[_ticker]).isActive);
+    }
+    get status() {
+      return this[_status];
+    }
+    get [_status]() {
+      let t1;
+      t1 = this[__AnimationController__status];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_status")) : t1;
+    }
+    set [_status](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 430, 24, "null");
+      this[__AnimationController__status] = t1;
+    }
+    forward(opts) {
+      let from = opts && 'from' in opts ? opts.from : null;
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.forward() called with no default duration.\n" + "The \"duration\" property should be set, either in the constructor or later, before " + "calling the forward() function."));
         }
-        let pressure = (t2 = event.pressureMin, t3 = event.pressureMax, t4 = event.pressure, this.interpolation(t2, t3, t4));
-        if (!(dart.notNull(pressure) >= 0.0 && dart.notNull(pressure) <= 1.0 || pressure[$isNaN])) dart.assertFailed(null, I[0], 242, 9, "(pressure >= 0.0 && pressure <= 1.0) || // Interpolated pressure must be between 1.0 and 0.0...\r\n        pressure.isNaN");
-        this[_lastPosition] = recognizer.OffsetPair.fromEventPosition(event);
-        this[_lastPressure] = pressure;
-        if (this[_state] == force_press._ForceState.possible) {
-          if (dart.notNull(pressure) > dart.notNull(this.startPressure)) {
-            this[_state] = force_press._ForceState.started;
-            this.resolve(arena.GestureDisposition.accepted);
-          } else if (dart.notNull(event.delta.distanceSquared) > dart.notNull(events.computeHitSlop(event.kind))) {
-            this.resolve(arena.GestureDisposition.rejected);
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 444, 12, "() {\r\n      if (duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.forward() called with no default duration.\\n'\r\n          'The \"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the forward() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.forward() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 455, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      if (from != null) this.value = from;
+      return this[_animateToInternal](this.upperBound);
+    }
+    reverse(opts) {
+      let from = opts && 'from' in opts ? opts.from : null;
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && this.reverseDuration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.reverse() called with no default duration or reverseDuration.\n" + "The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the reverse() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 477, 12, "() {\r\n      if (duration == null && reverseDuration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.reverse() called with no default duration or reverseDuration.\\n'\r\n          'The \"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the reverse() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.reverse() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 488, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.reverse;
+      if (from != null) this.value = from;
+      return this[_animateToInternal](this.lowerBound);
+    }
+    animateTo(target, opts) {
+      if (target == null) dart.nullFailed(I[0], 514, 33, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 514, 69, "curve");
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.animateTo() called with no explicit duration and no default duration.\n" + "Either the \"duration\" argument to the animateTo() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the animateTo() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 515, 12, "() {\r\n      if (this.duration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateTo() called with no explicit duration and no default duration.\\n'\r\n          'Either the \"duration\" argument to the animateTo() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateTo() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateTo() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 527, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      return this[_animateToInternal](target, {duration: duration, curve: curve});
+    }
+    animateBack(target, opts) {
+      if (target == null) dart.nullFailed(I[0], 547, 35, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 547, 71, "curve");
+      if (!dart.test(dart.fn(() => {
+        if (this.duration == null && this.reverseDuration == null && duration == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\n" + "Either the \"duration\" argument to the animateBack() method should be provided, or the " + "\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before " + "calling the animateBack() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 548, 12, "() {\r\n      if (this.duration == null && reverseDuration == null && duration == null) {\r\n        throw FlutterError(\r\n          'AnimationController.animateBack() called with no explicit duration and no default duration or reverseDuration.\\n'\r\n          'Either the \"duration\" argument to the animateBack() method should be provided, or the '\r\n          '\"duration\" or \"reverseDuration\" property should be set, either in the constructor or later, before '\r\n          'calling the animateBack() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateBack() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 560, 7, "_ticker != null");
+      this[_direction] = animation_controller._AnimationDirection.reverse;
+      return this[_animateToInternal](target, {duration: duration, curve: curve});
+    }
+    [_animateToInternal](target, opts) {
+      if (target == null) dart.nullFailed(I[0], 568, 42, "target");
+      let duration = opts && 'duration' in opts ? opts.duration : null;
+      let curve = opts && 'curve' in opts ? opts.curve : C[6] || CT.C6;
+      if (curve == null) dart.nullFailed(I[0], 568, 78, "curve");
+      let scale = 1.0;
+      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
+        switch (this.animationBehavior) {
+          case C[3] || CT.C3:
+          {
+            scale = 0.05;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            break;
           }
         }
-        if (dart.notNull(pressure) > dart.notNull(this.startPressure) && this[_state] == force_press._ForceState.accepted) {
-          this[_state] = force_press._ForceState.started;
-          if (this.onStart != null) {
-            this.invokeCallback(dart.void, "onStart", dart.fn(() => dart.nullCheck(this.onStart)(new force_press.ForcePressDetails.new({pressure: pressure, globalPosition: this[_lastPosition].global, localPosition: this[_lastPosition].local})), T.VoidTovoid()));
+      }
+      let simulationDuration = duration;
+      if (simulationDuration == null) {
+        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.forward)) dart.assertFailed(null, I[0], 584, 14, "!(this.duration == null && _direction == _AnimationDirection.forward)");
+        if (!!(this.duration == null && this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration == null)) dart.assertFailed(null, I[0], 585, 14, "!(this.duration == null && _direction == _AnimationDirection.reverse && reverseDuration == null)");
+        let range = dart.notNull(this.upperBound) - dart.notNull(this.lowerBound);
+        let remainingFraction = range[$isFinite] ? (dart.notNull(target) - dart.notNull(this[_value]))[$abs]() / range : 1.0;
+        let directionDuration = this[_direction] == animation_controller._AnimationDirection.reverse && this.reverseDuration != null ? dart.nullCheck(this.reverseDuration) : dart.nullCheck(this.duration);
+        simulationDuration = directionDuration['*'](remainingFraction);
+      } else if (target == this.value) {
+        simulationDuration = core.Duration.zero;
+      }
+      this.stop();
+      if (dart.equals(simulationDuration, core.Duration.zero)) {
+        if (this.value != target) {
+          this[_value] = target[$clamp](this.lowerBound, this.upperBound);
+          this.notifyListeners();
+        }
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
+        this[_checkStatusChanged]();
+        return new ticker.TickerFuture.complete();
+      }
+      if (!dart.test(simulationDuration['>'](core.Duration.zero))) dart.assertFailed(null, I[0], 609, 12, "simulationDuration > Duration.zero");
+      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 610, 12, "!isAnimating");
+      return this[_startSimulation](new animation_controller._InterpolationSimulation.new(this[_value], target, simulationDuration, curve, scale));
+    }
+    repeat(opts) {
+      let min = opts && 'min' in opts ? opts.min : null;
+      let max = opts && 'max' in opts ? opts.max : null;
+      let reverse = opts && 'reverse' in opts ? opts.reverse : false;
+      if (reverse == null) dart.nullFailed(I[0], 635, 56, "reverse");
+      let period = opts && 'period' in opts ? opts.period : null;
+      min == null ? min = this.lowerBound : null;
+      max == null ? max = this.upperBound : null;
+      period == null ? period = this.duration : null;
+      if (!dart.test(dart.fn(() => {
+        if (period == null) {
+          dart.throw(assertions.FlutterError.new("AnimationController.repeat() called without an explicit period and with no default Duration.\n" + "Either the \"period\" argument to the repeat() method should be provided, or the " + "\"duration\" property should be set, either in the constructor or later, before " + "calling the repeat() function."));
+        }
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 639, 12, "() {\r\n      if (period == null) {\r\n        throw FlutterError(\r\n          'AnimationController.repeat() called without an explicit period and with no default Duration.\\n'\r\n          'Either the \"period\" argument to the repeat() method should be provided, or the '\r\n          '\"duration\" property should be set, either in the constructor or later, before '\r\n          'calling the repeat() function.'\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      if (!(dart.notNull(max) >= dart.notNull(min))) dart.assertFailed(null, I[0], 650, 12, "max >= min");
+      if (!(dart.notNull(max) <= dart.notNull(this.upperBound) && dart.notNull(min) >= dart.notNull(this.lowerBound))) dart.assertFailed(null, I[0], 651, 12, "max <= upperBound && min >= lowerBound");
+      if (!(reverse != null)) dart.assertFailed(null, I[0], 652, 12, "reverse != null");
+      this.stop();
+      return this[_startSimulation](new animation_controller._RepeatingSimulation.new(this[_value], min, max, reverse, dart.nullCheck(period), dart.bind(this, _directionSetter)));
+    }
+    [_directionSetter](direction) {
+      if (direction == null) dart.nullFailed(I[0], 657, 45, "direction");
+      this[_direction] = direction;
+      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
+      this[_checkStatusChanged]();
+    }
+    fling(opts) {
+      let t2, t2$;
+      let velocity = opts && 'velocity' in opts ? opts.velocity : 1;
+      if (velocity == null) dart.nullFailed(I[0], 684, 31, "velocity");
+      let springDescription = opts && 'springDescription' in opts ? opts.springDescription : null;
+      let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : null;
+      springDescription == null ? springDescription = animation_controller._kFlingSpringDescription : null;
+      this[_direction] = dart.notNull(velocity) < 0.0 ? animation_controller._AnimationDirection.reverse : animation_controller._AnimationDirection.forward;
+      let target = dart.notNull(velocity) < 0.0 ? dart.notNull(this.lowerBound) - dart.notNull(animation_controller._kFlingTolerance.distance) : dart.notNull(this.upperBound) + dart.notNull(animation_controller._kFlingTolerance.distance);
+      let scale = 1.0;
+      let behavior = (t2 = animationBehavior, t2 == null ? this.animationBehavior : t2);
+      if (dart.test(dart.nullCheck(binding.SemanticsBinding.instance).disableAnimations)) {
+        switch (behavior) {
+          case C[3] || CT.C3:
+          {
+            scale = 200.0;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            break;
           }
         }
-        if (this.onPeak != null && dart.notNull(pressure) > dart.notNull(this.peakPressure) && this[_state] == force_press._ForceState.started) {
-          this[_state] = force_press._ForceState.peaked;
-          if (this.onPeak != null) {
-            this.invokeCallback(dart.void, "onPeak", dart.fn(() => dart.nullCheck(this.onPeak)(new force_press.ForcePressDetails.new({pressure: pressure, globalPosition: event.position, localPosition: event.localPosition})), T.VoidTovoid()));
-          }
+      }
+      let simulation = (t2$ = new spring_simulation.SpringSimulation.new(springDescription, this.value, target, dart.notNull(velocity) * scale), (() => {
+        t2$.tolerance = animation_controller._kFlingTolerance;
+        return t2$;
+      })());
+      if (!(simulation.type != spring_simulation.SpringType.underDamped)) dart.assertFailed("The resulting spring simulation is of type SpringType.underDamped.\n" + "This can lead to unexpected look of the animation, please adjust the springDescription parameter", I[0], 705, 7, "simulation.type != SpringType.underDamped");
+      this.stop();
+      return this[_startSimulation](simulation);
+    }
+    animateWith(simulation) {
+      if (simulation == null) dart.nullFailed(I[0], 727, 39, "simulation");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.animateWith() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 729, 7, "_ticker != null");
+      this.stop();
+      this[_direction] = animation_controller._AnimationDirection.forward;
+      return this[_startSimulation](simulation);
+    }
+    [_startSimulation](simulation) {
+      if (simulation == null) dart.nullFailed(I[0], 738, 44, "simulation");
+      if (!(simulation != null)) dart.assertFailed(null, I[0], 739, 12, "simulation != null");
+      if (!!dart.test(this.isAnimating)) dart.assertFailed(null, I[0], 740, 12, "!isAnimating");
+      this[_simulation] = simulation;
+      this[_lastElapsedDuration] = core.Duration.zero;
+      this[_value] = simulation.x(0.0)[$clamp](this.lowerBound, this.upperBound);
+      let result = dart.nullCheck(this[_ticker]).start();
+      this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.forward : animation.AnimationStatus.reverse;
+      this[_checkStatusChanged]();
+      return result;
+    }
+    stop(opts) {
+      let canceled = opts && 'canceled' in opts ? opts.canceled : true;
+      if (canceled == null) dart.nullFailed(I[0], 769, 20, "canceled");
+      if (!(this[_ticker] != null)) dart.assertFailed("AnimationController.stop() called after AnimationController.dispose()\n" + "AnimationController methods should not be used after calling dispose.", I[0], 771, 7, "_ticker != null");
+      this[_simulation] = null;
+      this[_lastElapsedDuration] = null;
+      dart.nullCheck(this[_ticker]).stop({canceled: canceled});
+    }
+    dispose() {
+      if (!dart.test(dart.fn(() => {
+        if (this[_ticker] == null) {
+          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("AnimationController.dispose() called more than once."), new assertions.ErrorDescription.new("A given " + dart.str(this[$runtimeType]) + " cannot be disposed more than once.\n"), new (T.DiagnosticsPropertyOfAnimationController()).new("The following " + dart.str(this[$runtimeType]) + " object was disposed multiple times", this, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
         }
-        if (this.onUpdate != null && !pressure[$isNaN] && (this[_state] == force_press._ForceState.started || this[_state] == force_press._ForceState.peaked)) {
-          if (this.onUpdate != null) {
-            this.invokeCallback(dart.void, "onUpdate", dart.fn(() => dart.nullCheck(this.onUpdate)(new force_press.ForcePressDetails.new({pressure: pressure, globalPosition: event.position, localPosition: event.localPosition})), T.VoidTovoid()));
-          }
-        }
-      }
-      this.stopTrackingIfPointerNoLongerDown(event);
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 788, 12, "() {\r\n      if (_ticker == null) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('AnimationController.dispose() called more than once.'),\r\n          ErrorDescription('A given $runtimeType cannot be disposed more than once.\\n'),\r\n          DiagnosticsProperty<AnimationController>(\r\n            'The following $runtimeType object was disposed multiple times',\r\n            this,\r\n            style: DiagnosticsTreeStyle.errorProperty,\r\n          ),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
+      dart.nullCheck(this[_ticker]).dispose();
+      this[_ticker] = null;
+      super.dispose();
     }
-    acceptGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 295, 26, "pointer");
-      if (this[_state] == force_press._ForceState.possible) this[_state] = force_press._ForceState.accepted;
-      if (this.onStart != null && this[_state] == force_press._ForceState.started) {
-        this.invokeCallback(dart.void, "onStart", dart.fn(() => dart.nullCheck(this.onStart)(new force_press.ForcePressDetails.new({pressure: this[_lastPressure], globalPosition: this[_lastPosition].global, localPosition: this[_lastPosition].local})), T.VoidTovoid()));
+    [_checkStatusChanged]() {
+      let newStatus = this.status;
+      if (this[_lastReportedStatus] != newStatus) {
+        this[_lastReportedStatus] = newStatus;
+        this.notifyStatusListeners(newStatus);
       }
     }
-    didStopTrackingLastPointer(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 309, 39, "pointer");
-      let wasAccepted = this[_state] == force_press._ForceState.started || this[_state] == force_press._ForceState.peaked;
-      if (this[_state] == force_press._ForceState.possible) {
-        this.resolve(arena.GestureDisposition.rejected);
-        return;
+    [_tick](elapsed) {
+      if (elapsed == null) dart.nullFailed(I[0], 816, 23, "elapsed");
+      this[_lastElapsedDuration] = elapsed;
+      let elapsedInSeconds = elapsed.inMicroseconds[$toDouble]() / 1000000;
+      if (!(elapsedInSeconds >= 0.0)) dart.assertFailed(null, I[0], 819, 12, "elapsedInSeconds >= 0.0");
+      this[_value] = dart.nullCheck(this[_simulation]).x(elapsedInSeconds)[$clamp](this.lowerBound, this.upperBound);
+      if (dart.test(dart.nullCheck(this[_simulation]).isDone(elapsedInSeconds))) {
+        this[_status] = this[_direction] == animation_controller._AnimationDirection.forward ? animation.AnimationStatus.completed : animation.AnimationStatus.dismissed;
+        this.stop({canceled: false});
       }
-      if (wasAccepted && this.onEnd != null) {
-        if (this.onEnd != null) {
-          this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(new force_press.ForcePressDetails.new({pressure: 0.0, globalPosition: this[_lastPosition].global, localPosition: this[_lastPosition].local})), T.VoidTovoid()));
-        }
-      }
-      this[_state] = force_press._ForceState.ready;
+      this.notifyListeners();
+      this[_checkStatusChanged]();
     }
-    rejectGesture(pointer) {
-      if (pointer == null) dart.nullFailed(I[0], 328, 26, "pointer");
-      this.stopTrackingPointer(pointer);
-      this.didStopTrackingLastPointer(pointer);
-    }
-    static _inverseLerp(min, max, t) {
-      if (min == null) dart.nullFailed(I[0], 333, 37, "min");
-      if (max == null) dart.nullFailed(I[0], 333, 49, "max");
-      if (t == null) dart.nullFailed(I[0], 333, 61, "t");
-      if (!(dart.notNull(min) <= dart.notNull(max))) dart.assertFailed(null, I[0], 334, 12, "min <= max");
-      let value = (dart.notNull(t) - dart.notNull(min)) / (dart.notNull(max) - dart.notNull(min));
-      if (!value[$isNaN]) value = value[$clamp](0.0, 1.0);
-      return value;
-    }
-    get debugDescription() {
-      return "force press";
+    toStringDetails() {
+      let paused = dart.test(this.isAnimating) ? "" : "; paused";
+      let ticker = this[_ticker] == null ? "; DISPOSED" : dart.test(dart.nullCheck(this[_ticker]).muted) ? "; silenced" : "";
+      let label = this.debugLabel == null ? "" : "; for " + dart.str(this.debugLabel);
+      let more = dart.str(super.toStringDetails()) + " " + this.value[$toStringAsFixed](3);
+      return more + paused + ticker + label;
     }
   };
-  (force_press.ForcePressGestureRecognizer.new = function(opts) {
-    let startPressure = opts && 'startPressure' in opts ? opts.startPressure : 0.4;
-    if (startPressure == null) dart.nullFailed(I[0], 123, 10, "startPressure");
-    let peakPressure = opts && 'peakPressure' in opts ? opts.peakPressure : 0.85;
-    if (peakPressure == null) dart.nullFailed(I[0], 124, 10, "peakPressure");
-    let interpolation = opts && 'interpolation' in opts ? opts.interpolation : C[6] || CT.C6;
-    if (interpolation == null) dart.nullFailed(I[0], 125, 10, "interpolation");
-    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    this[onStart] = null;
-    this[onUpdate] = null;
-    this[onPeak] = null;
-    this[onEnd] = null;
-    this[__ForcePressGestureRecognizer__lastPosition] = null;
-    this[__ForcePressGestureRecognizer__lastPosition_isSet] = false;
-    this[__ForcePressGestureRecognizer__lastPressure] = null;
-    this[__ForcePressGestureRecognizer__lastPressure_isSet] = false;
-    this[_state] = force_press._ForceState.ready;
-    this[startPressure$] = startPressure;
-    this[peakPressure$] = peakPressure;
-    this[interpolation$] = interpolation;
-    if (!(startPressure != null)) dart.assertFailed(null, I[0], 128, 15, "startPressure != null");
-    if (!(peakPressure != null)) dart.assertFailed(null, I[0], 129, 15, "peakPressure != null");
-    if (!(interpolation != null)) dart.assertFailed(null, I[0], 130, 15, "interpolation != null");
-    if (!(dart.notNull(peakPressure) > dart.notNull(startPressure))) dart.assertFailed(null, I[0], 131, 15, "peakPressure > startPressure");
-    force_press.ForcePressGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+  (animation_controller.AnimationController.new = function(opts) {
+    let t0;
+    let value = opts && 'value' in opts ? opts.value : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    let lowerBound = opts && 'lowerBound' in opts ? opts.lowerBound : 0;
+    if (lowerBound == null) dart.nullFailed(I[0], 238, 10, "lowerBound");
+    let upperBound = opts && 'upperBound' in opts ? opts.upperBound : 1;
+    if (upperBound == null) dart.nullFailed(I[0], 239, 10, "upperBound");
+    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[3] || CT.C3;
+    if (animationBehavior == null) dart.nullFailed(I[0], 240, 10, "animationBehavior");
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 241, 29, "vsync");
+    this[_ticker] = null;
+    this[_simulation] = null;
+    this[__AnimationController__value] = null;
+    this[_lastElapsedDuration] = null;
+    this[__AnimationController__status] = null;
+    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
+    this[duration$] = duration;
+    this[reverseDuration$] = reverseDuration;
+    this[debugLabel$] = debugLabel;
+    this[lowerBound$] = lowerBound;
+    this[upperBound$] = upperBound;
+    this[animationBehavior$] = animationBehavior;
+    if (!(lowerBound != null)) dart.assertFailed(null, I[0], 242, 15, "lowerBound != null");
+    if (!(upperBound != null)) dart.assertFailed(null, I[0], 243, 15, "upperBound != null");
+    if (!(dart.notNull(upperBound) >= dart.notNull(lowerBound))) dart.assertFailed(null, I[0], 244, 15, "upperBound >= lowerBound");
+    if (!(vsync != null)) dart.assertFailed(null, I[0], 245, 15, "vsync != null");
+    this[_direction] = animation_controller._AnimationDirection.forward;
+    animation_controller.AnimationController.__proto__.new.call(this);
+    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+    this[_internalSetValue]((t0 = value, t0 == null ? this.lowerBound : t0));
+  }).prototype = animation_controller.AnimationController.prototype;
+  (animation_controller.AnimationController.unbounded = function(opts) {
+    let value = opts && 'value' in opts ? opts.value : 0;
+    if (value == null) dart.nullFailed(I[0], 269, 12, "value");
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
+    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 273, 29, "vsync");
+    let animationBehavior = opts && 'animationBehavior' in opts ? opts.animationBehavior : C[4] || CT.C4;
+    if (animationBehavior == null) dart.nullFailed(I[0], 274, 10, "animationBehavior");
+    this[_ticker] = null;
+    this[_simulation] = null;
+    this[__AnimationController__value] = null;
+    this[_lastElapsedDuration] = null;
+    this[__AnimationController__status] = null;
+    this[_lastReportedStatus] = animation.AnimationStatus.dismissed;
+    this[duration$] = duration;
+    this[reverseDuration$] = reverseDuration;
+    this[debugLabel$] = debugLabel;
+    this[animationBehavior$] = animationBehavior;
+    if (!(value != null)) dart.assertFailed(null, I[0], 275, 15, "value != null");
+    if (!(vsync != null)) dart.assertFailed(null, I[0], 276, 15, "vsync != null");
+    this[lowerBound$] = -1 / 0;
+    this[upperBound$] = 1 / 0;
+    this[_direction] = animation_controller._AnimationDirection.forward;
+    animation_controller.AnimationController.__proto__.new.call(this);
+    this[_ticker] = vsync.createTicker(dart.bind(this, _tick));
+    this[_internalSetValue](value);
+  }).prototype = animation_controller.AnimationController.prototype;
+  dart.addTypeTests(animation_controller.AnimationController);
+  dart.addTypeCaches(animation_controller.AnimationController);
+  dart.setMethodSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getMethods(animation_controller.AnimationController.__proto__),
+    resync: dart.fnType(dart.void, [ticker.TickerProvider]),
+    reset: dart.fnType(dart.void, []),
+    [_internalSetValue]: dart.fnType(dart.void, [core.double]),
+    forward: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
+    reverse: dart.fnType(ticker.TickerFuture, [], {from: dart.nullable(core.double)}, {}),
+    animateTo: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    animateBack: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    [_animateToInternal]: dart.fnType(ticker.TickerFuture, [core.double], {curve: curves.Curve, duration: dart.nullable(core.Duration)}, {}),
+    repeat: dart.fnType(ticker.TickerFuture, [], {max: dart.nullable(core.double), min: dart.nullable(core.double), period: dart.nullable(core.Duration), reverse: core.bool}, {}),
+    [_directionSetter]: dart.fnType(dart.void, [animation_controller._AnimationDirection]),
+    fling: dart.fnType(ticker.TickerFuture, [], {animationBehavior: dart.nullable(animation_controller.AnimationBehavior), springDescription: dart.nullable(spring_simulation.SpringDescription), velocity: core.double}, {}),
+    animateWith: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
+    [_startSimulation]: dart.fnType(ticker.TickerFuture, [simulation.Simulation]),
+    stop: dart.fnType(dart.void, [], {canceled: core.bool}, {}),
+    [_checkStatusChanged]: dart.fnType(dart.void, []),
+    [_tick]: dart.fnType(dart.void, [core.Duration])
+  }));
+  dart.setGetterSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getGetters(animation_controller.AnimationController.__proto__),
+    view: animation.Animation$(core.double),
+    value: core.double,
+    [_value]: core.double,
+    velocity: core.double,
+    lastElapsedDuration: dart.nullable(core.Duration),
+    isAnimating: core.bool,
+    status: animation.AnimationStatus,
+    [_status]: animation.AnimationStatus
+  }));
+  dart.setSetterSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getSetters(animation_controller.AnimationController.__proto__),
+    [_value]: core.double,
+    value: core.double,
+    [_status]: animation.AnimationStatus
+  }));
+  dart.setLibraryUri(animation_controller.AnimationController, I[1]);
+  dart.setFieldSignature(animation_controller.AnimationController, () => ({
+    __proto__: dart.getFields(animation_controller.AnimationController.__proto__),
+    lowerBound: dart.finalFieldType(core.double),
+    upperBound: dart.finalFieldType(core.double),
+    debugLabel: dart.finalFieldType(dart.nullable(core.String)),
+    animationBehavior: dart.finalFieldType(animation_controller.AnimationBehavior),
+    duration: dart.fieldType(dart.nullable(core.Duration)),
+    reverseDuration: dart.fieldType(dart.nullable(core.Duration)),
+    [_ticker]: dart.fieldType(dart.nullable(ticker.Ticker)),
+    [_simulation]: dart.fieldType(dart.nullable(simulation.Simulation)),
+    [__AnimationController__value]: dart.fieldType(dart.nullable(core.double)),
+    [_lastElapsedDuration]: dart.fieldType(dart.nullable(core.Duration)),
+    [_direction]: dart.fieldType(animation_controller._AnimationDirection),
+    [__AnimationController__status]: dart.fieldType(dart.nullable(animation.AnimationStatus)),
+    [_lastReportedStatus]: dart.fieldType(animation.AnimationStatus)
+  }));
+  var _begin$ = dart.privateName(animation_controller, "_begin");
+  var _end$ = dart.privateName(animation_controller, "_end");
+  var _curve$ = dart.privateName(animation_controller, "_curve");
+  var _durationInSeconds = dart.privateName(animation_controller, "_durationInSeconds");
+  animation_controller._InterpolationSimulation = class _InterpolationSimulation extends simulation.Simulation {
+    x(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 854, 19, "timeInSeconds");
+      let t = (dart.notNull(timeInSeconds) / dart.notNull(this[_durationInSeconds]))[$clamp](0.0, 1.0);
+      if (t === 0.0)
+        return this[_begin$];
+      else if (t === 1.0)
+        return this[_end$];
+      else
+        return dart.notNull(this[_begin$]) + (dart.notNull(this[_end$]) - dart.notNull(this[_begin$])) * dart.notNull(this[_curve$].transform(t));
+    }
+    dx(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 865, 20, "timeInSeconds");
+      let epsilon = this.tolerance.time;
+      return (dart.notNull(this.x(dart.notNull(timeInSeconds) + dart.notNull(epsilon))) - dart.notNull(this.x(dart.notNull(timeInSeconds) - dart.notNull(epsilon)))) / (2 * dart.notNull(epsilon));
+    }
+    isDone(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 871, 22, "timeInSeconds");
+      return dart.notNull(timeInSeconds) > dart.notNull(this[_durationInSeconds]);
+    }
+  };
+  (animation_controller._InterpolationSimulation.new = function(_begin, _end, duration, _curve, scale) {
+    if (_begin == null) dart.nullFailed(I[0], 842, 33, "_begin");
+    if (_end == null) dart.nullFailed(I[0], 842, 46, "_end");
+    if (duration == null) dart.nullFailed(I[0], 842, 61, "duration");
+    if (_curve == null) dart.nullFailed(I[0], 842, 76, "_curve");
+    if (scale == null) dart.nullFailed(I[0], 842, 91, "scale");
+    this[_begin$] = _begin;
+    this[_end$] = _end;
+    this[_curve$] = _curve;
+    if (!(_begin != null)) dart.assertFailed(null, I[0], 843, 14, "_begin != null");
+    if (!(_end != null)) dart.assertFailed(null, I[0], 844, 14, "_end != null");
+    if (!(duration != null && dart.notNull(duration.inMicroseconds) > 0)) dart.assertFailed(null, I[0], 845, 14, "duration != null && duration.inMicroseconds > 0");
+    this[_durationInSeconds] = dart.notNull(duration.inMicroseconds) * dart.notNull(scale) / 1000000;
+    animation_controller._InterpolationSimulation.__proto__.new.call(this);
     ;
-  }).prototype = force_press.ForcePressGestureRecognizer.prototype;
-  dart.addTypeTests(force_press.ForcePressGestureRecognizer);
-  dart.addTypeCaches(force_press.ForcePressGestureRecognizer);
-  dart.setMethodSignature(force_press.ForcePressGestureRecognizer, () => ({
-    __proto__: dart.getMethods(force_press.ForcePressGestureRecognizer.__proto__),
-    addAllowedPointer: dart.fnType(dart.void, [events.PointerEvent]),
-    handleEvent: dart.fnType(dart.void, [events.PointerEvent]),
-    didStopTrackingLastPointer: dart.fnType(dart.void, [core.int])
+  }).prototype = animation_controller._InterpolationSimulation.prototype;
+  dart.addTypeTests(animation_controller._InterpolationSimulation);
+  dart.addTypeCaches(animation_controller._InterpolationSimulation);
+  dart.setMethodSignature(animation_controller._InterpolationSimulation, () => ({
+    __proto__: dart.getMethods(animation_controller._InterpolationSimulation.__proto__),
+    x: dart.fnType(core.double, [core.double]),
+    dx: dart.fnType(core.double, [core.double]),
+    isDone: dart.fnType(core.bool, [core.double])
   }));
-  dart.setGetterSignature(force_press.ForcePressGestureRecognizer, () => ({
-    __proto__: dart.getGetters(force_press.ForcePressGestureRecognizer.__proto__),
-    [_lastPosition]: recognizer.OffsetPair,
-    [_lastPressure]: core.double,
-    debugDescription: core.String
+  dart.setLibraryUri(animation_controller._InterpolationSimulation, I[1]);
+  dart.setFieldSignature(animation_controller._InterpolationSimulation, () => ({
+    __proto__: dart.getFields(animation_controller._InterpolationSimulation.__proto__),
+    [_durationInSeconds]: dart.finalFieldType(core.double),
+    [_begin$]: dart.finalFieldType(core.double),
+    [_end$]: dart.finalFieldType(core.double),
+    [_curve$]: dart.finalFieldType(curves.Curve)
   }));
-  dart.setSetterSignature(force_press.ForcePressGestureRecognizer, () => ({
-    __proto__: dart.getSetters(force_press.ForcePressGestureRecognizer.__proto__),
-    [_lastPosition]: recognizer.OffsetPair,
-    [_lastPressure]: core.double
+  var _periodInSeconds = dart.privateName(animation_controller, "_periodInSeconds");
+  var _initialT = dart.privateName(animation_controller, "_initialT");
+  animation_controller._RepeatingSimulation = class _RepeatingSimulation extends simulation.Simulation {
+    x(timeInSeconds) {
+      let t2, t2$;
+      if (timeInSeconds == null) dart.nullFailed(I[0], 893, 19, "timeInSeconds");
+      if (!(dart.notNull(timeInSeconds) >= 0.0)) dart.assertFailed(null, I[0], 894, 12, "timeInSeconds >= 0.0");
+      let totalTimeInSeconds = dart.notNull(timeInSeconds) + dart.notNull(this[_initialT]);
+      let t = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$modulo](1.0);
+      let _isPlayingReverse = (totalTimeInSeconds / dart.notNull(this[_periodInSeconds]))[$truncate]()[$isOdd];
+      if (dart.test(this.reverse) && _isPlayingReverse) {
+        t2 = animation_controller._AnimationDirection.reverse;
+        this.directionSetter(t2);
+        return dart.nullCheck(ui.lerpDouble(this.max, this.min, t));
+      } else {
+        t2$ = animation_controller._AnimationDirection.forward;
+        this.directionSetter(t2$);
+        return dart.nullCheck(ui.lerpDouble(this.min, this.max, t));
+      }
+    }
+    dx(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 910, 20, "timeInSeconds");
+      return (dart.notNull(this.max) - dart.notNull(this.min)) / dart.notNull(this[_periodInSeconds]);
+    }
+    isDone(timeInSeconds) {
+      if (timeInSeconds == null) dart.nullFailed(I[0], 913, 22, "timeInSeconds");
+      return false;
+    }
+  };
+  (animation_controller._RepeatingSimulation.new = function(initialValue, min, max, reverse, period, directionSetter) {
+    if (initialValue == null) dart.nullFailed(I[0], 877, 31, "initialValue");
+    if (min == null) dart.nullFailed(I[0], 877, 50, "min");
+    if (max == null) dart.nullFailed(I[0], 877, 60, "max");
+    if (reverse == null) dart.nullFailed(I[0], 877, 70, "reverse");
+    if (period == null) dart.nullFailed(I[0], 877, 88, "period");
+    if (directionSetter == null) dart.nullFailed(I[0], 877, 101, "directionSetter");
+    this.min = min;
+    this.max = max;
+    this.reverse = reverse;
+    this.directionSetter = directionSetter;
+    this[_periodInSeconds] = dart.notNull(period.inMicroseconds) / 1000000;
+    this[_initialT] = max == min ? 0.0 : dart.notNull(initialValue) / (dart.notNull(max) - dart.notNull(min)) * (dart.notNull(period.inMicroseconds) / 1000000);
+    animation_controller._RepeatingSimulation.__proto__.new.call(this);
+    if (!(dart.notNull(this[_periodInSeconds]) > 0.0)) dart.assertFailed(null, I[0], 880, 12, "_periodInSeconds > 0.0");
+    if (!(dart.notNull(this[_initialT]) >= 0.0)) dart.assertFailed(null, I[0], 881, 12, "_initialT >= 0.0");
+  }).prototype = animation_controller._RepeatingSimulation.prototype;
+  dart.addTypeTests(animation_controller._RepeatingSimulation);
+  dart.addTypeCaches(animation_controller._RepeatingSimulation);
+  dart.setMethodSignature(animation_controller._RepeatingSimulation, () => ({
+    __proto__: dart.getMethods(animation_controller._RepeatingSimulation.__proto__),
+    x: dart.fnType(core.double, [core.double]),
+    dx: dart.fnType(core.double, [core.double]),
+    isDone: dart.fnType(core.bool, [core.double])
   }));
-  dart.setLibraryUri(force_press.ForcePressGestureRecognizer, I[1]);
-  dart.setFieldSignature(force_press.ForcePressGestureRecognizer, () => ({
-    __proto__: dart.getFields(force_press.ForcePressGestureRecognizer.__proto__),
-    onStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [force_press.ForcePressDetails]))),
-    onUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [force_press.ForcePressDetails]))),
-    onPeak: dart.fieldType(dart.nullable(dart.fnType(dart.void, [force_press.ForcePressDetails]))),
-    onEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [force_press.ForcePressDetails]))),
-    startPressure: dart.finalFieldType(core.double),
-    peakPressure: dart.finalFieldType(core.double),
-    interpolation: dart.finalFieldType(dart.fnType(core.double, [core.double, core.double, core.double])),
-    [__ForcePressGestureRecognizer__lastPosition]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
-    [__ForcePressGestureRecognizer__lastPosition_isSet]: dart.fieldType(core.bool),
-    [__ForcePressGestureRecognizer__lastPressure]: dart.fieldType(dart.nullable(core.double)),
-    [__ForcePressGestureRecognizer__lastPressure_isSet]: dart.fieldType(core.bool),
-    [_state]: dart.fieldType(force_press._ForceState)
+  dart.setLibraryUri(animation_controller._RepeatingSimulation, I[1]);
+  dart.setFieldSignature(animation_controller._RepeatingSimulation, () => ({
+    __proto__: dart.getFields(animation_controller._RepeatingSimulation.__proto__),
+    min: dart.finalFieldType(core.double),
+    max: dart.finalFieldType(core.double),
+    reverse: dart.finalFieldType(core.bool),
+    directionSetter: dart.finalFieldType(dart.fnType(dart.void, [animation_controller._AnimationDirection])),
+    [_periodInSeconds]: dart.finalFieldType(core.double),
+    [_initialT]: dart.finalFieldType(core.double)
   }));
-  dart.trackLibraries("packages/flutter/src/gestures/force_press.dart", {
-    "package:flutter/src/gestures/force_press.dart": force_press
+  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
+  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
+  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
+  dart.defineLazy(animation_controller, {
+    /*animation_controller._kFlingSpringDescription*/get _kFlingSpringDescription() {
+      return new spring_simulation.SpringDescription.withDampingRatio({mass: 1.0, stiffness: 500.0, ratio: 1.0});
+    },
+    /*animation_controller._kFlingTolerance*/get _kFlingTolerance() {
+      return C[7] || CT.C7;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/animation/animation_controller.dart", {
+    "package:flutter/src/animation/animation_controller.dart": animation_controller
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["force_press.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/gestures/force_press.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["animation_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/animation/animation_controller.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__force_press: force_press
+    src__animation__animation_controller: animation_controller
   };
 }));
 
-//# sourceMappingURL=force_press.dart.lib.js.map
+//# sourceMappingURL=animation_controller.dart.lib.js.map

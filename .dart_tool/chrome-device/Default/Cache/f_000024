@@ -1,21 +1,20 @@
-define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__flutter__src__rendering__table_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/constants.dart', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__gestures__tap_dart(dart_sdk, packages__flutter__src__gestures__constants$46dart, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
-  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  var table_border = Object.create(dart.library);
-  var $isEmpty = dartx.isEmpty;
-  var $first = dartx.first;
-  var $last = dartx.last;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $runtimeType = dartx.runtimeType;
-  dart._checkModuleNullSafetyMode(false);
+  const constants = packages__flutter__src__gestures__constants$46dart.src__gestures__constants;
+  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var tap = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
   var T = {
-    _: () => T
+    DiagnosticsPropertyOfOffset: () => (T.DiagnosticsPropertyOfOffset = dart.constFn(diagnostics.DiagnosticsProperty$(ui.Offset)))(),
+    DiagnosticsPropertyOfint: () => (T.DiagnosticsPropertyOfint = dart.constFn(diagnostics.DiagnosticsProperty$(core.int)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   var T$Eval = Object.assign({
     _: () => T$Eval
@@ -30,285 +29,485 @@ define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flut
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: borders.BorderStyle.prototype,
-        [_name]: "BorderStyle.none",
-        index: 0
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190080.0
-      });
-    },
     get C0() {
       return C[0] = dart.const({
-        __proto__: borders.BorderSide.prototype,
-        [BorderSide_style]: C[1] || CT.C1,
-        [BorderSide_width]: 0,
-        [BorderSide_color]: C[2] || CT.C2
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: borders.BorderStyle.prototype,
-        [_name]: "BorderStyle.solid",
-        index: 1
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 0
       });
     }
   }, false);
-  var C = Array(4).fill(void 0);
+  var C = [void 0];
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/rendering/table_border.dart",
-    "package:flutter/src/rendering/table_border.dart"
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/gestures/tap.dart",
+    "package:flutter/src/gestures/tap.dart"
   ];
-  var top$ = dart.privateName(table_border, "TableBorder.top");
-  var right$ = dart.privateName(table_border, "TableBorder.right");
-  var bottom$ = dart.privateName(table_border, "TableBorder.bottom");
-  var left$ = dart.privateName(table_border, "TableBorder.left");
-  var horizontalInside$ = dart.privateName(table_border, "TableBorder.horizontalInside");
-  var verticalInside$ = dart.privateName(table_border, "TableBorder.verticalInside");
-  var _name = dart.privateName(borders, "_name");
-  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
-  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
-  table_border.TableBorder = class TableBorder extends core.Object {
-    get top() {
-      return this[top$];
+  var globalPosition$ = dart.privateName(tap, "TapDownDetails.globalPosition");
+  var kind$ = dart.privateName(tap, "TapDownDetails.kind");
+  var localPosition$ = dart.privateName(tap, "TapDownDetails.localPosition");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  tap.TapDownDetails = class TapDownDetails extends core.Object {
+    get globalPosition() {
+      return this[globalPosition$];
     }
-    set top(value) {
-      super.top = value;
+    set globalPosition(value) {
+      super.globalPosition = value;
     }
-    get right() {
-      return this[right$];
+    get kind() {
+      return this[kind$];
     }
-    set right(value) {
-      super.right = value;
+    set kind(value) {
+      super.kind = value;
     }
-    get bottom() {
-      return this[bottom$];
+    get localPosition() {
+      return this[localPosition$];
     }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get left() {
-      return this[left$];
-    }
-    set left(value) {
-      super.left = value;
-    }
-    get horizontalInside() {
-      return this[horizontalInside$];
-    }
-    set horizontalInside(value) {
-      super.horizontalInside = value;
-    }
-    get verticalInside() {
-      return this[verticalInside$];
-    }
-    set verticalInside(value) {
-      super.verticalInside = value;
-    }
-    static all(opts) {
-      let color = opts && 'color' in opts ? opts.color : C[2] || CT.C2;
-      if (color == null) dart.nullFailed(I[0], 32, 11, "color");
-      let width = opts && 'width' in opts ? opts.width : 1;
-      if (width == null) dart.nullFailed(I[0], 33, 12, "width");
-      let style = opts && 'style' in opts ? opts.style : C[3] || CT.C3;
-      if (style == null) dart.nullFailed(I[0], 34, 17, "style");
-      let side = new borders.BorderSide.new({color: color, width: width, style: style});
-      return new table_border.TableBorder.new({top: side, right: side, bottom: side, left: side, horizontalInside: side, verticalInside: side});
-    }
-    static symmetric(opts) {
-      let inside = opts && 'inside' in opts ? opts.inside : C[0] || CT.C0;
-      if (inside == null) dart.nullFailed(I[0], 43, 16, "inside");
-      let outside = opts && 'outside' in opts ? opts.outside : C[0] || CT.C0;
-      if (outside == null) dart.nullFailed(I[0], 44, 16, "outside");
-      return new table_border.TableBorder.new({top: outside, right: outside, bottom: outside, left: outside, horizontalInside: inside, verticalInside: inside});
-    }
-    get dimensions() {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left.width, this.top.width, this.right.width, this.bottom.width);
-    }
-    get isUniform() {
-      if (!(this.top != null)) dart.assertFailed(null, I[0], 85, 12, "top != null");
-      if (!(this.right != null)) dart.assertFailed(null, I[0], 86, 12, "right != null");
-      if (!(this.bottom != null)) dart.assertFailed(null, I[0], 87, 12, "bottom != null");
-      if (!(this.left != null)) dart.assertFailed(null, I[0], 88, 12, "left != null");
-      if (!(this.horizontalInside != null)) dart.assertFailed(null, I[0], 89, 12, "horizontalInside != null");
-      if (!(this.verticalInside != null)) dart.assertFailed(null, I[0], 90, 12, "verticalInside != null");
-      let topColor = this.top.color;
-      if (!dart.equals(this.right.color, topColor) || !dart.equals(this.bottom.color, topColor) || !dart.equals(this.left.color, topColor) || !dart.equals(this.horizontalInside.color, topColor) || !dart.equals(this.verticalInside.color, topColor)) return false;
-      let topWidth = this.top.width;
-      if (this.right.width != topWidth || this.bottom.width != topWidth || this.left.width != topWidth || this.horizontalInside.width != topWidth || this.verticalInside.width != topWidth) return false;
-      let topStyle = this.top.style;
-      if (this.right.style != topStyle || this.bottom.style != topStyle || this.left.style != topStyle || this.horizontalInside.style != topStyle || this.verticalInside.style != topStyle) return false;
-      return true;
-    }
-    scale(t) {
-      if (t == null) dart.nullFailed(I[0], 134, 28, "t");
-      return new table_border.TableBorder.new({top: this.top.scale(t), right: this.right.scale(t), bottom: this.bottom.scale(t), left: this.left.scale(t), horizontalInside: this.horizontalInside.scale(t), verticalInside: this.verticalInside.scale(t)});
-    }
-    static lerp(a, b, t) {
-      if (t == null) dart.nullFailed(I[0], 151, 67, "t");
-      if (!(t != null)) dart.assertFailed(null, I[0], 152, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b).scale(t);
-      if (b == null) return a.scale(1.0 - dart.notNull(t));
-      return new table_border.TableBorder.new({top: borders.BorderSide.lerp(a.top, b.top, t), right: borders.BorderSide.lerp(a.right, b.right, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), left: borders.BorderSide.lerp(a.left, b.left, t), horizontalInside: borders.BorderSide.lerp(a.horizontalInside, b.horizontalInside, t), verticalInside: borders.BorderSide.lerp(a.verticalInside, b.verticalInside, t)});
-    }
-    paint(canvas, rect, opts) {
-      let t0, t0$;
-      if (canvas == null) dart.nullFailed(I[0], 196, 12, "canvas");
-      if (rect == null) dart.nullFailed(I[0], 197, 10, "rect");
-      let rows = opts && 'rows' in opts ? opts.rows : null;
-      if (rows == null) dart.nullFailed(I[0], 198, 31, "rows");
-      let columns = opts && 'columns' in opts ? opts.columns : null;
-      if (columns == null) dart.nullFailed(I[0], 199, 31, "columns");
-      if (!(this.top != null)) dart.assertFailed(null, I[0], 202, 12, "top != null");
-      if (!(this.right != null)) dart.assertFailed(null, I[0], 203, 12, "right != null");
-      if (!(this.bottom != null)) dart.assertFailed(null, I[0], 204, 12, "bottom != null");
-      if (!(this.left != null)) dart.assertFailed(null, I[0], 205, 12, "left != null");
-      if (!(this.horizontalInside != null)) dart.assertFailed(null, I[0], 206, 12, "horizontalInside != null");
-      if (!(this.verticalInside != null)) dart.assertFailed(null, I[0], 207, 12, "verticalInside != null");
-      if (!(canvas != null)) dart.assertFailed(null, I[0], 210, 12, "canvas != null");
-      if (!(rect != null)) dart.assertFailed(null, I[0], 211, 12, "rect != null");
-      if (!(rows != null)) dart.assertFailed(null, I[0], 212, 12, "rows != null");
-      if (!(dart.test(rows[$isEmpty]) || dart.notNull(rows[$first]) >= 0.0 && dart.notNull(rows[$last]) <= dart.notNull(rect.height))) dart.assertFailed(null, I[0], 213, 12, "rows.isEmpty || (rows.first >= 0.0 && rows.last <= rect.height)");
-      if (!(columns != null)) dart.assertFailed(null, I[0], 214, 12, "columns != null");
-      if (!(dart.test(columns[$isEmpty]) || dart.notNull(columns[$first]) >= 0.0 && dart.notNull(columns[$last]) <= dart.notNull(rect.width))) dart.assertFailed(null, I[0], 215, 12, "columns.isEmpty || (columns.first >= 0.0 && columns.last <= rect.width)");
-      if (dart.test(columns[$isNotEmpty]) || dart.test(rows[$isNotEmpty])) {
-        let paint = ui.Paint.new();
-        let path = ui.Path.new();
-        if (dart.test(columns[$isNotEmpty])) {
-          switch (this.verticalInside.style) {
-            case C[3] || CT.C3:
-            {
-              t0 = paint;
-              (() => {
-                t0.color = this.verticalInside.color;
-                t0.strokeWidth = this.verticalInside.width;
-                t0.style = ui.PaintingStyle.stroke;
-                return t0;
-              })();
-              path.reset();
-              for (let x of columns) {
-                path.moveTo(dart.notNull(rect.left) + dart.notNull(x), rect.top);
-                path.lineTo(dart.notNull(rect.left) + dart.notNull(x), rect.bottom);
-              }
-              canvas.drawPath(path, paint);
-              break;
-            }
-            case C[1] || CT.C1:
-            {
-              break;
-            }
-            default:
-            {
-              dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-            }
-          }
-        }
-        if (dart.test(rows[$isNotEmpty])) {
-          switch (this.horizontalInside.style) {
-            case C[3] || CT.C3:
-            {
-              t0$ = paint;
-              (() => {
-                t0$.color = this.horizontalInside.color;
-                t0$.strokeWidth = this.horizontalInside.width;
-                t0$.style = ui.PaintingStyle.stroke;
-                return t0$;
-              })();
-              path.reset();
-              for (let y of rows) {
-                path.moveTo(rect.left, dart.notNull(rect.top) + dart.notNull(y));
-                path.lineTo(rect.right, dart.notNull(rect.top) + dart.notNull(y));
-              }
-              canvas.drawPath(path, paint);
-              break;
-            }
-            case C[1] || CT.C1:
-            {
-              break;
-            }
-            default:
-            {
-              dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-            }
-          }
-        }
-      }
-      borders.paintBorder(canvas, rect, {top: this.top, right: this.right, bottom: this.bottom, left: this.left});
-    }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return table_border.TableBorder.is(other) && dart.equals(other.top, this.top) && dart.equals(other.right, this.right) && dart.equals(other.bottom, this.bottom) && dart.equals(other.left, this.left) && dart.equals(other.horizontalInside, this.horizontalInside) && dart.equals(other.verticalInside, this.verticalInside);
-    }
-    get hashCode() {
-      return ui.hashValues(this.top, this.right, this.bottom, this.left, this.horizontalInside, this.verticalInside);
-    }
-    toString() {
-      return "TableBorder(" + dart.str(this.top) + ", " + dart.str(this.right) + ", " + dart.str(this.bottom) + ", " + dart.str(this.left) + ", " + dart.str(this.horizontalInside) + ", " + dart.str(this.verticalInside) + ")";
+    set localPosition(value) {
+      super.localPosition = value;
     }
   };
-  (table_border.TableBorder.new = function(opts) {
-    let top = opts && 'top' in opts ? opts.top : C[0] || CT.C0;
-    if (top == null) dart.nullFailed(I[0], 20, 10, "top");
-    let right = opts && 'right' in opts ? opts.right : C[0] || CT.C0;
-    if (right == null) dart.nullFailed(I[0], 21, 10, "right");
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[0] || CT.C0;
-    if (bottom == null) dart.nullFailed(I[0], 22, 10, "bottom");
-    let left = opts && 'left' in opts ? opts.left : C[0] || CT.C0;
-    if (left == null) dart.nullFailed(I[0], 23, 10, "left");
-    let horizontalInside = opts && 'horizontalInside' in opts ? opts.horizontalInside : C[0] || CT.C0;
-    if (horizontalInside == null) dart.nullFailed(I[0], 24, 10, "horizontalInside");
-    let verticalInside = opts && 'verticalInside' in opts ? opts.verticalInside : C[0] || CT.C0;
-    if (verticalInside == null) dart.nullFailed(I[0], 25, 10, "verticalInside");
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    this[left$] = left;
-    this[horizontalInside$] = horizontalInside;
-    this[verticalInside$] = verticalInside;
+  (tap.TapDownDetails.new = function(opts) {
+    let t0;
+    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
+    if (globalPosition == null) dart.nullFailed(I[0], 25, 10, "globalPosition");
+    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    this[globalPosition$] = globalPosition;
+    this[kind$] = kind;
+    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 28, 15, "globalPosition != null");
+    this[localPosition$] = (t0 = localPosition, t0 == null ? globalPosition : t0);
     ;
-  }).prototype = table_border.TableBorder.prototype;
-  dart.addTypeTests(table_border.TableBorder);
-  dart.addTypeCaches(table_border.TableBorder);
-  dart.setMethodSignature(table_border.TableBorder, () => ({
-    __proto__: dart.getMethods(table_border.TableBorder.__proto__),
-    scale: dart.fnType(table_border.TableBorder, [core.double]),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {}, {columns: core.Iterable$(core.double), rows: core.Iterable$(core.double)})
+  }).prototype = tap.TapDownDetails.prototype;
+  dart.addTypeTests(tap.TapDownDetails);
+  dart.addTypeCaches(tap.TapDownDetails);
+  dart.setLibraryUri(tap.TapDownDetails, I[1]);
+  dart.setFieldSignature(tap.TapDownDetails, () => ({
+    __proto__: dart.getFields(tap.TapDownDetails.__proto__),
+    globalPosition: dart.finalFieldType(ui.Offset),
+    kind: dart.finalFieldType(dart.nullable(ui.PointerDeviceKind)),
+    localPosition: dart.finalFieldType(ui.Offset)
   }));
-  dart.setGetterSignature(table_border.TableBorder, () => ({
-    __proto__: dart.getGetters(table_border.TableBorder.__proto__),
-    dimensions: edge_insets.EdgeInsets,
-    isUniform: core.bool
+  var globalPosition$0 = dart.privateName(tap, "TapUpDetails.globalPosition");
+  var localPosition$0 = dart.privateName(tap, "TapUpDetails.localPosition");
+  var kind$0 = dart.privateName(tap, "TapUpDetails.kind");
+  tap.TapUpDetails = class TapUpDetails extends core.Object {
+    get globalPosition() {
+      return this[globalPosition$0];
+    }
+    set globalPosition(value) {
+      super.globalPosition = value;
+    }
+    get localPosition() {
+      return this[localPosition$0];
+    }
+    set localPosition(value) {
+      super.localPosition = value;
+    }
+    get kind() {
+      return this[kind$0];
+    }
+    set kind(value) {
+      super.kind = value;
+    }
+  };
+  (tap.TapUpDetails.new = function(opts) {
+    let t0;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    if (kind == null) dart.nullFailed(I[0], 62, 19, "kind");
+    let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : C[0] || CT.C0;
+    if (globalPosition == null) dart.nullFailed(I[0], 63, 10, "globalPosition");
+    let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
+    this[kind$0] = kind;
+    this[globalPosition$0] = globalPosition;
+    if (!(globalPosition != null)) dart.assertFailed(null, I[0], 65, 15, "globalPosition != null");
+    this[localPosition$0] = (t0 = localPosition, t0 == null ? globalPosition : t0);
+    ;
+  }).prototype = tap.TapUpDetails.prototype;
+  dart.addTypeTests(tap.TapUpDetails);
+  dart.addTypeCaches(tap.TapUpDetails);
+  dart.setLibraryUri(tap.TapUpDetails, I[1]);
+  dart.setFieldSignature(tap.TapUpDetails, () => ({
+    __proto__: dart.getFields(tap.TapUpDetails.__proto__),
+    globalPosition: dart.finalFieldType(ui.Offset),
+    localPosition: dart.finalFieldType(ui.Offset),
+    kind: dart.finalFieldType(ui.PointerDeviceKind)
   }));
-  dart.setLibraryUri(table_border.TableBorder, I[1]);
-  dart.setFieldSignature(table_border.TableBorder, () => ({
-    __proto__: dart.getFields(table_border.TableBorder.__proto__),
-    top: dart.finalFieldType(borders.BorderSide),
-    right: dart.finalFieldType(borders.BorderSide),
-    bottom: dart.finalFieldType(borders.BorderSide),
-    left: dart.finalFieldType(borders.BorderSide),
-    horizontalInside: dart.finalFieldType(borders.BorderSide),
-    verticalInside: dart.finalFieldType(borders.BorderSide)
+  var _sentTapDown = dart.privateName(tap, "_sentTapDown");
+  var _wonArenaForPrimaryPointer = dart.privateName(tap, "_wonArenaForPrimaryPointer");
+  var _down = dart.privateName(tap, "_down");
+  var _up = dart.privateName(tap, "_up");
+  var _reset = dart.privateName(tap, "_reset");
+  var _checkUp = dart.privateName(tap, "_checkUp");
+  var _checkCancel = dart.privateName(tap, "_checkCancel");
+  var _checkDown = dart.privateName(tap, "_checkDown");
+  tap.BaseTapGestureRecognizer = class BaseTapGestureRecognizer extends recognizer.PrimaryPointerGestureRecognizer {
+    addAllowedPointer(event) {
+      if (event == null) dart.nullFailed(I[0], 191, 43, "event");
+      if (!(event != null)) dart.assertFailed(null, I[0], 192, 12, "event != null");
+      if (this.state == recognizer.GestureRecognizerState.ready) {
+        if (this[_down] != null && this[_up] != null) {
+          if (!(dart.nullCheck(this[_down]).pointer == dart.nullCheck(this[_up]).pointer)) dart.assertFailed(null, I[0], 197, 16, "_down!.pointer == _up!.pointer");
+          this[_reset]();
+        }
+        if (!(this[_down] == null && this[_up] == null)) dart.assertFailed(null, I[0], 201, 14, "_down == null && _up == null");
+        this[_down] = event;
+      }
+      if (this[_down] != null) {
+        super.addAllowedPointer(event);
+      }
+    }
+    startTrackingPointer(pointer, transform = null) {
+      if (pointer == null) dart.nullFailed(I[0], 219, 33, "pointer");
+      if (!(this[_down] != null)) dart.assertFailed(null, I[0], 222, 12, "_down != null");
+      super.startTrackingPointer(pointer, transform);
+    }
+    handlePrimaryPointer(event) {
+      if (event == null) dart.nullFailed(I[0], 227, 42, "event");
+      if (events.PointerUpEvent.is(event)) {
+        this[_up] = event;
+        this[_checkUp]();
+      } else if (events.PointerCancelEvent.is(event)) {
+        this.resolve(arena.GestureDisposition.rejected);
+        if (dart.test(this[_sentTapDown])) {
+          this[_checkCancel](event, "");
+        }
+        this[_reset]();
+      } else if (event.buttons != dart.nullCheck(this[_down]).buttons) {
+        this.resolve(arena.GestureDisposition.rejected);
+        this.stopTrackingPointer(dart.nullCheck(this.primaryPointer));
+      }
+    }
+    resolve(disposition) {
+      if (disposition == null) dart.nullFailed(I[0], 244, 35, "disposition");
+      if (dart.test(this[_wonArenaForPrimaryPointer]) && disposition == arena.GestureDisposition.rejected) {
+        if (!dart.test(this[_sentTapDown])) dart.assertFailed(null, I[0], 249, 14, "_sentTapDown");
+        this[_checkCancel](null, "spontaneous");
+        this[_reset]();
+      }
+      super.resolve(disposition);
+    }
+    didExceedDeadline() {
+      this[_checkDown]();
+    }
+    acceptGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 262, 26, "pointer");
+      super.acceptGesture(pointer);
+      if (pointer == this.primaryPointer) {
+        this[_checkDown]();
+        this[_wonArenaForPrimaryPointer] = true;
+        this[_checkUp]();
+      }
+    }
+    rejectGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 272, 26, "pointer");
+      super.rejectGesture(pointer);
+      if (pointer == this.primaryPointer) {
+        if (!(this.state != recognizer.GestureRecognizerState.possible)) dart.assertFailed(null, I[0], 276, 14, "state != GestureRecognizerState.possible");
+        if (dart.test(this[_sentTapDown])) this[_checkCancel](null, "forced");
+        this[_reset]();
+      }
+    }
+    [_checkDown]() {
+      if (dart.test(this[_sentTapDown])) {
+        return;
+      }
+      this.handleTapDown({down: dart.nullCheck(this[_down])});
+      this[_sentTapDown] = true;
+    }
+    [_checkUp]() {
+      if (!dart.test(this[_wonArenaForPrimaryPointer]) || this[_up] == null) {
+        return;
+      }
+      if (!(dart.nullCheck(this[_up]).pointer == dart.nullCheck(this[_down]).pointer)) dart.assertFailed(null, I[0], 295, 12, "_up!.pointer == _down!.pointer");
+      this.handleTapUp({down: dart.nullCheck(this[_down]), up: dart.nullCheck(this[_up])});
+      this[_reset]();
+    }
+    [_checkCancel](event, note) {
+      if (note == null) dart.nullFailed(I[0], 300, 55, "note");
+      this.handleTapCancel({down: dart.nullCheck(this[_down]), cancel: event, reason: note});
+    }
+    [_reset]() {
+      this[_sentTapDown] = false;
+      this[_wonArenaForPrimaryPointer] = false;
+      this[_up] = null;
+      this[_down] = null;
+    }
+    get debugDescription() {
+      return "base tap";
+    }
+    debugFillProperties(properties) {
+      let t0, t0$, t0$0, t0$1;
+      if (properties == null) dart.nullFailed(I[0], 315, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("wonArenaForPrimaryPointer", {value: this[_wonArenaForPrimaryPointer], ifTrue: "won arena"}));
+      properties.add(new (T.DiagnosticsPropertyOfOffset()).new("finalPosition", (t0 = this[_up], t0 == null ? null : t0.position), {defaultValue: null}));
+      properties.add(new (T.DiagnosticsPropertyOfOffset()).new("finalLocalPosition", (t0$ = this[_up], t0$ == null ? null : t0$.localPosition), {defaultValue: (t0$0 = this[_up], t0$0 == null ? null : t0$0.position)}));
+      properties.add(new (T.DiagnosticsPropertyOfint()).new("button", (t0$1 = this[_down], t0$1 == null ? null : t0$1.buttons), {defaultValue: null}));
+      properties.add(new diagnostics.FlagProperty.new("sentTapDown", {value: this[_sentTapDown], ifTrue: "sent tap down"}));
+    }
+  };
+  (tap.BaseTapGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    this[_sentTapDown] = false;
+    this[_wonArenaForPrimaryPointer] = false;
+    this[_down] = null;
+    this[_up] = null;
+    tap.BaseTapGestureRecognizer.__proto__.new.call(this, {deadline: constants.kPressTimeout, debugOwner: debugOwner});
+    ;
+  }).prototype = tap.BaseTapGestureRecognizer.prototype;
+  dart.addTypeTests(tap.BaseTapGestureRecognizer);
+  dart.addTypeCaches(tap.BaseTapGestureRecognizer);
+  dart.setMethodSignature(tap.BaseTapGestureRecognizer, () => ({
+    __proto__: dart.getMethods(tap.BaseTapGestureRecognizer.__proto__),
+    handlePrimaryPointer: dart.fnType(dart.void, [events.PointerEvent]),
+    [_checkDown]: dart.fnType(dart.void, []),
+    [_checkUp]: dart.fnType(dart.void, []),
+    [_checkCancel]: dart.fnType(dart.void, [dart.nullable(events.PointerCancelEvent), core.String]),
+    [_reset]: dart.fnType(dart.void, [])
   }));
-  dart.defineExtensionMethods(table_border.TableBorder, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(table_border.TableBorder, ['hashCode']);
-  dart.trackLibraries("packages/flutter/src/rendering/table_border.dart", {
-    "package:flutter/src/rendering/table_border.dart": table_border
+  dart.setGetterSignature(tap.BaseTapGestureRecognizer, () => ({
+    __proto__: dart.getGetters(tap.BaseTapGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(tap.BaseTapGestureRecognizer, I[1]);
+  dart.setFieldSignature(tap.BaseTapGestureRecognizer, () => ({
+    __proto__: dart.getFields(tap.BaseTapGestureRecognizer.__proto__),
+    [_sentTapDown]: dart.fieldType(core.bool),
+    [_wonArenaForPrimaryPointer]: dart.fieldType(core.bool),
+    [_down]: dart.fieldType(dart.nullable(events.PointerDownEvent)),
+    [_up]: dart.fieldType(dart.nullable(events.PointerUpEvent))
+  }));
+  var onTapDown = dart.privateName(tap, "TapGestureRecognizer.onTapDown");
+  var onTapUp = dart.privateName(tap, "TapGestureRecognizer.onTapUp");
+  var onTap = dart.privateName(tap, "TapGestureRecognizer.onTap");
+  var onTapCancel = dart.privateName(tap, "TapGestureRecognizer.onTapCancel");
+  var onSecondaryTap = dart.privateName(tap, "TapGestureRecognizer.onSecondaryTap");
+  var onSecondaryTapDown = dart.privateName(tap, "TapGestureRecognizer.onSecondaryTapDown");
+  var onSecondaryTapUp = dart.privateName(tap, "TapGestureRecognizer.onSecondaryTapUp");
+  var onSecondaryTapCancel = dart.privateName(tap, "TapGestureRecognizer.onSecondaryTapCancel");
+  var onTertiaryTapDown = dart.privateName(tap, "TapGestureRecognizer.onTertiaryTapDown");
+  var onTertiaryTapUp = dart.privateName(tap, "TapGestureRecognizer.onTertiaryTapUp");
+  var onTertiaryTapCancel = dart.privateName(tap, "TapGestureRecognizer.onTertiaryTapCancel");
+  tap.TapGestureRecognizer = class TapGestureRecognizer extends tap.BaseTapGestureRecognizer {
+    get onTapDown() {
+      return this[onTapDown];
+    }
+    set onTapDown(value) {
+      this[onTapDown] = value;
+    }
+    get onTapUp() {
+      return this[onTapUp];
+    }
+    set onTapUp(value) {
+      this[onTapUp] = value;
+    }
+    get onTap() {
+      return this[onTap];
+    }
+    set onTap(value) {
+      this[onTap] = value;
+    }
+    get onTapCancel() {
+      return this[onTapCancel];
+    }
+    set onTapCancel(value) {
+      this[onTapCancel] = value;
+    }
+    get onSecondaryTap() {
+      return this[onSecondaryTap];
+    }
+    set onSecondaryTap(value) {
+      this[onSecondaryTap] = value;
+    }
+    get onSecondaryTapDown() {
+      return this[onSecondaryTapDown];
+    }
+    set onSecondaryTapDown(value) {
+      this[onSecondaryTapDown] = value;
+    }
+    get onSecondaryTapUp() {
+      return this[onSecondaryTapUp];
+    }
+    set onSecondaryTapUp(value) {
+      this[onSecondaryTapUp] = value;
+    }
+    get onSecondaryTapCancel() {
+      return this[onSecondaryTapCancel];
+    }
+    set onSecondaryTapCancel(value) {
+      this[onSecondaryTapCancel] = value;
+    }
+    get onTertiaryTapDown() {
+      return this[onTertiaryTapDown];
+    }
+    set onTertiaryTapDown(value) {
+      this[onTertiaryTapDown] = value;
+    }
+    get onTertiaryTapUp() {
+      return this[onTertiaryTapUp];
+    }
+    set onTertiaryTapUp(value) {
+      this[onTertiaryTapUp] = value;
+    }
+    get onTertiaryTapCancel() {
+      return this[onTertiaryTapCancel];
+    }
+    set onTertiaryTapCancel(value) {
+      this[onTertiaryTapCancel] = value;
+    }
+    isPointerAllowed(event) {
+      if (event == null) dart.nullFailed(I[0], 541, 42, "event");
+      switch (event.buttons) {
+        case 1:
+        {
+          if (this.onTapDown == null && this.onTap == null && this.onTapUp == null && this.onTapCancel == null) return false;
+          break;
+        }
+        case 2:
+        {
+          if (this.onSecondaryTap == null && this.onSecondaryTapDown == null && this.onSecondaryTapUp == null && this.onSecondaryTapCancel == null) return false;
+          break;
+        }
+        case 4:
+        {
+          if (this.onTertiaryTapDown == null && this.onTertiaryTapUp == null && this.onTertiaryTapCancel == null) return false;
+          break;
+        }
+        default:
+        {
+          return false;
+        }
+      }
+      return super.isPointerAllowed(event);
+    }
+    handleTapDown(opts) {
+      let down = opts && 'down' in opts ? opts.down : null;
+      if (down == null) dart.nullFailed(I[0], 571, 49, "down");
+      let details = new tap.TapDownDetails.new({globalPosition: down.position, localPosition: down.localPosition, kind: this.getKindForPointer(down.pointer)});
+      switch (down.buttons) {
+        case 1:
+        {
+          if (this.onTapDown != null) this.invokeCallback(dart.void, "onTapDown", dart.fn(() => dart.nullCheck(this.onTapDown)(details), T.VoidTovoid()));
+          break;
+        }
+        case 2:
+        {
+          if (this.onSecondaryTapDown != null) this.invokeCallback(dart.void, "onSecondaryTapDown", dart.fn(() => dart.nullCheck(this.onSecondaryTapDown)(details), T.VoidTovoid()));
+          break;
+        }
+        case 4:
+        {
+          if (this.onTertiaryTapDown != null) this.invokeCallback(dart.void, "onTertiaryTapDown", dart.fn(() => dart.nullCheck(this.onTertiaryTapDown)(details), T.VoidTovoid()));
+          break;
+        }
+        default:
+      }
+    }
+    handleTapUp(opts) {
+      let down = opts && 'down' in opts ? opts.down : null;
+      if (down == null) dart.nullFailed(I[0], 596, 48, "down");
+      let up = opts && 'up' in opts ? opts.up : null;
+      if (up == null) dart.nullFailed(I[0], 596, 78, "up");
+      let details = new tap.TapUpDetails.new({kind: up.kind, globalPosition: up.position, localPosition: up.localPosition});
+      switch (down.buttons) {
+        case 1:
+        {
+          if (this.onTapUp != null) this.invokeCallback(dart.void, "onTapUp", dart.fn(() => dart.nullCheck(this.onTapUp)(details), T.VoidTovoid()));
+          if (this.onTap != null) this.invokeCallback(dart.void, "onTap", dart.nullCheck(this.onTap));
+          break;
+        }
+        case 2:
+        {
+          if (this.onSecondaryTapUp != null) this.invokeCallback(dart.void, "onSecondaryTapUp", dart.fn(() => dart.nullCheck(this.onSecondaryTapUp)(details), T.VoidTovoid()));
+          if (this.onSecondaryTap != null) this.invokeCallback(dart.void, "onSecondaryTap", dart.fn(() => dart.nullCheck(this.onSecondaryTap)(), T.VoidTovoid()));
+          break;
+        }
+        case 4:
+        {
+          if (this.onTertiaryTapUp != null) this.invokeCallback(dart.void, "onTertiaryTapUp", dart.fn(() => dart.nullCheck(this.onTertiaryTapUp)(details), T.VoidTovoid()));
+          break;
+        }
+        default:
+      }
+    }
+    handleTapCancel(opts) {
+      let down = opts && 'down' in opts ? opts.down : null;
+      if (down == null) dart.nullFailed(I[0], 625, 52, "down");
+      let cancel = opts && 'cancel' in opts ? opts.cancel : null;
+      let reason = opts && 'reason' in opts ? opts.reason : null;
+      if (reason == null) dart.nullFailed(I[0], 625, 102, "reason");
+      let note = reason === "" ? reason : dart.str(reason) + " ";
+      switch (down.buttons) {
+        case 1:
+        {
+          if (this.onTapCancel != null) this.invokeCallback(dart.void, dart.str(note) + "onTapCancel", dart.nullCheck(this.onTapCancel));
+          break;
+        }
+        case 2:
+        {
+          if (this.onSecondaryTapCancel != null) this.invokeCallback(dart.void, dart.str(note) + "onSecondaryTapCancel", dart.nullCheck(this.onSecondaryTapCancel));
+          break;
+        }
+        case 4:
+        {
+          if (this.onTertiaryTapCancel != null) this.invokeCallback(dart.void, dart.str(note) + "onTertiaryTapCancel", dart.nullCheck(this.onTertiaryTapCancel));
+          break;
+        }
+        default:
+      }
+    }
+    get debugDescription() {
+      return "tap";
+    }
+  };
+  (tap.TapGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    this[onTapDown] = null;
+    this[onTapUp] = null;
+    this[onTap] = null;
+    this[onTapCancel] = null;
+    this[onSecondaryTap] = null;
+    this[onSecondaryTapDown] = null;
+    this[onSecondaryTapUp] = null;
+    this[onSecondaryTapCancel] = null;
+    this[onTertiaryTapDown] = null;
+    this[onTertiaryTapUp] = null;
+    this[onTertiaryTapCancel] = null;
+    tap.TapGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner});
+    ;
+  }).prototype = tap.TapGestureRecognizer.prototype;
+  dart.addTypeTests(tap.TapGestureRecognizer);
+  dart.addTypeCaches(tap.TapGestureRecognizer);
+  dart.setMethodSignature(tap.TapGestureRecognizer, () => ({
+    __proto__: dart.getMethods(tap.TapGestureRecognizer.__proto__),
+    handleTapDown: dart.fnType(dart.void, [], {}, {down: events.PointerDownEvent}),
+    handleTapUp: dart.fnType(dart.void, [], {}, {down: events.PointerDownEvent, up: events.PointerUpEvent}),
+    handleTapCancel: dart.fnType(dart.void, [], {cancel: dart.nullable(events.PointerCancelEvent)}, {down: events.PointerDownEvent, reason: core.String})
+  }));
+  dart.setLibraryUri(tap.TapGestureRecognizer, I[1]);
+  dart.setFieldSignature(tap.TapGestureRecognizer, () => ({
+    __proto__: dart.getFields(tap.TapGestureRecognizer.__proto__),
+    onTapDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapDownDetails]))),
+    onTapUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapUpDetails]))),
+    onTap: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onTapCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onSecondaryTap: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onSecondaryTapDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapDownDetails]))),
+    onSecondaryTapUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapUpDetails]))),
+    onSecondaryTapCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onTertiaryTapDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapDownDetails]))),
+    onTertiaryTapUp: dart.fieldType(dart.nullable(dart.fnType(dart.void, [tap.TapUpDetails]))),
+    onTertiaryTapCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, [])))
+  }));
+  dart.trackLibraries("packages/flutter/src/gestures/tap.dart", {
+    "package:flutter/src/gestures/tap.dart": tap
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["table_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/rendering/table_border.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["tap.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/gestures/tap.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__table_border: table_border
+    src__gestures__tap: tap
   };
 }));
 
-//# sourceMappingURL=table_border.dart.lib.js.map
+//# sourceMappingURL=tap.dart.lib.js.map
