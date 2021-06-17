@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:animelife/Widgets/anime_card_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +19,16 @@ class AnimeRowWidget extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               titulo,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Color.fromARGB(255, 255, 255, 255)),
             ),
           ),
           CupertinoScrollbar(
             child: Container(
               margin: EdgeInsets.only(bottom: 8, top: 16),
-              height: 250,
+              height: 257,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.fromLTRB(8, 0, 0, 0),

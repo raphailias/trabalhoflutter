@@ -1,5 +1,4 @@
 import 'package:animelife/Widgets/animerowwidget.dart';
-import 'package:animelife/Widgets/search_bar_widget.dart';
 import 'package:animelife/Widgets/top_bar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -29,14 +28,13 @@ class TelaInicial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
+    return Container(
+      color: const Color.fromARGB(255, 7, 15, 49),
+      child: ListView(
         children: [
           TopBarWidget(),
-          SearchBarWidget(),
           AnimeRowWidget(nome: nome, url: url, titulo: 'Animes Populares'),
-          AnimeRowWidget(nome: nome, url: url, titulo: 'Animes Recomendados'),
-          AnimeRowWidget(nome: nome, url: url, titulo: 'Animes da Season')
+          AnimeRowWidget(nome: nome, url: url, titulo: 'Animes da Temporada')
         ],
       ),
     );

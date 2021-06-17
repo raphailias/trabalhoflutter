@@ -13,8 +13,18 @@ class AnimeCardWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () => null,
         child: Card(
+          color: Color.fromARGB(0, 7, 15, 49),
           child: Column(
-            children: [Image.network(url), Text(nome)],
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(url),
+              ),
+              Text(
+                nome,
+                style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+              )
+            ],
           ),
         ),
       ),

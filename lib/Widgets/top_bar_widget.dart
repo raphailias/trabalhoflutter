@@ -13,16 +13,31 @@ class TopBarWidget extends StatelessWidget with PreferredSizeWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: AppBar(
-          automaticallyImplyLeading: true,
-          leading: IconButton(
-            iconSize: 40,
-            icon: new Image.network(
-                'https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619633400'),
-            onPressed: () => null,
-          ),
-          backgroundColor: Colors.white,
-          elevation: 0,
+        child: Column(
+          children: [
+            Align(
+                alignment: Alignment.topLeft,
+                child: TextButton(onPressed: () => null, child: Text('Sair'))),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  iconSize: 60,
+                  icon: CircleAvatar(
+                    radius: 100,
+                    backgroundImage: NetworkImage(
+                        'https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619633400'),
+                  ),
+                  onPressed: () => null,
+                ),
+                Text(
+                  'Youkoso, Raphailias',
+                  style: TextStyle(
+                      fontSize: 25, color: Color.fromARGB(255, 255, 255, 255)),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
