@@ -1,29 +1,31 @@
+import 'package:animelife/Modules/repositories/animecalendario.dart';
 import 'package:animelife/Widgets/anime_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:animelife/Modules/repositories/anime_repository.dart';
 
-final List<String> nome = <String>[
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi',
-  'Kaifuku Jutsushi no Yarinaoshi'
-];
-final List<String> url = <String>[
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg',
-  'https://cdn.myanimelist.net/images/anime/1301/110018.jpg'
-];
+class TabBarteste extends StatefulWidget {
+  @override
+  _TabBartesteState createState() => _TabBartesteState();
+}
 
-class TabBarteste extends StatelessWidget {
+class _TabBartesteState extends State<TabBarteste> {
+  final repository = AnimeRepository();
+  final List<String> nome = [];
+  final List<String> url = [];
+  final List<String> nome1 = [];
+  final List<String> url1 = [];
+  final List<String> nome2 = [];
+  final List<String> url2 = [];
+  final List<String> nome3 = [];
+  final List<String> url3 = [];
+  final List<String> nome4 = [];
+  final List<String> url4 = [];
+  final List<String> nome5 = [];
+  final List<String> url5 = [];
+  final List<String> nome6 = [];
+  final List<String> url6 = [];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -61,83 +63,223 @@ class TabBarteste extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TabBarView(
                 children: [
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          )),
-                  StaggeredGridView.countBuilder(
-                      staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      itemCount: 8,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => AnimeCardWidget(
-                            nome: nome[index],
-                            url: url[index],
-                          ))
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.monday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome.add(anime.elementAt(i).title.toString());
+                            url.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.tuesday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome1.add(anime.elementAt(i).title.toString());
+                            url1.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.wednesday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome2.add(anime.elementAt(i).title.toString());
+                            url2.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.thursday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome3.add(anime.elementAt(i).title.toString());
+                            url3.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.friday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome4.add(anime.elementAt(i).title.toString());
+                            url4.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.saturday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome5.add(anime.elementAt(i).title.toString());
+                            url5.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
+                  FutureBuilder<AnimeCalendario>(
+                      future: repository.fetchCalendario(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          var anime = snapshot.data!.sunday;
+
+                          for (var i = 0; i < anime!.length; i++) {
+                            nome6.add(anime.elementAt(i).title.toString());
+                            url6.add(anime.elementAt(i).imageUrl.toString());
+                          }
+                          return StaggeredGridView.countBuilder(
+                              staggeredTileBuilder: (index) =>
+                                  StaggeredTile.fit(2),
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              itemCount: 8,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => AnimeCardWidget(
+                                    nome: nome[index],
+                                    url: url[index],
+                                  ));
+                        }
+                        return Text('erro');
+                      }),
                 ],
               ),
             ),

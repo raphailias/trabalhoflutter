@@ -22,6 +22,8 @@ class AnimeCardWidget extends StatelessWidget {
               ),
               Text(
                 nome,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
                 style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
               )
             ],

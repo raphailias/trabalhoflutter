@@ -52,7 +52,7 @@ class TelaInfo extends StatelessWidget {
                                               SizedBox(
                                                 height: 40,
                                               ),
-                                              Text('24 ep . 900.900 fans',
+                                              Text('24 ep . data de iniioc',
                                                   style: TextStyle(
                                                       color: Colors.white70))
                                             ],

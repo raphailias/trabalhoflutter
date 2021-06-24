@@ -1,23 +1,31 @@
-define(['dart_sdk', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__flutter__src__material__tab_controller_dart(dart_sdk, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__widgets__widget_span$46dart) {
+define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/layout_helper.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__rendering__wrap_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__layout_helper$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _internal = dart_sdk._internal;
+  const ui = dart_sdk.ui;
   const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
-  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
-  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
-  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  var tab_controller = Object.create(dart.library);
-  var $toDouble = dartx.toDouble;
-  var $_equals = dartx._equals;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const layout_helper = packages__flutter__src__rendering__layout_helper$46dart.src__rendering__layout_helper;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var wrap = Object.create(dart.library);
+  var $runtimeType = dartx.runtimeType;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $add = dartx.add;
+  var $length = dartx.length;
+  var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+    RenderBoxAndBoxConstraintsToSize: () => (T.RenderBoxAndBoxConstraintsToSize = dart.constFn(dart.fnType(ui.Size, [box.RenderBox, box.BoxConstraints])))(),
+    JSArrayOf_RunMetrics: () => (T.JSArrayOf_RunMetrics = dart.constFn(_interceptors.JSArray$(wrap._RunMetrics)))(),
+    EnumPropertyOfAxis: () => (T.EnumPropertyOfAxis = dart.constFn(diagnostics.EnumProperty$(basic_types.Axis)))(),
+    EnumPropertyOfWrapAlignment: () => (T.EnumPropertyOfWrapAlignment = dart.constFn(diagnostics.EnumProperty$(wrap.WrapAlignment)))(),
+    EnumPropertyOfTextDirection: () => (T.EnumPropertyOfTextDirection = dart.constFn(diagnostics.EnumProperty$(ui.TextDirection)))(),
+    EnumPropertyOfVerticalDirection: () => (T.EnumPropertyOfVerticalDirection = dart.constFn(diagnostics.EnumProperty$(basic_types.VerticalDirection)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -25,399 +33,862 @@ define(['dart_sdk', 'packages/flutter/src/animation/animation_controller.dart', 
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 300000
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.start",
+        index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: curves.Cubic.prototype,
-        [Cubic_d]: 1,
-        [Cubic_c]: 0.25,
-        [Cubic_b]: 0.1,
-        [Cubic_a]: 0.25
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.end",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.center",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.spaceBetween",
+        index: 3
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "controller",
-        [_Location_column]: 7,
-        [_Location_line]: 441,
-        [_Location_file]: null
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.spaceAround",
+        index: 4
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "enabled",
-        [_Location_column]: 7,
-        [_Location_line]: 442,
-        [_Location_file]: null
+        __proto__: wrap.WrapAlignment.prototype,
+        [_name$]: "WrapAlignment.spaceEvenly",
+        index: 5
       });
     },
     get C6() {
-      return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 443,
-        [_Location_file]: null
+      return C[6] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], wrap.WrapAlignment);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: wrap.WrapCrossAlignment.prototype,
+        [_name$]: "WrapCrossAlignment.start",
+        index: 0
       });
     },
-    get C3() {
-      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[3] || CT.C3,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 440,
-        [_Location_file]: "file:///D:/flutter2/flutter/packages/flutter/lib/src/material/tab_controller.dart"
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: wrap.WrapCrossAlignment.prototype,
+        [_name$]: "WrapCrossAlignment.end",
+        index: 1
       });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: wrap.WrapCrossAlignment.prototype,
+        [_name$]: "WrapCrossAlignment.center",
+        index: 2
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9], wrap.WrapCrossAlignment);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
+        index: 0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: basic_types.VerticalDirection.prototype,
+        [_name]: "VerticalDirection.down",
+        index: 1
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Clip.prototype,
+        [_name$0]: "Clip.none",
+        index: 0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.vertical",
+        index: 1
+      });
+    },
+    get C15() {
+      return C[15] = dart.fn(layout_helper.ChildLayoutHelper.dryLayoutChild, T.RenderBoxAndBoxConstraintsToSize());
     }
   }, false);
-  var C = Array(7).fill(void 0);
+  var C = Array(16).fill(void 0);
   var I = [
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/material/tab_controller.dart",
-    "package:flutter/src/material/tab_controller.dart"
+    "package:flutter/src/rendering/wrap.dart",
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/rendering/wrap.dart"
   ];
-  var length$ = dart.privateName(tab_controller, "TabController.length");
-  var _indexIsChangingCount = dart.privateName(tab_controller, "_indexIsChangingCount");
-  var _index = dart.privateName(tab_controller, "_index");
-  var _previousIndex = dart.privateName(tab_controller, "_previousIndex");
-  var _animationController = dart.privateName(tab_controller, "_animationController");
-  var _copyWith = dart.privateName(tab_controller, "_copyWith");
-  var _changeIndex = dart.privateName(tab_controller, "_changeIndex");
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var Cubic_d = dart.privateName(curves, "Cubic.d");
-  var Cubic_c = dart.privateName(curves, "Cubic.c");
-  var Cubic_b = dart.privateName(curves, "Cubic.b");
-  var Cubic_a = dart.privateName(curves, "Cubic.a");
-  tab_controller.TabController = class TabController extends change_notifier.ChangeNotifier {
-    get length() {
-      return this[length$];
+  var _name$ = dart.privateName(wrap, "_name");
+  wrap.WrapAlignment = class WrapAlignment extends core.Object {
+    toString() {
+      return this[_name$];
     }
-    set length(value) {
-      super.length = value;
+  };
+  (wrap.WrapAlignment.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = wrap.WrapAlignment.prototype;
+  dart.addTypeTests(wrap.WrapAlignment);
+  dart.addTypeCaches(wrap.WrapAlignment);
+  dart.setLibraryUri(wrap.WrapAlignment, I[0]);
+  dart.setFieldSignature(wrap.WrapAlignment, () => ({
+    __proto__: dart.getFields(wrap.WrapAlignment.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(wrap.WrapAlignment, ['toString']);
+  wrap.WrapAlignment.start = C[0] || CT.C0;
+  wrap.WrapAlignment.end = C[1] || CT.C1;
+  wrap.WrapAlignment.center = C[2] || CT.C2;
+  wrap.WrapAlignment.spaceBetween = C[3] || CT.C3;
+  wrap.WrapAlignment.spaceAround = C[4] || CT.C4;
+  wrap.WrapAlignment.spaceEvenly = C[5] || CT.C5;
+  wrap.WrapAlignment.values = C[6] || CT.C6;
+  wrap.WrapCrossAlignment = class WrapCrossAlignment extends core.Object {
+    toString() {
+      return this[_name$];
     }
-    [_copyWith](opts) {
-      let t0, t0$, t0$0;
-      let index = opts && 'index' in opts ? opts.index : null;
-      let length = opts && 'length' in opts ? opts.length : null;
-      let previousIndex = opts && 'previousIndex' in opts ? opts.previousIndex : null;
-      return new tab_controller.TabController.__({index: (t0 = index, t0 == null ? this[_index] : t0), length: (t0$ = length, t0$ == null ? this.length : t0$), animationController: this[_animationController], previousIndex: (t0$0 = previousIndex, t0$0 == null ? this[_previousIndex] : t0$0)});
+  };
+  (wrap.WrapCrossAlignment.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = wrap.WrapCrossAlignment.prototype;
+  dart.addTypeTests(wrap.WrapCrossAlignment);
+  dart.addTypeCaches(wrap.WrapCrossAlignment);
+  dart.setLibraryUri(wrap.WrapCrossAlignment, I[0]);
+  dart.setFieldSignature(wrap.WrapCrossAlignment, () => ({
+    __proto__: dart.getFields(wrap.WrapCrossAlignment.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(wrap.WrapCrossAlignment, ['toString']);
+  wrap.WrapCrossAlignment.start = C[7] || CT.C7;
+  wrap.WrapCrossAlignment.end = C[8] || CT.C8;
+  wrap.WrapCrossAlignment.center = C[9] || CT.C9;
+  wrap.WrapCrossAlignment.values = C[10] || CT.C10;
+  wrap._RunMetrics = class _RunMetrics extends core.Object {};
+  (wrap._RunMetrics.new = function(mainAxisExtent, crossAxisExtent, childCount) {
+    this.mainAxisExtent = mainAxisExtent;
+    this.crossAxisExtent = crossAxisExtent;
+    this.childCount = childCount;
+    ;
+  }).prototype = wrap._RunMetrics.prototype;
+  dart.addTypeTests(wrap._RunMetrics);
+  dart.addTypeCaches(wrap._RunMetrics);
+  dart.setLibraryUri(wrap._RunMetrics, I[0]);
+  dart.setFieldSignature(wrap._RunMetrics, () => ({
+    __proto__: dart.getFields(wrap._RunMetrics.__proto__),
+    mainAxisExtent: dart.finalFieldType(core.double),
+    crossAxisExtent: dart.finalFieldType(core.double),
+    childCount: dart.finalFieldType(core.int)
+  }));
+  var _runIndex = dart.privateName(wrap, "_runIndex");
+  wrap.WrapParentData = class WrapParentData extends box.ContainerBoxParentData$(box.RenderBox) {};
+  (wrap.WrapParentData.new = function() {
+    this[_runIndex] = 0;
+    wrap.WrapParentData.__proto__.new.call(this);
+    ;
+  }).prototype = wrap.WrapParentData.prototype;
+  dart.addTypeTests(wrap.WrapParentData);
+  dart.addTypeCaches(wrap.WrapParentData);
+  dart.setLibraryUri(wrap.WrapParentData, I[0]);
+  dart.setFieldSignature(wrap.WrapParentData, () => ({
+    __proto__: dart.getFields(wrap.WrapParentData.__proto__),
+    [_runIndex]: dart.fieldType(core.int)
+  }));
+  var _name = dart.privateName(basic_types, "_name");
+  var _name$0 = dart.privateName(ui, "_name");
+  var _clipBehavior = dart.privateName(wrap, "_clipBehavior");
+  var _hasVisualOverflow = dart.privateName(wrap, "_hasVisualOverflow");
+  var _clipRectLayer = dart.privateName(wrap, "_clipRectLayer");
+  var _direction = dart.privateName(wrap, "_direction");
+  var _alignment = dart.privateName(wrap, "_alignment");
+  var _spacing = dart.privateName(wrap, "_spacing");
+  var _runAlignment = dart.privateName(wrap, "_runAlignment");
+  var _runSpacing = dart.privateName(wrap, "_runSpacing");
+  var _crossAxisAlignment = dart.privateName(wrap, "_crossAxisAlignment");
+  var _textDirection = dart.privateName(wrap, "_textDirection");
+  var _verticalDirection = dart.privateName(wrap, "_verticalDirection");
+  var _debugHasNecessaryDirections = dart.privateName(wrap, "_debugHasNecessaryDirections");
+  var _getMainAxisExtent = dart.privateName(wrap, "_getMainAxisExtent");
+  var _getCrossAxisExtent = dart.privateName(wrap, "_getCrossAxisExtent");
+  var _getOffset = dart.privateName(wrap, "_getOffset");
+  var _getChildCrossAxisOffset = dart.privateName(wrap, "_getChildCrossAxisOffset");
+  var _computeDryLayout = dart.privateName(wrap, "_computeDryLayout");
+  const RenderBox_ContainerRenderObjectMixin$36 = class RenderBox_ContainerRenderObjectMixin extends box.RenderBox {};
+  (RenderBox_ContainerRenderObjectMixin$36.new = function() {
+    object.ContainerRenderObjectMixin$(box.RenderBox, wrap.WrapParentData)[dart.mixinNew].call(this);
+    RenderBox_ContainerRenderObjectMixin$36.__proto__.new.call(this);
+  }).prototype = RenderBox_ContainerRenderObjectMixin$36.prototype;
+  dart.applyMixin(RenderBox_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, wrap.WrapParentData));
+  const RenderBox_RenderBoxContainerDefaultsMixin$36 = class RenderBox_RenderBoxContainerDefaultsMixin extends RenderBox_ContainerRenderObjectMixin$36 {};
+  (RenderBox_RenderBoxContainerDefaultsMixin$36.new = function() {
+    RenderBox_RenderBoxContainerDefaultsMixin$36.__proto__.new.call(this);
+  }).prototype = RenderBox_RenderBoxContainerDefaultsMixin$36.prototype;
+  dart.applyMixin(RenderBox_RenderBoxContainerDefaultsMixin$36, box.RenderBoxContainerDefaultsMixin$(box.RenderBox, wrap.WrapParentData));
+  wrap.RenderWrap = class RenderWrap extends RenderBox_RenderBoxContainerDefaultsMixin$36 {
+    get direction() {
+      return this[_direction];
     }
-    get animation() {
-      let t0;
-      t0 = this[_animationController];
-      return t0 == null ? null : t0.view;
+    set direction(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 152, 12, "value != null");
+      if (this[_direction] === value) return;
+      this[_direction] = value;
+      this.markNeedsLayout();
     }
-    [_changeIndex](value, opts) {
-      let duration = opts && 'duration' in opts ? opts.duration : null;
-      let curve = opts && 'curve' in opts ? opts.curve : null;
-      if (!(value !== null)) dart.assertFailed(null, I[0], 211, 12, "value != null");
-      if (!(value >= 0 && (value < this.length || this.length === 0))) dart.assertFailed(null, I[0], 212, 12, "value >= 0 && (value < length || length == 0)");
-      if (!(duration != null || curve == null)) dart.assertFailed(null, I[0], 213, 12, "duration != null || curve == null");
-      if (!(this[_indexIsChangingCount] >= 0)) dart.assertFailed(null, I[0], 214, 12, "_indexIsChangingCount >= 0");
-      if (value === this[_index] || this.length < 2) return;
-      this[_previousIndex] = this.index;
-      this[_index] = value;
-      if (duration != null) {
-        this[_indexIsChangingCount] = this[_indexIsChangingCount] + 1;
-        this.notifyListeners();
-        dart.nullCheck(this[_animationController]).animateTo(this[_index][$toDouble](), {duration: duration, curve: dart.nullCheck(curve)}).whenCompleteOrCancel(dart.fn(() => {
-          if (this[_animationController] != null) {
-            this[_indexIsChangingCount] = this[_indexIsChangingCount] - 1;
-            this.notifyListeners();
+    get alignment() {
+      return this[_alignment];
+    }
+    set alignment(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 175, 12, "value != null");
+      if (this[_alignment] === value) return;
+      this[_alignment] = value;
+      this.markNeedsLayout();
+    }
+    get spacing() {
+      return this[_spacing];
+    }
+    set spacing(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 196, 12, "value != null");
+      if (this[_spacing] === value) return;
+      this[_spacing] = value;
+      this.markNeedsLayout();
+    }
+    get runAlignment() {
+      return this[_runAlignment];
+    }
+    set runAlignment(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 220, 12, "value != null");
+      if (this[_runAlignment] === value) return;
+      this[_runAlignment] = value;
+      this.markNeedsLayout();
+    }
+    get runSpacing() {
+      return this[_runSpacing];
+    }
+    set runSpacing(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 240, 12, "value != null");
+      if (this[_runSpacing] === value) return;
+      this[_runSpacing] = value;
+      this.markNeedsLayout();
+    }
+    get crossAxisAlignment() {
+      return this[_crossAxisAlignment];
+    }
+    set crossAxisAlignment(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 265, 12, "value != null");
+      if (this[_crossAxisAlignment] === value) return;
+      this[_crossAxisAlignment] = value;
+      this.markNeedsLayout();
+    }
+    get textDirection() {
+      return this[_textDirection];
+    }
+    set textDirection(value) {
+      if (this[_textDirection] != value) {
+        this[_textDirection] = value;
+        this.markNeedsLayout();
+      }
+    }
+    get verticalDirection() {
+      return this[_verticalDirection];
+    }
+    set verticalDirection(value) {
+      if (this[_verticalDirection] !== value) {
+        this[_verticalDirection] = value;
+        this.markNeedsLayout();
+      }
+    }
+    get clipBehavior() {
+      return this[_clipBehavior];
+    }
+    set clipBehavior(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 341, 12, "value != null");
+      if (value !== this[_clipBehavior]) {
+        this[_clipBehavior] = value;
+        this.markNeedsPaint();
+        this.markNeedsSemanticsUpdate();
+      }
+    }
+    get [_debugHasNecessaryDirections]() {
+      if (!(this.direction !== null)) dart.assertFailed(null, I[1], 350, 12, "direction != null");
+      if (!(this.alignment !== null)) dart.assertFailed(null, I[1], 351, 12, "alignment != null");
+      if (!(this.runAlignment !== null)) dart.assertFailed(null, I[1], 352, 12, "runAlignment != null");
+      if (!(this.crossAxisAlignment !== null)) dart.assertFailed(null, I[1], 353, 12, "crossAxisAlignment != null");
+      if (this.firstChild != null && !dart.equals(this.lastChild, this.firstChild)) {
+        switch (this.direction) {
+          case C[11] || CT.C11:
+          {
+            if (!(this.textDirection != null)) dart.assertFailed("Horizontal " + dart.str(this[$runtimeType]) + " with multiple children has a null textDirection, so the layout order is undefined.", I[1], 358, 18, "textDirection != null");
+            break;
           }
-        }, T.VoidTovoid()));
-      } else {
-        this[_indexIsChangingCount] = this[_indexIsChangingCount] + 1;
-        dart.nullCheck(this[_animationController]).value = this[_index][$toDouble]();
-        this[_indexIsChangingCount] = this[_indexIsChangingCount] - 1;
-        this.notifyListeners();
-      }
-    }
-    get index() {
-      return this[_index];
-    }
-    set index(value) {
-      this[_changeIndex](value);
-    }
-    get previousIndex() {
-      return this[_previousIndex];
-    }
-    get indexIsChanging() {
-      return this[_indexIsChangingCount] !== 0;
-    }
-    animateTo(value, opts) {
-      let duration = opts && 'duration' in opts ? opts.duration : C[0] || CT.C0;
-      let curve = opts && 'curve' in opts ? opts.curve : C[1] || CT.C1;
-      this[_changeIndex](value, {duration: duration, curve: curve});
-    }
-    get offset() {
-      return dart.nullCheck(this[_animationController]).value - this[_index][$toDouble]();
-    }
-    set offset(value) {
-      if (!(value !== null)) dart.assertFailed(null, I[0], 287, 12, "value != null");
-      if (!(value >= -1.0 && value <= 1.0)) dart.assertFailed(null, I[0], 288, 12, "value >= -1.0 && value <= 1.0");
-      if (!!this.indexIsChanging) dart.assertFailed(null, I[0], 289, 12, "!indexIsChanging");
-      if (value === this.offset) return;
-      dart.nullCheck(this[_animationController]).value = value + this[_index][$toDouble]();
-    }
-    dispose() {
-      let t0;
-      t0 = this[_animationController];
-      t0 == null ? null : t0.dispose();
-      this[_animationController] = null;
-      super.dispose();
-    }
-  };
-  (tab_controller.TabController.new = function(opts) {
-    let initialIndex = opts && 'initialIndex' in opts ? opts.initialIndex : 0;
-    let length = opts && 'length' in opts ? opts.length : null;
-    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
-    this[_indexIsChangingCount] = 0;
-    this[length$] = length;
-    if (!(length !== null && length >= 0)) dart.assertFailed(null, I[0], 150, 14, "length != null && length >= 0");
-    if (!(initialIndex !== null && initialIndex >= 0 && (length === 0 || initialIndex < length))) dart.assertFailed(null, I[0], 151, 14, "initialIndex != null && initialIndex >= 0 && (length == 0 || initialIndex < length)");
-    this[_index] = initialIndex;
-    this[_previousIndex] = initialIndex;
-    this[_animationController] = new animation_controller.AnimationController.unbounded({value: initialIndex[$toDouble](), vsync: vsync});
-    tab_controller.TabController.__proto__.new.call(this);
-    ;
-  }).prototype = tab_controller.TabController.prototype;
-  (tab_controller.TabController.__ = function(opts) {
-    let index = opts && 'index' in opts ? opts.index : null;
-    let previousIndex = opts && 'previousIndex' in opts ? opts.previousIndex : null;
-    let animationController = opts && 'animationController' in opts ? opts.animationController : null;
-    let length = opts && 'length' in opts ? opts.length : null;
-    this[_indexIsChangingCount] = 0;
-    this[length$] = length;
-    this[_index] = index;
-    this[_previousIndex] = previousIndex;
-    this[_animationController] = animationController;
-    tab_controller.TabController.__proto__.new.call(this);
-    ;
-  }).prototype = tab_controller.TabController.prototype;
-  dart.addTypeTests(tab_controller.TabController);
-  dart.addTypeCaches(tab_controller.TabController);
-  dart.setMethodSignature(tab_controller.TabController, () => ({
-    __proto__: dart.getMethods(tab_controller.TabController.__proto__),
-    [_copyWith]: dart.fnType(tab_controller.TabController, [], {}, {index: dart.nullable(core.int), length: dart.nullable(core.int), previousIndex: dart.nullable(core.int)}),
-    [_changeIndex]: dart.fnType(dart.void, [core.int], {curve: dart.nullable(curves.Curve), duration: dart.nullable(core.Duration)}, {}),
-    animateTo: dart.fnType(dart.void, [core.int], {curve: curves.Curve, duration: core.Duration}, {})
-  }));
-  dart.setGetterSignature(tab_controller.TabController, () => ({
-    __proto__: dart.getGetters(tab_controller.TabController.__proto__),
-    animation: dart.nullable(animation.Animation$(core.double)),
-    index: core.int,
-    previousIndex: core.int,
-    indexIsChanging: core.bool,
-    offset: core.double
-  }));
-  dart.setSetterSignature(tab_controller.TabController, () => ({
-    __proto__: dart.getSetters(tab_controller.TabController.__proto__),
-    index: core.int,
-    offset: core.double
-  }));
-  dart.setLibraryUri(tab_controller.TabController, I[1]);
-  dart.setFieldSignature(tab_controller.TabController, () => ({
-    __proto__: dart.getFields(tab_controller.TabController.__proto__),
-    [_animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
-    length: dart.finalFieldType(core.int),
-    [_index]: dart.fieldType(core.int),
-    [_previousIndex]: dart.fieldType(core.int),
-    [_indexIsChangingCount]: dart.fieldType(core.int)
-  }));
-  var controller$ = dart.privateName(tab_controller, "_TabControllerScope.controller");
-  var enabled$ = dart.privateName(tab_controller, "_TabControllerScope.enabled");
-  tab_controller._TabControllerScope = class _TabControllerScope extends framework.InheritedWidget {
-    get controller() {
-      return this[controller$];
-    }
-    set controller(value) {
-      super.controller = value;
-    }
-    get enabled() {
-      return this[enabled$];
-    }
-    set enabled(value) {
-      super.enabled = value;
-    }
-    updateShouldNotify(old) {
-      tab_controller._TabControllerScope.as(old);
-      return this.enabled !== old.enabled || !this.controller[$_equals](old.controller);
-    }
-  };
-  (tab_controller._TabControllerScope.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let enabled = opts && 'enabled' in opts ? opts.enabled : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[controller$] = controller;
-    this[enabled$] = enabled;
-    tab_controller._TabControllerScope.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = tab_controller._TabControllerScope.prototype;
-  dart.addTypeTests(tab_controller._TabControllerScope);
-  dart.addTypeCaches(tab_controller._TabControllerScope);
-  dart.setMethodSignature(tab_controller._TabControllerScope, () => ({
-    __proto__: dart.getMethods(tab_controller._TabControllerScope.__proto__),
-    updateShouldNotify: dart.fnType(core.bool, [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(tab_controller._TabControllerScope, I[1]);
-  dart.setFieldSignature(tab_controller._TabControllerScope, () => ({
-    __proto__: dart.getFields(tab_controller._TabControllerScope.__proto__),
-    controller: dart.finalFieldType(tab_controller.TabController),
-    enabled: dart.finalFieldType(core.bool)
-  }));
-  var length$0 = dart.privateName(tab_controller, "DefaultTabController.length");
-  var initialIndex$ = dart.privateName(tab_controller, "DefaultTabController.initialIndex");
-  var child$ = dart.privateName(tab_controller, "DefaultTabController.child");
-  tab_controller.DefaultTabController = class DefaultTabController extends framework.StatefulWidget {
-    get length() {
-      return this[length$0];
-    }
-    set length(value) {
-      super.length = value;
-    }
-    get initialIndex() {
-      return this[initialIndex$];
-    }
-    set initialIndex(value) {
-      super.initialIndex = value;
-    }
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    static of(context) {
-      let t0;
-      let scope = context.dependOnInheritedWidgetOfExactType(tab_controller._TabControllerScope);
-      t0 = scope;
-      return t0 == null ? null : t0.controller;
-    }
-    createState() {
-      return new tab_controller._DefaultTabControllerState.new();
-    }
-  };
-  (tab_controller.DefaultTabController.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let length = opts && 'length' in opts ? opts.length : null;
-    let initialIndex = opts && 'initialIndex' in opts ? opts.initialIndex : 0;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[length$0] = length;
-    this[initialIndex$] = initialIndex;
-    this[child$] = child;
-    if (!(initialIndex !== null)) dart.assertFailed(null, I[0], 378, 15, "initialIndex != null");
-    if (!(length >= 0)) dart.assertFailed(null, I[0], 379, 15, "length >= 0");
-    if (!(length === 0 || initialIndex >= 0 && initialIndex < length)) dart.assertFailed(null, I[0], 380, 15, "length == 0 || (initialIndex >= 0 && initialIndex < length)");
-    tab_controller.DefaultTabController.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = tab_controller.DefaultTabController.prototype;
-  dart.addTypeTests(tab_controller.DefaultTabController);
-  dart.addTypeCaches(tab_controller.DefaultTabController);
-  dart.setMethodSignature(tab_controller.DefaultTabController, () => ({
-    __proto__: dart.getMethods(tab_controller.DefaultTabController.__proto__),
-    createState: dart.fnType(tab_controller._DefaultTabControllerState, [])
-  }));
-  dart.setLibraryUri(tab_controller.DefaultTabController, I[1]);
-  dart.setFieldSignature(tab_controller.DefaultTabController, () => ({
-    __proto__: dart.getFields(tab_controller.DefaultTabController.__proto__),
-    length: dart.finalFieldType(core.int),
-    initialIndex: dart.finalFieldType(core.int),
-    child: dart.finalFieldType(framework.Widget)
-  }));
-  var ___DefaultTabControllerState__controller = dart.privateName(tab_controller, "_#_DefaultTabControllerState#_controller");
-  var _controller = dart.privateName(tab_controller, "_controller");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(tab_controller.DefaultTabController) {};
-  (State_SingleTickerProviderStateMixin$36.new = function() {
-    ticker_provider.SingleTickerProviderStateMixin$(tab_controller.DefaultTabController)[dart.mixinNew].call(this);
-    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
-  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
-  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(tab_controller.DefaultTabController));
-  tab_controller._DefaultTabControllerState = class _DefaultTabControllerState extends State_SingleTickerProviderStateMixin$36 {
-    get [_controller]() {
-      let t0;
-      t0 = this[___DefaultTabControllerState__controller];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t0;
-    }
-    set [_controller](t0) {
-      this[___DefaultTabControllerState__controller] = t0;
-    }
-    initState() {
-      super.initState();
-      this[_controller] = new tab_controller.TabController.new({vsync: this, length: this.widget.length, initialIndex: this.widget.initialIndex});
-    }
-    dispose() {
-      this[_controller].dispose();
-      super.dispose();
-    }
-    build(context) {
-      return new tab_controller._TabControllerScope.new({controller: this[_controller], enabled: ticker_provider.TickerMode.of(context), child: this.widget.child, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
-    }
-    didUpdateWidget(oldWidget) {
-      tab_controller.DefaultTabController.as(oldWidget);
-      super.didUpdateWidget(oldWidget);
-      if (oldWidget.length !== this.widget.length) {
-        let newIndex = null;
-        let previousIndex = this[_controller].previousIndex;
-        if (this[_controller].index >= this.widget.length) {
-          newIndex = math.max(core.int, 0, this.widget.length - 1);
-          previousIndex = this[_controller].index;
+          case C[14] || CT.C14:
+          {
+            if (!(this.verticalDirection !== null)) dart.assertFailed("Vertical " + dart.str(this[$runtimeType]) + " with multiple children has a null verticalDirection, so the layout order is undefined.", I[1], 361, 18, "verticalDirection != null");
+            break;
+          }
         }
-        this[_controller] = this[_controller][_copyWith]({length: this.widget.length, index: newIndex, previousIndex: previousIndex});
+      }
+      if (this.alignment === wrap.WrapAlignment.start || this.alignment === wrap.WrapAlignment.end) {
+        switch (this.direction) {
+          case C[11] || CT.C11:
+          {
+            if (!(this.textDirection != null)) dart.assertFailed("Horizontal " + dart.str(this[$runtimeType]) + " with alignment " + dart.str(this.alignment) + " has a null textDirection, so the alignment cannot be resolved.", I[1], 368, 18, "textDirection != null");
+            break;
+          }
+          case C[14] || CT.C14:
+          {
+            if (!(this.verticalDirection !== null)) dart.assertFailed("Vertical " + dart.str(this[$runtimeType]) + " with alignment " + dart.str(this.alignment) + " has a null verticalDirection, so the alignment cannot be resolved.", I[1], 371, 18, "verticalDirection != null");
+            break;
+          }
+        }
+      }
+      if (this.runAlignment === wrap.WrapAlignment.start || this.runAlignment === wrap.WrapAlignment.end) {
+        switch (this.direction) {
+          case C[11] || CT.C11:
+          {
+            if (!(this.verticalDirection !== null)) dart.assertFailed("Horizontal " + dart.str(this[$runtimeType]) + " with runAlignment " + dart.str(this.runAlignment) + " has a null verticalDirection, so the alignment cannot be resolved.", I[1], 378, 18, "verticalDirection != null");
+            break;
+          }
+          case C[14] || CT.C14:
+          {
+            if (!(this.textDirection != null)) dart.assertFailed("Vertical " + dart.str(this[$runtimeType]) + " with runAlignment " + dart.str(this.runAlignment) + " has a null textDirection, so the alignment cannot be resolved.", I[1], 381, 18, "textDirection != null");
+            break;
+          }
+        }
+      }
+      if (this.crossAxisAlignment === wrap.WrapCrossAlignment.start || this.crossAxisAlignment === wrap.WrapCrossAlignment.end) {
+        switch (this.direction) {
+          case C[11] || CT.C11:
+          {
+            if (!(this.verticalDirection !== null)) dart.assertFailed("Horizontal " + dart.str(this[$runtimeType]) + " with crossAxisAlignment " + dart.str(this.crossAxisAlignment) + " has a null verticalDirection, so the alignment cannot be resolved.", I[1], 388, 18, "verticalDirection != null");
+            break;
+          }
+          case C[14] || CT.C14:
+          {
+            if (!(this.textDirection != null)) dart.assertFailed("Vertical " + dart.str(this[$runtimeType]) + " with crossAxisAlignment " + dart.str(this.crossAxisAlignment) + " has a null textDirection, so the alignment cannot be resolved.", I[1], 391, 18, "textDirection != null");
+            break;
+          }
+        }
+      }
+      return true;
+    }
+    setupParentData(child) {
+      box.RenderBox.as(child);
+      if (!wrap.WrapParentData.is(child.parentData)) child.parentData = new wrap.WrapParentData.new();
+    }
+    computeMinIntrinsicWidth(height) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          let width = 0.0;
+          let child = this.firstChild;
+          while (child != null) {
+            width = math.max(core.double, width, child.getMinIntrinsicWidth(1 / 0));
+            child = this.childAfter(child);
+          }
+          return width;
+        }
+        case C[14] || CT.C14:
+        {
+          return this.computeDryLayout(new box.BoxConstraints.new({maxHeight: height})).width;
+        }
       }
     }
+    computeMaxIntrinsicWidth(height) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          let width = 0.0;
+          let child = this.firstChild;
+          while (child != null) {
+            width = width + child.getMaxIntrinsicWidth(1 / 0);
+            child = this.childAfter(child);
+          }
+          return width;
+        }
+        case C[14] || CT.C14:
+        {
+          return this.computeDryLayout(new box.BoxConstraints.new({maxHeight: height})).width;
+        }
+      }
+    }
+    computeMinIntrinsicHeight(width) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return this.computeDryLayout(new box.BoxConstraints.new({maxWidth: width})).height;
+        }
+        case C[14] || CT.C14:
+        {
+          let height = 0.0;
+          let child = this.firstChild;
+          while (child != null) {
+            height = math.max(core.double, height, child.getMinIntrinsicHeight(1 / 0));
+            child = this.childAfter(child);
+          }
+          return height;
+        }
+      }
+    }
+    computeMaxIntrinsicHeight(width) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return this.computeDryLayout(new box.BoxConstraints.new({maxWidth: width})).height;
+        }
+        case C[14] || CT.C14:
+        {
+          let height = 0.0;
+          let child = this.firstChild;
+          while (child != null) {
+            height = height + child.getMaxIntrinsicHeight(1 / 0);
+            child = this.childAfter(child);
+          }
+          return height;
+        }
+      }
+    }
+    computeDistanceToActualBaseline(baseline) {
+      return this.defaultComputeDistanceToHighestActualBaseline(baseline);
+    }
+    [_getMainAxisExtent](childSize) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return childSize.width;
+        }
+        case C[14] || CT.C14:
+        {
+          return childSize.height;
+        }
+      }
+    }
+    [_getCrossAxisExtent](childSize) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return childSize.height;
+        }
+        case C[14] || CT.C14:
+        {
+          return childSize.width;
+        }
+      }
+    }
+    [_getOffset](mainAxisOffset, crossAxisOffset) {
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return new ui.Offset.new(mainAxisOffset, crossAxisOffset);
+        }
+        case C[14] || CT.C14:
+        {
+          return new ui.Offset.new(crossAxisOffset, mainAxisOffset);
+        }
+      }
+    }
+    [_getChildCrossAxisOffset](flipCrossAxis, runCrossAxisExtent, childCrossAxisExtent) {
+      let freeSpace = runCrossAxisExtent - childCrossAxisExtent;
+      switch (this.crossAxisAlignment) {
+        case C[7] || CT.C7:
+        {
+          return flipCrossAxis ? freeSpace : 0.0;
+        }
+        case C[8] || CT.C8:
+        {
+          return flipCrossAxis ? 0.0 : freeSpace;
+        }
+        case C[9] || CT.C9:
+        {
+          return freeSpace / 2.0;
+        }
+      }
+    }
+    computeDryLayout(constraints) {
+      return this[_computeDryLayout](constraints);
+    }
+    [_computeDryLayout](constraints, layoutChild = C[15] || CT.C15) {
+      let childConstraints = null;
+      let mainAxisLimit = 0.0;
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          childConstraints = new box.BoxConstraints.new({maxWidth: constraints.maxWidth});
+          mainAxisLimit = constraints.maxWidth;
+          break;
+        }
+        case C[14] || CT.C14:
+        {
+          childConstraints = new box.BoxConstraints.new({maxHeight: constraints.maxHeight});
+          mainAxisLimit = constraints.maxHeight;
+          break;
+        }
+      }
+      let mainAxisExtent = 0.0;
+      let crossAxisExtent = 0.0;
+      let runMainAxisExtent = 0.0;
+      let runCrossAxisExtent = 0.0;
+      let childCount = 0;
+      let child = this.firstChild;
+      while (child != null) {
+        let childSize = layoutChild(child, childConstraints);
+        let childMainAxisExtent = this[_getMainAxisExtent](childSize);
+        let childCrossAxisExtent = this[_getCrossAxisExtent](childSize);
+        if (childCount > 0 && runMainAxisExtent + childMainAxisExtent + this.spacing > mainAxisLimit) {
+          mainAxisExtent = math.max(core.double, mainAxisExtent, runMainAxisExtent);
+          crossAxisExtent = crossAxisExtent + (runCrossAxisExtent + this.runSpacing);
+          runMainAxisExtent = 0.0;
+          runCrossAxisExtent = 0.0;
+          childCount = 0;
+        }
+        runMainAxisExtent = runMainAxisExtent + childMainAxisExtent;
+        runCrossAxisExtent = math.max(core.double, runCrossAxisExtent, childCrossAxisExtent);
+        if (childCount > 0) runMainAxisExtent = runMainAxisExtent + this.spacing;
+        childCount = childCount + 1;
+        child = this.childAfter(child);
+      }
+      crossAxisExtent = crossAxisExtent + runCrossAxisExtent;
+      mainAxisExtent = math.max(core.double, mainAxisExtent, runMainAxisExtent);
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          return constraints.constrain(new ui.Size.new(mainAxisExtent, crossAxisExtent));
+        }
+        case C[14] || CT.C14:
+        {
+          return constraints.constrain(new ui.Size.new(crossAxisExtent, mainAxisExtent));
+        }
+      }
+    }
+    performLayout() {
+      let constraints = this.constraints;
+      if (!this[_debugHasNecessaryDirections]) dart.assertFailed(null, I[1], 572, 12, "_debugHasNecessaryDirections");
+      this[_hasVisualOverflow] = false;
+      let child = this.firstChild;
+      if (child == null) {
+        this.size = constraints.smallest;
+        return;
+      }
+      let childConstraints = null;
+      let mainAxisLimit = 0.0;
+      let flipMainAxis = false;
+      let flipCrossAxis = false;
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          childConstraints = new box.BoxConstraints.new({maxWidth: constraints.maxWidth});
+          mainAxisLimit = constraints.maxWidth;
+          if (this.textDirection === ui.TextDirection.rtl) flipMainAxis = true;
+          if (this.verticalDirection === basic_types.VerticalDirection.up) flipCrossAxis = true;
+          break;
+        }
+        case C[14] || CT.C14:
+        {
+          childConstraints = new box.BoxConstraints.new({maxHeight: constraints.maxHeight});
+          mainAxisLimit = constraints.maxHeight;
+          if (this.verticalDirection === basic_types.VerticalDirection.up) flipMainAxis = true;
+          if (this.textDirection === ui.TextDirection.rtl) flipCrossAxis = true;
+          break;
+        }
+      }
+      if (!(childConstraints !== null)) dart.assertFailed(null, I[1], 601, 12, "childConstraints != null");
+      if (!(mainAxisLimit !== null)) dart.assertFailed(null, I[1], 602, 12, "mainAxisLimit != null");
+      let spacing = this.spacing;
+      let runSpacing = this.runSpacing;
+      let runMetrics = T.JSArrayOf_RunMetrics().of([]);
+      let mainAxisExtent = 0.0;
+      let crossAxisExtent = 0.0;
+      let runMainAxisExtent = 0.0;
+      let runCrossAxisExtent = 0.0;
+      let childCount = 0;
+      while (child != null) {
+        child.layout(childConstraints, {parentUsesSize: true});
+        let childMainAxisExtent = this[_getMainAxisExtent](child.size);
+        let childCrossAxisExtent = this[_getCrossAxisExtent](child.size);
+        if (childCount > 0 && runMainAxisExtent + spacing + childMainAxisExtent > mainAxisLimit) {
+          mainAxisExtent = math.max(core.double, mainAxisExtent, runMainAxisExtent);
+          crossAxisExtent = crossAxisExtent + runCrossAxisExtent;
+          if (runMetrics[$isNotEmpty]) crossAxisExtent = crossAxisExtent + runSpacing;
+          runMetrics[$add](new wrap._RunMetrics.new(runMainAxisExtent, runCrossAxisExtent, childCount));
+          runMainAxisExtent = 0.0;
+          runCrossAxisExtent = 0.0;
+          childCount = 0;
+        }
+        runMainAxisExtent = runMainAxisExtent + childMainAxisExtent;
+        if (childCount > 0) runMainAxisExtent = runMainAxisExtent + spacing;
+        runCrossAxisExtent = math.max(core.double, runCrossAxisExtent, childCrossAxisExtent);
+        childCount = childCount + 1;
+        let childParentData = wrap.WrapParentData.as(dart.nullCheck(child.parentData));
+        childParentData[_runIndex] = runMetrics[$length];
+        child = childParentData.nextSibling;
+      }
+      if (childCount > 0) {
+        mainAxisExtent = math.max(core.double, mainAxisExtent, runMainAxisExtent);
+        crossAxisExtent = crossAxisExtent + runCrossAxisExtent;
+        if (runMetrics[$isNotEmpty]) crossAxisExtent = crossAxisExtent + runSpacing;
+        runMetrics[$add](new wrap._RunMetrics.new(runMainAxisExtent, runCrossAxisExtent, childCount));
+      }
+      let runCount = runMetrics[$length];
+      if (!(runCount > 0)) dart.assertFailed(null, I[1], 643, 12, "runCount > 0");
+      let containerMainAxisExtent = 0.0;
+      let containerCrossAxisExtent = 0.0;
+      switch (this.direction) {
+        case C[11] || CT.C11:
+        {
+          this.size = constraints.constrain(new ui.Size.new(mainAxisExtent, crossAxisExtent));
+          containerMainAxisExtent = this.size.width;
+          containerCrossAxisExtent = this.size.height;
+          break;
+        }
+        case C[14] || CT.C14:
+        {
+          this.size = constraints.constrain(new ui.Size.new(crossAxisExtent, mainAxisExtent));
+          containerMainAxisExtent = this.size.height;
+          containerCrossAxisExtent = this.size.width;
+          break;
+        }
+      }
+      this[_hasVisualOverflow] = containerMainAxisExtent < mainAxisExtent || containerCrossAxisExtent < crossAxisExtent;
+      let crossAxisFreeSpace = math.max(core.double, 0.0, containerCrossAxisExtent - crossAxisExtent);
+      let runLeadingSpace = 0.0;
+      let runBetweenSpace = 0.0;
+      switch (this.runAlignment) {
+        case C[0] || CT.C0:
+        {
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          runLeadingSpace = crossAxisFreeSpace;
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          runLeadingSpace = crossAxisFreeSpace / 2.0;
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          runBetweenSpace = runCount > 1 ? crossAxisFreeSpace / (runCount - 1) : 0.0;
+          break;
+        }
+        case C[4] || CT.C4:
+        {
+          runBetweenSpace = crossAxisFreeSpace / runCount;
+          runLeadingSpace = runBetweenSpace / 2.0;
+          break;
+        }
+        case C[5] || CT.C5:
+        {
+          runBetweenSpace = crossAxisFreeSpace / (runCount + 1);
+          runLeadingSpace = runBetweenSpace;
+          break;
+        }
+      }
+      runBetweenSpace = runBetweenSpace + runSpacing;
+      let crossAxisOffset = flipCrossAxis ? containerCrossAxisExtent - runLeadingSpace : runLeadingSpace;
+      child = this.firstChild;
+      for (let i = 0; i < runCount; i = i + 1) {
+        let metrics = runMetrics[$_get](i);
+        let runMainAxisExtent = metrics.mainAxisExtent;
+        let runCrossAxisExtent = metrics.crossAxisExtent;
+        let childCount = metrics.childCount;
+        let mainAxisFreeSpace = math.max(core.double, 0.0, containerMainAxisExtent - runMainAxisExtent);
+        let childLeadingSpace = 0.0;
+        let childBetweenSpace = 0.0;
+        switch (this.alignment) {
+          case C[0] || CT.C0:
+          {
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            childLeadingSpace = mainAxisFreeSpace;
+            break;
+          }
+          case C[2] || CT.C2:
+          {
+            childLeadingSpace = mainAxisFreeSpace / 2.0;
+            break;
+          }
+          case C[3] || CT.C3:
+          {
+            childBetweenSpace = childCount > 1 ? mainAxisFreeSpace / (childCount - 1) : 0.0;
+            break;
+          }
+          case C[4] || CT.C4:
+          {
+            childBetweenSpace = mainAxisFreeSpace / childCount;
+            childLeadingSpace = childBetweenSpace / 2.0;
+            break;
+          }
+          case C[5] || CT.C5:
+          {
+            childBetweenSpace = mainAxisFreeSpace / (childCount + 1);
+            childLeadingSpace = childBetweenSpace;
+            break;
+          }
+        }
+        childBetweenSpace = childBetweenSpace + spacing;
+        let childMainPosition = flipMainAxis ? containerMainAxisExtent - childLeadingSpace : childLeadingSpace;
+        if (flipCrossAxis) crossAxisOffset = crossAxisOffset - runCrossAxisExtent;
+        while (child != null) {
+          let childParentData = wrap.WrapParentData.as(dart.nullCheck(child.parentData));
+          if (childParentData[_runIndex] !== i) break;
+          let childMainAxisExtent = this[_getMainAxisExtent](child.size);
+          let childCrossAxisExtent = this[_getCrossAxisExtent](child.size);
+          let childCrossAxisOffset = this[_getChildCrossAxisOffset](flipCrossAxis, runCrossAxisExtent, childCrossAxisExtent);
+          if (flipMainAxis) childMainPosition = childMainPosition - childMainAxisExtent;
+          childParentData.offset = this[_getOffset](childMainPosition, crossAxisOffset + childCrossAxisOffset);
+          if (flipMainAxis)
+            childMainPosition = childMainPosition - childBetweenSpace;
+          else
+            childMainPosition = childMainPosition + (childMainAxisExtent + childBetweenSpace);
+          child = childParentData.nextSibling;
+        }
+        if (flipCrossAxis)
+          crossAxisOffset = crossAxisOffset - runBetweenSpace;
+        else
+          crossAxisOffset = crossAxisOffset + (runCrossAxisExtent + runBetweenSpace);
+      }
+    }
+    hitTestChildren(result, opts) {
+      let position = opts && 'position' in opts ? opts.position : null;
+      return this.defaultHitTestChildren(result, {position: position});
+    }
+    paint(context, offset) {
+      if (this[_hasVisualOverflow] && this.clipBehavior !== ui.Clip.none) {
+        this[_clipRectLayer] = context.pushClipRect(this.needsCompositing, offset, ui.Offset.zero['&'](this.size), dart.bind(this, 'defaultPaint'), {clipBehavior: this.clipBehavior, oldLayer: this[_clipRectLayer]});
+      } else {
+        this[_clipRectLayer] = null;
+        this.defaultPaint(context, offset);
+      }
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (T.EnumPropertyOfAxis()).new("direction", this.direction));
+      properties.add(new (T.EnumPropertyOfWrapAlignment()).new("alignment", this.alignment));
+      properties.add(new diagnostics.DoubleProperty.new("spacing", this.spacing));
+      properties.add(new (T.EnumPropertyOfWrapAlignment()).new("runAlignment", this.runAlignment));
+      properties.add(new diagnostics.DoubleProperty.new("runSpacing", this.runSpacing));
+      properties.add(new diagnostics.DoubleProperty.new("crossAxisAlignment", this.runSpacing));
+      properties.add(new (T.EnumPropertyOfTextDirection()).new("textDirection", this.textDirection, {defaultValue: null}));
+      properties.add(new (T.EnumPropertyOfVerticalDirection()).new("verticalDirection", this.verticalDirection, {defaultValue: basic_types.VerticalDirection.down}));
+    }
   };
-  (tab_controller._DefaultTabControllerState.new = function() {
-    this[___DefaultTabControllerState__controller] = null;
-    tab_controller._DefaultTabControllerState.__proto__.new.call(this);
-    ;
-  }).prototype = tab_controller._DefaultTabControllerState.prototype;
-  dart.addTypeTests(tab_controller._DefaultTabControllerState);
-  dart.addTypeCaches(tab_controller._DefaultTabControllerState);
-  dart.setMethodSignature(tab_controller._DefaultTabControllerState, () => ({
-    __proto__: dart.getMethods(tab_controller._DefaultTabControllerState.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  (wrap.RenderWrap.new = function(opts) {
+    let children = opts && 'children' in opts ? opts.children : null;
+    let direction = opts && 'direction' in opts ? opts.direction : C[11] || CT.C11;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[0] || CT.C0;
+    let spacing = opts && 'spacing' in opts ? opts.spacing : 0;
+    let runAlignment = opts && 'runAlignment' in opts ? opts.runAlignment : C[0] || CT.C0;
+    let runSpacing = opts && 'runSpacing' in opts ? opts.runSpacing : 0;
+    let crossAxisAlignment = opts && 'crossAxisAlignment' in opts ? opts.crossAxisAlignment : C[7] || CT.C7;
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let verticalDirection = opts && 'verticalDirection' in opts ? opts.verticalDirection : C[12] || CT.C12;
+    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[13] || CT.C13;
+    this[_clipBehavior] = ui.Clip.none;
+    this[_hasVisualOverflow] = false;
+    this[_clipRectLayer] = null;
+    if (!(direction !== null)) dart.assertFailed(null, I[1], 124, 15, "direction != null");
+    if (!(alignment !== null)) dart.assertFailed(null, I[1], 125, 15, "alignment != null");
+    if (!(spacing !== null)) dart.assertFailed(null, I[1], 126, 15, "spacing != null");
+    if (!(runAlignment !== null)) dart.assertFailed(null, I[1], 127, 15, "runAlignment != null");
+    if (!(runSpacing !== null)) dart.assertFailed(null, I[1], 128, 15, "runSpacing != null");
+    if (!(crossAxisAlignment !== null)) dart.assertFailed(null, I[1], 129, 15, "crossAxisAlignment != null");
+    if (!(clipBehavior !== null)) dart.assertFailed(null, I[1], 130, 15, "clipBehavior != null");
+    this[_direction] = direction;
+    this[_alignment] = alignment;
+    this[_spacing] = spacing;
+    this[_runAlignment] = runAlignment;
+    this[_runSpacing] = runSpacing;
+    this[_crossAxisAlignment] = crossAxisAlignment;
+    this[_textDirection] = textDirection;
+    this[_verticalDirection] = verticalDirection;
+    this[_clipBehavior] = clipBehavior;
+    wrap.RenderWrap.__proto__.new.call(this);
+    this.addAll(children);
+  }).prototype = wrap.RenderWrap.prototype;
+  dart.addTypeTests(wrap.RenderWrap);
+  dart.addTypeCaches(wrap.RenderWrap);
+  dart.setMethodSignature(wrap.RenderWrap, () => ({
+    __proto__: dart.getMethods(wrap.RenderWrap.__proto__),
+    [_getMainAxisExtent]: dart.fnType(core.double, [ui.Size]),
+    [_getCrossAxisExtent]: dart.fnType(core.double, [ui.Size]),
+    [_getOffset]: dart.fnType(ui.Offset, [core.double, core.double]),
+    [_getChildCrossAxisOffset]: dart.fnType(core.double, [core.bool, core.double, core.double]),
+    [_computeDryLayout]: dart.fnType(ui.Size, [box.BoxConstraints], [dart.fnType(ui.Size, [box.RenderBox, box.BoxConstraints])])
   }));
-  dart.setGetterSignature(tab_controller._DefaultTabControllerState, () => ({
-    __proto__: dart.getGetters(tab_controller._DefaultTabControllerState.__proto__),
-    [_controller]: tab_controller.TabController
+  dart.setGetterSignature(wrap.RenderWrap, () => ({
+    __proto__: dart.getGetters(wrap.RenderWrap.__proto__),
+    direction: basic_types.Axis,
+    alignment: wrap.WrapAlignment,
+    spacing: core.double,
+    runAlignment: wrap.WrapAlignment,
+    runSpacing: core.double,
+    crossAxisAlignment: wrap.WrapCrossAlignment,
+    textDirection: dart.nullable(ui.TextDirection),
+    verticalDirection: basic_types.VerticalDirection,
+    clipBehavior: ui.Clip,
+    [_debugHasNecessaryDirections]: core.bool
   }));
-  dart.setSetterSignature(tab_controller._DefaultTabControllerState, () => ({
-    __proto__: dart.getSetters(tab_controller._DefaultTabControllerState.__proto__),
-    [_controller]: tab_controller.TabController
+  dart.setSetterSignature(wrap.RenderWrap, () => ({
+    __proto__: dart.getSetters(wrap.RenderWrap.__proto__),
+    direction: basic_types.Axis,
+    alignment: wrap.WrapAlignment,
+    spacing: core.double,
+    runAlignment: wrap.WrapAlignment,
+    runSpacing: core.double,
+    crossAxisAlignment: wrap.WrapCrossAlignment,
+    textDirection: dart.nullable(ui.TextDirection),
+    verticalDirection: basic_types.VerticalDirection,
+    clipBehavior: ui.Clip
   }));
-  dart.setLibraryUri(tab_controller._DefaultTabControllerState, I[1]);
-  dart.setFieldSignature(tab_controller._DefaultTabControllerState, () => ({
-    __proto__: dart.getFields(tab_controller._DefaultTabControllerState.__proto__),
-    [___DefaultTabControllerState__controller]: dart.fieldType(dart.nullable(tab_controller.TabController))
+  dart.setLibraryUri(wrap.RenderWrap, I[0]);
+  dart.setFieldSignature(wrap.RenderWrap, () => ({
+    __proto__: dart.getFields(wrap.RenderWrap.__proto__),
+    [_direction]: dart.fieldType(basic_types.Axis),
+    [_alignment]: dart.fieldType(wrap.WrapAlignment),
+    [_spacing]: dart.fieldType(core.double),
+    [_runAlignment]: dart.fieldType(wrap.WrapAlignment),
+    [_runSpacing]: dart.fieldType(core.double),
+    [_crossAxisAlignment]: dart.fieldType(wrap.WrapCrossAlignment),
+    [_textDirection]: dart.fieldType(dart.nullable(ui.TextDirection)),
+    [_verticalDirection]: dart.fieldType(basic_types.VerticalDirection),
+    [_clipBehavior]: dart.fieldType(ui.Clip),
+    [_hasVisualOverflow]: dart.fieldType(core.bool),
+    [_clipRectLayer]: dart.fieldType(dart.nullable(layer.ClipRectLayer))
   }));
-  dart.trackLibraries("packages/flutter/src/material/tab_controller.dart", {
-    "package:flutter/src/material/tab_controller.dart": tab_controller
+  dart.trackLibraries("packages/flutter/src/rendering/wrap.dart", {
+    "package:flutter/src/rendering/wrap.dart": wrap
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["tab_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/material/tab_controller.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["wrap.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/rendering/wrap.dart.lib.js"}');
   // Exports:
   return {
-    src__material__tab_controller: tab_controller
+    src__rendering__wrap: wrap
   };
 }));
 
-//# sourceMappingURL=tab_controller.dart.lib.js.map
+//# sourceMappingURL=wrap.dart.lib.js.map

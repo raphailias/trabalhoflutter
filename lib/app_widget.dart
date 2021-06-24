@@ -1,4 +1,5 @@
 import 'package:animelife/Modules/TelaInicial/navbarinf.dart';
+import 'package:animelife/Modules/TelaInicial/tela_inicial.dart';
 import 'package:animelife/Modules/Tela_Informacoes/telainformacao.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: TelaInfo(),
+        body: MyStatefulWidget(),
       ),
       debugShowCheckedModeBanner: false,
     );

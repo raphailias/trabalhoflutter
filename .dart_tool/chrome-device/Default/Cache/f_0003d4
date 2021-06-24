@@ -1,0 +1,801 @@
+define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/animelife/Modules/TelaInicial/tela_inicial.dart', 'packages/animelife/Modules/TelaCalendario/tab.dart'], (function load__packages__animelife__Modules__TelaInicial__navbarinf_dart(dart_sdk, packages__flutter__src__material__app$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__painting__strut_style$46dart, packages__animelife__Modules__TelaInicial__tela_inicial$46dart, packages__animelife__Modules__TelaCalendario__tab$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const app = packages__flutter__src__material__app$46dart.src__material__app;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const binding = packages__flutter__src__widgets__widget_span$46dart.src__widgets__binding;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const bottom_navigation_bar = packages__flutter__src__material__icon_button$46dart.src__material__bottom_navigation_bar;
+  const bottom_navigation_bar_item = packages__flutter__src__widgets__bottom_navigation_bar_item$46dart.src__widgets__bottom_navigation_bar_item;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const tela_inicial = packages__animelife__Modules__TelaInicial__tela_inicial$46dart.Modules__TelaInicial__tela_inicial;
+  const tab = packages__animelife__Modules__TelaCalendario__tab$46dart.Modules__TelaCalendario__tab;
+  var navbarinf = Object.create(dart.library);
+  var $elementAt = dartx.elementAt;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    BuildContextToWidget: () => (T.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "home",
+        [_Location_column]: 7,
+        [_Location_line]: 13,
+        [_Location_file]: null
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3], widget_inspector._Location);
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 12,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Locale.prototype,
+        [Locale__countryCode]: "US",
+        [Locale_scriptCode]: null,
+        [Locale__languageCode]: "en"
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], ui.Locale);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: app.ThemeMode.prototype,
+        [_name]: "ThemeMode.system",
+        index: 0
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([], navigator.NavigatorObserver);
+    },
+    get C8() {
+      return C[8] = dart.constMap(core.String, T.BuildContextToWidget(), []);
+    },
+    get C11() {
+      return C[11] = dart.constList([], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: navbarinf.MyStatefulWidget.prototype,
+        [Widget__location]: C[10] || CT.C10,
+        [Widget_key]: null
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: app.MaterialApp.prototype,
+        [Widget__location]: C[1] || CT.C1,
+        [Widget_key]: null,
+        [MaterialApp_debugShowMaterialGrid]: false,
+        [MaterialApp_scrollBehavior]: null,
+        [MaterialApp_restorationScopeId]: null,
+        [MaterialApp_actions]: null,
+        [MaterialApp_shortcuts]: null,
+        [MaterialApp_debugShowCheckedModeBanner]: true,
+        [MaterialApp_showSemanticsDebugger]: false,
+        [MaterialApp_checkerboardOffscreenLayers]: false,
+        [MaterialApp_checkerboardRasterCacheImages]: false,
+        [MaterialApp_showPerformanceOverlay]: false,
+        [MaterialApp_supportedLocales]: C[4] || CT.C4,
+        [MaterialApp_localeResolutionCallback]: null,
+        [MaterialApp_localeListResolutionCallback]: null,
+        [MaterialApp_localizationsDelegates]: null,
+        [MaterialApp_locale]: null,
+        [MaterialApp_color]: null,
+        [MaterialApp_themeMode]: C[6] || CT.C6,
+        [MaterialApp_highContrastDarkTheme]: null,
+        [MaterialApp_highContrastTheme]: null,
+        [MaterialApp_darkTheme]: null,
+        [MaterialApp_theme]: null,
+        [MaterialApp_onGenerateTitle]: null,
+        [MaterialApp_title]: "",
+        [MaterialApp_builder]: null,
+        [MaterialApp_backButtonDispatcher]: null,
+        [MaterialApp_routerDelegate]: null,
+        [MaterialApp_routeInformationParser]: null,
+        [MaterialApp_routeInformationProvider]: null,
+        [MaterialApp_navigatorObservers]: C[7] || CT.C7,
+        [MaterialApp_onUnknownRoute]: null,
+        [MaterialApp_onGenerateInitialRoutes]: null,
+        [MaterialApp_onGenerateRoute]: null,
+        [MaterialApp_initialRoute]: null,
+        [MaterialApp_routes]: C[8] || CT.C8,
+        [MaterialApp_home]: C[9] || CT.C9,
+        [MaterialApp_scaffoldMessengerKey]: null,
+        [MaterialApp_navigatorKey]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 54,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 53,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278585881.0
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 59,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58136
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[19] || CT.C19,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[22] || CT.C22
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_tooltip]: null,
+        [BottomNavigationBarItem_backgroundColor]: C[17] || CT.C17,
+        [BottomNavigationBarItem_label]: "Inicial",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C[18] || CT.C18,
+        [BottomNavigationBarItem_icon]: C[18] || CT.C18
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 64,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 59710
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[25] || CT.C25,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[28] || CT.C28
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_tooltip]: null,
+        [BottomNavigationBarItem_backgroundColor]: C[17] || CT.C17,
+        [BottomNavigationBarItem_label]: "Calendário",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C[24] || CT.C24,
+        [BottomNavigationBarItem_icon]: C[24] || CT.C24
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 59319
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[31] || CT.C31,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[34] || CT.C34
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_tooltip]: null,
+        [BottomNavigationBarItem_backgroundColor]: C[17] || CT.C17,
+        [BottomNavigationBarItem_label]: "Recomendações",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C[30] || CT.C30,
+        [BottomNavigationBarItem_icon]: C[30] || CT.C30
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 59687
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[37] || CT.C37,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: null,
+        [Icon_icon]: C[40] || CT.C40
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_tooltip]: null,
+        [BottomNavigationBarItem_backgroundColor]: C[17] || CT.C17,
+        [BottomNavigationBarItem_label]: "Perfil",
+        [BottomNavigationBarItem_title]: null,
+        [BottomNavigationBarItem_activeIcon]: C[36] || CT.C36,
+        [BottomNavigationBarItem_icon]: C[36] || CT.C36
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[23] || CT.C23, C[29] || CT.C29, C[35] || CT.C35], bottom_navigation_bar_item.BottomNavigationBarItem);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "items",
+        [_Location_column]: 9,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "currentIndex",
+        [_Location_column]: 9,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "selectedItemColor",
+        [_Location_column]: 9,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45, C[46] || CT.C46], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 53,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottomNavigationBar",
+        [_Location_column]: 7,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49, C[50] || CT.C50], widget_inspector._Location);
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 52,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 6
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[52] || CT.C52,
+        [TextStyle_fontSize]: 30,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: null,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 7,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 7,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.constList([C[57] || CT.C57, C[58] || CT.C58], widget_inspector._Location);
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[56] || CT.C56,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 7,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62], widget_inspector._Location);
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[60] || CT.C60,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 38,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 5,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: navbarinf.NavbarInf.prototype,
+        [Widget__location]: C[64] || CT.C64,
+        [Widget_key]: null
+      });
+    }
+  }, false);
+  var C = Array(65).fill(void 0);
+  var I = ["package:animelife/Modules/TelaInicial/navbarinf.dart"];
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var MaterialApp_debugShowMaterialGrid = dart.privateName(app, "MaterialApp.debugShowMaterialGrid");
+  var MaterialApp_scrollBehavior = dart.privateName(app, "MaterialApp.scrollBehavior");
+  var MaterialApp_restorationScopeId = dart.privateName(app, "MaterialApp.restorationScopeId");
+  var MaterialApp_actions = dart.privateName(app, "MaterialApp.actions");
+  var MaterialApp_shortcuts = dart.privateName(app, "MaterialApp.shortcuts");
+  var MaterialApp_debugShowCheckedModeBanner = dart.privateName(app, "MaterialApp.debugShowCheckedModeBanner");
+  var MaterialApp_showSemanticsDebugger = dart.privateName(app, "MaterialApp.showSemanticsDebugger");
+  var MaterialApp_checkerboardOffscreenLayers = dart.privateName(app, "MaterialApp.checkerboardOffscreenLayers");
+  var MaterialApp_checkerboardRasterCacheImages = dart.privateName(app, "MaterialApp.checkerboardRasterCacheImages");
+  var MaterialApp_showPerformanceOverlay = dart.privateName(app, "MaterialApp.showPerformanceOverlay");
+  var Locale__countryCode = dart.privateName(ui, "Locale._countryCode");
+  var Locale_scriptCode = dart.privateName(ui, "Locale.scriptCode");
+  var Locale__languageCode = dart.privateName(ui, "Locale._languageCode");
+  var MaterialApp_supportedLocales = dart.privateName(app, "MaterialApp.supportedLocales");
+  var MaterialApp_localeResolutionCallback = dart.privateName(app, "MaterialApp.localeResolutionCallback");
+  var MaterialApp_localeListResolutionCallback = dart.privateName(app, "MaterialApp.localeListResolutionCallback");
+  var MaterialApp_localizationsDelegates = dart.privateName(app, "MaterialApp.localizationsDelegates");
+  var MaterialApp_locale = dart.privateName(app, "MaterialApp.locale");
+  var MaterialApp_color = dart.privateName(app, "MaterialApp.color");
+  var _name = dart.privateName(app, "_name");
+  var MaterialApp_themeMode = dart.privateName(app, "MaterialApp.themeMode");
+  var MaterialApp_highContrastDarkTheme = dart.privateName(app, "MaterialApp.highContrastDarkTheme");
+  var MaterialApp_highContrastTheme = dart.privateName(app, "MaterialApp.highContrastTheme");
+  var MaterialApp_darkTheme = dart.privateName(app, "MaterialApp.darkTheme");
+  var MaterialApp_theme = dart.privateName(app, "MaterialApp.theme");
+  var MaterialApp_onGenerateTitle = dart.privateName(app, "MaterialApp.onGenerateTitle");
+  var MaterialApp_title = dart.privateName(app, "MaterialApp.title");
+  var MaterialApp_builder = dart.privateName(app, "MaterialApp.builder");
+  var MaterialApp_backButtonDispatcher = dart.privateName(app, "MaterialApp.backButtonDispatcher");
+  var MaterialApp_routerDelegate = dart.privateName(app, "MaterialApp.routerDelegate");
+  var MaterialApp_routeInformationParser = dart.privateName(app, "MaterialApp.routeInformationParser");
+  var MaterialApp_routeInformationProvider = dart.privateName(app, "MaterialApp.routeInformationProvider");
+  var MaterialApp_navigatorObservers = dart.privateName(app, "MaterialApp.navigatorObservers");
+  var MaterialApp_onUnknownRoute = dart.privateName(app, "MaterialApp.onUnknownRoute");
+  var MaterialApp_onGenerateInitialRoutes = dart.privateName(app, "MaterialApp.onGenerateInitialRoutes");
+  var MaterialApp_onGenerateRoute = dart.privateName(app, "MaterialApp.onGenerateRoute");
+  var MaterialApp_initialRoute = dart.privateName(app, "MaterialApp.initialRoute");
+  var MaterialApp_routes = dart.privateName(app, "MaterialApp.routes");
+  var MaterialApp_home = dart.privateName(app, "MaterialApp.home");
+  var MaterialApp_scaffoldMessengerKey = dart.privateName(app, "MaterialApp.scaffoldMessengerKey");
+  var MaterialApp_navigatorKey = dart.privateName(app, "MaterialApp.navigatorKey");
+  navbarinf.NavbarInf = class NavbarInf extends framework.StatelessWidget {
+    build(context) {
+      return C[0] || CT.C0;
+    }
+  };
+  (navbarinf.NavbarInf.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    navbarinf.NavbarInf.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = navbarinf.NavbarInf.prototype;
+  dart.addTypeTests(navbarinf.NavbarInf);
+  dart.addTypeCaches(navbarinf.NavbarInf);
+  dart.setMethodSignature(navbarinf.NavbarInf, () => ({
+    __proto__: dart.getMethods(navbarinf.NavbarInf.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(navbarinf.NavbarInf, I[0]);
+  navbarinf.MyStatefulWidget = class MyStatefulWidget extends framework.StatefulWidget {
+    createState() {
+      return new navbarinf._MyStatefulWidgetState.new();
+    }
+  };
+  (navbarinf.MyStatefulWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    navbarinf.MyStatefulWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = navbarinf.MyStatefulWidget.prototype;
+  dart.addTypeTests(navbarinf.MyStatefulWidget);
+  dart.addTypeCaches(navbarinf.MyStatefulWidget);
+  dart.setMethodSignature(navbarinf.MyStatefulWidget, () => ({
+    __proto__: dart.getMethods(navbarinf.MyStatefulWidget.__proto__),
+    createState: dart.fnType(framework.State$(navbarinf.MyStatefulWidget), [])
+  }));
+  dart.setLibraryUri(navbarinf.MyStatefulWidget, I[0]);
+  var _selectedIndex = dart.privateName(navbarinf, "_selectedIndex");
+  var _onItemTapped = dart.privateName(navbarinf, "_onItemTapped");
+  var BottomNavigationBarItem_tooltip = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.tooltip");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BottomNavigationBarItem_backgroundColor = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.backgroundColor");
+  var BottomNavigationBarItem_label = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.label");
+  var BottomNavigationBarItem_title = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.title");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var BottomNavigationBarItem_activeIcon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.activeIcon");
+  var BottomNavigationBarItem_icon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.icon");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  navbarinf._MyStatefulWidgetState = class _MyStatefulWidgetState extends framework.State$(navbarinf.MyStatefulWidget) {
+    [_onItemTapped](index) {
+      this.setState(dart.fn(() => {
+        this[_selectedIndex] = index;
+      }, T.VoidTovoid()));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({body: new basic.Center.new({child: navbarinf._MyStatefulWidgetState._widgetOptions[$elementAt](this[_selectedIndex]), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), bottomNavigationBar: new bottom_navigation_bar.BottomNavigationBar.new({items: C[15] || CT.C15, currentIndex: this[_selectedIndex], selectedItemColor: new ui.Color.fromARGB(255, 37, 114, 201), onTap: dart.bind(this, _onItemTapped), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), $creationLocationd_0dea112b090073317d4: C[47] || CT.C47});
+    }
+  };
+  (navbarinf._MyStatefulWidgetState.new = function() {
+    this[_selectedIndex] = 0;
+    navbarinf._MyStatefulWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = navbarinf._MyStatefulWidgetState.prototype;
+  dart.addTypeTests(navbarinf._MyStatefulWidgetState);
+  dart.addTypeCaches(navbarinf._MyStatefulWidgetState);
+  dart.setMethodSignature(navbarinf._MyStatefulWidgetState, () => ({
+    __proto__: dart.getMethods(navbarinf._MyStatefulWidgetState.__proto__),
+    [_onItemTapped]: dart.fnType(dart.void, [core.int]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(navbarinf._MyStatefulWidgetState, I[0]);
+  dart.setFieldSignature(navbarinf._MyStatefulWidgetState, () => ({
+    __proto__: dart.getFields(navbarinf._MyStatefulWidgetState.__proto__),
+    [_selectedIndex]: dart.fieldType(core.int)
+  }));
+  dart.defineLazy(navbarinf._MyStatefulWidgetState, {
+    /*navbarinf._MyStatefulWidgetState.estilo*/get estilo() {
+      return C[51] || CT.C51;
+    },
+    /*navbarinf._MyStatefulWidgetState._widgetOptions*/get _widgetOptions() {
+      return T.JSArrayOfWidget().of([new tela_inicial.TelaInicial.new({$creationLocationd_0dea112b090073317d4: C[53] || CT.C53}), new tab.TabBarteste.new({$creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), new text.Text.new("Index 2: School", {style: navbarinf._MyStatefulWidgetState.estilo, $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), new text.Text.new("Index 3: Settings", {style: navbarinf._MyStatefulWidgetState.estilo, $creationLocationd_0dea112b090073317d4: C[59] || CT.C59})]);
+    },
+    set _widgetOptions(_) {}
+  }, false);
+  navbarinf.main = function main() {
+    return binding.runApp(C[63] || CT.C63);
+  };
+  dart.trackLibraries("packages/animelife/Modules/TelaInicial/navbarinf.dart", {
+    "package:animelife/Modules/TelaInicial/navbarinf.dart": navbarinf
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["navbarinf.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAU4B;AACxB;IAGF;;;QAPsB;;AAAQ,uDAAW,GAAG;;EAAC;;;;;;;;;;AAeJ;IAAwB;;;QAHpC;;AAAQ,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oBAwB7B;AAGnB,MAFF,cAAS;AACe,QAAtB,uBAAiB,KAAK;;IAE1B;UAG0B;AACxB,YAAO,kCACC,6BACG,AAAe,4DAAU,uGAEb,yFAuBL,yCACW,sBAAS,KAAK,IAAI,KAAK,uBACzC;IAGb;;;IAxDI,uBAAiB;;;EAyDvB;;;;;;;;;;;;;;MAxDyB,uCAAM;;;MAET,+CAAc;YAAW,yBAC3C,6FACA,oFACA,kBACE,2BACO,oGAET,kBACE,6BACO;;;;;AAnCE;EAAyB","file":"../../../../../../../../packages/animelife/Modules/TelaInicial/navbarinf.dart.lib.js"}');
+  // Exports:
+  return {
+    Modules__TelaInicial__navbarinf: navbarinf
+  };
+}));
+
+//# sourceMappingURL=navbarinf.dart.lib.js.map

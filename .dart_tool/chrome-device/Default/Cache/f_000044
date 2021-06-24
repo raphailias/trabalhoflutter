@@ -1,51 +1,33 @@
-define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/painting/debug.dart', 'packages/flutter/src/scheduler/binding.dart'], (function load__packages__flutter__src__painting__decoration_image_dart(dart_sdk, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__painting__debug$46dart, packages__flutter__src__scheduler__binding$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/gestures/drag_details.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__gestures__monodrag_dart(dart_sdk, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__gestures__drag_details$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
-  const _interceptors = dart_sdk._interceptors;
-  const collection = dart_sdk.collection;
-  const _engine = dart_sdk._engine;
-  const developer = dart_sdk.developer;
   const _js_helper = dart_sdk._js_helper;
+  const collection = dart_sdk.collection;
+  const _internal = dart_sdk._internal;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
+  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
-  const debug = packages__flutter__src__painting__debug$46dart.src__painting__debug;
-  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
-  var decoration_image = Object.create(dart.library);
-  var $runtimeType = dartx.runtimeType;
-  var $_equals = dartx._equals;
-  var $add = dartx.add;
-  var $join = dartx.join;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $toDouble = dartx.toDouble;
-  var $truncate = dartx.truncate;
-  var $toInt = dartx.toInt;
-  var $_get = dartx._get;
+  var monodrag = Object.create(dart.library);
   var $_set = dartx._set;
-  var $values = dartx.values;
-  var $toSet = dartx.toSet;
-  var $isEmpty = dartx.isEmpty;
-  var $floor = dartx.floor;
-  var $ceil = dartx.ceil;
+  var $_get = dartx._get;
+  var $sign = dartx.sign;
+  var $clear = dartx.clear;
+  var $abs = dartx.abs;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
-    DiagnosticsPropertyOfDecorationImage: () => (T.DiagnosticsPropertyOfDecorationImage = dart.constFn(diagnostics.DiagnosticsProperty$(decoration_image.DecorationImage)))(),
-    DiagnosticsPropertyOfImageConfiguration: () => (T.DiagnosticsPropertyOfImageConfiguration = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.ImageConfiguration)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    LinkedHashSetOfImageSizeInfo: () => (T.LinkedHashSetOfImageSizeInfo = dart.constFn(collection.LinkedHashSet$(debug.ImageSizeInfo)))(),
-    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
-    IdentityMapOfString$ImageSizeInfo: () => (T.IdentityMapOfString$ImageSizeInfo = dart.constFn(_js_helper.IdentityMap$(core.String, debug.ImageSizeInfo)))(),
-    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
-    SyncIterableOfRect: () => (T.SyncIterableOfRect = dart.constFn(_js_helper.SyncIterable$(ui.Rect)))()
+    PointerEventToVelocityTracker: () => (T.PointerEventToVelocityTracker = dart.constFn(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])))(),
+    IdentityMapOfint$VelocityTracker: () => (T.IdentityMapOfint$VelocityTracker = dart.constFn(_js_helper.IdentityMap$(core.int, velocity_tracker.VelocityTracker)))(),
+    LinkedHashSetOfint: () => (T.LinkedHashSetOfint = dart.constFn(collection.LinkedHashSet$(core.int)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidToString: () => (T.VoidToString = dart.constFn(dart.fnType(core.String, [])))(),
+    EnumPropertyOfDragStartBehavior: () => (T.EnumPropertyOfDragStartBehavior = dart.constFn(diagnostics.EnumProperty$(recognizer.DragStartBehavior)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -53,501 +35,593 @@ define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/fl
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeat",
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.ready",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeatX",
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.possible",
         index: 1
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeatY",
+        __proto__: monodrag._DragState.prototype,
+        [_name$]: "_DragState.accepted",
         index: 2
       });
     },
     get C3() {
-      return C[3] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.noRepeat",
-        index: 3
-      });
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], monodrag._DragState);
     },
     get C4() {
-      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], decoration_image.ImageRepeat);
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: ui.FilterQuality.prototype,
-        [_name]: "FilterQuality.low",
+      return C[4] = dart.const({
+        __proto__: recognizer.DragStartBehavior.prototype,
+        [_name]: "DragStartBehavior.start",
         index: 1
       });
     },
-    get C8() {
-      return C[8] = dart.constList([-1, 0, 0, 0, 255, 0, -1, 0, 0, 255, 0, 0, -1, 0, 255, 0, 0, 0, 1, 0], core.double);
+    get C5() {
+      return C[5] = dart.fn(monodrag.DragGestureRecognizer._defaultBuilder, T.PointerEventToVelocityTracker());
     },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: _engine._CkMatrixColorFilter.prototype,
-        [_CkMatrixColorFilter_matrix]: C[8] || CT.C8
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: recognizer.DragStartBehavior.prototype,
+        [_name]: "DragStartBehavior.down",
+        index: 0
       });
     }
   }, false);
-  var C = Array(9).fill(void 0);
+  var C = Array(7).fill(void 0);
   var I = [
-    "package:flutter/src/painting/decoration_image.dart",
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/painting/decoration_image.dart"
+    "package:flutter/src/gestures/monodrag.dart",
+    "file:///D:/flutter2/flutter/packages/flutter/lib/src/gestures/monodrag.dart"
   ];
-  var _name$ = dart.privateName(decoration_image, "_name");
-  decoration_image.ImageRepeat = class ImageRepeat extends core.Object {
+  var _name$ = dart.privateName(monodrag, "_name");
+  monodrag._DragState = class _DragState extends core.Object {
     toString() {
       return this[_name$];
     }
   };
-  (decoration_image.ImageRepeat.new = function(index, _name) {
+  (monodrag._DragState.new = function(index, _name) {
     this.index = index;
     this[_name$] = _name;
     ;
-  }).prototype = decoration_image.ImageRepeat.prototype;
-  dart.addTypeTests(decoration_image.ImageRepeat);
-  dart.addTypeCaches(decoration_image.ImageRepeat);
-  dart.setLibraryUri(decoration_image.ImageRepeat, I[0]);
-  dart.setFieldSignature(decoration_image.ImageRepeat, () => ({
-    __proto__: dart.getFields(decoration_image.ImageRepeat.__proto__),
+  }).prototype = monodrag._DragState.prototype;
+  dart.addTypeTests(monodrag._DragState);
+  dart.addTypeCaches(monodrag._DragState);
+  dart.setLibraryUri(monodrag._DragState, I[0]);
+  dart.setFieldSignature(monodrag._DragState, () => ({
+    __proto__: dart.getFields(monodrag._DragState.__proto__),
     index: dart.finalFieldType(core.int),
     [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.defineExtensionMethods(decoration_image.ImageRepeat, ['toString']);
-  decoration_image.ImageRepeat.repeat = C[0] || CT.C0;
-  decoration_image.ImageRepeat.repeatX = C[1] || CT.C1;
-  decoration_image.ImageRepeat.repeatY = C[2] || CT.C2;
-  decoration_image.ImageRepeat.noRepeat = C[3] || CT.C3;
-  decoration_image.ImageRepeat.values = C[4] || CT.C4;
-  var image$ = dart.privateName(decoration_image, "DecorationImage.image");
-  var onError$ = dart.privateName(decoration_image, "DecorationImage.onError");
-  var colorFilter$ = dart.privateName(decoration_image, "DecorationImage.colorFilter");
-  var fit$ = dart.privateName(decoration_image, "DecorationImage.fit");
-  var alignment$ = dart.privateName(decoration_image, "DecorationImage.alignment");
-  var centerSlice$ = dart.privateName(decoration_image, "DecorationImage.centerSlice");
-  var repeat$ = dart.privateName(decoration_image, "DecorationImage.repeat");
-  var matchTextDirection$ = dart.privateName(decoration_image, "DecorationImage.matchTextDirection");
-  var scale$ = dart.privateName(decoration_image, "DecorationImage.scale");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  decoration_image.DecorationImage = class DecorationImage extends core.Object {
-    get image() {
-      return this[image$];
+  dart.defineExtensionMethods(monodrag._DragState, ['toString']);
+  monodrag._DragState.ready = C[0] || CT.C0;
+  monodrag._DragState.possible = C[1] || CT.C1;
+  monodrag._DragState.accepted = C[2] || CT.C2;
+  monodrag._DragState.values = C[3] || CT.C3;
+  var dragStartBehavior$ = dart.privateName(monodrag, "DragGestureRecognizer.dragStartBehavior");
+  var onDown = dart.privateName(monodrag, "DragGestureRecognizer.onDown");
+  var onStart = dart.privateName(monodrag, "DragGestureRecognizer.onStart");
+  var onUpdate = dart.privateName(monodrag, "DragGestureRecognizer.onUpdate");
+  var onEnd = dart.privateName(monodrag, "DragGestureRecognizer.onEnd");
+  var onCancel = dart.privateName(monodrag, "DragGestureRecognizer.onCancel");
+  var minFlingDistance = dart.privateName(monodrag, "DragGestureRecognizer.minFlingDistance");
+  var minFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.minFlingVelocity");
+  var maxFlingVelocity = dart.privateName(monodrag, "DragGestureRecognizer.maxFlingVelocity");
+  var velocityTrackerBuilder$ = dart.privateName(monodrag, "DragGestureRecognizer.velocityTrackerBuilder");
+  var _name = dart.privateName(recognizer, "_name");
+  var _state = dart.privateName(monodrag, "_state");
+  var __DragGestureRecognizer__initialPosition = dart.privateName(monodrag, "_#DragGestureRecognizer#_initialPosition");
+  var __DragGestureRecognizer__pendingDragOffset = dart.privateName(monodrag, "_#DragGestureRecognizer#_pendingDragOffset");
+  var _lastPendingEventTimestamp = dart.privateName(monodrag, "_lastPendingEventTimestamp");
+  var _initialButtons = dart.privateName(monodrag, "_initialButtons");
+  var _lastTransform = dart.privateName(monodrag, "_lastTransform");
+  var __DragGestureRecognizer__globalDistanceMoved = dart.privateName(monodrag, "_#DragGestureRecognizer#_globalDistanceMoved");
+  var _velocityTrackers = dart.privateName(monodrag, "_velocityTrackers");
+  var _acceptedActivePointers = dart.privateName(monodrag, "_acceptedActivePointers");
+  var _initialPosition = dart.privateName(monodrag, "_initialPosition");
+  var _pendingDragOffset = dart.privateName(monodrag, "_pendingDragOffset");
+  var _globalDistanceMoved = dart.privateName(monodrag, "_globalDistanceMoved");
+  var _checkDown = dart.privateName(monodrag, "_checkDown");
+  var _giveUpPointer = dart.privateName(monodrag, "_giveUpPointer");
+  var _getDeltaForDetails = dart.privateName(monodrag, "_getDeltaForDetails");
+  var _getPrimaryValueFromOffset = dart.privateName(monodrag, "_getPrimaryValueFromOffset");
+  var _checkUpdate = dart.privateName(monodrag, "_checkUpdate");
+  var _hasSufficientGlobalDistanceToAccept = dart.privateName(monodrag, "_hasSufficientGlobalDistanceToAccept");
+  var _checkStart = dart.privateName(monodrag, "_checkStart");
+  var _checkCancel = dart.privateName(monodrag, "_checkCancel");
+  var _checkEnd = dart.privateName(monodrag, "_checkEnd");
+  monodrag.DragGestureRecognizer = class DragGestureRecognizer extends recognizer.OneSequenceGestureRecognizer {
+    get dragStartBehavior() {
+      return this[dragStartBehavior$];
     }
-    set image(value) {
-      super.image = value;
+    set dragStartBehavior(value) {
+      this[dragStartBehavior$] = value;
     }
-    get onError() {
-      return this[onError$];
+    get onDown() {
+      return this[onDown];
     }
-    set onError(value) {
-      super.onError = value;
+    set onDown(value) {
+      this[onDown] = value;
     }
-    get colorFilter() {
-      return this[colorFilter$];
+    get onStart() {
+      return this[onStart];
     }
-    set colorFilter(value) {
-      super.colorFilter = value;
+    set onStart(value) {
+      this[onStart] = value;
     }
-    get fit() {
-      return this[fit$];
+    get onUpdate() {
+      return this[onUpdate];
     }
-    set fit(value) {
-      super.fit = value;
+    set onUpdate(value) {
+      this[onUpdate] = value;
     }
-    get alignment() {
-      return this[alignment$];
+    get onEnd() {
+      return this[onEnd];
     }
-    set alignment(value) {
-      super.alignment = value;
+    set onEnd(value) {
+      this[onEnd] = value;
     }
-    get centerSlice() {
-      return this[centerSlice$];
+    get onCancel() {
+      return this[onCancel];
     }
-    set centerSlice(value) {
-      super.centerSlice = value;
+    set onCancel(value) {
+      this[onCancel] = value;
     }
-    get repeat() {
-      return this[repeat$];
+    get minFlingDistance() {
+      return this[minFlingDistance];
     }
-    set repeat(value) {
-      super.repeat = value;
+    set minFlingDistance(value) {
+      this[minFlingDistance] = value;
     }
-    get matchTextDirection() {
-      return this[matchTextDirection$];
+    get minFlingVelocity() {
+      return this[minFlingVelocity];
     }
-    set matchTextDirection(value) {
-      super.matchTextDirection = value;
+    set minFlingVelocity(value) {
+      this[minFlingVelocity] = value;
     }
-    get scale() {
-      return this[scale$];
+    get maxFlingVelocity() {
+      return this[maxFlingVelocity];
     }
-    set scale(value) {
-      super.scale = value;
+    set maxFlingVelocity(value) {
+      this[maxFlingVelocity] = value;
     }
-    createPainter(onChanged) {
-      if (!(onChanged !== null)) dart.assertFailed(null, I[1], 150, 12, "onChanged != null");
-      return new decoration_image.DecorationImagePainter.__(this, onChanged);
+    get velocityTrackerBuilder() {
+      return this[velocityTrackerBuilder$];
     }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return decoration_image.DecorationImage.is(other) && other.image[$_equals](this.image) && dart.equals(other.colorFilter, this.colorFilter) && other.fit == this.fit && other.alignment._equals(this.alignment) && dart.equals(other.centerSlice, this.centerSlice) && other.repeat === this.repeat && other.matchTextDirection === this.matchTextDirection && other.scale === this.scale;
+    set velocityTrackerBuilder(value) {
+      this[velocityTrackerBuilder$] = value;
     }
-    get hashCode() {
-      return ui.hashValues(this.image, this.colorFilter, this.fit, this.alignment, this.centerSlice, this.repeat, this.matchTextDirection, this.scale);
+    static _defaultBuilder(event) {
+      return new velocity_tracker.VelocityTracker.withKind(event.kind);
     }
-    toString() {
-      let properties = (() => {
-        let t0 = T.JSArrayOfString().of([dart.str(this.image)]);
-        if (this.colorFilter != null) t0[$add](dart.str(this.colorFilter));
-        if (this.fit != null && !(this.fit === box_fit.BoxFit.fill && this.centerSlice != null) && !(this.fit === box_fit.BoxFit.scaleDown && this.centerSlice == null)) t0[$add](dart.str(this.fit));
-        t0[$add](dart.str(this.alignment));
-        if (this.centerSlice != null) t0[$add]("centerSlice: " + dart.str(this.centerSlice));
-        if (this.repeat !== decoration_image.ImageRepeat.noRepeat) t0[$add](dart.str(this.repeat));
-        if (this.matchTextDirection) t0[$add]("match text direction");
-        t0[$add]("scale: " + dart.str(this.scale));
-        return t0;
-      })();
-      return object.objectRuntimeType(this, "DecorationImage") + "(" + properties[$join](", ") + ")";
+    get [_initialPosition]() {
+      let t0;
+      t0 = this[__DragGestureRecognizer__initialPosition];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_initialPosition")) : t0;
     }
-  };
-  (decoration_image.DecorationImage.new = function(opts) {
-    let image = opts && 'image' in opts ? opts.image : null;
-    let onError = opts && 'onError' in opts ? opts.onError : null;
-    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
-    let fit = opts && 'fit' in opts ? opts.fit : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
-    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
-    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    let scale = opts && 'scale' in opts ? opts.scale : 1;
-    this[image$] = image;
-    this[onError$] = onError;
-    this[colorFilter$] = colorFilter;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[centerSlice$] = centerSlice;
-    this[repeat$] = repeat;
-    this[matchTextDirection$] = matchTextDirection;
-    this[scale$] = scale;
-    if (!(image !== null)) dart.assertFailed(null, I[1], 55, 15, "image != null");
-    if (!(alignment !== null)) dart.assertFailed(null, I[1], 56, 15, "alignment != null");
-    if (!(repeat !== null)) dart.assertFailed(null, I[1], 57, 15, "repeat != null");
-    if (!(matchTextDirection !== null)) dart.assertFailed(null, I[1], 58, 15, "matchTextDirection != null");
-    if (!(scale !== null)) dart.assertFailed(null, I[1], 59, 15, "scale != null");
-    ;
-  }).prototype = decoration_image.DecorationImage.prototype;
-  dart.addTypeTests(decoration_image.DecorationImage);
-  dart.addTypeCaches(decoration_image.DecorationImage);
-  dart.setMethodSignature(decoration_image.DecorationImage, () => ({
-    __proto__: dart.getMethods(decoration_image.DecorationImage.__proto__),
-    createPainter: dart.fnType(decoration_image.DecorationImagePainter, [dart.fnType(dart.void, [])])
-  }));
-  dart.setLibraryUri(decoration_image.DecorationImage, I[0]);
-  dart.setFieldSignature(decoration_image.DecorationImage, () => ({
-    __proto__: dart.getFields(decoration_image.DecorationImage.__proto__),
-    image: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
-    onError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
-    colorFilter: dart.finalFieldType(dart.nullable(ui.ColorFilter)),
-    fit: dart.finalFieldType(dart.nullable(box_fit.BoxFit)),
-    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
-    centerSlice: dart.finalFieldType(dart.nullable(ui.Rect)),
-    repeat: dart.finalFieldType(decoration_image.ImageRepeat),
-    matchTextDirection: dart.finalFieldType(core.bool),
-    scale: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(decoration_image.DecorationImage, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(decoration_image.DecorationImage, ['hashCode']);
-  var _imageStream = dart.privateName(decoration_image, "_imageStream");
-  var _image = dart.privateName(decoration_image, "_image");
-  var _details$ = dart.privateName(decoration_image, "_details");
-  var _onChanged$ = dart.privateName(decoration_image, "_onChanged");
-  var _handleImage = dart.privateName(decoration_image, "_handleImage");
-  decoration_image.DecorationImagePainter = class DecorationImagePainter extends core.Object {
-    paint(canvas, rect, clipPath, configuration) {
-      let t1, t1$;
-      if (!(canvas !== null)) dart.assertFailed(null, I[1], 232, 12, "canvas != null");
-      if (!(rect !== null)) dart.assertFailed(null, I[1], 233, 12, "rect != null");
-      if (!(configuration !== null)) dart.assertFailed(null, I[1], 234, 12, "configuration != null");
-      let flipHorizontally = false;
-      if (this[_details$].matchTextDirection) {
-        if (!dart.fn(() => {
-          if (configuration.textDirection == null) {
-            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("DecorationImage.matchTextDirection can only be used when a TextDirection is available."), new assertions.ErrorDescription.new("When DecorationImagePainter.paint() was called, there was no text direction provided " + "in the ImageConfiguration object to match."), new (T.DiagnosticsPropertyOfDecorationImage()).new("The DecorationImage was", this[_details$], {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (T.DiagnosticsPropertyOfImageConfiguration()).new("The ImageConfiguration was", configuration, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
-          }
-          return true;
-        }, T.VoidTobool())()) dart.assertFailed(null, I[1], 238, 14, "() {\r\n        // We check this first so that the assert will fire immediately, not just\r\n        // when the image is ready.\r\n        if (configuration.textDirection == null) {\r\n          throw FlutterError.fromParts(<DiagnosticsNode>[\r\n            ErrorSummary('DecorationImage.matchTextDirection can only be used when a TextDirection is available.'),\r\n            ErrorDescription(\r\n              'When DecorationImagePainter.paint() was called, there was no text direction provided '\r\n              'in the ImageConfiguration object to match.',\r\n            ),\r\n            DiagnosticsProperty<DecorationImage>('The DecorationImage was', _details, style: DiagnosticsTreeStyle.errorProperty),\r\n            DiagnosticsProperty<ImageConfiguration>('The ImageConfiguration was', configuration, style: DiagnosticsTreeStyle.errorProperty),\r\n          ]);\r\n        }\r\n        return true;\r\n      }()");
-        if (configuration.textDirection === ui.TextDirection.rtl) flipHorizontally = true;
-      }
-      let newImageStream = this[_details$].image.resolve(configuration);
-      if (!newImageStream.key[$_equals]((t1 = this[_imageStream], t1 == null ? null : t1.key))) {
-        let listener = new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError});
-        t1$ = this[_imageStream];
-        t1$ == null ? null : t1$.removeListener(listener);
-        this[_imageStream] = newImageStream;
-        dart.nullCheck(this[_imageStream]).addListener(listener);
-      }
-      if (this[_image] == null) return;
-      if (clipPath != null) {
-        canvas.save();
-        canvas.clipPath(clipPath);
-      }
-      decoration_image.paintImage({canvas: canvas, rect: rect, image: dart.nullCheck(this[_image]).image, debugImageLabel: dart.nullCheck(this[_image]).debugLabel, scale: this[_details$].scale * dart.nullCheck(this[_image]).scale, colorFilter: this[_details$].colorFilter, fit: this[_details$].fit, alignment: this[_details$].alignment.resolve(configuration.textDirection), centerSlice: this[_details$].centerSlice, repeat: this[_details$].repeat, flipHorizontally: flipHorizontally, filterQuality: ui.FilterQuality.low});
-      if (clipPath != null) canvas.restore();
+    set [_initialPosition](t0) {
+      this[__DragGestureRecognizer__initialPosition] = t0;
     }
-    [_handleImage](value, synchronousCall) {
+    get [_pendingDragOffset]() {
       let t1;
-      if (dart.equals(this[_image], value)) return;
-      if (this[_image] != null && dart.nullCheck(this[_image]).isCloneOf(value)) {
-        value.dispose();
-        return;
+      t1 = this[__DragGestureRecognizer__pendingDragOffset];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_pendingDragOffset")) : t1;
+    }
+    set [_pendingDragOffset](t1) {
+      this[__DragGestureRecognizer__pendingDragOffset] = t1;
+    }
+    get [_globalDistanceMoved]() {
+      let t2;
+      t2 = this[__DragGestureRecognizer__globalDistanceMoved];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_globalDistanceMoved")) : t2;
+    }
+    set [_globalDistanceMoved](t2) {
+      this[__DragGestureRecognizer__globalDistanceMoved] = t2;
+    }
+    isPointerAllowed(event) {
+      if (this[_initialButtons] == null) {
+        switch (event.buttons) {
+          case 1:
+          {
+            if (this.onDown == null && this.onStart == null && this.onUpdate == null && this.onEnd == null && this.onCancel == null) return false;
+            break;
+          }
+          default:
+          {
+            return false;
+          }
+        }
+      } else {
+        if (event.buttons !== this[_initialButtons]) {
+          return false;
+        }
       }
-      t1 = this[_image];
-      t1 == null ? null : t1.dispose();
-      this[_image] = value;
-      if (!(this[_onChanged$] !== null)) dart.assertFailed(null, I[1], 304, 12, "_onChanged != null");
-      if (!synchronousCall) this[_onChanged$]();
+      return super.isPointerAllowed(events.PointerDownEvent.as(event));
+    }
+    addAllowedPointer(event) {
+      let t3;
+      this.startTrackingPointer(event.pointer, event.transform);
+      this[_velocityTrackers][$_set](event.pointer, (t3 = event, this.velocityTrackerBuilder(t3)));
+      if (this[_state] === monodrag._DragState.ready) {
+        this[_state] = monodrag._DragState.possible;
+        this[_initialPosition] = new recognizer.OffsetPair.new({global: event.position, local: event.localPosition});
+        this[_initialButtons] = event.buttons;
+        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
+        this[_globalDistanceMoved] = 0.0;
+        this[_lastPendingEventTimestamp] = event.timeStamp;
+        this[_lastTransform] = event.transform;
+        this[_checkDown]();
+      } else if (this[_state] === monodrag._DragState.accepted) {
+        this.resolve(arena.GestureDisposition.accepted);
+      }
+    }
+    handleEvent(event) {
+      let t3;
+      if (!(this[_state] !== monodrag._DragState.ready)) dart.assertFailed(null, I[1], 275, 12, "_state != _DragState.ready");
+      if (!event.synthesized && (events.PointerDownEvent.is(event) || events.PointerMoveEvent.is(event))) {
+        let tracker = dart.nullCheck(this[_velocityTrackers][$_get](event.pointer));
+        if (!(tracker !== null)) dart.assertFailed(null, I[1], 279, 14, "tracker != null");
+        tracker.addPosition(event.timeStamp, event.localPosition);
+      }
+      if (events.PointerMoveEvent.is(event)) {
+        if (event.buttons !== this[_initialButtons]) {
+          this[_giveUpPointer](event.pointer);
+          return;
+        }
+        if (this[_state] === monodrag._DragState.accepted) {
+          this[_checkUpdate]({sourceTimeStamp: event.timeStamp, delta: this[_getDeltaForDetails](event.localDelta), primaryDelta: this[_getPrimaryValueFromOffset](event.localDelta), globalPosition: event.position, localPosition: event.localPosition});
+        } else {
+          this[_pendingDragOffset] = this[_pendingDragOffset]['+'](new recognizer.OffsetPair.new({local: event.localDelta, global: event.delta}));
+          this[_lastPendingEventTimestamp] = event.timeStamp;
+          this[_lastTransform] = event.transform;
+          let movedLocally = this[_getDeltaForDetails](event.localDelta);
+          let localToGlobalTransform = event.transform == null ? null : vector_math_64.Matrix4.tryInvert(dart.nullCheck(event.transform));
+          this[_globalDistanceMoved] = this[_globalDistanceMoved] + events.PointerEvent.transformDeltaViaPositions({transform: localToGlobalTransform, untransformedDelta: movedLocally, untransformedEndPosition: event.localPosition}).distance * (t3 = this[_getPrimaryValueFromOffset](movedLocally), t3 == null ? 1.0 : t3)[$sign];
+          if (this[_hasSufficientGlobalDistanceToAccept](event.kind)) this.resolve(arena.GestureDisposition.accepted);
+        }
+      }
+      if (events.PointerUpEvent.is(event) || events.PointerCancelEvent.is(event)) {
+        this[_giveUpPointer](event.pointer);
+      }
+    }
+    acceptGesture(pointer) {
+      if (!!this[_acceptedActivePointers].contains(pointer)) dart.assertFailed(null, I[1], 320, 12, "!_acceptedActivePointers.contains(pointer)");
+      this[_acceptedActivePointers].add(pointer);
+      if (this[_state] !== monodrag._DragState.accepted) {
+        this[_state] = monodrag._DragState.accepted;
+        let delta = this[_pendingDragOffset];
+        let timestamp = dart.nullCheck(this[_lastPendingEventTimestamp]);
+        let transform = this[_lastTransform];
+        let localUpdateDelta = null;
+        switch (this.dragStartBehavior) {
+          case C[4] || CT.C4:
+          {
+            this[_initialPosition] = this[_initialPosition]['+'](delta);
+            localUpdateDelta = ui.Offset.zero;
+            break;
+          }
+          case C[6] || CT.C6:
+          {
+            localUpdateDelta = this[_getDeltaForDetails](delta.local);
+            break;
+          }
+        }
+        this[_pendingDragOffset] = recognizer.OffsetPair.zero;
+        this[_lastPendingEventTimestamp] = null;
+        this[_lastTransform] = null;
+        this[_checkStart](timestamp, pointer);
+        if (!localUpdateDelta._equals(ui.Offset.zero) && this.onUpdate != null) {
+          let localToGlobal = transform != null ? vector_math_64.Matrix4.tryInvert(transform) : null;
+          let correctedLocalPosition = this[_initialPosition].local['+'](localUpdateDelta);
+          let globalUpdateDelta = events.PointerEvent.transformDeltaViaPositions({untransformedEndPosition: correctedLocalPosition, untransformedDelta: localUpdateDelta, transform: localToGlobal});
+          let updateDelta = new recognizer.OffsetPair.new({local: localUpdateDelta, global: globalUpdateDelta});
+          let correctedPosition = this[_initialPosition]['+'](updateDelta);
+          this[_checkUpdate]({sourceTimeStamp: timestamp, delta: localUpdateDelta, primaryDelta: this[_getPrimaryValueFromOffset](localUpdateDelta), globalPosition: correctedPosition.global, localPosition: correctedPosition.local});
+        }
+      }
+    }
+    rejectGesture(pointer) {
+      this[_giveUpPointer](pointer);
+    }
+    didStopTrackingLastPointer(pointer) {
+      if (!(this[_state] !== monodrag._DragState.ready)) dart.assertFailed(null, I[1], 369, 12, "_state != _DragState.ready");
+      switch (this[_state]) {
+        case C[0] || CT.C0:
+        {
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          this.resolve(arena.GestureDisposition.rejected);
+          this[_checkCancel]();
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          this[_checkEnd](pointer);
+          break;
+        }
+      }
+      this[_velocityTrackers][$clear]();
+      this[_initialButtons] = null;
+      this[_state] = monodrag._DragState.ready;
+    }
+    [_giveUpPointer](pointer) {
+      this.stopTrackingPointer(pointer);
+      if (!this[_acceptedActivePointers].remove(pointer)) this.resolvePointer(pointer, arena.GestureDisposition.rejected);
+    }
+    [_checkDown]() {
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[1], 397, 12, "_initialButtons == kPrimaryButton");
+      if (this.onDown != null) {
+        let details = new drag_details.DragDownDetails.new({globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local});
+        this.invokeCallback(dart.void, "onDown", dart.fn(() => dart.nullCheck(this.onDown)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkStart](timestamp, pointer) {
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[1], 408, 12, "_initialButtons == kPrimaryButton");
+      if (this.onStart != null) {
+        let details = new drag_details.DragStartDetails.new({sourceTimeStamp: timestamp, globalPosition: this[_initialPosition].global, localPosition: this[_initialPosition].local, kind: this.getKindForPointer(pointer)});
+        this.invokeCallback(dart.void, "onStart", dart.fn(() => dart.nullCheck(this.onStart)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkUpdate](opts) {
+      let sourceTimeStamp = opts && 'sourceTimeStamp' in opts ? opts.sourceTimeStamp : null;
+      let delta = opts && 'delta' in opts ? opts.delta : null;
+      let primaryDelta = opts && 'primaryDelta' in opts ? opts.primaryDelta : null;
+      let globalPosition = opts && 'globalPosition' in opts ? opts.globalPosition : null;
+      let localPosition = opts && 'localPosition' in opts ? opts.localPosition : null;
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[1], 427, 12, "_initialButtons == kPrimaryButton");
+      if (this.onUpdate != null) {
+        let details = new drag_details.DragUpdateDetails.new({sourceTimeStamp: sourceTimeStamp, delta: delta, primaryDelta: primaryDelta, globalPosition: globalPosition, localPosition: localPosition});
+        this.invokeCallback(dart.void, "onUpdate", dart.fn(() => dart.nullCheck(this.onUpdate)(details), T.VoidTovoid()));
+      }
+    }
+    [_checkEnd](pointer) {
+      let t3, t3$;
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[1], 441, 12, "_initialButtons == kPrimaryButton");
+      if (this.onEnd == null) return;
+      let tracker = dart.nullCheck(this[_velocityTrackers][$_get](pointer));
+      if (!(tracker !== null)) dart.assertFailed(null, I[1], 446, 12, "tracker != null");
+      let details = null;
+      let debugReport = null;
+      let estimate = tracker.getVelocityEstimate();
+      if (estimate != null && this.isFlingGesture(estimate, tracker.kind)) {
+        let velocity = new velocity_tracker.Velocity.new({pixelsPerSecond: estimate.pixelsPerSecond}).clampMagnitude((t3 = this.minFlingVelocity, t3 == null ? 50 : t3), (t3$ = this.maxFlingVelocity, t3$ == null ? 8000 : t3$));
+        details = new drag_details.DragEndDetails.new({velocity: velocity, primaryVelocity: this[_getPrimaryValueFromOffset](velocity.pixelsPerSecond)});
+        debugReport = dart.fn(() => dart.str(estimate) + "; fling at " + dart.str(velocity) + ".", T.VoidToString());
+      } else {
+        details = new drag_details.DragEndDetails.new({velocity: velocity_tracker.Velocity.zero, primaryVelocity: 0.0});
+        debugReport = dart.fn(() => {
+          if (estimate == null) return "Could not estimate velocity.";
+          return dart.str(estimate) + "; judged to not be a fling.";
+        }, T.VoidToString());
+      }
+      this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(details), T.VoidTovoid()), {debugReport: debugReport});
+    }
+    [_checkCancel]() {
+      if (!(this[_initialButtons] === 1)) dart.assertFailed(null, I[1], 477, 12, "_initialButtons == kPrimaryButton");
+      if (this.onCancel != null) this.invokeCallback(dart.void, "onCancel", dart.nullCheck(this.onCancel));
     }
     dispose() {
-      let t1, t1$;
-      t1 = this[_imageStream];
-      t1 == null ? null : t1.removeListener(new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError}));
-      t1$ = this[_image];
-      t1$ == null ? null : t1$.dispose();
-      this[_image] = null;
+      this[_velocityTrackers][$clear]();
+      super.dispose();
     }
-    toString() {
-      return object.objectRuntimeType(this, "DecorationImagePainter") + "(stream: " + dart.str(this[_imageStream]) + ", image: " + dart.str(this[_image]) + ") for " + dart.str(this[_details$]);
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (T.EnumPropertyOfDragStartBehavior()).new("start behavior", this.dragStartBehavior));
     }
   };
-  (decoration_image.DecorationImagePainter.__ = function(_details, _onChanged) {
-    this[_imageStream] = null;
-    this[_image] = null;
-    this[_details$] = _details;
-    this[_onChanged$] = _onChanged;
-    if (!(_details !== null)) dart.assertFailed(null, I[1], 209, 69, "_details != null");
+  (monodrag.DragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    let dragStartBehavior = opts && 'dragStartBehavior' in opts ? opts.dragStartBehavior : C[4] || CT.C4;
+    let velocityTrackerBuilder = opts && 'velocityTrackerBuilder' in opts ? opts.velocityTrackerBuilder : C[5] || CT.C5;
+    this[onDown] = null;
+    this[onStart] = null;
+    this[onUpdate] = null;
+    this[onEnd] = null;
+    this[onCancel] = null;
+    this[minFlingDistance] = null;
+    this[minFlingVelocity] = null;
+    this[maxFlingVelocity] = null;
+    this[_state] = monodrag._DragState.ready;
+    this[__DragGestureRecognizer__initialPosition] = null;
+    this[__DragGestureRecognizer__pendingDragOffset] = null;
+    this[_lastPendingEventTimestamp] = null;
+    this[_initialButtons] = null;
+    this[_lastTransform] = null;
+    this[__DragGestureRecognizer__globalDistanceMoved] = null;
+    this[_velocityTrackers] = new (T.IdentityMapOfint$VelocityTracker()).new();
+    this[_acceptedActivePointers] = T.LinkedHashSetOfint().new();
+    this[dragStartBehavior$] = dragStartBehavior;
+    this[velocityTrackerBuilder$] = velocityTrackerBuilder;
+    if (!(dragStartBehavior !== null)) dart.assertFailed(null, I[1], 72, 15, "dragStartBehavior != null");
+    monodrag.DragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
     ;
-  }).prototype = decoration_image.DecorationImagePainter.prototype;
-  dart.addTypeTests(decoration_image.DecorationImagePainter);
-  dart.addTypeCaches(decoration_image.DecorationImagePainter);
-  dart.setMethodSignature(decoration_image.DecorationImagePainter, () => ({
-    __proto__: dart.getMethods(decoration_image.DecorationImagePainter.__proto__),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect, dart.nullable(ui.Path), image_provider.ImageConfiguration]),
-    [_handleImage]: dart.fnType(dart.void, [image_stream.ImageInfo, core.bool]),
-    dispose: dart.fnType(dart.void, [])
+  }).prototype = monodrag.DragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.DragGestureRecognizer);
+  dart.addTypeCaches(monodrag.DragGestureRecognizer);
+  dart.setMethodSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.DragGestureRecognizer.__proto__),
+    isPointerAllowed: dart.fnType(core.bool, [events.PointerEvent]),
+    addAllowedPointer: dart.fnType(dart.void, [events.PointerEvent]),
+    handleEvent: dart.fnType(dart.void, [events.PointerEvent]),
+    didStopTrackingLastPointer: dart.fnType(dart.void, [core.int]),
+    [_giveUpPointer]: dart.fnType(dart.void, [core.int]),
+    [_checkDown]: dart.fnType(dart.void, []),
+    [_checkStart]: dart.fnType(dart.void, [core.Duration, core.int]),
+    [_checkUpdate]: dart.fnType(dart.void, [], {localPosition: dart.nullable(ui.Offset), primaryDelta: dart.nullable(core.double), sourceTimeStamp: dart.nullable(core.Duration)}, {delta: ui.Offset, globalPosition: ui.Offset}),
+    [_checkEnd]: dart.fnType(dart.void, [core.int]),
+    [_checkCancel]: dart.fnType(dart.void, [])
   }));
-  dart.setLibraryUri(decoration_image.DecorationImagePainter, I[0]);
-  dart.setFieldSignature(decoration_image.DecorationImagePainter, () => ({
-    __proto__: dart.getFields(decoration_image.DecorationImagePainter.__proto__),
-    [_details$]: dart.finalFieldType(decoration_image.DecorationImage),
-    [_onChanged$]: dart.finalFieldType(dart.fnType(dart.void, [])),
-    [_imageStream]: dart.fieldType(dart.nullable(image_stream.ImageStream)),
-    [_image]: dart.fieldType(dart.nullable(image_stream.ImageInfo))
+  dart.setGetterSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.DragGestureRecognizer.__proto__),
+    [_initialPosition]: recognizer.OffsetPair,
+    [_pendingDragOffset]: recognizer.OffsetPair,
+    [_globalDistanceMoved]: core.double
   }));
-  dart.defineExtensionMethods(decoration_image.DecorationImagePainter, ['toString']);
-  var _name = dart.privateName(ui, "_name");
-  var _CkMatrixColorFilter_matrix = dart.privateName(_engine, "_CkMatrixColorFilter.matrix");
-  decoration_image.debugFlushLastFrameImageSizeInfo = function debugFlushLastFrameImageSizeInfo() {
-    if (!dart.fn(() => {
-      decoration_image._lastFrameImageSizeInfo = T.LinkedHashSetOfImageSizeInfo().new();
-      return true;
-    }, T.VoidTobool())()) dart.assertFailed(null, I[1], 343, 10, "() {\r\n    _lastFrameImageSizeInfo = <ImageSizeInfo>{};\r\n    return true;\r\n  }()");
-  };
-  decoration_image.paintImage = function paintImage(opts) {
-    let t1, t1$, t1$0, t1$1, t1$2;
-    let canvas = opts && 'canvas' in opts ? opts.canvas : null;
-    let rect = opts && 'rect' in opts ? opts.rect : null;
-    let image = opts && 'image' in opts ? opts.image : null;
-    let debugImageLabel = opts && 'debugImageLabel' in opts ? opts.debugImageLabel : null;
-    let scale = opts && 'scale' in opts ? opts.scale : 1;
-    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
-    let fit = opts && 'fit' in opts ? opts.fit : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
-    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
-    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
-    let flipHorizontally = opts && 'flipHorizontally' in opts ? opts.flipHorizontally : false;
-    let invertColors = opts && 'invertColors' in opts ? opts.invertColors : false;
-    let filterQuality = opts && 'filterQuality' in opts ? opts.filterQuality : C[6] || CT.C6;
-    let isAntiAlias = opts && 'isAntiAlias' in opts ? opts.isAntiAlias : false;
-    if (!(canvas !== null)) dart.assertFailed(null, I[1], 433, 10, "canvas != null");
-    if (!(image !== null)) dart.assertFailed(null, I[1], 434, 10, "image != null");
-    if (!(alignment !== null)) dart.assertFailed(null, I[1], 435, 10, "alignment != null");
-    if (!(repeat !== null)) dart.assertFailed(null, I[1], 436, 10, "repeat != null");
-    if (!(flipHorizontally !== null)) dart.assertFailed(null, I[1], 437, 10, "flipHorizontally != null");
-    if (!(isAntiAlias !== null)) dart.assertFailed(null, I[1], 438, 10, "isAntiAlias != null");
-    if (!dart.test((t1$ = (t1 = image.debugGetOpenHandleStackTraces(), t1 == null ? null : t1[$isNotEmpty]), t1$ == null ? true : t1$))) dart.assertFailed("Cannot paint an image that is disposed.\n" + "The caller of paintImage is expected to wait to dispose the image until " + "after painting has completed.", I[1], 440, 5, "image.debugGetOpenHandleStackTraces()?.isNotEmpty ?? true");
-    if (rect.isEmpty) return;
-    let outputSize = rect.size;
-    let inputSize = new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]());
-    let sliceBorder = null;
-    if (centerSlice != null) {
-      sliceBorder = ui.Offset.as(inputSize['/'](scale)['-'](centerSlice.size));
-      outputSize = ui.Size.as(outputSize['-'](sliceBorder));
-      inputSize = ui.Size.as(inputSize['-'](sliceBorder['*'](scale)));
+  dart.setSetterSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getSetters(monodrag.DragGestureRecognizer.__proto__),
+    [_initialPosition]: recognizer.OffsetPair,
+    [_pendingDragOffset]: recognizer.OffsetPair,
+    [_globalDistanceMoved]: core.double
+  }));
+  dart.setLibraryUri(monodrag.DragGestureRecognizer, I[0]);
+  dart.setFieldSignature(monodrag.DragGestureRecognizer, () => ({
+    __proto__: dart.getFields(monodrag.DragGestureRecognizer.__proto__),
+    dragStartBehavior: dart.fieldType(recognizer.DragStartBehavior),
+    onDown: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragDownDetails]))),
+    onStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragStartDetails]))),
+    onUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragUpdateDetails]))),
+    onEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [drag_details.DragEndDetails]))),
+    onCancel: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
+    minFlingDistance: dart.fieldType(dart.nullable(core.double)),
+    minFlingVelocity: dart.fieldType(dart.nullable(core.double)),
+    maxFlingVelocity: dart.fieldType(dart.nullable(core.double)),
+    velocityTrackerBuilder: dart.fieldType(dart.fnType(velocity_tracker.VelocityTracker, [events.PointerEvent])),
+    [_state]: dart.fieldType(monodrag._DragState),
+    [__DragGestureRecognizer__initialPosition]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
+    [__DragGestureRecognizer__pendingDragOffset]: dart.fieldType(dart.nullable(recognizer.OffsetPair)),
+    [_lastPendingEventTimestamp]: dart.fieldType(dart.nullable(core.Duration)),
+    [_initialButtons]: dart.fieldType(dart.nullable(core.int)),
+    [_lastTransform]: dart.fieldType(dart.nullable(vector_math_64.Matrix4)),
+    [__DragGestureRecognizer__globalDistanceMoved]: dart.fieldType(dart.nullable(core.double)),
+    [_velocityTrackers]: dart.finalFieldType(core.Map$(core.int, velocity_tracker.VelocityTracker)),
+    [_acceptedActivePointers]: dart.finalFieldType(core.Set$(core.int))
+  }));
+  monodrag.VerticalDragGestureRecognizer = class VerticalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return estimate.pixelsPerSecond.dy[$abs]() > minVelocity && estimate.offset.dy[$abs]() > minDistance;
     }
-    fit == null ? fit = centerSlice == null ? box_fit.BoxFit.scaleDown : box_fit.BoxFit.fill : null;
-    if (!(centerSlice == null || fit !== box_fit.BoxFit.none && fit !== box_fit.BoxFit.cover)) dart.assertFailed(null, I[1], 456, 10, "centerSlice == null || (fit != BoxFit.none && fit != BoxFit.cover)");
-    let fittedSizes = box_fit.applyBoxFit(fit, inputSize['/'](scale), outputSize);
-    let sourceSize = fittedSizes.source['*'](scale);
-    let destinationSize = fittedSizes.destination;
-    if (centerSlice != null) {
-      outputSize = outputSize['+'](dart.nullCheck(sliceBorder));
-      destinationSize = destinationSize['+'](sliceBorder);
-      if (!sourceSize._equals(inputSize)) dart.assertFailed("centerSlice was used with a BoxFit that does not guarantee that the image is fully visible.", I[1], 465, 12, "sourceSize == inputSize");
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      return this[_globalDistanceMoved][$abs]() > events.computeHitSlop(pointerDeviceKind);
     }
-    if (repeat !== decoration_image.ImageRepeat.noRepeat && destinationSize._equals(outputSize)) {
-      repeat = decoration_image.ImageRepeat.noRepeat;
+    [_getDeltaForDetails](delta) {
+      return new ui.Offset.new(0.0, delta.dy);
     }
-    let paint = (t1$0 = ui.Paint.new(), (() => {
-      t1$0.isAntiAlias = isAntiAlias;
-      return t1$0;
-    })());
-    if (colorFilter != null) paint.colorFilter = colorFilter;
-    paint.filterQuality = filterQuality;
-    paint.invertColors = invertColors;
-    let halfWidthDelta = (outputSize.width - destinationSize.width) / 2.0;
-    let halfHeightDelta = (outputSize.height - destinationSize.height) / 2.0;
-    let dx = halfWidthDelta + (flipHorizontally ? -alignment.x : alignment.x) * halfWidthDelta;
-    let dy = halfHeightDelta + alignment.y * halfHeightDelta;
-    let destinationPosition = rect.topLeft.translate(dx, dy);
-    let destinationRect = destinationPosition['&'](destinationSize);
-    let invertedCanvas = false;
-    if (!false) {
-      let sizeInfo = new debug.ImageSizeInfo.new({source: (t1$1 = debugImageLabel, t1$1 == null ? "<Unknown Image(" + dart.str(image.width) + "×" + dart.str(image.height) + ")>" : t1$1), imageSize: new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]()), displaySize: outputSize});
-      if (!dart.fn(() => {
-        let t1;
-        if (debug.debugInvertOversizedImages && sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debug.debugImageOverheadAllowance) {
-          let overheadInKilobytes = ((sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) / 1024)[$truncate]();
-          let outputWidth = outputSize.width[$toInt]();
-          let outputHeight = outputSize.height[$toInt]();
-          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: "Image " + dart.str(debugImageLabel) + " has a display size of " + dart.str(outputWidth) + "×" + dart.str(outputHeight) + " but a decode size of " + dart.str(image.width) + "×" + dart.str(image.height) + ", which uses an additional " + dart.str(overheadInKilobytes) + "KB.\n\n" + "Consider resizing the asset ahead of time, supplying a cacheWidth " + "parameter of " + dart.str(outputWidth) + ", a cacheHeight parameter of " + dart.str(outputHeight) + ", or using a ResizeImage.", library: "painting library", context: new assertions.ErrorDescription.new("while painting an image")}));
-          canvas.saveLayer(destinationRect, (t1 = ui.Paint.new(), (() => {
-            t1.colorFilter = C[7] || CT.C7;
-            return t1;
-          })()));
-          let dy = -(rect.top + rect.height / 2.0);
-          canvas.translate(0.0, -dy);
-          canvas.scale(1.0, -1.0);
-          canvas.translate(0.0, dy);
-          invertedCanvas = true;
-        }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 495, 12, "() {\r\n      if (debugInvertOversizedImages &&\r\n          sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debugImageOverheadAllowance) {\r\n        final int overheadInKilobytes = (sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) ~/ 1024;\r\n        final int outputWidth = outputSize.width.toInt();\r\n        final int outputHeight = outputSize.height.toInt();\r\n        FlutterError.reportError(FlutterErrorDetails(\r\n          exception: 'Image $debugImageLabel has a display size of '\r\n            '$outputWidth×$outputHeight but a decode size of '\r\n            '${image.width}×${image.height}, which uses an additional '\r\n            '${overheadInKilobytes}KB.\\n\\n'\r\n            'Consider resizing the asset ahead of time, supplying a cacheWidth '\r\n            'parameter of $outputWidth, a cacheHeight parameter of '\r\n            '$outputHeight, or using a ResizeImage.',\r\n          library: 'painting library',\r\n          context: ErrorDescription('while painting an image'),\r\n        ));\r\n        // Invert the colors of the canvas.\r\n        canvas.saveLayer(\r\n          destinationRect,\r\n          Paint()..colorFilter = const ColorFilter.matrix(<double>[\r\n            -1,  0,  0, 0, 255,\r\n             0, -1,  0, 0, 255,\r\n             0,  0, -1, 0, 255,\r\n             0,  0,  0, 1,   0,\r\n          ]),\r\n        );\r\n        // Flip the canvas vertically.\r\n        final double dy = -(rect.top + rect.height / 2.0);\r\n        canvas.translate(0.0, -dy);\r\n        canvas.scale(1.0, -1.0);\r\n        canvas.translate(0.0, dy);\r\n        invertedCanvas = true;\r\n      }\r\n      return true;\r\n    }()");
-      if (!decoration_image._lastFrameImageSizeInfo.contains(sizeInfo)) {
-        let existingSizeInfo = decoration_image._pendingImageSizeInfo[$_get](sizeInfo.source);
-        if (existingSizeInfo == null || existingSizeInfo.displaySizeInBytes < sizeInfo.displaySizeInBytes) {
-          decoration_image._pendingImageSizeInfo[$_set](dart.nullCheck(sizeInfo.source), sizeInfo);
-        }
-        t1$2 = debug.debugOnPaintImage;
-        t1$2 == null ? null : t1$2(sizeInfo);
-        dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(timeStamp => {
-          decoration_image._lastFrameImageSizeInfo = decoration_image._pendingImageSizeInfo[$values][$toSet]();
-          if (decoration_image._pendingImageSizeInfo[$isEmpty]) {
-            return;
-          }
-          developer.postEvent("Flutter.ImageSizesForFrame", (() => {
-            let t1 = new (T.IdentityMapOfString$Object()).new();
-            for (let imageSizeInfo of decoration_image._pendingImageSizeInfo[$values])
-              t1[$_set](dart.nullCheck(imageSizeInfo.source), imageSizeInfo.toJson());
-            return t1;
-          })());
-          decoration_image._pendingImageSizeInfo = new (T.IdentityMapOfString$ImageSizeInfo()).new();
-        }, T.DurationTovoid()));
-      }
+    [_getPrimaryValueFromOffset](value) {
+      return value.dy;
     }
-    let needSave = centerSlice != null || repeat !== decoration_image.ImageRepeat.noRepeat || flipHorizontally;
-    if (needSave) canvas.save();
-    if (repeat !== decoration_image.ImageRepeat.noRepeat) canvas.clipRect(rect);
-    if (flipHorizontally) {
-      let dx = -(rect.left + rect.width / 2.0);
-      canvas.translate(-dx, 0.0);
-      canvas.scale(-1.0, 1.0);
-      canvas.translate(dx, 0.0);
-    }
-    if (centerSlice == null) {
-      let sourceRect = alignment.inscribe(sourceSize, ui.Offset.zero['&'](inputSize));
-      if (repeat === decoration_image.ImageRepeat.noRepeat) {
-        canvas.drawImageRect(image, sourceRect, destinationRect, paint);
-      } else {
-        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
-          canvas.drawImageRect(image, sourceRect, tileRect, paint);
-      }
-    } else {
-      canvas.scale(1 / scale);
-      if (repeat === decoration_image.ImageRepeat.noRepeat) {
-        canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(destinationRect, scale), paint);
-      } else {
-        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
-          canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(tileRect, scale), paint);
-      }
-    }
-    if (needSave) canvas.restore();
-    if (invertedCanvas) {
-      canvas.restore();
+    get debugDescription() {
+      return "vertical drag";
     }
   };
-  decoration_image._generateImageTileRects = function _generateImageTileRects(outputRect, fundamentalRect, repeat) {
-    return new (T.SyncIterableOfRect()).new(function* _generateImageTileRects() {
-      let startX = 0;
-      let startY = 0;
-      let stopX = 0;
-      let stopY = 0;
-      let strideX = fundamentalRect.width;
-      let strideY = fundamentalRect.height;
-      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatX) {
-        startX = ((outputRect.left - fundamentalRect.left) / strideX)[$floor]();
-        stopX = ((outputRect.right - fundamentalRect.right) / strideX)[$ceil]();
-      }
-      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatY) {
-        startY = ((outputRect.top - fundamentalRect.top) / strideY)[$floor]();
-        stopY = ((outputRect.bottom - fundamentalRect.bottom) / strideY)[$ceil]();
-      }
-      for (let i = startX; i <= stopX; i = i + 1) {
-        for (let j = startY; j <= stopY; j = j + 1)
-          yield fundamentalRect.shift(new ui.Offset.new(i * strideX, j * strideY));
-      }
-    });
+  (monodrag.VerticalDragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    monodrag.VerticalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = monodrag.VerticalDragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.VerticalDragGestureRecognizer);
+  dart.addTypeCaches(monodrag.VerticalDragGestureRecognizer);
+  dart.setMethodSignature(monodrag.VerticalDragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.VerticalDragGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.VerticalDragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.VerticalDragGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.VerticalDragGestureRecognizer, I[0]);
+  monodrag.HorizontalDragGestureRecognizer = class HorizontalDragGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return estimate.pixelsPerSecond.dx[$abs]() > minVelocity && estimate.offset.dx[$abs]() > minDistance;
+    }
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      return this[_globalDistanceMoved][$abs]() > events.computeHitSlop(pointerDeviceKind);
+    }
+    [_getDeltaForDetails](delta) {
+      return new ui.Offset.new(delta.dx, 0.0);
+    }
+    [_getPrimaryValueFromOffset](value) {
+      return value.dx;
+    }
+    get debugDescription() {
+      return "horizontal drag";
+    }
   };
-  decoration_image._scaleRect = function _scaleRect(rect, scale) {
-    return new ui.Rect.fromLTRB(rect.left * scale, rect.top * scale, rect.right * scale, rect.bottom * scale);
+  (monodrag.HorizontalDragGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    monodrag.HorizontalDragGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = monodrag.HorizontalDragGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.HorizontalDragGestureRecognizer);
+  dart.addTypeCaches(monodrag.HorizontalDragGestureRecognizer);
+  dart.setMethodSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.HorizontalDragGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(core.double, [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.HorizontalDragGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.HorizontalDragGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.HorizontalDragGestureRecognizer, I[0]);
+  monodrag.PanGestureRecognizer = class PanGestureRecognizer extends monodrag.DragGestureRecognizer {
+    isFlingGesture(estimate, kind) {
+      let t3, t3$;
+      let minVelocity = (t3 = this.minFlingVelocity, t3 == null ? 50 : t3);
+      let minDistance = (t3$ = this.minFlingDistance, t3$ == null ? events.computeHitSlop(kind) : t3$);
+      return estimate.pixelsPerSecond.distanceSquared > minVelocity * minVelocity && estimate.offset.distanceSquared > minDistance * minDistance;
+    }
+    [_hasSufficientGlobalDistanceToAccept](pointerDeviceKind) {
+      return this[_globalDistanceMoved][$abs]() > events.computePanSlop(pointerDeviceKind);
+    }
+    [_getDeltaForDetails](delta) {
+      return delta;
+    }
+    [_getPrimaryValueFromOffset](value) {
+      return null;
+    }
+    get debugDescription() {
+      return "pan";
+    }
   };
-  dart.defineLazy(decoration_image, {
-    /*decoration_image._pendingImageSizeInfo*/get _pendingImageSizeInfo() {
-      return new (T.IdentityMapOfString$ImageSizeInfo()).new();
-    },
-    set _pendingImageSizeInfo(_) {},
-    /*decoration_image._lastFrameImageSizeInfo*/get _lastFrameImageSizeInfo() {
-      return T.LinkedHashSetOfImageSizeInfo().new();
-    },
-    set _lastFrameImageSizeInfo(_) {}
-  }, false);
-  dart.trackLibraries("packages/flutter/src/painting/decoration_image.dart", {
-    "package:flutter/src/painting/decoration_image.dart": decoration_image
+  (monodrag.PanGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    monodrag.PanGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner});
+    ;
+  }).prototype = monodrag.PanGestureRecognizer.prototype;
+  dart.addTypeTests(monodrag.PanGestureRecognizer);
+  dart.addTypeCaches(monodrag.PanGestureRecognizer);
+  dart.setMethodSignature(monodrag.PanGestureRecognizer, () => ({
+    __proto__: dart.getMethods(monodrag.PanGestureRecognizer.__proto__),
+    isFlingGesture: dart.fnType(core.bool, [velocity_tracker.VelocityEstimate, ui.PointerDeviceKind]),
+    [_hasSufficientGlobalDistanceToAccept]: dart.fnType(core.bool, [ui.PointerDeviceKind]),
+    [_getDeltaForDetails]: dart.fnType(ui.Offset, [ui.Offset]),
+    [_getPrimaryValueFromOffset]: dart.fnType(dart.nullable(core.double), [ui.Offset])
+  }));
+  dart.setGetterSignature(monodrag.PanGestureRecognizer, () => ({
+    __proto__: dart.getGetters(monodrag.PanGestureRecognizer.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(monodrag.PanGestureRecognizer, I[0]);
+  dart.trackLibraries("packages/flutter/src/gestures/monodrag.dart", {
+    "package:flutter/src/gestures/monodrag.dart": monodrag
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["decoration_image.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/painting/decoration_image.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["monodrag.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBA;;6CAJK;;;;EAIL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA8EoB;;;;;;IAYO;;;;;;IAiBC;;;;;;IAYC;;;;;;IAaH;;;;;;IAOG;;;;;;IAOnB;;;;;;IAOA;;;;;;IAKA;;;;;;IAwBsB;;;;;;2BA9HsB;AAAU,YAAgB,+CAAS,AAAM,KAAD;IAAM;;;AAiIlF;;IAAgB;;AAAhB;IAAgB;;;AAChB;;IAAkB;;AAAlB;IAAkB;;;AAWtB;;IAAoB;;AAApB;IAAoB;qBAgBG;AACjC,UAAI,AAAgB;AAClB,gBAAQ,AAAM,KAAD;;;AAET,gBAAI,AAAO,uBACP,AAAQ,wBACR,AAAS,yBACT,AAAM,sBACN,AAAS,uBACX,MAAO;AACT;;;;AAEA,kBAAO;;;;AAIX,YAAI,AAAM,KAAD,aAAY;AACnB,gBAAO;;;AAGX,YAAa,wBAAuB,2BAAN,KAAK;IACrC;sBAGoC;;AACkB,MAApD,0BAAqB,AAAM,KAAD,UAAU,AAAM,KAAD;AACuB,MAAhE,AAAiB,+BAAC,AAAM,KAAD,gBAAmC,KAAK,EAA5B,AAAsB;AACzD,UAAI,AAAO,iBAAc;AACK,QAA5B,eAAoB;AAC6D,QAAjF,yBAAmB,uCAAmB,AAAM,KAAD,kBAAkB,AAAM,KAAD;AACnC,QAA/B,wBAAkB,AAAM,KAAD;AACa,QAApC,2BAAgC;AACN,QAA1B,6BAAuB;AACqB,QAA5C,mCAA6B,AAAM,KAAD;AACF,QAAhC,uBAAiB,AAAM,KAAD;AACV,QAAZ;YACK,KAAI,AAAO,iBAAc;AACM,QAApC,aAA2B;;IAE/B;gBAG8B;;AAC5B,YAAO,AAAO,iBAAc;AAC5B,WAAK,AAAM,KAAD,iBACI,2BAAN,KAAK,KAA8B,2BAAN,KAAK;AAClB,sBAA0C,eAAhC,AAAiB,+BAAC,AAAM,KAAD;AACvD,cAAO,AAAQ,OAAD;AAC2C,QAAzD,AAAQ,OAAD,aAAa,AAAM,KAAD,YAAY,AAAM,KAAD;;AAG5C,UAAU,2BAAN,KAAK;AACP,YAAI,AAAM,KAAD,aAAY;AACU,UAA7B,qBAAe,AAAM,KAAD;AACpB;;AAEF,YAAI,AAAO,iBAAc;AAOtB,UAND,qCACmB,AAAM,KAAD,mBACf,0BAAoB,AAAM,KAAD,4BAClB,iCAA2B,AAAM,KAAD,8BAC9B,AAAM,KAAD,0BACN,AAAM,KAAD;;AAGwD,UAA9E,2BAAA,AAAmB,8BAAG,sCAAkB,AAAM,KAAD,qBAAqB,AAAM,KAAD;AAC3B,UAA5C,mCAA6B,AAAM,KAAD;AACF,UAAhC,uBAAiB,AAAM,KAAD;AACT,6BAAe,0BAAoB,AAAM,KAAD;AACtC,uCAAyB,AAAM,AAAU,KAAX,qBAAqB,OAAe,iCAAyB,eAAf,AAAM,KAAD;AAK/B,UAJjE,6BAAA,AAAqB,6BAAgB,AAInC,AAAS,2DAHE,sBAAsB,sBACb,YAAY,4BACN,AAAM,KAAD,4BAC4B,CAAN,KAAzC,iCAA2B,YAAY,GAAvC,aAA4C;AAC1D,cAAI,2CAAqC,AAAM,KAAD,QAC5C,AAAoC,aAAT;;;AAGjC,UAAU,yBAAN,KAAK,KAA4B,6BAAN,KAAK;AACL,QAA7B,qBAAe,AAAM,KAAD;;IAExB;kBAKuB;AACrB,WAAO,CAAC,AAAwB,uCAAS,OAAO;AACZ,MAApC,AAAwB,kCAAI,OAAO;AACnC,UAAI,iBAAqB;AACK,QAA5B,eAAoB;AACH,oBAAQ;AACV,wBAAsC,eAA1B;AACZ,wBAAY;AACd;AACb,gBAAQ;;;AAEuC,YAA3C,yBAAmB,AAAiB,4BAAE,KAAK;AACb,YAA9B,mBAA0B;AAC1B;;;;AAEmD,YAAnD,mBAAmB,0BAAoB,AAAM,KAAD;AAC5C;;;AAEgC,QAApC,2BAAgC;AACC,QAAjC,mCAA6B;AACR,QAArB,uBAAiB;AACc,QAA/B,kBAAY,SAAS,EAAE,OAAO;AAC9B,aAAI,gBAAgB,SAAW,mBAAQ;AACtB,8BAAgB,AAAU,SAAD,WAAmB,iCAAU,SAAS,IAAI;AACrE,uCAAyB,AAAiB,AAAM,kCAAE,gBAAgB;AAClE,kCAAiC,0EAClB,sBAAsB,sBAC5B,gBAAgB,aACzB,aAAa;AAET,4BAAc,sCAAkB,gBAAgB,UAAU,iBAAiB;AAC3E,kCAAoB,AAAiB,4BAAE,WAAW;AAOlE,UAND,qCACmB,SAAS,SACnB,gBAAgB,gBACT,iCAA2B,gBAAgB,mBACzC,AAAkB,iBAAD,wBAClB,AAAkB,iBAAD;;;IAIxC;kBAGuB;AACE,MAAvB,qBAAe,OAAO;IACxB;+BAGoC;AAClC,YAAO,AAAO,iBAAc;AAC5B,cAAO;;;AAEH;;;;AAGoC,UAApC,aAA2B;AACb,UAAd;AACA;;;;AAGkB,UAAlB,gBAAU,OAAO;AACjB;;;AAEqB,MAAzB,AAAkB;AACI,MAAtB,wBAAkB;AACO,MAAzB,eAAoB;IACtB;qBAEwB;AACM,MAA5B,yBAAoB,OAAO;AAG3B,WAAK,AAAwB,qCAAO,OAAO,GACzC,AAAoD,oBAArC,OAAO,EAAqB;IAC/C;;AAGE,YAAO,AAAgB;AACvB,UAAI;AACoB,sBAAU,sDACd,AAAiB,8CAClB,AAAiB;AAEoB,QAAtD,+BAAqB,UAAU,cAAY,AAAC,eAAP,aAAQ,OAAO;;IAExD;kBAE0B,WAAe;AACvC,YAAO,AAAgB;AACvB,UAAI;AACqB,sBAAU,wDACd,SAAS,kBACV,AAAiB,8CAClB,AAAiB,oCAC1B,uBAAkB,OAAO;AAEuB,QAAxD,+BAAqB,WAAW,cAAa,AAAC,eAAR,cAAS,OAAO;;IAE1D;;UAGY;UACM;UACR;UACQ;UACR;AAER,YAAO,AAAgB;AACvB,UAAI;AACsB,sBAAU,yDACf,eAAe,SACzB,KAAK,gBACE,YAAY,kBACV,cAAc,iBACf,aAAa;AAE4B,QAA1D,+BAAqB,YAAY,cAAc,AAAC,eAAT,eAAU,OAAO;;IAE5D;gBAEmB;;AACjB,YAAO,AAAgB;AACvB,UAAI,AAAM,oBACR;AAEoB,oBAAoC,eAA1B,AAAiB,+BAAC,OAAO;AACzD,YAAO,AAAQ,OAAD;AAEO;AACG;AAEA,qBAAW,AAAQ,OAAD;AAC1C,UAAI,QAAQ,YAAY,oBAAe,QAAQ,EAAE,AAAQ,OAAD;AACvC,uBAAW,AACvB,oDADiD,AAAS,QAAD,mCACzB,4BAAjB,wBAAwD,6BAAjB;AAIxD,QAHD,UAAU,+CACE,QAAQ,mBACD,iCAA2B,AAAS,QAAD;AAIrD,QAFD,cAAc,cAC2B,SAA9B,QAAQ,6BAAY,QAAQ;;AAMtC,QAHD,UAAU,+CACW,iDACF;AAMlB,QAJD,cAAc;AACZ,cAAI,AAAS,QAAD,UACV,MAAO;AACT,gBAA6C,UAApC,QAAQ;;;AAGyD,MAA9E,+BAAqB,SAAS,cAAW,AAAC,eAAN,YAAO,OAAO,kCAAgB,WAAW;IAC/E;;AAGE,YAAO,AAAgB;AACvB,UAAI,uBACF,AAA2C,+BAAtB,YAAoB,eAAR;IACrC;;AAI2B,MAAzB,AAAkB;AACH,MAAT;IACR;wBAEqD;AACd,MAA/B,0BAAoB,UAAU;AACgD,MAApF,AAAW,UAAD,KAAK,8CAAgC,kBAAkB;IACnE;;;QAvaU;QACW;QACd;QACA;IAsCkB;IAiBC;IAYC;IAaH;IAOG;IAOnB;IAOA;IAKA;IA0BG,eAAoB;qDACf;uDACA;IACN;IAGL;IACI;yDAMG;IAaoB,0BAA0C;IAuF3D,gCAA+B;IAtPvC;IACA;UACK,AAAkB,iBAAD;AACxB,yEAAkB,UAAU,QAAQ,IAAI;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;mBAybT,UAA4B;;AAClD,yBAA+B,4BAAjB;AACd,yBAA+B,6BAAjB,cAAoB,sBAAe,IAAI;AAClE,YAAO,AAAS,AAAgB,AAAG,AAAM,AAAc,SAAxC,8BAA4B,WAAW,IAAI,AAAS,AAAO,AAAG,AAAM,QAAjB,qBAAmB,WAAW;IAClG;2CAG4D;AAC1D,YAAO,AAAqB,AAAM,sCAAE,sBAAe,iBAAiB;IACtE;0BAGkC;AAAU,+BAAO,KAAK,AAAM,KAAD;IAAI;iCAGxB;AAAU,YAAA,AAAM,MAAD;IAAG;;AAG5B;IAAe;;;QAvBpC;QACW;AAChB,iFAAkB,UAAU,QAAQ,IAAI;;EAAC;;;;;;;;;;;;;;;;mBA4CT,UAA4B;;AAClD,yBAA+B,4BAAjB;AACd,yBAA+B,6BAAjB,cAAoB,sBAAe,IAAI;AAClE,YAAO,AAAS,AAAgB,AAAG,AAAM,AAAc,SAAxC,8BAA4B,WAAW,IAAI,AAAS,AAAO,AAAG,AAAM,QAAjB,qBAAmB,WAAW;IAClG;2CAG4D;AAC1D,YAAO,AAAqB,AAAM,sCAAE,sBAAe,iBAAiB;IACtE;0BAGkC;AAAU,+BAAO,AAAM,KAAD,KAAK;IAAI;iCAGxB;AAAU,YAAA,AAAM,MAAD;IAAG;;AAG5B;IAAiB;;;QAvBtC;QACW;AAChB,mFAAkB,UAAU,QAAQ,IAAI;;EAAC;;;;;;;;;;;;;;;;mBAsCT,UAA4B;;AAClD,yBAA+B,4BAAjB;AACd,yBAA+B,6BAAjB,cAAoB,sBAAe,IAAI;AAClE,YAAO,AAAS,AAAgB,AAAgB,AAC5C,SADW,mCAAmC,AAAY,WAAD,GAAG,WAAW,IACpE,AAAS,AAAO,AAAgB,QAAxB,0BAA0B,AAAY,WAAD,GAAG,WAAW;IACpE;2CAG4D;AAC1D,YAAO,AAAqB,AAAM,sCAAE,sBAAe,iBAAiB;IACtE;0BAGkC;AAAU,kBAAK;;iCAGP;AAAU;IAAI;;AAGzB;IAAK;;;QAtBL;AAAgB,wEAAkB,UAAU;;EAAC","file":"../../../../../../../../C:/packages/flutter/src/gestures/monodrag.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__decoration_image: decoration_image
+    src__gestures__monodrag: monodrag
   };
 }));
 
-//# sourceMappingURL=decoration_image.dart.lib.js.map
+//# sourceMappingURL=monodrag.dart.lib.js.map
