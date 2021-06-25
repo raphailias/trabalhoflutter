@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class TelaCadastro extends StatelessWidget {
+class TelaCadastro extends StatefulWidget {
+  @override
+  _TelaCadastroState createState() => _TelaCadastroState();
+}
+
+class _TelaCadastroState extends State<TelaCadastro> {
+  String value = '';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,11 +33,16 @@ class TelaCadastro extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       TextField(
+                        onChanged: (text) {
+                          value = text;
+                        },
                         decoration: InputDecoration(
                             hintText: 'Digite seu usuário do MAL'),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/second');
+                          },
                           child: Text(
                             "Começar!!!",
                           )),
@@ -42,5 +55,14 @@ class TelaCadastro extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void Addnick(String valor) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.getString('nick') == null) {
+      prefs.setString('nick', valor);
+    } else {
+      prefs.setString('nick', '');
+    }
   }
 }
