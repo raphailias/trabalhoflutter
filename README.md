@@ -20,10 +20,10 @@ Com auxílio da API Jikan, é possível obter informações necessárias sobre o
 - API Jikan: onde é possível resgatar as infromações dos animes (https://jikan.docs.apiary.io/#);
 - Plataforma Marvel: criação do Wireframe para auxílio na elaboração das telas do projeto (https://marvelapp.com/);
 - Documentação Flutter: auxílio na criação do projeto(https://flutter.dev/docs);
-- Dio: cliente HTTP para Dart(https://pub.dev/packages/dio);
+- Dio: cliente HTTP para Dart(https://pub.dev/packages/dio).
 
 #Os Devs:
-Raphael de Jesus 16.00378-0
-Júlia Catarina 16.00645-3
-Raphael Hungria 17.04015-9
-Yohan Lafaeff 17.04278-0
+- Raphael de Jesus 16.00378-0
+- Júlia Catarina 16.00645-3
+- Raphael Hungria 17.04015-9
+- Yohan Lafaeff 17.04278-0
