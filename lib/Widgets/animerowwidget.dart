@@ -5,9 +5,14 @@ import 'package:flutter/material.dart';
 class AnimeRowWidget extends StatelessWidget {
   final List<String> nome;
   final List<String> url;
+  final List<String> malid;
   final String titulo;
   const AnimeRowWidget(
-      {Key? key, required this.nome, required this.url, required this.titulo})
+      {Key? key,
+      required this.nome,
+      required this.url,
+      required this.titulo,
+      required this.malid})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -36,6 +41,7 @@ class AnimeRowWidget extends StatelessWidget {
                 itemBuilder: (context, index) => AnimeCardWidget(
                   nome: nome[index],
                   url: url[index],
+                  malid: malid[index],
                 ),
               ),
             ),

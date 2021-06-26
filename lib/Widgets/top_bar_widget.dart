@@ -5,7 +5,10 @@ class TopBarWidget extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
   final double? toolbarHeight;
-  TopBarWidget({Key? key, this.toolbarHeight})
+  final String nick;
+  final String url;
+  TopBarWidget(
+      {Key? key, this.toolbarHeight, required this.nick, required this.url})
       : preferredSize = Size.fromHeight((toolbarHeight ?? kToolbarHeight) + 16),
         super(key: key);
   @override
@@ -25,13 +28,12 @@ class TopBarWidget extends StatelessWidget with PreferredSizeWidget {
                   iconSize: 60,
                   icon: CircleAvatar(
                     radius: 100,
-                    backgroundImage: NetworkImage(
-                        'https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619633400'),
+                    backgroundImage: NetworkImage(url),
                   ),
                   onPressed: () => null,
                 ),
                 Text(
-                  'Youkoso, Raphailias',
+                  'Youkoso, ' + nick,
                   style: TextStyle(
                       fontSize: 25, color: Color.fromARGB(255, 255, 255, 255)),
                 ),

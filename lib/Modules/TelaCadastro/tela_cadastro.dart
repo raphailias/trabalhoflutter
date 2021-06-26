@@ -1,5 +1,5 @@
+import 'package:animelife/Modules/singleton/singletonappdata.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class TelaCadastro extends StatefulWidget {
   @override
@@ -7,8 +7,7 @@ class TelaCadastro extends StatefulWidget {
 }
 
 class _TelaCadastroState extends State<TelaCadastro> {
-  String value = '';
-
+  late String value;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,6 +40,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                       ),
                       TextButton(
                           onPressed: () {
+                            appData.nick = value;
                             Navigator.pushNamed(context, '/second');
                           },
                           child: Text(
@@ -55,14 +55,5 @@ class _TelaCadastroState extends State<TelaCadastro> {
         ),
       ),
     );
-  }
-
-  void Addnick(String valor) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.getString('nick') == '') {
-      prefs.setString('nick', valor);
-    } else {
-      prefs.setString('nick', '');
-    }
   }
 }

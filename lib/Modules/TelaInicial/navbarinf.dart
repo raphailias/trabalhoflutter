@@ -1,6 +1,7 @@
 import 'package:animelife/Modules/TelaCalendario/tab.dart';
 import 'package:animelife/Modules/TelaInicial/tela_inicial.dart';
-import 'package:animelife/Modules/repositories/teladev/teladev.dart';
+import 'package:animelife/Modules/teladev/teladev.dart';
+import 'package:animelife/Modules/telarecomendacao/telarecomendacao.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const NavbarInf());
@@ -32,10 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
     TelaInicial(),
     TabBarteste(),
-    Text(
-      'Index 2: School',
-      style: estilo,
-    ),
+    TelaRecomendacao(),
     TelaDart()
   ];
 
@@ -70,7 +68,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.emoji_emotions_sharp),
-            label: 'Perfil',
+            label: 'Devs',
             backgroundColor: Color.fromARGB(255, 6, 10, 25),
           ),
         ],

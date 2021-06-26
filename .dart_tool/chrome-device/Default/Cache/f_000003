@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "EjMjrMIYLGlSHYpPt35pow==";
+    window.$dartAppId = "jukR27gY5FGVbuBeeUEbyA==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:4534/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:1051/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:4536/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:1053/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -84,7 +84,6 @@ let modulePaths = {
  "web_entrypoint.dart": "web_entrypoint.dart.lib",
  "packages/animelife/main.dart": "packages/animelife/main.dart.lib",
  "packages/animelife/app_widget.dart": "packages/animelife/app_widget.dart.lib",
- "packages/animelife/Modules/telaperfil.dart/telaperfil.dart": "packages/animelife/Modules/telaperfil.dart/telaperfil.dart.lib",
  "packages/flutter/material.dart": "packages/flutter/material.dart.lib",
  "packages/flutter/widgets.dart": "packages/flutter/widgets.dart.lib",
  "packages/flutter/src/widgets/will_pop_scope.dart": "packages/flutter/src/widgets/will_pop_scope.dart.lib",
@@ -441,13 +440,17 @@ let modulePaths = {
  "packages/flutter/src/material/app.dart": "packages/flutter/src/material/app.dart.lib",
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
  "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
- "packages/animelife/Modules/Tela_Informacoes/telainformacao.dart": "packages/animelife/Modules/Tela_Informacoes/telainformacao.dart.lib",
- "packages/animelife/Modules/TelaInicial/tela_inicial.dart": "packages/animelife/Modules/TelaInicial/tela_inicial.dart.lib",
- "packages/animelife/Widgets/top_bar_widget.dart": "packages/animelife/Widgets/top_bar_widget.dart.lib",
  "packages/animelife/Widgets/animerowwidget.dart": "packages/animelife/Widgets/animerowwidget.dart.lib",
- "packages/animelife/Widgets/anime_card_widget.dart": "packages/animelife/Widgets/anime_card_widget.dart.lib",
- "packages/animelife/Modules/repositories/animeseason.dart": "packages/animelife/Modules/repositories/animeseason.dart.lib",
+ "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart": "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart.lib",
+ "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart": "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart.lib",
+ "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart": "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart.lib",
+ "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart": "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart.lib",
+ "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart": "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart.lib",
+ "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart": "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart.lib",
+ "packages/flutter_staggered_grid_view/src/widgets/sliver.dart": "packages/flutter_staggered_grid_view/src/widgets/sliver.dart.lib",
+ "packages/animelife/Modules/singleton/singletonappdata.dart": "packages/animelife/Modules/singleton/singletonappdata.dart.lib",
  "packages/animelife/Modules/repositories/anime_repository.dart": "packages/animelife/Modules/repositories/anime_repository.dart.lib",
+ "packages/animelife/Modules/repositories/animeseason.dart": "packages/animelife/Modules/repositories/animeseason.dart.lib",
  "packages/animelife/Modules/repositories/animecalendario.dart": "packages/animelife/Modules/repositories/animecalendario.dart.lib",
  "packages/animelife/Modules/repositories/AnimeJson.dart": "packages/animelife/Modules/repositories/AnimeJson.dart.lib",
  "packages/dio/src/interceptors/log.dart": "packages/dio/src/interceptors/log.dart.lib",
@@ -484,23 +487,17 @@ let modulePaths = {
  "packages/typed_data/typed_data.dart": "packages/typed_data/typed_data.dart.lib",
  "packages/typed_data/src/typed_queue.dart": "packages/typed_data/src/typed_queue.dart.lib",
  "packages/http_parser/src/authentication_challenge.dart": "packages/http_parser/src/authentication_challenge.dart.lib",
- "packages/animelife/Modules/TelaInicial/navbarinf.dart": "packages/animelife/Modules/TelaInicial/navbarinf.dart.lib",
- "packages/animelife/Modules/repositories/teladev/teladev.dart": "packages/animelife/Modules/repositories/teladev/teladev.dart.lib",
+ "packages/animelife/Modules/repositories/usuariomal.dart": "packages/animelife/Modules/repositories/usuariomal.dart.lib",
+ "packages/animelife/Modules/repositories/anime_recomendacao.dart": "packages/animelife/Modules/repositories/anime_recomendacao.dart.lib",
+ "packages/animelife/Modules/teladev/teladev.dart": "packages/animelife/Modules/teladev/teladev.dart.lib",
  "packages/animelife/Widgets/devcard.dart": "packages/animelife/Widgets/devcard.dart.lib",
- "packages/animelife/Modules/TelaCalendario/tab.dart": "packages/animelife/Modules/TelaCalendario/tab.dart.lib",
- "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart": "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart.lib",
- "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart": "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart.lib",
- "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart": "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart.lib",
- "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart": "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart.lib",
- "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart": "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart.lib",
- "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart": "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart.lib",
- "packages/flutter_staggered_grid_view/src/widgets/sliver.dart": "packages/flutter_staggered_grid_view/src/widgets/sliver.dart.lib"
+ "packages/animelife/Widgets/top_bar_widget.dart": "packages/animelife/Widgets/top_bar_widget.dart.lib",
+ "packages/animelife/Modules/TelaCadastro/tela_cadastro.dart": "packages/animelife/Modules/TelaCadastro/tela_cadastro.dart.lib"
 };
 let moduleNames = {
  "web_entrypoint.dart.lib": "web_entrypoint.dart",
  "packages/animelife/main.dart.lib": "packages/animelife/main.dart",
  "packages/animelife/app_widget.dart.lib": "packages/animelife/app_widget.dart",
- "packages/animelife/Modules/telaperfil.dart/telaperfil.dart.lib": "packages/animelife/Modules/telaperfil.dart/telaperfil.dart",
  "packages/flutter/material.dart.lib": "packages/flutter/material.dart",
  "packages/flutter/widgets.dart.lib": "packages/flutter/widgets.dart",
  "packages/flutter/src/widgets/will_pop_scope.dart.lib": "packages/flutter/src/widgets/will_pop_scope.dart",
@@ -857,13 +854,17 @@ let moduleNames = {
  "packages/flutter/src/material/app.dart.lib": "packages/flutter/src/material/app.dart",
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
  "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
- "packages/animelife/Modules/Tela_Informacoes/telainformacao.dart.lib": "packages/animelife/Modules/Tela_Informacoes/telainformacao.dart",
- "packages/animelife/Modules/TelaInicial/tela_inicial.dart.lib": "packages/animelife/Modules/TelaInicial/tela_inicial.dart",
- "packages/animelife/Widgets/top_bar_widget.dart.lib": "packages/animelife/Widgets/top_bar_widget.dart",
  "packages/animelife/Widgets/animerowwidget.dart.lib": "packages/animelife/Widgets/animerowwidget.dart",
- "packages/animelife/Widgets/anime_card_widget.dart.lib": "packages/animelife/Widgets/anime_card_widget.dart",
- "packages/animelife/Modules/repositories/animeseason.dart.lib": "packages/animelife/Modules/repositories/animeseason.dart",
+ "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart.lib": "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart",
+ "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart",
+ "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart",
+ "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart",
+ "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart",
+ "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart",
+ "packages/flutter_staggered_grid_view/src/widgets/sliver.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/sliver.dart",
+ "packages/animelife/Modules/singleton/singletonappdata.dart.lib": "packages/animelife/Modules/singleton/singletonappdata.dart",
  "packages/animelife/Modules/repositories/anime_repository.dart.lib": "packages/animelife/Modules/repositories/anime_repository.dart",
+ "packages/animelife/Modules/repositories/animeseason.dart.lib": "packages/animelife/Modules/repositories/animeseason.dart",
  "packages/animelife/Modules/repositories/animecalendario.dart.lib": "packages/animelife/Modules/repositories/animecalendario.dart",
  "packages/animelife/Modules/repositories/AnimeJson.dart.lib": "packages/animelife/Modules/repositories/AnimeJson.dart",
  "packages/dio/src/interceptors/log.dart.lib": "packages/dio/src/interceptors/log.dart",
@@ -900,17 +901,12 @@ let moduleNames = {
  "packages/typed_data/typed_data.dart.lib": "packages/typed_data/typed_data.dart",
  "packages/typed_data/src/typed_queue.dart.lib": "packages/typed_data/src/typed_queue.dart",
  "packages/http_parser/src/authentication_challenge.dart.lib": "packages/http_parser/src/authentication_challenge.dart",
- "packages/animelife/Modules/TelaInicial/navbarinf.dart.lib": "packages/animelife/Modules/TelaInicial/navbarinf.dart",
- "packages/animelife/Modules/repositories/teladev/teladev.dart.lib": "packages/animelife/Modules/repositories/teladev/teladev.dart",
+ "packages/animelife/Modules/repositories/usuariomal.dart.lib": "packages/animelife/Modules/repositories/usuariomal.dart",
+ "packages/animelife/Modules/repositories/anime_recomendacao.dart.lib": "packages/animelife/Modules/repositories/anime_recomendacao.dart",
+ "packages/animelife/Modules/teladev/teladev.dart.lib": "packages/animelife/Modules/teladev/teladev.dart",
  "packages/animelife/Widgets/devcard.dart.lib": "packages/animelife/Widgets/devcard.dart",
- "packages/animelife/Modules/TelaCalendario/tab.dart.lib": "packages/animelife/Modules/TelaCalendario/tab.dart",
- "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart.lib": "packages/flutter_staggered_grid_view/flutter_staggered_grid_view.dart",
- "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart",
- "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart",
- "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart",
- "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart",
- "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart.lib": "packages/flutter_staggered_grid_view/src/rendering/tile_container_render_object_mixin.dart",
- "packages/flutter_staggered_grid_view/src/widgets/sliver.dart.lib": "packages/flutter_staggered_grid_view/src/widgets/sliver.dart"
+ "packages/animelife/Widgets/top_bar_widget.dart.lib": "packages/animelife/Widgets/top_bar_widget.dart",
+ "packages/animelife/Modules/TelaCadastro/tela_cadastro.dart.lib": "packages/animelife/Modules/TelaCadastro/tela_cadastro.dart"
 };
 if(!window.$requireLoader) {
    window.$requireLoader = {
