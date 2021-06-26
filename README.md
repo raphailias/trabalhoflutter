@@ -2,7 +2,7 @@
 
 Bem-Vindos ao AnimeLife, um aplicativo desenvolvido em Flutter para te recomendar os melhores animes.
 
-## O que eu Posso acessar no APP?
+## O que eu posso acessar no APP?
 
 - Página principal: veja os animes da temporada atual e os mais populares pelo MyAnimeList;
 - Calendário: assim é possível acompanhar os animes em lançamento e qual dia da semana tem episódios novos;
