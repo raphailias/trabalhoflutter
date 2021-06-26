@@ -59,7 +59,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
 
   void Addnick(String valor) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.getString('nick') == null) {
+    if (prefs.getString('nick') == '') {
       prefs.setString('nick', valor);
     } else {
       prefs.setString('nick', '');
