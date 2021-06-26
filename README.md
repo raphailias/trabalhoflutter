@@ -22,3 +22,8 @@ Com auxílio da API Jikan, é possível obter informações necessárias sobre o
 - Documentação Flutter: auxílio na criação do projeto(https://flutter.dev/docs);
 - Dio: cliente HTTP para Dart(https://pub.dev/packages/dio);
 
+#Os Devs:
+Raphael de Jesus 16.00378-0
+Júlia Catarina 16.00645-3
+Raphael Hungria 17.04015-9
+Yohan Lafaeff 17.04278-0
