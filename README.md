@@ -21,5 +21,4 @@ Com auxílio da API Jikan, é possível obter informações necessárias sobre o
 - Plataforma Marvel: criação do Wireframe para auxílio na elaboração das telas do projeto (https://marvelapp.com/);
 - Documentação Flutter: auxílio na criação do projeto(https://flutter.dev/docs);
 - Dio: cliente HTTP para Dart(https://pub.dev/packages/dio);
-- Auto Size Text: ajudar a ajustar textos muito grandes(https://pub.dev/packages/auto_size_text).
 
