@@ -10,7 +10,7 @@ class AnimeCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
-      child: GestureDetector(
+      child: InkWell(
         onTap: () => null,
         child: Card(
           color: Color.fromARGB(0, 7, 15, 49),

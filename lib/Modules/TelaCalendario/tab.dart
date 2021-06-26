@@ -85,7 +85,7 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
                                     nome: nome[index],
@@ -116,11 +116,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome1[index],
+                                    url: url1[index],
                                   ));
                         }
                         return Text('erro');
@@ -147,11 +147,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome2[index],
+                                    url: url2[index],
                                   ));
                         }
                         return Text('erro');
@@ -178,11 +178,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome3[index],
+                                    url: url3[index],
                                   ));
                         }
                         return Text('erro');
@@ -209,11 +209,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome4[index],
+                                    url: url4[index],
                                   ));
                         }
                         return Text('erro');
@@ -240,11 +240,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome5[index],
+                                    url: url5[index],
                                   ));
                         }
                         return Text('erro');
@@ -271,11 +271,11 @@ class _TabBartesteState extends State<TabBarteste> {
                               crossAxisCount: 4,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
-                              itemCount: 8,
+                              itemCount: anime.length,
                               shrinkWrap: true,
                               itemBuilder: (context, index) => AnimeCardWidget(
-                                    nome: nome[index],
-                                    url: url[index],
+                                    nome: nome6[index],
+                                    url: url6[index],
                                   ));
                         }
                         return Text('erro');

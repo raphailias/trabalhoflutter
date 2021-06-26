@@ -1,4 +1,4 @@
-define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/animelife/Modules/TelaInicial/tela_inicial.dart', 'packages/animelife/Modules/TelaCalendario/tab.dart'], (function load__packages__animelife__Modules__TelaInicial__navbarinf_dart(dart_sdk, packages__flutter__src__material__app$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__painting__strut_style$46dart, packages__animelife__Modules__TelaInicial__tela_inicial$46dart, packages__animelife__Modules__TelaCalendario__tab$46dart) {
+define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/bottom_navigation_bar_item.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/animelife/Modules/TelaInicial/tela_inicial.dart', 'packages/animelife/Modules/TelaCalendario/tab.dart', 'packages/animelife/Modules/repositories/teladev/teladev.dart'], (function load__packages__animelife__Modules__TelaInicial__navbarinf_dart(dart_sdk, packages__flutter__src__material__app$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__bottom_navigation_bar_item$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__painting__strut_style$46dart, packages__animelife__Modules__TelaInicial__tela_inicial$46dart, packages__animelife__Modules__TelaCalendario__tab$46dart, packages__animelife__Modules__repositories__teladev__teladev$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
@@ -20,6 +20,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
   const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
   const tela_inicial = packages__animelife__Modules__TelaInicial__tela_inicial$46dart.Modules__TelaInicial__tela_inicial;
   const tab = packages__animelife__Modules__TelaCalendario__tab$46dart.Modules__TelaCalendario__tab;
+  const teladev = packages__animelife__Modules__repositories__teladev__teladev$46dart.Modules__repositories__teladev__teladev;
   var navbarinf = Object.create(dart.library);
   var $elementAt = dartx.elementAt;
   dart._checkModuleNullSafetyMode(true);
@@ -38,7 +39,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "home",
         [_Location_column]: 7,
-        [_Location_line]: 13,
+        [_Location_line]: 14,
         [_Location_file]: null
       });
     },
@@ -51,7 +52,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[2] || CT.C2,
         [_Location_name]: null,
         [_Location_column]: 18,
-        [_Location_line]: 12,
+        [_Location_line]: 13,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -88,7 +89,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
         [_Location_column]: 13,
-        [_Location_line]: 13,
+        [_Location_line]: 14,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -149,7 +150,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "child",
         [_Location_column]: 9,
-        [_Location_line]: 54,
+        [_Location_line]: 52,
         [_Location_file]: null
       });
     },
@@ -162,7 +163,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[13] || CT.C13,
         [_Location_name]: null,
         [_Location_column]: 13,
-        [_Location_line]: 53,
+        [_Location_line]: 51,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -178,7 +179,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
         [_Location_column]: 30,
-        [_Location_line]: 59,
+        [_Location_line]: 57,
         [_Location_file]: null
       });
     },
@@ -191,7 +192,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[20] || CT.C20,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 59,
+        [_Location_line]: 57,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -233,7 +234,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
         [_Location_column]: 30,
-        [_Location_line]: 64,
+        [_Location_line]: 62,
         [_Location_file]: null
       });
     },
@@ -246,7 +247,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[26] || CT.C26,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 64,
+        [_Location_line]: 62,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -288,7 +289,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
         [_Location_column]: 30,
-        [_Location_line]: 69,
+        [_Location_line]: 67,
         [_Location_file]: null
       });
     },
@@ -301,7 +302,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[32] || CT.C32,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 69,
+        [_Location_line]: 67,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -343,7 +344,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
         [_Location_column]: 30,
-        [_Location_line]: 74,
+        [_Location_line]: 72,
         [_Location_file]: null
       });
     },
@@ -356,7 +357,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[38] || CT.C38,
         [_Location_name]: null,
         [_Location_column]: 19,
-        [_Location_line]: 74,
+        [_Location_line]: 72,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -401,7 +402,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "items",
         [_Location_column]: 9,
-        [_Location_line]: 57,
+        [_Location_line]: 55,
         [_Location_file]: null
       });
     },
@@ -411,7 +412,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "currentIndex",
         [_Location_column]: 9,
-        [_Location_line]: 79,
+        [_Location_line]: 77,
         [_Location_file]: null
       });
     },
@@ -421,7 +422,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "selectedItemColor",
         [_Location_column]: 9,
-        [_Location_line]: 80,
+        [_Location_line]: 78,
         [_Location_file]: null
       });
     },
@@ -431,7 +432,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "onTap",
         [_Location_column]: 9,
-        [_Location_line]: 81,
+        [_Location_line]: 79,
         [_Location_file]: null
       });
     },
@@ -444,7 +445,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[42] || CT.C42,
         [_Location_name]: null,
         [_Location_column]: 28,
-        [_Location_line]: 56,
+        [_Location_line]: 54,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -454,7 +455,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "body",
         [_Location_column]: 7,
-        [_Location_line]: 53,
+        [_Location_line]: 51,
         [_Location_file]: null
       });
     },
@@ -464,7 +465,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "bottomNavigationBar",
         [_Location_column]: 7,
-        [_Location_line]: 56,
+        [_Location_line]: 54,
         [_Location_file]: null
       });
     },
@@ -477,7 +478,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[48] || CT.C48,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 52,
+        [_Location_line]: 50,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -522,7 +523,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
         [_Location_column]: 5,
-        [_Location_line]: 32,
+        [_Location_line]: 33,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -532,7 +533,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
         [_Location_column]: 5,
-        [_Location_line]: 33,
+        [_Location_line]: 34,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
@@ -542,7 +543,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
         [_Location_column]: 7,
-        [_Location_line]: 35,
+        [_Location_line]: 36,
         [_Location_file]: null
       });
     },
@@ -552,7 +553,7 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
         [_Location_column]: 7,
-        [_Location_line]: 36,
+        [_Location_line]: 37,
         [_Location_file]: null
       });
     },
@@ -565,62 +566,39 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
         [_Location_parameterLocations]: C[56] || CT.C56,
         [_Location_name]: null,
         [_Location_column]: 5,
-        [_Location_line]: 34,
+        [_Location_line]: 35,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 5,
+        [_Location_line]: 39,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
     get C61() {
       return C[61] = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 7,
-        [_Location_line]: 39,
-        [_Location_file]: null
-      });
-    },
-    get C62() {
-      return C[62] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "style",
-        [_Location_column]: 7,
-        [_Location_line]: 40,
-        [_Location_file]: null
-      });
-    },
-    get C60() {
-      return C[60] = dart.constList([C[61] || CT.C61, C[62] || CT.C62], widget_inspector._Location);
-    },
-    get C59() {
-      return C[59] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[60] || CT.C60,
-        [_Location_name]: null,
-        [_Location_column]: 5,
-        [_Location_line]: 38,
-        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
-      });
-    },
-    get C64() {
-      return C[64] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C[11] || CT.C11,
         [_Location_name]: null,
         [_Location_column]: 29,
-        [_Location_line]: 5,
+        [_Location_line]: 6,
         [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Modules/TelaInicial/navbarinf.dart"
       });
     },
-    get C63() {
-      return C[63] = dart.const({
+    get C60() {
+      return C[60] = dart.const({
         __proto__: navbarinf.NavbarInf.prototype,
-        [Widget__location]: C[64] || CT.C64,
+        [Widget__location]: C[61] || CT.C61,
         [Widget_key]: null
       });
     }
   }, false);
-  var C = Array(65).fill(void 0);
+  var C = Array(62).fill(void 0);
   var I = ["package:animelife/Modules/TelaInicial/navbarinf.dart"];
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
@@ -781,17 +759,17 @@ define(['dart_sdk', 'packages/flutter/src/material/app.dart', 'packages/flutter/
       return C[51] || CT.C51;
     },
     /*navbarinf._MyStatefulWidgetState._widgetOptions*/get _widgetOptions() {
-      return T.JSArrayOfWidget().of([new tela_inicial.TelaInicial.new({$creationLocationd_0dea112b090073317d4: C[53] || CT.C53}), new tab.TabBarteste.new({$creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), new text.Text.new("Index 2: School", {style: navbarinf._MyStatefulWidgetState.estilo, $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), new text.Text.new("Index 3: Settings", {style: navbarinf._MyStatefulWidgetState.estilo, $creationLocationd_0dea112b090073317d4: C[59] || CT.C59})]);
+      return T.JSArrayOfWidget().of([new tela_inicial.TelaInicial.new({$creationLocationd_0dea112b090073317d4: C[53] || CT.C53}), new tab.TabBarteste.new({$creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), new text.Text.new("Index 2: School", {style: navbarinf._MyStatefulWidgetState.estilo, $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), new teladev.TelaDart.new({$creationLocationd_0dea112b090073317d4: C[59] || CT.C59})]);
     },
     set _widgetOptions(_) {}
   }, false);
   navbarinf.main = function main() {
-    return binding.runApp(C[63] || CT.C63);
+    return binding.runApp(C[60] || CT.C60);
   };
   dart.trackLibraries("packages/animelife/Modules/TelaInicial/navbarinf.dart", {
     "package:animelife/Modules/TelaInicial/navbarinf.dart": navbarinf
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["navbarinf.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAU4B;AACxB;IAGF;;;QAPsB;;AAAQ,uDAAW,GAAG;;EAAC;;;;;;;;;;AAeJ;IAAwB;;;QAHpC;;AAAQ,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oBAwB7B;AAGnB,MAFF,cAAS;AACe,QAAtB,uBAAiB,KAAK;;IAE1B;UAG0B;AACxB,YAAO,kCACC,6BACG,AAAe,4DAAU,uGAEb,yFAuBL,yCACW,sBAAS,KAAK,IAAI,KAAK,uBACzC;IAGb;;;IAxDI,uBAAiB;;;EAyDvB;;;;;;;;;;;;;;MAxDyB,uCAAM;;;MAET,+CAAc;YAAW,yBAC3C,6FACA,oFACA,kBACE,2BACO,oGAET,kBACE,6BACO;;;;;AAnCE;EAAyB","file":"../../../../../../../../packages/animelife/Modules/TelaInicial/navbarinf.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["navbarinf.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAW4B;AACxB;IAGF;;;QAPsB;;AAAQ,uDAAW,GAAG;;EAAC;;;;;;;;;;AAeJ;IAAwB;;;QAHpC;;AAAQ,8DAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oBAqB7B;AAGnB,MAFF,cAAS;AACe,QAAtB,uBAAiB,KAAK;;IAE1B;UAG0B;AACxB,YAAO,kCACC,6BACG,AAAe,4DAAU,uGAEb,yFAuBL,yCACW,sBAAS,KAAK,IAAI,KAAK,uBACzC;IAGb;;;IArDI,uBAAiB;;;EAsDvB;;;;;;;;;;;;;;MArDyB,uCAAM;;;MAET,+CAAc;YAAW,yBAC3C,6FACA,oFACA,kBACE,2BACO,oGAET;;;;;AAjCW;EAAyB","file":"../../../../../../../../packages/animelife/Modules/TelaInicial/navbarinf.dart.lib.js"}');
   // Exports:
   return {
     Modules__TelaInicial__navbarinf: navbarinf

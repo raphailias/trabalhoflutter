@@ -1,37 +1,49 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/debug.dart', 'packages/flutter/src/foundation/print.dart'], (function load__packages__flutter__src__gestures__arena_dart(dart_sdk, packages__flutter__src__gestures__debug$46dart, packages__flutter__src__foundation__print$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter_staggered_grid_view/src/rendering/sliver_variable_size_box_adaptor.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver_multi_box_adaptor.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart', 'packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart'], (function load__packages__flutter_staggered_grid_view__src__widgets__sliver_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter_staggered_grid_view__src__rendering__sliver_variable_size_box_adaptor$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter_staggered_grid_view__src__widgets__staggered_tile$46dart, packages__flutter_staggered_grid_view__src__rendering__sliver_staggered_grid$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
   const _js_helper = dart_sdk._js_helper;
-  const async = dart_sdk.async;
+  const collection = dart_sdk.collection;
+  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const debug = packages__flutter__src__gestures__debug$46dart.src__gestures__debug;
-  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
-  var arena = Object.create(dart.library);
-  var $add = dartx.add;
-  var $isEmpty = dartx.isEmpty;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const sliver = packages__flutter__src__widgets__widget_span$46dart.src__widgets__sliver;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const sliver$ = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
+  const sliver_variable_size_box_adaptor = packages__flutter_staggered_grid_view__src__rendering__sliver_variable_size_box_adaptor$46dart.src__rendering__sliver_variable_size_box_adaptor;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const sliver_multi_box_adaptor = packages__flutter__src__rendering__sliver_multi_box_adaptor$46dart.src__rendering__sliver_multi_box_adaptor;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const staggered_tile = packages__flutter_staggered_grid_view__src__widgets__staggered_tile$46dart.src__widgets__staggered_tile;
+  const sliver_staggered_grid = packages__flutter_staggered_grid_view__src__rendering__sliver_staggered_grid$46dart.src__rendering__sliver_staggered_grid;
+  var sliver$0 = Object.create(dart.library);
   var $_equals = dartx._equals;
-  var $map = dartx.map;
-  var $join = dartx.join;
+  var $runtimeType = dartx.runtimeType;
+  var $clear = dartx.clear;
   var $putIfAbsent = dartx.putIfAbsent;
+  var $toList = dartx.toList;
+  var $forEach = dartx.forEach;
+  var $where = dartx.where;
   var $_get = dartx._get;
-  var $remove = dartx.remove;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $first = dartx.first;
   var $length = dartx.length;
-  var $contains = dartx.contains;
-  var $containsKey = dartx.containsKey;
-  var $toString = dartx.toString;
-  var $padRight = dartx.padRight;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    JSArrayOfGestureArenaMember: () => (T.JSArrayOfGestureArenaMember = dart.constFn(_interceptors.JSArray$(arena.GestureArenaMember)))(),
-    GestureArenaMemberToString: () => (T.GestureArenaMemberToString = dart.constFn(dart.fnType(core.String, [arena.GestureArenaMember])))(),
-    IdentityMapOfint$_GestureArena: () => (T.IdentityMapOfint$_GestureArena = dart.constFn(_js_helper.IdentityMap$(core.int, arena._GestureArena)))(),
-    VoidTo_GestureArena: () => (T.VoidTo_GestureArena = dart.constFn(dart.fnType(arena._GestureArena, [])))(),
+    DiagnosticsPropertyOfSliverChildDelegate: () => (T.DiagnosticsPropertyOfSliverChildDelegate = dart.constFn(diagnostics.DiagnosticsProperty$(sliver.SliverChildDelegate)))(),
+    WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
+    IdentityMapOfint$WidgetN: () => (T.IdentityMapOfint$WidgetN = dart.constFn(_js_helper.IdentityMap$(core.int, T.WidgetN())))(),
+    SplayTreeMapOfint$Element: () => (T.SplayTreeMapOfint$Element = dart.constFn(collection.SplayTreeMap$(core.int, framework.Element)))(),
+    VoidToint: () => (T.VoidToint = dart.constFn(dart.fnType(core.int, [])))(),
+    intTodynamic: () => (T.intTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.int])))(),
+    VoidToWidgetN: () => (T.VoidToWidgetN = dart.constFn(dart.fnType(T.WidgetN(), [])))(),
     VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))()
+    SliverVariableSizeBoxAdaptorParentDataN: () => (T.SliverVariableSizeBoxAdaptorParentDataN = dart.constFn(dart.nullable(sliver_variable_size_box_adaptor.SliverVariableSizeBoxAdaptorParentData)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    SliverMultiBoxAdaptorParentDataN: () => (T.SliverMultiBoxAdaptorParentDataN = dart.constFn(dart.nullable(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData)))(),
+    VoidTodouble: () => (T.VoidTodouble = dart.constFn(dart.fnType(core.double, [])))(),
+    doubleTodynamic: () => (T.doubleTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.double])))(),
+    ElementTobool: () => (T.ElementTobool = dart.constFn(dart.fnType(core.bool, [framework.Element])))(),
+    intToStaggeredTile: () => (T.intToStaggeredTile = dart.constFn(dart.fnType(staggered_tile.StaggeredTile, [core.int])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -39,283 +51,443 @@ define(['dart_sdk', 'packages/flutter/src/gestures/debug.dart', 'packages/flutte
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: arena.GestureDisposition.prototype,
-        [_name$]: "GestureDisposition.accepted",
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: arena.GestureDisposition.prototype,
-        [_name$]: "GestureDisposition.rejected",
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.vertical",
         index: 1
       });
     },
     get C2() {
-      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], arena.GestureDisposition);
+      return C[2] = dart.constList([], framework.Widget);
+    },
+    get C3() {
+      return C[3] = dart.constList([], staggered_tile.StaggeredTile);
     }
   }, false);
-  var C = Array(3).fill(void 0);
+  var C = Array(4).fill(void 0);
   var I = [
-    "package:flutter/src/gestures/arena.dart",
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/gestures/arena.dart"
+    "file:///C:/Users/rapha/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_staggered_grid_view-0.4.0/lib/src/widgets/sliver.dart",
+    "package:flutter_staggered_grid_view/src/widgets/sliver.dart"
   ];
-  var _name$ = dart.privateName(arena, "_name");
-  arena.GestureDisposition = class GestureDisposition extends core.Object {
-    toString() {
-      return this[_name$];
+  var delegate$ = dart.privateName(sliver$0, "SliverVariableSizeBoxAdaptorWidget.delegate");
+  sliver$0.SliverVariableSizeBoxAdaptorWidget = class SliverVariableSizeBoxAdaptorWidget extends sliver.SliverWithKeepAliveWidget {
+    get delegate() {
+      return this[delegate$];
+    }
+    set delegate(value) {
+      super.delegate = value;
+    }
+    createElement() {
+      return new sliver$0.SliverVariableSizeBoxAdaptorElement.new(this);
+    }
+    estimateMaxScrollOffset(constraints, firstIndex, lastIndex, leadingScrollOffset, trailingScrollOffset) {
+      if (!(lastIndex >= firstIndex)) dart.assertFailed(null, I[0], 58, 12, "lastIndex >= firstIndex");
+      return this.delegate.estimateMaxScrollOffset(firstIndex, lastIndex, leadingScrollOffset, trailingScrollOffset);
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfSliverChildDelegate()).new("delegate", this.delegate));
     }
   };
-  (arena.GestureDisposition.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
+  (sliver$0.SliverVariableSizeBoxAdaptorWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[delegate$] = delegate;
+    sliver$0.SliverVariableSizeBoxAdaptorWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = arena.GestureDisposition.prototype;
-  dart.addTypeTests(arena.GestureDisposition);
-  dart.addTypeCaches(arena.GestureDisposition);
-  dart.setLibraryUri(arena.GestureDisposition, I[0]);
-  dart.setFieldSignature(arena.GestureDisposition, () => ({
-    __proto__: dart.getFields(arena.GestureDisposition.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = sliver$0.SliverVariableSizeBoxAdaptorWidget.prototype;
+  dart.addTypeTests(sliver$0.SliverVariableSizeBoxAdaptorWidget);
+  dart.addTypeCaches(sliver$0.SliverVariableSizeBoxAdaptorWidget);
+  dart.setMethodSignature(sliver$0.SliverVariableSizeBoxAdaptorWidget, () => ({
+    __proto__: dart.getMethods(sliver$0.SliverVariableSizeBoxAdaptorWidget.__proto__),
+    createElement: dart.fnType(sliver$0.SliverVariableSizeBoxAdaptorElement, []),
+    estimateMaxScrollOffset: dart.fnType(dart.nullable(core.double), [sliver$.SliverConstraints, core.int, core.int, core.double, core.double])
   }));
-  dart.defineExtensionMethods(arena.GestureDisposition, ['toString']);
-  arena.GestureDisposition.accepted = C[0] || CT.C0;
-  arena.GestureDisposition.rejected = C[1] || CT.C1;
-  arena.GestureDisposition.values = C[2] || CT.C2;
-  arena.GestureArenaMember = class GestureArenaMember extends core.Object {};
-  (arena.GestureArenaMember.new = function() {
-    ;
-  }).prototype = arena.GestureArenaMember.prototype;
-  dart.addTypeTests(arena.GestureArenaMember);
-  dart.addTypeCaches(arena.GestureArenaMember);
-  dart.setLibraryUri(arena.GestureArenaMember, I[0]);
-  var _arena$ = dart.privateName(arena, "_arena");
-  var _pointer$ = dart.privateName(arena, "_pointer");
-  var _member$ = dart.privateName(arena, "_member");
-  var _resolve = dart.privateName(arena, "_resolve");
-  arena.GestureArenaEntry = class GestureArenaEntry extends core.Object {
-    resolve(disposition) {
-      this[_arena$][_resolve](this[_pointer$], this[_member$], disposition);
-    }
-  };
-  (arena.GestureArenaEntry.__ = function(_arena, _pointer, _member) {
-    this[_arena$] = _arena;
-    this[_pointer$] = _pointer;
-    this[_member$] = _member;
-    ;
-  }).prototype = arena.GestureArenaEntry.prototype;
-  dart.addTypeTests(arena.GestureArenaEntry);
-  dart.addTypeCaches(arena.GestureArenaEntry);
-  dart.setMethodSignature(arena.GestureArenaEntry, () => ({
-    __proto__: dart.getMethods(arena.GestureArenaEntry.__proto__),
-    resolve: dart.fnType(dart.void, [arena.GestureDisposition])
+  dart.setLibraryUri(sliver$0.SliverVariableSizeBoxAdaptorWidget, I[1]);
+  dart.setFieldSignature(sliver$0.SliverVariableSizeBoxAdaptorWidget, () => ({
+    __proto__: dart.getFields(sliver$0.SliverVariableSizeBoxAdaptorWidget.__proto__),
+    delegate: dart.finalFieldType(sliver.SliverChildDelegate)
   }));
-  dart.setLibraryUri(arena.GestureArenaEntry, I[0]);
-  dart.setFieldSignature(arena.GestureArenaEntry, () => ({
-    __proto__: dart.getFields(arena.GestureArenaEntry.__proto__),
-    [_arena$]: dart.finalFieldType(arena.GestureArenaManager),
-    [_pointer$]: dart.finalFieldType(core.int),
-    [_member$]: dart.finalFieldType(arena.GestureArenaMember)
-  }));
-  arena._GestureArena = class _GestureArena extends core.Object {
-    add(member) {
-      if (!this.isOpen) dart.assertFailed(null, I[1], 70, 12, "isOpen");
-      this.members[$add](member);
+  var _childWidgets = dart.privateName(sliver$0, "_childWidgets");
+  var _childElements = dart.privateName(sliver$0, "_childElements");
+  var _currentlyUpdatingChildIndex = dart.privateName(sliver$0, "_currentlyUpdatingChildIndex");
+  var _didUnderflow = dart.privateName(sliver$0, "_didUnderflow");
+  var _build = dart.privateName(sliver$0, "_build");
+  var _extrapolateMaxScrollOffset = dart.privateName(sliver$0, "_extrapolateMaxScrollOffset");
+  var _name = dart.privateName(basic_types, "_name");
+  sliver$0.SliverVariableSizeBoxAdaptorElement = class SliverVariableSizeBoxAdaptorElement extends framework.RenderObjectElement {
+    get widget() {
+      return sliver$0.SliverVariableSizeBoxAdaptorWidget.as(super.widget);
     }
-    toString() {
-      let buffer = new core.StringBuffer.new();
-      if (this.members[$isEmpty]) {
-        buffer.write("<empty>");
-      } else {
-        buffer.write(this.members[$map](core.String, dart.fn(member => {
-          if (member[$_equals](this.eagerWinner)) return dart.str(member) + " (eager winner)";
-          return dart.str(member);
-        }, T.GestureArenaMemberToString()))[$join](", "));
-      }
-      if (this.isOpen) buffer.write(" [open]");
-      if (this.isHeld) buffer.write(" [held]");
-      if (this.hasPendingSweep) buffer.write(" [hasPendingSweep]");
-      return buffer.toString();
+    get renderObject() {
+      return sliver_variable_size_box_adaptor.RenderSliverVariableSizeBoxAdaptor.as(super.renderObject);
     }
-  };
-  (arena._GestureArena.new = function() {
-    this.members = T.JSArrayOfGestureArenaMember().of([]);
-    this.isOpen = true;
-    this.isHeld = false;
-    this.hasPendingSweep = false;
-    this.eagerWinner = null;
-    ;
-  }).prototype = arena._GestureArena.prototype;
-  dart.addTypeTests(arena._GestureArena);
-  dart.addTypeCaches(arena._GestureArena);
-  dart.setMethodSignature(arena._GestureArena, () => ({
-    __proto__: dart.getMethods(arena._GestureArena.__proto__),
-    add: dart.fnType(dart.void, [arena.GestureArenaMember])
-  }));
-  dart.setLibraryUri(arena._GestureArena, I[0]);
-  dart.setFieldSignature(arena._GestureArena, () => ({
-    __proto__: dart.getFields(arena._GestureArena.__proto__),
-    members: dart.finalFieldType(core.List$(arena.GestureArenaMember)),
-    isOpen: dart.fieldType(core.bool),
-    isHeld: dart.fieldType(core.bool),
-    hasPendingSweep: dart.fieldType(core.bool),
-    eagerWinner: dart.fieldType(dart.nullable(arena.GestureArenaMember))
-  }));
-  dart.defineExtensionMethods(arena._GestureArena, ['toString']);
-  var _arenas = dart.privateName(arena, "_arenas");
-  var _debugLogDiagnostic = dart.privateName(arena, "_debugLogDiagnostic");
-  var _tryToResolveArena = dart.privateName(arena, "_tryToResolveArena");
-  var _resolveInFavorOf = dart.privateName(arena, "_resolveInFavorOf");
-  var _resolveByDefault = dart.privateName(arena, "_resolveByDefault");
-  arena.GestureArenaManager = class GestureArenaManager extends core.Object {
-    add(pointer, member) {
-      let state = this[_arenas][$putIfAbsent](pointer, dart.fn(() => {
-        if (!this[_debugLogDiagnostic](pointer, "★ Opening new gesture arena.")) dart.assertFailed(null, I[1], 109, 14, "_debugLogDiagnostic(pointer, '★ Opening new gesture arena.')");
-        return new arena._GestureArena.new();
-      }, T.VoidTo_GestureArena()));
-      state.add(member);
-      if (!this[_debugLogDiagnostic](pointer, "Adding: " + dart.str(member))) dart.assertFailed(null, I[1], 113, 12, "_debugLogDiagnostic(pointer, 'Adding: $member')");
-      return new arena.GestureArenaEntry.__(this, pointer, member);
-    }
-    close(pointer) {
-      let state = this[_arenas][$_get](pointer);
-      if (state == null) return;
-      state.isOpen = false;
-      if (!this[_debugLogDiagnostic](pointer, "Closing", state)) dart.assertFailed(null, I[1], 125, 12, "_debugLogDiagnostic(pointer, 'Closing', state)");
-      this[_tryToResolveArena](pointer, state);
-    }
-    sweep(pointer) {
-      let state = this[_arenas][$_get](pointer);
-      if (state == null) return;
-      if (!!state.isOpen) dart.assertFailed(null, I[1], 146, 12, "!state.isOpen");
-      if (state.isHeld) {
-        state.hasPendingSweep = true;
-        if (!this[_debugLogDiagnostic](pointer, "Delaying sweep", state)) dart.assertFailed(null, I[1], 149, 14, "_debugLogDiagnostic(pointer, 'Delaying sweep', state)");
-        return;
-      }
-      if (!this[_debugLogDiagnostic](pointer, "Sweeping", state)) dart.assertFailed(null, I[1], 152, 12, "_debugLogDiagnostic(pointer, 'Sweeping', state)");
-      this[_arenas][$remove](pointer);
-      if (state.members[$isNotEmpty]) {
-        if (!this[_debugLogDiagnostic](pointer, "Winner: " + dart.str(state.members[$first]))) dart.assertFailed(null, I[1], 156, 14, "_debugLogDiagnostic(pointer, 'Winner: ${state.members.first}')");
-        state.members[$first].acceptGesture(pointer);
-        for (let i = 1; i < state.members[$length]; i = i + 1)
-          state.members[$_get](i).rejectGesture(pointer);
+    update(newWidget) {
+      sliver$0.SliverVariableSizeBoxAdaptorWidget.as(newWidget);
+      let oldWidget = this.widget;
+      super.update(newWidget);
+      let newDelegate = newWidget.delegate;
+      let oldDelegate = oldWidget.delegate;
+      if (!newDelegate[$_equals](oldDelegate) && (!newDelegate[$runtimeType]._equals(oldDelegate[$runtimeType]) || newDelegate.shouldRebuild(oldDelegate))) {
+        this.performRebuild();
       }
     }
-    hold(pointer) {
-      let state = this[_arenas][$_get](pointer);
-      if (state == null) return;
-      state.isHeld = true;
-      if (!this[_debugLogDiagnostic](pointer, "Holding", state)) dart.assertFailed(null, I[1], 181, 12, "_debugLogDiagnostic(pointer, 'Holding', state)");
-    }
-    release(pointer) {
-      let state = this[_arenas][$_get](pointer);
-      if (state == null) return;
-      state.isHeld = false;
-      if (!this[_debugLogDiagnostic](pointer, "Releasing", state)) dart.assertFailed(null, I[1], 198, 12, "_debugLogDiagnostic(pointer, 'Releasing', state)");
-      if (state.hasPendingSweep) this.sweep(pointer);
-    }
-    [_resolve](pointer, member, disposition) {
-      let t0;
-      let state = this[_arenas][$_get](pointer);
-      if (state == null) return;
-      if (!this[_debugLogDiagnostic](pointer, (disposition === arena.GestureDisposition.accepted ? "Accepting" : "Rejecting") + ": " + dart.str(member))) dart.assertFailed(null, I[1], 210, 12, "_debugLogDiagnostic(pointer, '${ disposition == GestureDisposition.accepted ? \"Accepting\" : \"Rejecting\" }: $member')");
-      if (!state.members[$contains](member)) dart.assertFailed(null, I[1], 211, 12, "state.members.contains(member)");
-      if (disposition === arena.GestureDisposition.rejected) {
-        state.members[$remove](member);
-        member.rejectGesture(pointer);
-        if (!state.isOpen) this[_tryToResolveArena](pointer, state);
-      } else {
-        if (!(disposition === arena.GestureDisposition.accepted)) dart.assertFailed(null, I[1], 218, 14, "disposition == GestureDisposition.accepted");
-        if (state.isOpen) {
-          t0 = state;
-          t0.eagerWinner == null ? t0.eagerWinner = member : null;
+    performRebuild() {
+      this[_childWidgets][$clear]();
+      super.performRebuild();
+      if (!(this[_currentlyUpdatingChildIndex] == null)) dart.assertFailed(null, I[0], 122, 12, "_currentlyUpdatingChildIndex == null");
+      try {
+        let firstIndex = null;
+        function firstIndex$35get() {
+          let t1;
+          t1 = firstIndex;
+          return t1 == null ? dart.throw(new _internal.LateError.localNI("firstIndex")) : t1;
+        }
+        dart.fn(firstIndex$35get, T.VoidToint());
+        function firstIndex$35set(t2) {
+          if (firstIndex == null)
+            return firstIndex = t2;
+          else
+            dart.throw(new _internal.LateError.localAI("firstIndex"));
+        }
+        dart.fn(firstIndex$35set, T.intTodynamic());
+        let lastIndex = null;
+        function lastIndex$35get() {
+          let t5;
+          t5 = lastIndex;
+          return t5 == null ? dart.throw(new _internal.LateError.localNI("lastIndex")) : t5;
+        }
+        dart.fn(lastIndex$35get, T.VoidToint());
+        function lastIndex$35set(t6) {
+          if (lastIndex == null)
+            return lastIndex = t6;
+          else
+            dart.throw(new _internal.LateError.localAI("lastIndex"));
+        }
+        dart.fn(lastIndex$35set, T.intTodynamic());
+        if (this[_childElements].isEmpty) {
+          firstIndex$35set(0);
+          lastIndex$35set(0);
+        } else if (this[_didUnderflow]) {
+          firstIndex$35set(dart.nullCheck(this[_childElements].firstKey()));
+          lastIndex$35set(dart.nullCheck(this[_childElements].lastKey()) + 1);
         } else {
-          if (!this[_debugLogDiagnostic](pointer, "Self-declared winner: " + dart.str(member))) dart.assertFailed(null, I[1], 222, 16, "_debugLogDiagnostic(pointer, 'Self-declared winner: $member')");
-          this[_resolveInFavorOf](pointer, state, member);
+          firstIndex$35set(dart.nullCheck(this[_childElements].firstKey()));
+          lastIndex$35set(dart.nullCheck(this[_childElements].lastKey()));
         }
-      }
-    }
-    [_tryToResolveArena](pointer, state) {
-      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, I[1], 229, 12, "_arenas[pointer] == state");
-      if (!!state.isOpen) dart.assertFailed(null, I[1], 230, 12, "!state.isOpen");
-      if (state.members[$length] === 1) {
-        async.scheduleMicrotask(dart.fn(() => this[_resolveByDefault](pointer, state), T.VoidTovoid()));
-      } else if (state.members[$isEmpty]) {
-        this[_arenas][$remove](pointer);
-        if (!this[_debugLogDiagnostic](pointer, "Arena empty.")) dart.assertFailed(null, I[1], 235, 14, "_debugLogDiagnostic(pointer, 'Arena empty.')");
-      } else if (state.eagerWinner != null) {
-        if (!this[_debugLogDiagnostic](pointer, "Eager winner: " + dart.str(state.eagerWinner))) dart.assertFailed(null, I[1], 237, 14, "_debugLogDiagnostic(pointer, 'Eager winner: ${state.eagerWinner}')");
-        this[_resolveInFavorOf](pointer, state, dart.nullCheck(state.eagerWinner));
-      }
-    }
-    [_resolveByDefault](pointer, state) {
-      if (!this[_arenas][$containsKey](pointer)) return;
-      if (!dart.equals(this[_arenas][$_get](pointer), state)) dart.assertFailed(null, I[1], 245, 12, "_arenas[pointer] == state");
-      if (!!state.isOpen) dart.assertFailed(null, I[1], 246, 12, "!state.isOpen");
-      let members = state.members;
-      if (!(members[$length] === 1)) dart.assertFailed(null, I[1], 248, 12, "members.length == 1");
-      this[_arenas][$remove](pointer);
-      if (!this[_debugLogDiagnostic](pointer, "Default winner: " + dart.str(state.members[$first]))) dart.assertFailed(null, I[1], 250, 12, "_debugLogDiagnostic(pointer, 'Default winner: ${state.members.first}')");
-      state.members[$first].acceptGesture(pointer);
-    }
-    [_resolveInFavorOf](pointer, state, member) {
-      if (!state[$_equals](this[_arenas][$_get](pointer))) dart.assertFailed(null, I[1], 255, 12, "state == _arenas[pointer]");
-      if (!(state !== null)) dart.assertFailed(null, I[1], 256, 12, "state != null");
-      if (!(state.eagerWinner == null || dart.equals(state.eagerWinner, member))) dart.assertFailed(null, I[1], 257, 12, "state.eagerWinner == null || state.eagerWinner == member");
-      if (!!state.isOpen) dart.assertFailed(null, I[1], 258, 12, "!state.isOpen");
-      this[_arenas][$remove](pointer);
-      for (let rejectedMember of state.members) {
-        if (!rejectedMember[$_equals](member)) rejectedMember.rejectGesture(pointer);
-      }
-      member.acceptGesture(pointer);
-    }
-    [_debugLogDiagnostic](pointer, message, state = null) {
-      if (!dart.fn(() => {
-        let t0;
-        if (debug.debugPrintGestureArenaDiagnostics) {
-          let count = (t0 = state, t0 == null ? null : t0.members[$length]);
-          let s = count !== 1 ? "s" : "";
-          print.debugPrint("Gesture arena " + pointer[$toString]()[$padRight](4) + " ❙ " + message + (count != null ? " with " + dart.str(count) + " member" + s + "." : ""));
+        for (let index = firstIndex$35get(); index <= lastIndex$35get(); index = index + 1) {
+          this[_currentlyUpdatingChildIndex] = index;
+          let newChild = this.updateChild(this[_childElements]._get(index), this[_build](index), index);
+          if (newChild != null) {
+            this[_childElements]._set(index, newChild);
+          } else {
+            this[_childElements].remove(index);
+          }
         }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 268, 12, "() {\r\n      if (debugPrintGestureArenaDiagnostics) {\r\n        final int? count = state?.members.length;\r\n        final String s = count != 1 ? 's' : '';\r\n        debugPrint('Gesture arena ${pointer.toString().padRight(4)} ❙ $message${ count != null ? \" with $count member$s.\" : \"\"}');\r\n      }\r\n      return true;\r\n    }()");
+      } finally {
+        this[_currentlyUpdatingChildIndex] = null;
+      }
+    }
+    [_build](index) {
+      return this[_childWidgets][$putIfAbsent](index, dart.fn(() => this.widget.delegate.build(this, index), T.VoidToWidgetN()));
+    }
+    createChild(index) {
+      if (!(this[_currentlyUpdatingChildIndex] == null)) dart.assertFailed(null, I[0], 159, 12, "_currentlyUpdatingChildIndex == null");
+      dart.nullCheck(this.owner).buildScope(this, dart.fn(() => {
+        let newChild = null;
+        try {
+          this[_currentlyUpdatingChildIndex] = index;
+          newChild = this.updateChild(this[_childElements]._get(index), this[_build](index), index);
+        } finally {
+          this[_currentlyUpdatingChildIndex] = null;
+        }
+        if (newChild != null) {
+          this[_childElements]._set(index, newChild);
+        } else {
+          this[_childElements].remove(index);
+        }
+      }, T.VoidTovoid()));
+    }
+    updateChild(child, newWidget, newSlot) {
+      let t9, t8, t9$, t8$;
+      let oldParentData = T.SliverVariableSizeBoxAdaptorParentDataN().as((t8 = child, t8 == null ? null : (t9 = t8.renderObject, t9 == null ? null : t9.parentData)));
+      let newChild = super.updateChild(child, newWidget, newSlot);
+      let newParentData = T.SliverVariableSizeBoxAdaptorParentDataN().as((t8$ = newChild, t8$ == null ? null : (t9$ = t8$.renderObject, t9$ == null ? null : t9$.parentData)));
+      if (newParentData != null) {
+        newParentData.keepAlive = true;
+      }
+      if (!dart.equals(oldParentData, newParentData) && oldParentData != null && newParentData != null) {
+        newParentData.layoutOffset = oldParentData.layoutOffset;
+      }
+      return newChild;
+    }
+    forgetChild(child) {
+      if (!(child.slot != null)) dart.assertFailed(null, I[0], 201, 12, "child.slot != null");
+      if (!this[_childElements].containsKey(child.slot)) dart.assertFailed(null, I[0], 202, 12, "_childElements.containsKey(child.slot)");
+      this[_childElements].remove(child.slot);
+      super.forgetChild(child);
+    }
+    removeChild(child) {
+      let index = this.renderObject.indexOf(child);
+      if (!(this[_currentlyUpdatingChildIndex] == null)) dart.assertFailed(null, I[0], 210, 12, "_currentlyUpdatingChildIndex == null");
+      if (!(index >= 0)) dart.assertFailed(null, I[0], 211, 12, "index >= 0");
+      dart.nullCheck(this.owner).buildScope(this, dart.fn(() => {
+        if (!this[_childElements].containsKey(index)) dart.assertFailed(null, I[0], 213, 14, "_childElements.containsKey(index)");
+        try {
+          this[_currentlyUpdatingChildIndex] = index;
+          let result = this.updateChild(this[_childElements]._get(index), null, index);
+          if (!(result == null)) dart.assertFailed(null, I[0], 217, 16, "result == null");
+        } finally {
+          this[_currentlyUpdatingChildIndex] = null;
+        }
+        this[_childElements].remove(index);
+        if (!!this[_childElements].containsKey(index)) dart.assertFailed(null, I[0], 222, 14, "!_childElements.containsKey(index)");
+      }, T.VoidTovoid()));
+    }
+    [_extrapolateMaxScrollOffset](firstIndex, lastIndex, leadingScrollOffset, trailingScrollOffset) {
+      let childCount = this.widget.delegate.estimatedChildCount;
+      if (childCount == null) {
+        return 1 / 0;
+      }
+      if (lastIndex === dart.notNull(childCount) - 1) {
+        return trailingScrollOffset;
+      }
+      let reifiedCount = dart.nullCheck(lastIndex) - dart.nullCheck(firstIndex) + 1;
+      let averageExtent = (dart.nullCheck(trailingScrollOffset) - dart.nullCheck(leadingScrollOffset)) / reifiedCount;
+      let remainingCount = dart.notNull(childCount) - dart.notNull(lastIndex) - 1;
+      return dart.notNull(trailingScrollOffset) + averageExtent * remainingCount;
+    }
+    estimateMaxScrollOffset(constraints, opts) {
+      let t8;
+      let firstIndex = opts && 'firstIndex' in opts ? opts.firstIndex : null;
+      let lastIndex = opts && 'lastIndex' in opts ? opts.lastIndex : null;
+      let leadingScrollOffset = opts && 'leadingScrollOffset' in opts ? opts.leadingScrollOffset : null;
+      let trailingScrollOffset = opts && 'trailingScrollOffset' in opts ? opts.trailingScrollOffset : null;
+      t8 = this.widget.estimateMaxScrollOffset(constraints, dart.nullCheck(firstIndex), dart.nullCheck(lastIndex), dart.nullCheck(leadingScrollOffset), dart.nullCheck(trailingScrollOffset));
+      return t8 == null ? dart.nullCheck(this[_extrapolateMaxScrollOffset](firstIndex, lastIndex, leadingScrollOffset, trailingScrollOffset)) : t8;
+    }
+    get childCount() {
+      let t8;
+      t8 = this.widget.delegate.estimatedChildCount;
+      return t8 == null ? 0 : t8;
+    }
+    didStartLayout() {
+      if (!this.debugAssertChildListLocked()) dart.assertFailed(null, I[0], 274, 12, "debugAssertChildListLocked()");
+    }
+    didFinishLayout() {
+      let t8, t8$;
+      if (!this.debugAssertChildListLocked()) dart.assertFailed(null, I[0], 279, 12, "debugAssertChildListLocked()");
+      let firstIndex = (t8 = this[_childElements].firstKey(), t8 == null ? 0 : t8);
+      let lastIndex = (t8$ = this[_childElements].lastKey(), t8$ == null ? 0 : t8$);
+      this.widget.delegate.didFinishLayout(firstIndex, lastIndex);
+    }
+    debugAssertChildListLocked() {
+      if (!(this[_currentlyUpdatingChildIndex] == null)) dart.assertFailed(null, I[0], 289, 12, "_currentlyUpdatingChildIndex == null");
       return true;
     }
+    didAdoptChild(child) {
+      if (!(this[_currentlyUpdatingChildIndex] != null)) dart.assertFailed(null, I[0], 295, 12, "_currentlyUpdatingChildIndex != null");
+      let childParentData = sliver_variable_size_box_adaptor.SliverVariableSizeBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      childParentData.index = this[_currentlyUpdatingChildIndex];
+    }
+    setDidUnderflow(value) {
+      this[_didUnderflow] = value;
+    }
+    insertRenderObjectChild(child, slot) {
+      box.RenderBox.as(child);
+      core.int.as(slot);
+      if (!(this[_currentlyUpdatingChildIndex] === slot)) dart.assertFailed(null, I[0], 310, 12, "_currentlyUpdatingChildIndex == slot");
+      if (!this.renderObject.debugValidateChild(child)) dart.assertFailed(null, I[0], 311, 12, "renderObject.debugValidateChild(child)");
+      this.renderObject._set(dart.nullCheck(this[_currentlyUpdatingChildIndex]), child);
+      if (!dart.fn(() => {
+        let childParentData = sliver_variable_size_box_adaptor.SliverVariableSizeBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+        if (!(slot === childParentData.index)) dart.assertFailed(null, I[0], 316, 14, "slot == childParentData.index");
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[0], 313, 12, "() {\r\n      final childParentData =\r\n          child.parentData! as SliverVariableSizeBoxAdaptorParentData;\r\n      assert(slot == childParentData.index);\r\n      return true;\r\n    }()");
+    }
+    moveRenderObjectChild(child, oldSlot, newSlot) {
+      object.RenderObject.as(child);
+      if (!false) dart.assertFailed(null, I[0], 327, 12, "false");
+    }
+    removeRenderObjectChild(child, slot) {
+      object.RenderObject.as(child);
+      if (!(this[_currentlyUpdatingChildIndex] != null)) dart.assertFailed(null, I[0], 335, 12, "_currentlyUpdatingChildIndex != null");
+      this.renderObject.remove(dart.nullCheck(this[_currentlyUpdatingChildIndex]));
+    }
+    visitChildren(visitor) {
+      this[_childElements].values[$toList]()[$forEach](visitor);
+    }
+    debugVisitOnstageChildren(visitor) {
+      this[_childElements].values[$where](dart.fn(child => {
+        let parentData = T.SliverMultiBoxAdaptorParentDataN().as(dart.nullCheck(child.renderObject).parentData);
+        let itemExtent = null;
+        function itemExtent$35get() {
+          let t9;
+          t9 = itemExtent;
+          return t9 == null ? dart.throw(new _internal.LateError.localNI("itemExtent")) : t9;
+        }
+        dart.fn(itemExtent$35get, T.VoidTodouble());
+        function itemExtent$35set(t10) {
+          return itemExtent = t10;
+        }
+        dart.fn(itemExtent$35set, T.doubleTodynamic());
+        switch (this.renderObject.constraints.axis) {
+          case C[0] || CT.C0:
+          {
+            itemExtent$35set(dart.nullCheck(child.renderObject).paintBounds.width);
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            itemExtent$35set(dart.nullCheck(child.renderObject).paintBounds.height);
+            break;
+          }
+        }
+        return dart.nullCheck(dart.nullCheck(parentData).layoutOffset) < this.renderObject.constraints.scrollOffset + this.renderObject.constraints.remainingPaintExtent && dart.nullCheck(parentData.layoutOffset) + itemExtent$35get() > this.renderObject.constraints.scrollOffset;
+      }, T.ElementTobool()))[$forEach](visitor);
+    }
   };
-  (arena.GestureArenaManager.new = function() {
-    this[_arenas] = new (T.IdentityMapOfint$_GestureArena()).new();
+  (sliver$0.SliverVariableSizeBoxAdaptorElement.new = function(widget) {
+    this[_childWidgets] = new (T.IdentityMapOfint$WidgetN()).new();
+    this[_childElements] = new (T.SplayTreeMapOfint$Element()).new();
+    this[_currentlyUpdatingChildIndex] = null;
+    this[_didUnderflow] = false;
+    sliver$0.SliverVariableSizeBoxAdaptorElement.__proto__.new.call(this, widget);
     ;
-  }).prototype = arena.GestureArenaManager.prototype;
-  dart.addTypeTests(arena.GestureArenaManager);
-  dart.addTypeCaches(arena.GestureArenaManager);
-  dart.setMethodSignature(arena.GestureArenaManager, () => ({
-    __proto__: dart.getMethods(arena.GestureArenaManager.__proto__),
-    add: dart.fnType(arena.GestureArenaEntry, [core.int, arena.GestureArenaMember]),
-    close: dart.fnType(dart.void, [core.int]),
-    sweep: dart.fnType(dart.void, [core.int]),
-    hold: dart.fnType(dart.void, [core.int]),
-    release: dart.fnType(dart.void, [core.int]),
-    [_resolve]: dart.fnType(dart.void, [core.int, arena.GestureArenaMember, arena.GestureDisposition]),
-    [_tryToResolveArena]: dart.fnType(dart.void, [core.int, arena._GestureArena]),
-    [_resolveByDefault]: dart.fnType(dart.void, [core.int, arena._GestureArena]),
-    [_resolveInFavorOf]: dart.fnType(dart.void, [core.int, arena._GestureArena, arena.GestureArenaMember]),
-    [_debugLogDiagnostic]: dart.fnType(core.bool, [core.int, core.String], [dart.nullable(arena._GestureArena)])
+  }).prototype = sliver$0.SliverVariableSizeBoxAdaptorElement.prototype;
+  dart.addTypeTests(sliver$0.SliverVariableSizeBoxAdaptorElement);
+  dart.addTypeCaches(sliver$0.SliverVariableSizeBoxAdaptorElement);
+  sliver$0.SliverVariableSizeBoxAdaptorElement[dart.implements] = () => [sliver_variable_size_box_adaptor.RenderSliverVariableSizeBoxChildManager];
+  dart.setMethodSignature(sliver$0.SliverVariableSizeBoxAdaptorElement, () => ({
+    __proto__: dart.getMethods(sliver$0.SliverVariableSizeBoxAdaptorElement.__proto__),
+    [_build]: dart.fnType(dart.nullable(framework.Widget), [core.int]),
+    createChild: dart.fnType(dart.void, [core.int]),
+    updateChild: dart.fnType(dart.nullable(framework.Element), [dart.nullable(framework.Element), dart.nullable(framework.Widget), dart.dynamic]),
+    removeChild: dart.fnType(dart.void, [box.RenderBox]),
+    [_extrapolateMaxScrollOffset]: dart.fnType(dart.nullable(core.double), [dart.nullable(core.int), dart.nullable(core.int), dart.nullable(core.double), dart.nullable(core.double)]),
+    estimateMaxScrollOffset: dart.fnType(core.double, [sliver$.SliverConstraints], {firstIndex: dart.nullable(core.int), lastIndex: dart.nullable(core.int), leadingScrollOffset: dart.nullable(core.double), trailingScrollOffset: dart.nullable(core.double)}, {}),
+    didStartLayout: dart.fnType(dart.void, []),
+    didFinishLayout: dart.fnType(dart.void, []),
+    debugAssertChildListLocked: dart.fnType(core.bool, []),
+    didAdoptChild: dart.fnType(dart.void, [box.RenderBox]),
+    setDidUnderflow: dart.fnType(dart.void, [core.bool])
   }));
-  dart.setLibraryUri(arena.GestureArenaManager, I[0]);
-  dart.setFieldSignature(arena.GestureArenaManager, () => ({
-    __proto__: dart.getFields(arena.GestureArenaManager.__proto__),
-    [_arenas]: dart.finalFieldType(core.Map$(core.int, arena._GestureArena))
+  dart.setGetterSignature(sliver$0.SliverVariableSizeBoxAdaptorElement, () => ({
+    __proto__: dart.getGetters(sliver$0.SliverVariableSizeBoxAdaptorElement.__proto__),
+    widget: sliver$0.SliverVariableSizeBoxAdaptorWidget,
+    renderObject: sliver_variable_size_box_adaptor.RenderSliverVariableSizeBoxAdaptor,
+    childCount: core.int
   }));
-  dart.trackLibraries("packages/flutter/src/gestures/arena.dart", {
-    "package:flutter/src/gestures/arena.dart": arena
+  dart.setLibraryUri(sliver$0.SliverVariableSizeBoxAdaptorElement, I[1]);
+  dart.setFieldSignature(sliver$0.SliverVariableSizeBoxAdaptorElement, () => ({
+    __proto__: dart.getFields(sliver$0.SliverVariableSizeBoxAdaptorElement.__proto__),
+    [_childWidgets]: dart.finalFieldType(core.Map$(core.int, dart.nullable(framework.Widget))),
+    [_childElements]: dart.finalFieldType(collection.SplayTreeMap$(core.int, framework.Element)),
+    [_currentlyUpdatingChildIndex]: dart.fieldType(dart.nullable(core.int)),
+    [_didUnderflow]: dart.fieldType(core.bool)
+  }));
+  var gridDelegate$ = dart.privateName(sliver$0, "SliverStaggeredGrid.gridDelegate");
+  sliver$0.SliverStaggeredGrid = class SliverStaggeredGrid extends sliver$0.SliverVariableSizeBoxAdaptorWidget {
+    get gridDelegate() {
+      return this[gridDelegate$];
+    }
+    set gridDelegate(value) {
+      super.gridDelegate = value;
+    }
+    createRenderObject(context) {
+      let element = sliver$0.SliverVariableSizeBoxAdaptorElement.as(context);
+      return new sliver_staggered_grid.RenderSliverStaggeredGrid.new({childManager: element, gridDelegate: this.gridDelegate});
+    }
+    updateRenderObject(context, renderObject) {
+      sliver_staggered_grid.RenderSliverStaggeredGrid.as(renderObject);
+      renderObject.gridDelegate = this.gridDelegate;
+    }
+  };
+  (sliver$0.SliverStaggeredGrid.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let gridDelegate = opts && 'gridDelegate' in opts ? opts.gridDelegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[gridDelegate$] = gridDelegate;
+    sliver$0.SliverStaggeredGrid.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver$0.SliverStaggeredGrid.prototype;
+  (sliver$0.SliverStaggeredGrid.count = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
+    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
+    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
+    let children = opts && 'children' in opts ? opts.children : C[2] || CT.C2;
+    let staggeredTiles = opts && 'staggeredTiles' in opts ? opts.staggeredTiles : C[3] || CT.C3;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: crossAxisCount, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: dart.fn(i => staggeredTiles[$_get](i), T.intToStaggeredTile()), staggeredTileCount: staggeredTiles[$length]});
+    sliver$0.SliverStaggeredGrid.__proto__.new.call(this, {key: key, delegate: new sliver.SliverChildListDelegate.new(children), $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver$0.SliverStaggeredGrid.prototype;
+  (sliver$0.SliverStaggeredGrid.countBuilder = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
+    let staggeredTileBuilder = opts && 'staggeredTileBuilder' in opts ? opts.staggeredTileBuilder : null;
+    let itemBuilder = opts && 'itemBuilder' in opts ? opts.itemBuilder : null;
+    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
+    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
+    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: crossAxisCount, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: staggeredTileBuilder, staggeredTileCount: itemCount});
+    sliver$0.SliverStaggeredGrid.__proto__.new.call(this, {key: key, delegate: new sliver.SliverChildBuilderDelegate.new(itemBuilder, {childCount: itemCount}), $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver$0.SliverStaggeredGrid.prototype;
+  (sliver$0.SliverStaggeredGrid.extent = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let maxCrossAxisExtent = opts && 'maxCrossAxisExtent' in opts ? opts.maxCrossAxisExtent : null;
+    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
+    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
+    let children = opts && 'children' in opts ? opts.children : C[2] || CT.C2;
+    let staggeredTiles = opts && 'staggeredTiles' in opts ? opts.staggeredTiles : C[3] || CT.C3;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithMaxCrossAxisExtent.new({maxCrossAxisExtent: maxCrossAxisExtent, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: dart.fn(i => staggeredTiles[$_get](i), T.intToStaggeredTile()), staggeredTileCount: staggeredTiles[$length]});
+    sliver$0.SliverStaggeredGrid.__proto__.new.call(this, {key: key, delegate: new sliver.SliverChildListDelegate.new(children), $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver$0.SliverStaggeredGrid.prototype;
+  (sliver$0.SliverStaggeredGrid.extentBuilder = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let maxCrossAxisExtent = opts && 'maxCrossAxisExtent' in opts ? opts.maxCrossAxisExtent : null;
+    let staggeredTileBuilder = opts && 'staggeredTileBuilder' in opts ? opts.staggeredTileBuilder : null;
+    let itemBuilder = opts && 'itemBuilder' in opts ? opts.itemBuilder : null;
+    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
+    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
+    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithMaxCrossAxisExtent.new({maxCrossAxisExtent: maxCrossAxisExtent, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: staggeredTileBuilder, staggeredTileCount: itemCount});
+    sliver$0.SliverStaggeredGrid.__proto__.new.call(this, {key: key, delegate: new sliver.SliverChildBuilderDelegate.new(itemBuilder, {childCount: itemCount}), $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver$0.SliverStaggeredGrid.prototype;
+  dart.addTypeTests(sliver$0.SliverStaggeredGrid);
+  dart.addTypeCaches(sliver$0.SliverStaggeredGrid);
+  dart.setMethodSignature(sliver$0.SliverStaggeredGrid, () => ({
+    __proto__: dart.getMethods(sliver$0.SliverStaggeredGrid.__proto__),
+    createRenderObject: dart.fnType(sliver_staggered_grid.RenderSliverStaggeredGrid, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(sliver$0.SliverStaggeredGrid, I[1]);
+  dart.setFieldSignature(sliver$0.SliverStaggeredGrid, () => ({
+    __proto__: dart.getFields(sliver$0.SliverStaggeredGrid.__proto__),
+    gridDelegate: dart.finalFieldType(sliver_staggered_grid.SliverStaggeredGridDelegate)
+  }));
+  dart.trackLibraries("packages/flutter_staggered_grid_view/src/widgets/sliver.dart", {
+    "package:flutter_staggered_grid_view/src/widgets/sliver.dart": sliver$0
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["arena.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBA;;kDANK;;;;EAML;;;;;;;;;;;;;;;;EAgBA;;;;;;;;;YAiBkC;AACiB,MAA/C,AAAO,wBAAS,iBAAU,gBAAS,WAAW;IAChD;;yCAZyB,QAAa,UAAe;IAA5B;IAAa;IAAe;;EAAQ;;;;;;;;;;;;;;;QA2BjC;AAC1B,WAAO;AACY,MAAnB,AAAQ,mBAAI,MAAM;IACpB;;AAIqB,mBAAS;AAC5B,UAAI,AAAQ;AACa,QAAvB,AAAO,MAAD,OAAO;;AAMC,QAJd,AAAO,MAAD,OAAO,AAAQ,AAIlB,gCAJ8B,QAAoB;AACnD,cAAI,AAAO,MAAD,WAAI,mBACZ,MAA+B,UAAtB,MAAM;AACjB,gBAAgB,UAAP,MAAM;mDACT;;AAEV,UAAI,aACF,AAAO,AAAgB,MAAjB,OAAO;AACf,UAAI,aACF,AAAO,AAAgB,MAAjB,OAAO;AACf,UAAI,sBACF,AAAO,AAA2B,MAA5B,OAAO;AACf,YAAO,AAAO,OAAD;IACf;;;IAnC+B,eAA8B;IACxD,cAAS;IACT,cAAS;IACT,uBAAkB;IAMH;;EA2BtB;;;;;;;;;;;;;;;;;;;;;;;QAa4B,SAA4B;AAChC,kBAAQ,AAAQ,4BAAY,OAAO,EAAE;AACvD,aAAO,0BAAoB,OAAO,EAAE;AACpC,cAAO;;AAEQ,MAAjB,AAAM,KAAD,KAAK,MAAM;AAChB,WAAO,0BAAoB,OAAO,EAAE,AAAiB,sBAAP,MAAM;AACpD,YAAyB,gCAAE,MAAM,OAAO,EAAE,MAAM;IAClD;UAKe;AACQ,kBAAQ,AAAO,qBAAC,OAAO;AAC5C,UAAI,AAAM,KAAD,UACP;AACkB,MAApB,AAAM,KAAD,UAAU;AACf,WAAO,0BAAoB,OAAO,EAAE,WAAW,KAAK;AAClB,MAAlC,yBAAmB,OAAO,EAAE,KAAK;IACnC;UAee;AACQ,kBAAQ,AAAO,qBAAC,OAAO;AAC5C,UAAI,AAAM,KAAD,UACP;AACF,WAAO,CAAC,AAAM,KAAD;AACb,UAAI,AAAM,KAAD;AACqB,QAA5B,AAAM,KAAD,mBAAmB;AACxB,aAAO,0BAAoB,OAAO,EAAE,kBAAkB,KAAK;AAC3D;;AAEF,WAAO,0BAAoB,OAAO,EAAE,YAAY,KAAK;AAC9B,MAAvB,AAAQ,uBAAO,OAAO;AACtB,UAAI,AAAM,AAAQ,KAAT;AAEP,aAAO,0BAAoB,OAAO,EAAE,AAAgC,sBAArB,AAAM,AAAQ,KAAT;AACV,QAA1C,AAAM,AAAQ,AAAM,KAAf,+BAA6B,OAAO;AAEzC,iBAAS,IAAI,GAAG,AAAE,CAAD,GAAG,AAAM,AAAQ,KAAT,mBAAiB,IAAA,AAAC,CAAA;AACF,UAAvC,AAAM,AAAO,AAAI,KAAZ,gBAAS,CAAC,gBAAgB,OAAO;;IAE5C;SAcc;AACS,kBAAQ,AAAO,qBAAC,OAAO;AAC5C,UAAI,AAAM,KAAD,UACP;AACiB,MAAnB,AAAM,KAAD,UAAU;AACf,WAAO,0BAAoB,OAAO,EAAE,WAAW,KAAK;IACtD;YAWiB;AACM,kBAAQ,AAAO,qBAAC,OAAO;AAC5C,UAAI,AAAM,KAAD,UACP;AACkB,MAApB,AAAM,KAAD,UAAU;AACf,WAAO,0BAAoB,OAAO,EAAE,aAAa,KAAK;AACtD,UAAI,AAAM,KAAD,kBACP,AAAc,WAAR,OAAO;IACjB;eAKkB,SAA4B,QAA2B;;AAClD,kBAAQ,AAAO,qBAAC,OAAO;AAC5C,UAAI,AAAM,KAAD,UACP;AACF,WAAO,0BAAoB,OAAO,EAAwF,CAAlF,AAAY,WAAD,KAAuB,oCAAW,cAAc,eAAa,gBAAG,MAAM;AACzH,WAAO,AAAM,AAAQ,KAAT,oBAAkB,MAAM;AACpC,UAAI,AAAY,WAAD,KAAuB;AACR,QAA5B,AAAM,AAAQ,KAAT,kBAAgB,MAAM;AACE,QAA7B,AAAO,MAAD,eAAe,OAAO;AAC5B,aAAK,AAAM,KAAD,SACR,AAAkC,yBAAf,OAAO,EAAE,KAAK;;AAEnC,cAAO,AAAY,WAAD,KAAuB;AACzC,YAAI,AAAM,KAAD;AACqB,eAA5B,KAAK;UAAa,yBAAZ,iBAAgB,MAAM,GAAV;;AAElB,eAAO,0BAAoB,OAAO,EAAE,AAA+B,oCAAP,MAAM;AACzB,UAAzC,wBAAkB,OAAO,EAAE,KAAK,EAAE,MAAM;;;IAG9C;yBAE4B,SAAuB;AACjD,WAAwB,YAAjB,AAAO,qBAAC,OAAO,GAAK,KAAK;AAChC,WAAO,CAAC,AAAM,KAAD;AACb,UAAI,AAAM,AAAQ,AAAO,KAAhB,sBAAmB;AACgC,QAA1D,wBAAkB,cAAM,wBAAkB,OAAO,EAAE,KAAK;YACnD,KAAI,AAAM,AAAQ,KAAT;AACS,QAAvB,AAAQ,uBAAO,OAAO;AACtB,aAAO,0BAAoB,OAAO,EAAE;YAC/B,KAAI,AAAM,KAAD;AACd,aAAO,0BAAoB,OAAO,EAAE,AAAoC,4BAAnB,AAAM,KAAD;AACL,QAArD,wBAAkB,OAAO,EAAE,KAAK,EAAmB,eAAjB,AAAM,KAAD;;IAE3C;wBAE2B,SAAuB;AAChD,WAAK,AAAQ,4BAAY,OAAO,GAC9B;AACF,WAAwB,YAAjB,AAAO,qBAAC,OAAO,GAAK,KAAK;AAChC,WAAO,CAAC,AAAM,KAAD;AACkB,oBAAU,AAAM,KAAD;AAC9C,YAAO,AAAQ,AAAO,OAAR,cAAW;AACF,MAAvB,AAAQ,uBAAO,OAAO;AACtB,WAAO,0BAAoB,OAAO,EAAE,AAAwC,8BAArB,AAAM,AAAQ,KAAT;AAClB,MAA1C,AAAM,AAAQ,AAAM,KAAf,+BAA6B,OAAO;IAC3C;wBAE2B,SAAuB,OAA0B;AAC1E,WAAO,AAAM,KAAD,WAAI,AAAO,qBAAC,OAAO;AAC/B,YAAO,AAAM,KAAD;AACZ,YAAO,AAAM,AAAY,AAAQ,KAArB,wBAA0C,YAAlB,AAAM,KAAD,cAAgB,MAAM;AAC/D,WAAO,CAAC,AAAM,KAAD;AACU,MAAvB,AAAQ,uBAAO,OAAO;AACtB,eAA8B,iBAAkB,AAAM,MAAD;AACnD,aAAI,cAAc,WAAI,MAAM,GAC1B,AAAe,AAAsB,cAAvB,eAAe,OAAO;;AAEX,MAA7B,AAAO,MAAD,eAAe,OAAO;IAC9B;0BAE6B,SAAgB,SAA0B;AACrE,WAAO,AAON;;AANC,YAAI;AACS,4BAAQ,KAAK,eAAL,OAAO,AAAQ;AACrB,kBAAI,AAAM,KAAD,KAAI,IAAI,MAAM;AACqF,UAAzH,AAAU,iBAAC,AAA6G,mBAA5F,AAAQ,AAAW,OAAZ,yBAAqB,KAAG,QAAI,OAAO,IAAG,AAAM,KAAD,WAAW,AAAyB,oBAAjB,KAAK,gBAAQ,CAAC,SAAK;;AAEtH,cAAO;;AAET,YAAO;IACT;;;IA7K8B,gBAA8B;;EA8K9D","file":"../../../../../../../../C:/packages/flutter/src/gestures/arena.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["sliver.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../packages/flutter_staggered_grid_view/src/widgets/sliver.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__arena: arena
+    src__widgets__sliver: sliver$0
   };
 }));
 
-//# sourceMappingURL=arena.dart.lib.js.map
+//# sourceMappingURL=sliver.dart.lib.js.map

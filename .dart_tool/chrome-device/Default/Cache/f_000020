@@ -1,18 +1,29 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__widgets__async_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/safe_area.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/material/circle_avatar.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/widgets/preferred_size.dart'], (function load__packages__animelife__Widgets__top_bar_widget_dart(dart_sdk, packages__flutter__src__widgets__safe_area$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__material__circle_avatar$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__widgets__preferred_size$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const async = dart_sdk.async;
-  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const safe_area = packages__flutter__src__widgets__safe_area$46dart.src__widgets__safe_area;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
   const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var async$ = Object.create(dart.library);
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const circle_avatar = packages__flutter__src__material__circle_avatar$46dart.src__material__circle_avatar;
+  const _network_image_web = packages__flutter__src__painting___network_image_web$46dart.src__painting___network_image_web;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const preferred_size = packages__flutter__src__widgets__preferred_size$46dart.src__widgets__preferred_size;
+  var top_bar_widget = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(true);
-  var T$ = {
-    VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    ObjectAndStackTraceToNull: () => (T$.ObjectAndStackTraceToNull = dart.constFn(dart.fnType(core.Null, [core.Object, core.StackTrace])))()
+  var T = {
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -20,592 +31,389 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.none",
-        index: 0
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.waiting",
-        index: 1
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.active",
-        index: 2
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 8
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: async$.ConnectionState.prototype,
-        [_name$]: "ConnectionState.done",
-        index: 3
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 70,
+        [_Location_line]: 20,
+        [_Location_file]: null
       });
     },
-    get C4() {
-      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], async$.ConnectionState);
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3], widget_inspector._Location);
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 65,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 35,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 58,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
     },
     get C5() {
-      return C[5] = dart.const({
-        __proto__: core._StringStackTrace.prototype,
-        [_StringStackTrace__stackTrace]: ""
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 20,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 17,
+        [_Location_line]: 19,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 20,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "radius",
+        [_Location_column]: 21,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundImage",
+        [_Location_column]: 21,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "iconSize",
+        [_Location_column]: 19,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 19,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 19,
+        [_Location_line]: 31,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 19,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 19,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 15,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 15,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 16,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 14,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.constList([C[38] || CT.C38], widget_inspector._Location);
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[37] || CT.C37,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/rapha/Desktop/ProjFlutter/trabalhoflutter/lib/Widgets/top_bar_widget.dart"
       });
     }
   }, false);
-  var C = Array(6).fill(void 0);
-  var I = [
-    "package:flutter/src/widgets/async.dart",
-    "file:///D:/flutter2/flutter/packages/flutter/lib/src/widgets/async.dart"
-  ];
-  var stream$ = dart.privateName(async$, "StreamBuilderBase.stream");
-  const _is_StreamBuilderBase_default = Symbol('_is_StreamBuilderBase_default');
-  async$.StreamBuilderBase$ = dart.generic((T, S) => {
-    var _StreamBuilderBaseStateOfT$S = () => (_StreamBuilderBaseStateOfT$S = dart.constFn(async$._StreamBuilderBaseState$(T, S)))();
-    class StreamBuilderBase extends framework.StatefulWidget {
-      get stream() {
-        return this[stream$];
-      }
-      set stream(value) {
-        super.stream = value;
-      }
-      afterConnected(current) {
-        S.as(current);
-        return current;
-      }
-      afterError(current, error, stackTrace) {
-        S.as(current);
-        return current;
-      }
-      afterDone(current) {
-        S.as(current);
-        return current;
-      }
-      afterDisconnected(current) {
-        S.as(current);
-        return current;
-      }
-      createState() {
-        return new (_StreamBuilderBaseStateOfT$S()).new();
-      }
+  var C = Array(39).fill(void 0);
+  var I = ["package:animelife/Widgets/top_bar_widget.dart"];
+  var preferredSize = dart.privateName(top_bar_widget, "TopBarWidget.preferredSize");
+  var toolbarHeight$ = dart.privateName(top_bar_widget, "TopBarWidget.toolbarHeight");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const StatelessWidget_PreferredSizeWidget$36 = class StatelessWidget_PreferredSizeWidget extends framework.StatelessWidget {};
+  (StatelessWidget_PreferredSizeWidget$36.new = function(opts) {
+    StatelessWidget_PreferredSizeWidget$36.__proto__.new.call(this, opts);
+  }).prototype = StatelessWidget_PreferredSizeWidget$36.prototype;
+  dart.applyMixin(StatelessWidget_PreferredSizeWidget$36, preferred_size.PreferredSizeWidget);
+  top_bar_widget.TopBarWidget = class TopBarWidget extends StatelessWidget_PreferredSizeWidget$36 {
+    get preferredSize() {
+      return this[preferredSize];
     }
-    (StreamBuilderBase.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let stream = opts && 'stream' in opts ? opts.stream : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[stream$] = stream;
-      StreamBuilderBase.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = StreamBuilderBase.prototype;
-    dart.addTypeTests(StreamBuilderBase);
-    StreamBuilderBase.prototype[_is_StreamBuilderBase_default] = true;
-    dart.addTypeCaches(StreamBuilderBase);
-    dart.setMethodSignature(StreamBuilderBase, () => ({
-      __proto__: dart.getMethods(StreamBuilderBase.__proto__),
-      afterConnected: dart.fnType(S, [dart.nullable(core.Object)]),
-      afterError: dart.fnType(S, [dart.nullable(core.Object), core.Object, core.StackTrace]),
-      afterDone: dart.fnType(S, [dart.nullable(core.Object)]),
-      afterDisconnected: dart.fnType(S, [dart.nullable(core.Object)]),
-      createState: dart.fnType(framework.State$(async$.StreamBuilderBase$(T, S)), [])
-    }));
-    dart.setLibraryUri(StreamBuilderBase, I[0]);
-    dart.setFieldSignature(StreamBuilderBase, () => ({
-      __proto__: dart.getFields(StreamBuilderBase.__proto__),
-      stream: dart.finalFieldType(dart.nullable(async.Stream$(T)))
-    }));
-    return StreamBuilderBase;
-  });
-  async$.StreamBuilderBase = async$.StreamBuilderBase$();
-  dart.addTypeTests(async$.StreamBuilderBase, _is_StreamBuilderBase_default);
-  var _subscription = dart.privateName(async$, "_subscription");
-  var ___StreamBuilderBaseState__summary = dart.privateName(async$, "_#_StreamBuilderBaseState#_summary");
-  var ___StreamBuilderBaseState__summary_isSet = dart.privateName(async$, "_#_StreamBuilderBaseState#_summary#isSet");
-  var _summary = dart.privateName(async$, "_summary");
-  var _subscribe = dart.privateName(async$, "_subscribe");
-  var _unsubscribe = dart.privateName(async$, "_unsubscribe");
-  const _is__StreamBuilderBaseState_default = Symbol('_is__StreamBuilderBaseState_default');
-  async$._StreamBuilderBaseState$ = dart.generic((T, S) => {
-    var StreamBuilderBaseOfT$S = () => (StreamBuilderBaseOfT$S = dart.constFn(async$.StreamBuilderBase$(T, S)))();
-    var TTovoid = () => (TTovoid = dart.constFn(dart.fnType(dart.void, [T])))();
-    class _StreamBuilderBaseState extends framework.State$(async$.StreamBuilderBase$(T, S)) {
-      get [_summary]() {
-        let t0;
-        return this[___StreamBuilderBaseState__summary_isSet] ? (t0 = this[___StreamBuilderBaseState__summary], t0) : dart.throw(new _internal.LateError.fieldNI("_summary"));
-      }
-      set [_summary](t0) {
-        this[___StreamBuilderBaseState__summary_isSet] = true;
-        this[___StreamBuilderBaseState__summary] = t0;
-      }
-      initState() {
-        super.initState();
-        this[_summary] = this.widget.initial();
-        this[_subscribe]();
-      }
-      didUpdateWidget(oldWidget) {
-        StreamBuilderBaseOfT$S().as(oldWidget);
-        super.didUpdateWidget(oldWidget);
-        if (!dart.equals(oldWidget.stream, this.widget.stream)) {
-          if (this[_subscription] != null) {
-            this[_unsubscribe]();
-            this[_summary] = this.widget.afterDisconnected(this[_summary]);
-          }
-          this[_subscribe]();
-        }
-      }
-      build(context) {
-        return this.widget.build(context, this[_summary]);
-      }
-      dispose() {
-        this[_unsubscribe]();
-        super.dispose();
-      }
-      [_subscribe]() {
-        if (this.widget.stream != null) {
-          this[_subscription] = dart.nullCheck(this.widget.stream).listen(dart.fn(data => {
-            this.setState(dart.fn(() => {
-              this[_summary] = this.widget.afterData(this[_summary], data);
-            }, T$.VoidTovoid()));
-          }, TTovoid()), {onError: dart.fn((error, stackTrace) => {
-              this.setState(dart.fn(() => {
-                this[_summary] = this.widget.afterError(this[_summary], error, stackTrace);
-              }, T$.VoidTovoid()));
-            }, T$.ObjectAndStackTraceToNull()), onDone: dart.fn(() => {
-              this.setState(dart.fn(() => {
-                this[_summary] = this.widget.afterDone(this[_summary]);
-              }, T$.VoidTovoid()));
-            }, T$.VoidTovoid())});
-          this[_summary] = this.widget.afterConnected(this[_summary]);
-        }
-      }
-      [_unsubscribe]() {
-        if (this[_subscription] != null) {
-          dart.nullCheck(this[_subscription]).cancel();
-          this[_subscription] = null;
-        }
-      }
+    set preferredSize(value) {
+      super.preferredSize = value;
     }
-    (_StreamBuilderBaseState.new = function() {
-      this[_subscription] = null;
-      this[___StreamBuilderBaseState__summary] = null;
-      this[___StreamBuilderBaseState__summary_isSet] = false;
-      _StreamBuilderBaseState.__proto__.new.call(this);
-      ;
-    }).prototype = _StreamBuilderBaseState.prototype;
-    dart.addTypeTests(_StreamBuilderBaseState);
-    _StreamBuilderBaseState.prototype[_is__StreamBuilderBaseState_default] = true;
-    dart.addTypeCaches(_StreamBuilderBaseState);
-    dart.setMethodSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getMethods(_StreamBuilderBaseState.__proto__),
-      build: dart.fnType(framework.Widget, [framework.BuildContext]),
-      [_subscribe]: dart.fnType(dart.void, []),
-      [_unsubscribe]: dart.fnType(dart.void, [])
-    }));
-    dart.setGetterSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getGetters(_StreamBuilderBaseState.__proto__),
-      [_summary]: S
-    }));
-    dart.setSetterSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getSetters(_StreamBuilderBaseState.__proto__),
-      [_summary]: S
-    }));
-    dart.setLibraryUri(_StreamBuilderBaseState, I[0]);
-    dart.setFieldSignature(_StreamBuilderBaseState, () => ({
-      __proto__: dart.getFields(_StreamBuilderBaseState.__proto__),
-      [_subscription]: dart.fieldType(dart.nullable(async.StreamSubscription$(T))),
-      [___StreamBuilderBaseState__summary]: dart.fieldType(dart.nullable(S)),
-      [___StreamBuilderBaseState__summary_isSet]: dart.fieldType(core.bool)
-    }));
-    return _StreamBuilderBaseState;
-  });
-  async$._StreamBuilderBaseState = async$._StreamBuilderBaseState$();
-  dart.addTypeTests(async$._StreamBuilderBaseState, _is__StreamBuilderBaseState_default);
-  var _name$ = dart.privateName(async$, "_name");
-  async$.ConnectionState = class ConnectionState extends core.Object {
-    toString() {
-      return this[_name$];
+    get toolbarHeight() {
+      return this[toolbarHeight$];
+    }
+    set toolbarHeight(value) {
+      super.toolbarHeight = value;
+    }
+    build(context) {
+      return new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[0] || CT.C0, child: new basic.Column.new({children: T.JSArrayOfWidget().of([new basic.Align.new({alignment: alignment.Alignment.topLeft, child: new text_button.TextButton.new({onPressed: dart.fn(() => null, T.VoidTovoid()), child: new text.Text.new("Sair", {$creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.start, children: T.JSArrayOfWidget().of([new icon_button.IconButton.new({iconSize: 60.0, icon: new circle_avatar.CircleAvatar.new({radius: 100.0, backgroundImage: new _network_image_web.NetworkImage.new("https://cdn.myanimelist.net/images/userimages/5129181.jpg?t=1619633400"), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), onPressed: dart.fn(() => null, T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), new text.Text.new("Youkoso, Raphailias", {style: new text_style.TextStyle.new({fontSize: 25.0, color: new ui.Color.fromARGB(255, 255, 255, 255)}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21})]), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25})]), $creationLocationd_0dea112b090073317d4: C[29] || CT.C29}), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), $creationLocationd_0dea112b090073317d4: C[36] || CT.C36});
     }
   };
-  (async$.ConnectionState.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
+  (top_bar_widget.TopBarWidget.new = function(opts) {
+    let t0;
+    let key = opts && 'key' in opts ? opts.key : null;
+    let toolbarHeight = opts && 'toolbarHeight' in opts ? opts.toolbarHeight : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[toolbarHeight$] = toolbarHeight;
+    this[preferredSize] = new ui.Size.fromHeight(dart.notNull((t0 = toolbarHeight, t0 == null ? 56 : t0)) + 16);
+    top_bar_widget.TopBarWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = async$.ConnectionState.prototype;
-  dart.addTypeTests(async$.ConnectionState);
-  dart.addTypeCaches(async$.ConnectionState);
-  dart.setLibraryUri(async$.ConnectionState, I[0]);
-  dart.setFieldSignature(async$.ConnectionState, () => ({
-    __proto__: dart.getFields(async$.ConnectionState.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = top_bar_widget.TopBarWidget.prototype;
+  dart.addTypeTests(top_bar_widget.TopBarWidget);
+  dart.addTypeCaches(top_bar_widget.TopBarWidget);
+  dart.setMethodSignature(top_bar_widget.TopBarWidget, () => ({
+    __proto__: dart.getMethods(top_bar_widget.TopBarWidget.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.defineExtensionMethods(async$.ConnectionState, ['toString']);
-  async$.ConnectionState.none = C[0] || CT.C0;
-  async$.ConnectionState.waiting = C[1] || CT.C1;
-  async$.ConnectionState.active = C[2] || CT.C2;
-  async$.ConnectionState.done = C[3] || CT.C3;
-  async$.ConnectionState.values = C[4] || CT.C4;
-  var connectionState$ = dart.privateName(async$, "AsyncSnapshot.connectionState");
-  var data$ = dart.privateName(async$, "AsyncSnapshot.data");
-  var error$ = dart.privateName(async$, "AsyncSnapshot.error");
-  var stackTrace$ = dart.privateName(async$, "AsyncSnapshot.stackTrace");
-  var _StringStackTrace__stackTrace = dart.privateName(core, "_StringStackTrace._stackTrace");
-  const _is_AsyncSnapshot_default = Symbol('_is_AsyncSnapshot_default');
-  async$.AsyncSnapshot$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    class AsyncSnapshot extends core.Object {
-      get connectionState() {
-        return this[connectionState$];
-      }
-      set connectionState(value) {
-        super.connectionState = value;
-      }
-      get data() {
-        return this[data$];
-      }
-      set data(value) {
-        super.data = value;
-      }
-      get error() {
-        return this[error$];
-      }
-      set error(value) {
-        super.error = value;
-      }
-      get stackTrace() {
-        return this[stackTrace$];
-      }
-      set stackTrace(value) {
-        super.stackTrace = value;
-      }
-      get requireData() {
-        if (this.hasData) return dart.nullCheck(this.data);
-        if (this.hasError) dart.throw(dart.nullCheck(this.error));
-        dart.throw(new core.StateError.new("Snapshot has neither data nor error"));
-      }
-      inState(state) {
-        return new (AsyncSnapshotOfT()).__(state, this.data, this.error, this.stackTrace);
-      }
-      get hasData() {
-        return this.data != null;
-      }
-      get hasError() {
-        return this.error != null;
-      }
-      toString() {
-        return object.objectRuntimeType(this, "AsyncSnapshot") + "(" + dart.str(this.connectionState) + ", " + dart.str(this.data) + ", " + dart.str(this.error) + ", " + dart.str(this.stackTrace) + ")";
-      }
-      _equals(other) {
-        if (other == null) return false;
-        if (this === other) return true;
-        return AsyncSnapshotOfT().is(other) && other.connectionState === this.connectionState && dart.equals(other.data, this.data) && dart.equals(other.error, this.error) && dart.equals(other.stackTrace, this.stackTrace);
-      }
-      get hashCode() {
-        return ui.hashValues(this.connectionState, this.data, this.error);
-      }
-    }
-    (AsyncSnapshot.__ = function(connectionState, data, error, stackTrace) {
-      this[connectionState$] = connectionState;
-      this[data$] = data;
-      this[error$] = error;
-      this[stackTrace$] = stackTrace;
-      if (!(connectionState !== null)) dart.assertFailed(null, I[1], 207, 14, "connectionState != null");
-      if (!!(data != null && error != null)) dart.assertFailed(null, I[1], 208, 14, "!(data != null && error != null)");
-      if (!(stackTrace == null || error != null)) dart.assertFailed(null, I[1], 209, 14, "stackTrace == null || error != null");
-      ;
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.nothing = function() {
-      AsyncSnapshot.__.call(this, async$.ConnectionState.none, null, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.waiting = function() {
-      AsyncSnapshot.__.call(this, async$.ConnectionState.waiting, null, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.withData = function(state, data) {
-      AsyncSnapshot.__.call(this, state, data, null, null);
-    }).prototype = AsyncSnapshot.prototype;
-    (AsyncSnapshot.withError = function(state, error, stackTrace = C[5] || CT.C5) {
-      AsyncSnapshot.__.call(this, state, null, error, stackTrace);
-    }).prototype = AsyncSnapshot.prototype;
-    dart.addTypeTests(AsyncSnapshot);
-    AsyncSnapshot.prototype[_is_AsyncSnapshot_default] = true;
-    dart.addTypeCaches(AsyncSnapshot);
-    dart.setMethodSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getMethods(AsyncSnapshot.__proto__),
-      inState: dart.fnType(async$.AsyncSnapshot$(T), [async$.ConnectionState])
-    }));
-    dart.setGetterSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getGetters(AsyncSnapshot.__proto__),
-      requireData: T,
-      hasData: core.bool,
-      hasError: core.bool
-    }));
-    dart.setLibraryUri(AsyncSnapshot, I[0]);
-    dart.setFieldSignature(AsyncSnapshot, () => ({
-      __proto__: dart.getFields(AsyncSnapshot.__proto__),
-      connectionState: dart.finalFieldType(async$.ConnectionState),
-      data: dart.finalFieldType(dart.nullable(T)),
-      error: dart.finalFieldType(dart.nullable(core.Object)),
-      stackTrace: dart.finalFieldType(dart.nullable(core.StackTrace))
-    }));
-    dart.defineExtensionMethods(AsyncSnapshot, ['toString', '_equals']);
-    dart.defineExtensionAccessors(AsyncSnapshot, ['hashCode']);
-    return AsyncSnapshot;
-  });
-  async$.AsyncSnapshot = async$.AsyncSnapshot$();
-  dart.addTypeTests(async$.AsyncSnapshot, _is_AsyncSnapshot_default);
-  var builder$ = dart.privateName(async$, "StreamBuilder.builder");
-  var initialData$ = dart.privateName(async$, "StreamBuilder.initialData");
-  const _is_StreamBuilder_default = Symbol('_is_StreamBuilder_default');
-  async$.StreamBuilder$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    class StreamBuilder extends async$.StreamBuilderBase$(T, async$.AsyncSnapshot$(T)) {
-      get builder() {
-        return this[builder$];
-      }
-      set builder(value) {
-        super.builder = value;
-      }
-      get initialData() {
-        return this[initialData$];
-      }
-      set initialData(value) {
-        super.initialData = value;
-      }
-      initial() {
-        return this.initialData == null ? new (AsyncSnapshotOfT()).nothing() : new (AsyncSnapshotOfT()).withData(async$.ConnectionState.none, T.as(this.initialData));
-      }
-      afterConnected(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.waiting);
-      }
-      afterData(current, data) {
-        AsyncSnapshotOfT().as(current);
-        T.as(data);
-        return new (AsyncSnapshotOfT()).withData(async$.ConnectionState.active, data);
-      }
-      afterError(current, error, stackTrace) {
-        AsyncSnapshotOfT().as(current);
-        return new (AsyncSnapshotOfT()).withError(async$.ConnectionState.active, error, stackTrace);
-      }
-      afterDone(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.done);
-      }
-      afterDisconnected(current) {
-        AsyncSnapshotOfT().as(current);
-        return current.inState(async$.ConnectionState.none);
-      }
-      build(context, currentSummary) {
-        let t2, t1;
-        AsyncSnapshotOfT().as(currentSummary);
-        t1 = context;
-        t2 = currentSummary;
-        return this.builder(t1, t2);
-      }
-    }
-    (StreamBuilder.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let initialData = opts && 'initialData' in opts ? opts.initialData : null;
-      let stream = opts && 'stream' in opts ? opts.stream : null;
-      let builder = opts && 'builder' in opts ? opts.builder : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[initialData$] = initialData;
-      this[builder$] = builder;
-      if (!(builder !== null)) dart.assertFailed(null, I[1], 502, 15, "builder != null");
-      StreamBuilder.__proto__.new.call(this, {key: key, stream: stream, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = StreamBuilder.prototype;
-    dart.addTypeTests(StreamBuilder);
-    StreamBuilder.prototype[_is_StreamBuilder_default] = true;
-    dart.addTypeCaches(StreamBuilder);
-    dart.setMethodSignature(StreamBuilder, () => ({
-      __proto__: dart.getMethods(StreamBuilder.__proto__),
-      initial: dart.fnType(async$.AsyncSnapshot$(T), []),
-      afterData: dart.fnType(async$.AsyncSnapshot$(T), [dart.nullable(core.Object), dart.nullable(core.Object)]),
-      build: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(core.Object)])
-    }));
-    dart.setLibraryUri(StreamBuilder, I[0]);
-    dart.setFieldSignature(StreamBuilder, () => ({
-      __proto__: dart.getFields(StreamBuilder.__proto__),
-      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, async$.AsyncSnapshot$(T)])),
-      initialData: dart.finalFieldType(dart.nullable(T))
-    }));
-    return StreamBuilder;
-  });
-  async$.StreamBuilder = async$.StreamBuilder$();
-  dart.addTypeTests(async$.StreamBuilder, _is_StreamBuilder_default);
-  var future$ = dart.privateName(async$, "FutureBuilder.future");
-  var builder$0 = dart.privateName(async$, "FutureBuilder.builder");
-  var initialData$0 = dart.privateName(async$, "FutureBuilder.initialData");
-  const _is_FutureBuilder_default = Symbol('_is_FutureBuilder_default');
-  async$.FutureBuilder$ = dart.generic(T => {
-    var _FutureBuilderStateOfT = () => (_FutureBuilderStateOfT = dart.constFn(async$._FutureBuilderState$(T)))();
-    class FutureBuilder extends framework.StatefulWidget {
-      get future() {
-        return this[future$];
-      }
-      set future(value) {
-        super.future = value;
-      }
-      get builder() {
-        return this[builder$0];
-      }
-      set builder(value) {
-        super.builder = value;
-      }
-      get initialData() {
-        return this[initialData$0];
-      }
-      set initialData(value) {
-        super.initialData = value;
-      }
-      createState() {
-        return new (_FutureBuilderStateOfT()).new();
-      }
-    }
-    (FutureBuilder.new = function(opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let future = opts && 'future' in opts ? opts.future : null;
-      let initialData = opts && 'initialData' in opts ? opts.initialData : null;
-      let builder = opts && 'builder' in opts ? opts.builder : null;
-      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-      this[future$] = future;
-      this[initialData$0] = initialData;
-      this[builder$0] = builder;
-      if (!(builder !== null)) dart.assertFailed(null, I[1], 697, 15, "builder != null");
-      FutureBuilder.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-      ;
-    }).prototype = FutureBuilder.prototype;
-    dart.addTypeTests(FutureBuilder);
-    FutureBuilder.prototype[_is_FutureBuilder_default] = true;
-    dart.addTypeCaches(FutureBuilder);
-    dart.setMethodSignature(FutureBuilder, () => ({
-      __proto__: dart.getMethods(FutureBuilder.__proto__),
-      createState: dart.fnType(framework.State$(async$.FutureBuilder$(T)), [])
-    }));
-    dart.setLibraryUri(FutureBuilder, I[0]);
-    dart.setFieldSignature(FutureBuilder, () => ({
-      __proto__: dart.getFields(FutureBuilder.__proto__),
-      future: dart.finalFieldType(dart.nullable(async.Future$(T))),
-      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, async$.AsyncSnapshot$(T)])),
-      initialData: dart.finalFieldType(dart.nullable(T))
-    }));
-    return FutureBuilder;
-  });
-  async$.FutureBuilder = async$.FutureBuilder$();
-  dart.addTypeTests(async$.FutureBuilder, _is_FutureBuilder_default);
-  var _activeCallbackIdentity = dart.privateName(async$, "_activeCallbackIdentity");
-  var ___FutureBuilderState__snapshot = dart.privateName(async$, "_#_FutureBuilderState#_snapshot");
-  var _snapshot = dart.privateName(async$, "_snapshot");
-  const _is__FutureBuilderState_default = Symbol('_is__FutureBuilderState_default');
-  async$._FutureBuilderState$ = dart.generic(T => {
-    var AsyncSnapshotOfT = () => (AsyncSnapshotOfT = dart.constFn(async$.AsyncSnapshot$(T)))();
-    var FutureBuilderOfT = () => (FutureBuilderOfT = dart.constFn(async$.FutureBuilder$(T)))();
-    var BuildContextAndAsyncSnapshotOfTToWidget = () => (BuildContextAndAsyncSnapshotOfTToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, AsyncSnapshotOfT()])))();
-    var TToNull = () => (TToNull = dart.constFn(dart.fnType(core.Null, [T])))();
-    class _FutureBuilderState extends framework.State$(async$.FutureBuilder$(T)) {
-      get [_snapshot]() {
-        let t1;
-        t1 = this[___FutureBuilderState__snapshot];
-        return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_snapshot")) : t1;
-      }
-      set [_snapshot](t1) {
-        this[___FutureBuilderState__snapshot] = t1;
-      }
-      initState() {
-        super.initState();
-        this[_snapshot] = this.widget.initialData == null ? new (AsyncSnapshotOfT()).nothing() : new (AsyncSnapshotOfT()).withData(async$.ConnectionState.none, T.as(this.widget.initialData));
-        this[_subscribe]();
-      }
-      didUpdateWidget(oldWidget) {
-        FutureBuilderOfT().as(oldWidget);
-        super.didUpdateWidget(oldWidget);
-        if (!dart.equals(oldWidget.future, this.widget.future)) {
-          if (this[_activeCallbackIdentity] != null) {
-            this[_unsubscribe]();
-            this[_snapshot] = this[_snapshot].inState(async$.ConnectionState.none);
-          }
-          this[_subscribe]();
-        }
-      }
-      build(context) {
-        let t4, t3, t2;
-        t2 = this.widget;
-        t3 = context;
-        t4 = this[_snapshot];
-        return BuildContextAndAsyncSnapshotOfTToWidget().as(t2.builder)(t3, t4);
-      }
-      dispose() {
-        this[_unsubscribe]();
-        super.dispose();
-      }
-      [_subscribe]() {
-        if (this.widget.future != null) {
-          let callbackIdentity = new core.Object.new();
-          this[_activeCallbackIdentity] = callbackIdentity;
-          dart.nullCheck(this.widget.future).then(dart.void, dart.fn(data => {
-            if (dart.equals(this[_activeCallbackIdentity], callbackIdentity)) {
-              this.setState(dart.fn(() => {
-                this[_snapshot] = new (AsyncSnapshotOfT()).withData(async$.ConnectionState.done, data);
-              }, T$.VoidTovoid()));
-            }
-          }, TToNull()), {onError: dart.fn((error, stackTrace) => {
-              if (dart.equals(this[_activeCallbackIdentity], callbackIdentity)) {
-                this.setState(dart.fn(() => {
-                  this[_snapshot] = new (AsyncSnapshotOfT()).withError(async$.ConnectionState.done, error, stackTrace);
-                }, T$.VoidTovoid()));
-              }
-            }, T$.ObjectAndStackTraceToNull())});
-          this[_snapshot] = this[_snapshot].inState(async$.ConnectionState.waiting);
-        }
-      }
-      [_unsubscribe]() {
-        this[_activeCallbackIdentity] = null;
-      }
-    }
-    (_FutureBuilderState.new = function() {
-      this[_activeCallbackIdentity] = null;
-      this[___FutureBuilderState__snapshot] = null;
-      _FutureBuilderState.__proto__.new.call(this);
-      ;
-    }).prototype = _FutureBuilderState.prototype;
-    dart.addTypeTests(_FutureBuilderState);
-    _FutureBuilderState.prototype[_is__FutureBuilderState_default] = true;
-    dart.addTypeCaches(_FutureBuilderState);
-    dart.setMethodSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getMethods(_FutureBuilderState.__proto__),
-      build: dart.fnType(framework.Widget, [framework.BuildContext]),
-      [_subscribe]: dart.fnType(dart.void, []),
-      [_unsubscribe]: dart.fnType(dart.void, [])
-    }));
-    dart.setGetterSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getGetters(_FutureBuilderState.__proto__),
-      [_snapshot]: async$.AsyncSnapshot$(T)
-    }));
-    dart.setSetterSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getSetters(_FutureBuilderState.__proto__),
-      [_snapshot]: async$.AsyncSnapshot$(T)
-    }));
-    dart.setLibraryUri(_FutureBuilderState, I[0]);
-    dart.setFieldSignature(_FutureBuilderState, () => ({
-      __proto__: dart.getFields(_FutureBuilderState.__proto__),
-      [_activeCallbackIdentity]: dart.fieldType(dart.nullable(core.Object)),
-      [___FutureBuilderState__snapshot]: dart.fieldType(dart.nullable(async$.AsyncSnapshot$(T)))
-    }));
-    return _FutureBuilderState;
-  });
-  async$._FutureBuilderState = async$._FutureBuilderState$();
-  dart.addTypeTests(async$._FutureBuilderState, _is__FutureBuilderState_default);
-  dart.trackLibraries("packages/flutter/src/widgets/async.dart", {
-    "package:flutter/src/widgets/async.dart": async$
+  dart.setLibraryUri(top_bar_widget.TopBarWidget, I[0]);
+  dart.setFieldSignature(top_bar_widget.TopBarWidget, () => ({
+    __proto__: dart.getFields(top_bar_widget.TopBarWidget.__proto__),
+    preferredSize: dart.finalFieldType(ui.Size),
+    toolbarHeight: dart.finalFieldType(dart.nullable(core.double))
+  }));
+  dart.trackLibraries("packages/animelife/Widgets/top_bar_widget.dart", {
+    "package:animelife/Widgets/top_bar_widget.dart": top_bar_widget
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["async.dart"],"names":[],"mappings":"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","file":"../../../../../../../../C:/packages/flutter/src/widgets/async.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["top_bar_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAKa;;;;;;IACG;;;;;;UAKY;AACxB,YAAO,oCACE,sDAEE,gCACK,wBACR,gCACyB,oCACd,2CAAsB,cAAM,8BAAa,kBAAK,oLACzD,sCACuC,wCAC3B,wBACR,0CACY,YACJ,4CACI,wBACS,wCACb,iJAEK,cAAM,kFAEnB,kBACE,+BACO,wCACO,aAAiB,sBAAS,KAAK,KAAK,KAAK;IAQvE;;;;QApCmB;QAAU;;;IACT,sBAAO,uBAA6C,cAAnB,KAAd,aAAa,EAAb,yBAAmC;AACpE,+DAAW,GAAG;;EAAC","file":"../../../../../../../packages/animelife/Widgets/top_bar_widget.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__async: async$
+    Widgets__top_bar_widget: top_bar_widget
   };
 }));
 
-//# sourceMappingURL=async.dart.lib.js.map
+//# sourceMappingURL=top_bar_widget.dart.lib.js.map

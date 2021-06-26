@@ -1,5 +1,6 @@
 import 'package:animelife/Modules/TelaCalendario/tab.dart';
 import 'package:animelife/Modules/TelaInicial/tela_inicial.dart';
+import 'package:animelife/Modules/repositories/teladev/teladev.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const NavbarInf());
@@ -35,10 +36,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 2: School',
       style: estilo,
     ),
-    Text(
-      'Index 3: Settings',
-      style: estilo,
-    ),
+    TelaDart()
   ];
 
   void _onItemTapped(int index) {

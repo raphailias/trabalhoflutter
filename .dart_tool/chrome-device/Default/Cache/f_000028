@@ -1,274 +1,1288 @@
-define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter_staggered_grid_view/src/widgets/staggered_tile.dart', 'packages/flutter_staggered_grid_view/src/rendering/sliver_staggered_grid.dart', 'packages/flutter_staggered_grid_view/src/widgets/sliver.dart', 'packages/flutter/src/widgets/scroll_view.dart'], (function load__packages__flutter_staggered_grid_view__src__widgets__staggered_grid_view_dart(dart_sdk, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter_staggered_grid_view__src__widgets__staggered_tile$46dart, packages__flutter_staggered_grid_view__src__rendering__sliver_staggered_grid$46dart, packages__flutter_staggered_grid_view__src__widgets__sliver$46dart, packages__flutter__src__widgets__scroll_view$46dart) {
+define(['dart_sdk'], (function load__packages__animelife__Modules__repositories__animecalendario_dart(dart_sdk) {
   'use strict';
   const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const sliver = packages__flutter__src__widgets__widget_span$46dart.src__widgets__sliver;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const staggered_tile = packages__flutter_staggered_grid_view__src__widgets__staggered_tile$46dart.src__widgets__staggered_tile;
-  const sliver_staggered_grid = packages__flutter_staggered_grid_view__src__rendering__sliver_staggered_grid$46dart.src__rendering__sliver_staggered_grid;
-  const sliver$ = packages__flutter_staggered_grid_view__src__widgets__sliver$46dart.src__widgets__sliver;
-  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
-  var staggered_grid_view = Object.create(dart.library);
+  var animecalendario = Object.create(dart.library);
   var $_get = dartx._get;
-  var $length = dartx.length;
+  var $add = dartx.add;
+  var $_set = dartx._set;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    intToStaggeredTile: () => (T.intToStaggeredTile = dart.constFn(dart.fnType(staggered_tile.StaggeredTile, [core.int])))()
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    JSArrayOfMonday: () => (T.JSArrayOfMonday = dart.constFn(_interceptors.JSArray$(animecalendario.Monday)))(),
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    JSArrayOfTuesday: () => (T.JSArrayOfTuesday = dart.constFn(_interceptors.JSArray$(animecalendario.Tuesday)))(),
+    JSArrayOfWednesday: () => (T.JSArrayOfWednesday = dart.constFn(_interceptors.JSArray$(animecalendario.Wednesday)))(),
+    JSArrayOfThursday: () => (T.JSArrayOfThursday = dart.constFn(_interceptors.JSArray$(animecalendario.Thursday)))(),
+    JSArrayOfFriday: () => (T.JSArrayOfFriday = dart.constFn(_interceptors.JSArray$(animecalendario.Friday)))(),
+    JSArrayOfSaturday: () => (T.JSArrayOfSaturday = dart.constFn(_interceptors.JSArray$(animecalendario.Saturday)))(),
+    JSArrayOfSunday: () => (T.JSArrayOfSunday = dart.constFn(_interceptors.JSArray$(animecalendario.Sunday)))(),
+    LinkedMapOfString$dynamic: () => (T.LinkedMapOfString$dynamic = dart.constFn(_js_helper.LinkedMap$(core.String, dart.dynamic)))(),
+    MondayToMapOfString$dynamic: () => (T.MondayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Monday])))(),
+    TuesdayToMapOfString$dynamic: () => (T.TuesdayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Tuesday])))(),
+    WednesdayToMapOfString$dynamic: () => (T.WednesdayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Wednesday])))(),
+    ThursdayToMapOfString$dynamic: () => (T.ThursdayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Thursday])))(),
+    FridayToMapOfString$dynamic: () => (T.FridayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Friday])))(),
+    SaturdayToMapOfString$dynamic: () => (T.SaturdayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Saturday])))(),
+    SundayToMapOfString$dynamic: () => (T.SundayToMapOfString$dynamic = dart.constFn(dart.fnType(T.MapOfString$dynamic(), [animecalendario.Sunday])))(),
+    doubleN: () => (T.doubleN = dart.constFn(dart.nullable(core.double)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
-        index: 1
-      });
-    },
-    get C1() {
-      return C[1] = dart.constList([], framework.Widget);
-    },
-    get C2() {
-      return C[2] = dart.constList([], staggered_tile.StaggeredTile);
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "delegate",
-        [_Location_column]: 7,
-        [_Location_line]: 503,
-        [_Location_file]: null
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "gridDelegate",
-        [_Location_column]: 7,
-        [_Location_line]: 504,
-        [_Location_file]: null
-      });
-    },
-    get C4() {
-      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[4] || CT.C4,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 502,
-        [_Location_file]: "file:///C:/Users/rapha/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_staggered_grid_view-0.4.0/lib/src/widgets/staggered_grid_view.dart"
-      });
+  var I = ["package:animelife/Modules/repositories/animecalendario.dart"];
+  var requestHash$ = dart.privateName(animecalendario, "AnimeCalendario.requestHash");
+  var requestCached$ = dart.privateName(animecalendario, "AnimeCalendario.requestCached");
+  var requestCacheExpiry$ = dart.privateName(animecalendario, "AnimeCalendario.requestCacheExpiry");
+  var monday$ = dart.privateName(animecalendario, "AnimeCalendario.monday");
+  var tuesday$ = dart.privateName(animecalendario, "AnimeCalendario.tuesday");
+  var wednesday$ = dart.privateName(animecalendario, "AnimeCalendario.wednesday");
+  var thursday$ = dart.privateName(animecalendario, "AnimeCalendario.thursday");
+  var friday$ = dart.privateName(animecalendario, "AnimeCalendario.friday");
+  var saturday$ = dart.privateName(animecalendario, "AnimeCalendario.saturday");
+  var sunday$ = dart.privateName(animecalendario, "AnimeCalendario.sunday");
+  animecalendario.AnimeCalendario = class AnimeCalendario extends core.Object {
+    get requestHash() {
+      return this[requestHash$];
     }
-  }, false);
-  var C = Array(7).fill(void 0);
-  var I = ["package:flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart"];
-  var gridDelegate$ = dart.privateName(staggered_grid_view, "StaggeredGridView.gridDelegate");
-  var childrenDelegate$ = dart.privateName(staggered_grid_view, "StaggeredGridView.childrenDelegate");
-  var _name = dart.privateName(basic_types, "_name");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  staggered_grid_view.StaggeredGridView = class StaggeredGridView extends scroll_view.BoxScrollView {
-    get gridDelegate() {
-      return this[gridDelegate$];
+    set requestHash(value) {
+      this[requestHash$] = value;
     }
-    set gridDelegate(value) {
-      super.gridDelegate = value;
+    get requestCached() {
+      return this[requestCached$];
     }
-    get childrenDelegate() {
-      return this[childrenDelegate$];
+    set requestCached(value) {
+      this[requestCached$] = value;
     }
-    set childrenDelegate(value) {
-      super.childrenDelegate = value;
+    get requestCacheExpiry() {
+      return this[requestCacheExpiry$];
     }
-    buildChildLayout(context) {
-      return new sliver$.SliverStaggeredGrid.new({delegate: this.childrenDelegate, gridDelegate: this.gridDelegate, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+    set requestCacheExpiry(value) {
+      this[requestCacheExpiry$] = value;
+    }
+    get monday() {
+      return this[monday$];
+    }
+    set monday(value) {
+      this[monday$] = value;
+    }
+    get tuesday() {
+      return this[tuesday$];
+    }
+    set tuesday(value) {
+      this[tuesday$] = value;
+    }
+    get wednesday() {
+      return this[wednesday$];
+    }
+    set wednesday(value) {
+      this[wednesday$] = value;
+    }
+    get thursday() {
+      return this[thursday$];
+    }
+    set thursday(value) {
+      this[thursday$] = value;
+    }
+    get friday() {
+      return this[friday$];
+    }
+    set friday(value) {
+      this[friday$] = value;
+    }
+    get saturday() {
+      return this[saturday$];
+    }
+    set saturday(value) {
+      this[saturday$] = value;
+    }
+    get sunday() {
+      return this[sunday$];
+    }
+    set sunday(value) {
+      this[sunday$] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("request_hash", this.requestHash);
+      data[$_set]("request_cached", this.requestCached);
+      data[$_set]("request_cache_expiry", this.requestCacheExpiry);
+      if (this.monday != null) {
+        data[$_set]("monday", dart.nullCheck(this.monday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.MondayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.tuesday != null) {
+        data[$_set]("tuesday", dart.nullCheck(this.tuesday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.TuesdayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.wednesday != null) {
+        data[$_set]("wednesday", dart.nullCheck(this.wednesday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.WednesdayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.thursday != null) {
+        data[$_set]("thursday", dart.nullCheck(this.thursday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.ThursdayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.friday != null) {
+        data[$_set]("friday", dart.nullCheck(this.friday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.FridayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.saturday != null) {
+        data[$_set]("saturday", dart.nullCheck(this.saturday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.SaturdayToMapOfString$dynamic()))[$toList]());
+      }
+      if (this.sunday != null) {
+        data[$_set]("sunday", dart.nullCheck(this.sunday)[$map](T.MapOfString$dynamic(), dart.fn(v => v.toJson(), T.SundayToMapOfString$dynamic()))[$toList]());
+      }
+      return data;
     }
   };
-  (staggered_grid_view.StaggeredGridView.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let gridDelegate = opts && 'gridDelegate' in opts ? opts.gridDelegate : null;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let children = opts && 'children' in opts ? opts.children : C[1] || CT.C1;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = gridDelegate;
-    this[childrenDelegate$] = new sliver.SliverChildListDelegate.new(children, {addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (animecalendario.AnimeCalendario.new = function(opts) {
+    let requestHash = opts && 'requestHash' in opts ? opts.requestHash : null;
+    let requestCached = opts && 'requestCached' in opts ? opts.requestCached : null;
+    let requestCacheExpiry = opts && 'requestCacheExpiry' in opts ? opts.requestCacheExpiry : null;
+    let monday = opts && 'monday' in opts ? opts.monday : null;
+    let tuesday = opts && 'tuesday' in opts ? opts.tuesday : null;
+    let wednesday = opts && 'wednesday' in opts ? opts.wednesday : null;
+    let thursday = opts && 'thursday' in opts ? opts.thursday : null;
+    let friday = opts && 'friday' in opts ? opts.friday : null;
+    let saturday = opts && 'saturday' in opts ? opts.saturday : null;
+    let sunday = opts && 'sunday' in opts ? opts.sunday : null;
+    this[requestHash$] = requestHash;
+    this[requestCached$] = requestCached;
+    this[requestCacheExpiry$] = requestCacheExpiry;
+    this[monday$] = monday;
+    this[tuesday$] = tuesday;
+    this[wednesday$] = wednesday;
+    this[thursday$] = thursday;
+    this[friday$] = friday;
+    this[saturday$] = saturday;
+    this[sunday$] = sunday;
     ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.builder = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let gridDelegate = opts && 'gridDelegate' in opts ? opts.gridDelegate : null;
-    let itemBuilder = opts && 'itemBuilder' in opts ? opts.itemBuilder : null;
-    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = gridDelegate;
-    this[childrenDelegate$] = new sliver.SliverChildBuilderDelegate.new(itemBuilder, {childCount: itemCount, addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.custom = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let gridDelegate = opts && 'gridDelegate' in opts ? opts.gridDelegate : null;
-    let childrenDelegate = opts && 'childrenDelegate' in opts ? opts.childrenDelegate : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = gridDelegate;
-    this[childrenDelegate$] = childrenDelegate;
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.count = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let children = opts && 'children' in opts ? opts.children : C[1] || CT.C1;
-    let staggeredTiles = opts && 'staggeredTiles' in opts ? opts.staggeredTiles : C[2] || CT.C2;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: crossAxisCount, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: dart.fn(i => staggeredTiles[$_get](i), T.intToStaggeredTile()), staggeredTileCount: staggeredTiles[$length]});
-    this[childrenDelegate$] = new sliver.SliverChildListDelegate.new(children, {addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.countBuilder = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let crossAxisCount = opts && 'crossAxisCount' in opts ? opts.crossAxisCount : null;
-    let itemBuilder = opts && 'itemBuilder' in opts ? opts.itemBuilder : null;
-    let staggeredTileBuilder = opts && 'staggeredTileBuilder' in opts ? opts.staggeredTileBuilder : null;
-    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithFixedCrossAxisCount.new({crossAxisCount: crossAxisCount, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: staggeredTileBuilder, staggeredTileCount: itemCount});
-    this[childrenDelegate$] = new sliver.SliverChildBuilderDelegate.new(itemBuilder, {childCount: itemCount, addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.extent = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let maxCrossAxisExtent = opts && 'maxCrossAxisExtent' in opts ? opts.maxCrossAxisExtent : null;
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let children = opts && 'children' in opts ? opts.children : C[1] || CT.C1;
-    let staggeredTiles = opts && 'staggeredTiles' in opts ? opts.staggeredTiles : C[2] || CT.C2;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithMaxCrossAxisExtent.new({maxCrossAxisExtent: maxCrossAxisExtent, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: dart.fn(i => staggeredTiles[$_get](i), T.intToStaggeredTile()), staggeredTileCount: staggeredTiles[$length]});
-    this[childrenDelegate$] = new sliver.SliverChildListDelegate.new(children, {addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  (staggered_grid_view.StaggeredGridView.extentBuilder = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let scrollDirection = opts && 'scrollDirection' in opts ? opts.scrollDirection : C[0] || CT.C0;
-    let reverse = opts && 'reverse' in opts ? opts.reverse : false;
-    let controller = opts && 'controller' in opts ? opts.controller : null;
-    let primary = opts && 'primary' in opts ? opts.primary : null;
-    let physics = opts && 'physics' in opts ? opts.physics : null;
-    let shrinkWrap = opts && 'shrinkWrap' in opts ? opts.shrinkWrap : false;
-    let padding = opts && 'padding' in opts ? opts.padding : null;
-    let maxCrossAxisExtent = opts && 'maxCrossAxisExtent' in opts ? opts.maxCrossAxisExtent : null;
-    let itemBuilder = opts && 'itemBuilder' in opts ? opts.itemBuilder : null;
-    let staggeredTileBuilder = opts && 'staggeredTileBuilder' in opts ? opts.staggeredTileBuilder : null;
-    let itemCount = opts && 'itemCount' in opts ? opts.itemCount : null;
-    let mainAxisSpacing = opts && 'mainAxisSpacing' in opts ? opts.mainAxisSpacing : 0;
-    let crossAxisSpacing = opts && 'crossAxisSpacing' in opts ? opts.crossAxisSpacing : 0;
-    let addAutomaticKeepAlives = opts && 'addAutomaticKeepAlives' in opts ? opts.addAutomaticKeepAlives : true;
-    let addRepaintBoundaries = opts && 'addRepaintBoundaries' in opts ? opts.addRepaintBoundaries : true;
-    let restorationId = opts && 'restorationId' in opts ? opts.restorationId : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[gridDelegate$] = new sliver_staggered_grid.SliverStaggeredGridDelegateWithMaxCrossAxisExtent.new({maxCrossAxisExtent: maxCrossAxisExtent, mainAxisSpacing: mainAxisSpacing, crossAxisSpacing: crossAxisSpacing, staggeredTileBuilder: staggeredTileBuilder, staggeredTileCount: itemCount});
-    this[childrenDelegate$] = new sliver.SliverChildBuilderDelegate.new(itemBuilder, {childCount: itemCount, addAutomaticKeepAlives: addAutomaticKeepAlives, addRepaintBoundaries: addRepaintBoundaries});
-    staggered_grid_view.StaggeredGridView.__proto__.new.call(this, {key: key, scrollDirection: scrollDirection, reverse: reverse, controller: controller, primary: primary, physics: physics, shrinkWrap: shrinkWrap, padding: padding, restorationId: restorationId, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = staggered_grid_view.StaggeredGridView.prototype;
-  dart.addTypeTests(staggered_grid_view.StaggeredGridView);
-  dart.addTypeCaches(staggered_grid_view.StaggeredGridView);
-  dart.setMethodSignature(staggered_grid_view.StaggeredGridView, () => ({
-    __proto__: dart.getMethods(staggered_grid_view.StaggeredGridView.__proto__),
-    buildChildLayout: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = animecalendario.AnimeCalendario.prototype;
+  (animecalendario.AnimeCalendario.fromJson = function(json) {
+    this[sunday$] = null;
+    this[saturday$] = null;
+    this[friday$] = null;
+    this[thursday$] = null;
+    this[wednesday$] = null;
+    this[tuesday$] = null;
+    this[monday$] = null;
+    this[requestCacheExpiry$] = null;
+    this[requestCached$] = null;
+    this[requestHash$] = null;
+    this.requestHash = T.StringN().as(json[$_get]("request_hash"));
+    this.requestCached = T.boolN().as(json[$_get]("request_cached"));
+    this.requestCacheExpiry = T.intN().as(json[$_get]("request_cache_expiry"));
+    if (json[$_get]("monday") != null) {
+      this.monday = T.JSArrayOfMonday().of([]);
+      dart.dsend(json[$_get]("monday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.monday)[$add](new animecalendario.Monday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("tuesday") != null) {
+      this.tuesday = T.JSArrayOfTuesday().of([]);
+      dart.dsend(json[$_get]("tuesday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.tuesday)[$add](new animecalendario.Tuesday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("wednesday") != null) {
+      this.wednesday = T.JSArrayOfWednesday().of([]);
+      dart.dsend(json[$_get]("wednesday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.wednesday)[$add](new animecalendario.Wednesday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("thursday") != null) {
+      this.thursday = T.JSArrayOfThursday().of([]);
+      dart.dsend(json[$_get]("thursday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.thursday)[$add](new animecalendario.Thursday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("friday") != null) {
+      this.friday = T.JSArrayOfFriday().of([]);
+      dart.dsend(json[$_get]("friday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.friday)[$add](new animecalendario.Friday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("saturday") != null) {
+      this.saturday = T.JSArrayOfSaturday().of([]);
+      dart.dsend(json[$_get]("saturday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.saturday)[$add](new animecalendario.Saturday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+    if (json[$_get]("sunday") != null) {
+      this.sunday = T.JSArrayOfSunday().of([]);
+      dart.dsend(json[$_get]("sunday"), 'forEach', [dart.fn(v => {
+          dart.nullCheck(this.sunday)[$add](new animecalendario.Sunday.fromJson(T.MapOfString$dynamic().as(v)));
+        }, T.dynamicToNull())]);
+    }
+  }).prototype = animecalendario.AnimeCalendario.prototype;
+  dart.addTypeTests(animecalendario.AnimeCalendario);
+  dart.addTypeCaches(animecalendario.AnimeCalendario);
+  dart.setMethodSignature(animecalendario.AnimeCalendario, () => ({
+    __proto__: dart.getMethods(animecalendario.AnimeCalendario.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
   }));
-  dart.setLibraryUri(staggered_grid_view.StaggeredGridView, I[0]);
-  dart.setFieldSignature(staggered_grid_view.StaggeredGridView, () => ({
-    __proto__: dart.getFields(staggered_grid_view.StaggeredGridView.__proto__),
-    gridDelegate: dart.finalFieldType(sliver_staggered_grid.SliverStaggeredGridDelegate),
-    childrenDelegate: dart.finalFieldType(sliver.SliverChildDelegate)
+  dart.setLibraryUri(animecalendario.AnimeCalendario, I[0]);
+  dart.setFieldSignature(animecalendario.AnimeCalendario, () => ({
+    __proto__: dart.getFields(animecalendario.AnimeCalendario.__proto__),
+    requestHash: dart.fieldType(dart.nullable(core.String)),
+    requestCached: dart.fieldType(dart.nullable(core.bool)),
+    requestCacheExpiry: dart.fieldType(dart.nullable(core.int)),
+    monday: dart.fieldType(dart.nullable(core.List$(animecalendario.Monday))),
+    tuesday: dart.fieldType(dart.nullable(core.List$(animecalendario.Tuesday))),
+    wednesday: dart.fieldType(dart.nullable(core.List$(animecalendario.Wednesday))),
+    thursday: dart.fieldType(dart.nullable(core.List$(animecalendario.Thursday))),
+    friday: dart.fieldType(dart.nullable(core.List$(animecalendario.Friday))),
+    saturday: dart.fieldType(dart.nullable(core.List$(animecalendario.Saturday))),
+    sunday: dart.fieldType(dart.nullable(core.List$(animecalendario.Sunday)))
   }));
-  dart.trackLibraries("packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart", {
-    "package:flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart": staggered_grid_view
+  var malId$ = dart.privateName(animecalendario, "Monday.malId");
+  var url$ = dart.privateName(animecalendario, "Monday.url");
+  var title$ = dart.privateName(animecalendario, "Monday.title");
+  var imageUrl$ = dart.privateName(animecalendario, "Monday.imageUrl");
+  var synopsis$ = dart.privateName(animecalendario, "Monday.synopsis");
+  var type = dart.privateName(animecalendario, "Monday.type");
+  var airingStart$ = dart.privateName(animecalendario, "Monday.airingStart");
+  var episodes$ = dart.privateName(animecalendario, "Monday.episodes");
+  var members$ = dart.privateName(animecalendario, "Monday.members");
+  var score$ = dart.privateName(animecalendario, "Monday.score");
+  animecalendario.Monday = class Monday extends core.Object {
+    get malId() {
+      return this[malId$];
+    }
+    set malId(value) {
+      this[malId$] = value;
+    }
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      this[url$] = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      this[title$] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$];
+    }
+    set imageUrl(value) {
+      this[imageUrl$] = value;
+    }
+    get synopsis() {
+      return this[synopsis$];
+    }
+    set synopsis(value) {
+      this[synopsis$] = value;
+    }
+    get type() {
+      return this[type];
+    }
+    set type(value) {
+      this[type] = value;
+    }
+    get airingStart() {
+      return this[airingStart$];
+    }
+    set airingStart(value) {
+      this[airingStart$] = value;
+    }
+    get episodes() {
+      return this[episodes$];
+    }
+    set episodes(value) {
+      this[episodes$] = value;
+    }
+    get members() {
+      return this[members$];
+    }
+    set members(value) {
+      this[members$] = value;
+    }
+    get score() {
+      return this[score$];
+    }
+    set score(value) {
+      this[score$] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Monday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type] = null;
+    this[malId$] = malId;
+    this[url$] = url;
+    this[title$] = title;
+    this[imageUrl$] = imageUrl;
+    this[synopsis$] = synopsis;
+    this[airingStart$] = airingStart;
+    this[episodes$] = episodes;
+    this[members$] = members;
+    this[score$] = score;
+    ;
+  }).prototype = animecalendario.Monday.prototype;
+  (animecalendario.Monday.fromJson = function(json) {
+    this[type] = null;
+    this[score$] = null;
+    this[members$] = null;
+    this[episodes$] = null;
+    this[airingStart$] = null;
+    this[synopsis$] = null;
+    this[imageUrl$] = null;
+    this[title$] = null;
+    this[url$] = null;
+    this[malId$] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Monday.prototype;
+  dart.addTypeTests(animecalendario.Monday);
+  dart.addTypeCaches(animecalendario.Monday);
+  dart.setMethodSignature(animecalendario.Monday, () => ({
+    __proto__: dart.getMethods(animecalendario.Monday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Monday, I[0]);
+  dart.setFieldSignature(animecalendario.Monday, () => ({
+    __proto__: dart.getFields(animecalendario.Monday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$0 = dart.privateName(animecalendario, "Tuesday.malId");
+  var url$0 = dart.privateName(animecalendario, "Tuesday.url");
+  var title$0 = dart.privateName(animecalendario, "Tuesday.title");
+  var imageUrl$0 = dart.privateName(animecalendario, "Tuesday.imageUrl");
+  var synopsis$0 = dart.privateName(animecalendario, "Tuesday.synopsis");
+  var type$ = dart.privateName(animecalendario, "Tuesday.type");
+  var airingStart$0 = dart.privateName(animecalendario, "Tuesday.airingStart");
+  var episodes$0 = dart.privateName(animecalendario, "Tuesday.episodes");
+  var members$0 = dart.privateName(animecalendario, "Tuesday.members");
+  var score$0 = dart.privateName(animecalendario, "Tuesday.score");
+  animecalendario.Tuesday = class Tuesday extends core.Object {
+    get malId() {
+      return this[malId$0];
+    }
+    set malId(value) {
+      this[malId$0] = value;
+    }
+    get url() {
+      return this[url$0];
+    }
+    set url(value) {
+      this[url$0] = value;
+    }
+    get title() {
+      return this[title$0];
+    }
+    set title(value) {
+      this[title$0] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$0];
+    }
+    set imageUrl(value) {
+      this[imageUrl$0] = value;
+    }
+    get synopsis() {
+      return this[synopsis$0];
+    }
+    set synopsis(value) {
+      this[synopsis$0] = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      this[type$] = value;
+    }
+    get airingStart() {
+      return this[airingStart$0];
+    }
+    set airingStart(value) {
+      this[airingStart$0] = value;
+    }
+    get episodes() {
+      return this[episodes$0];
+    }
+    set episodes(value) {
+      this[episodes$0] = value;
+    }
+    get members() {
+      return this[members$0];
+    }
+    set members(value) {
+      this[members$0] = value;
+    }
+    get score() {
+      return this[score$0];
+    }
+    set score(value) {
+      this[score$0] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Tuesday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$] = null;
+    this[malId$0] = malId;
+    this[url$0] = url;
+    this[title$0] = title;
+    this[imageUrl$0] = imageUrl;
+    this[synopsis$0] = synopsis;
+    this[airingStart$0] = airingStart;
+    this[episodes$0] = episodes;
+    this[members$0] = members;
+    this[score$0] = score;
+    ;
+  }).prototype = animecalendario.Tuesday.prototype;
+  (animecalendario.Tuesday.fromJson = function(json) {
+    this[type$] = null;
+    this[score$0] = null;
+    this[members$0] = null;
+    this[episodes$0] = null;
+    this[airingStart$0] = null;
+    this[synopsis$0] = null;
+    this[imageUrl$0] = null;
+    this[title$0] = null;
+    this[url$0] = null;
+    this[malId$0] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Tuesday.prototype;
+  dart.addTypeTests(animecalendario.Tuesday);
+  dart.addTypeCaches(animecalendario.Tuesday);
+  dart.setMethodSignature(animecalendario.Tuesday, () => ({
+    __proto__: dart.getMethods(animecalendario.Tuesday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Tuesday, I[0]);
+  dart.setFieldSignature(animecalendario.Tuesday, () => ({
+    __proto__: dart.getFields(animecalendario.Tuesday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$1 = dart.privateName(animecalendario, "Wednesday.malId");
+  var url$1 = dart.privateName(animecalendario, "Wednesday.url");
+  var title$1 = dart.privateName(animecalendario, "Wednesday.title");
+  var imageUrl$1 = dart.privateName(animecalendario, "Wednesday.imageUrl");
+  var synopsis$1 = dart.privateName(animecalendario, "Wednesday.synopsis");
+  var type$0 = dart.privateName(animecalendario, "Wednesday.type");
+  var airingStart$1 = dart.privateName(animecalendario, "Wednesday.airingStart");
+  var episodes$1 = dart.privateName(animecalendario, "Wednesday.episodes");
+  var members$1 = dart.privateName(animecalendario, "Wednesday.members");
+  var score$1 = dart.privateName(animecalendario, "Wednesday.score");
+  animecalendario.Wednesday = class Wednesday extends core.Object {
+    get malId() {
+      return this[malId$1];
+    }
+    set malId(value) {
+      this[malId$1] = value;
+    }
+    get url() {
+      return this[url$1];
+    }
+    set url(value) {
+      this[url$1] = value;
+    }
+    get title() {
+      return this[title$1];
+    }
+    set title(value) {
+      this[title$1] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$1];
+    }
+    set imageUrl(value) {
+      this[imageUrl$1] = value;
+    }
+    get synopsis() {
+      return this[synopsis$1];
+    }
+    set synopsis(value) {
+      this[synopsis$1] = value;
+    }
+    get type() {
+      return this[type$0];
+    }
+    set type(value) {
+      this[type$0] = value;
+    }
+    get airingStart() {
+      return this[airingStart$1];
+    }
+    set airingStart(value) {
+      this[airingStart$1] = value;
+    }
+    get episodes() {
+      return this[episodes$1];
+    }
+    set episodes(value) {
+      this[episodes$1] = value;
+    }
+    get members() {
+      return this[members$1];
+    }
+    set members(value) {
+      this[members$1] = value;
+    }
+    get score() {
+      return this[score$1];
+    }
+    set score(value) {
+      this[score$1] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Wednesday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$0] = null;
+    this[malId$1] = malId;
+    this[url$1] = url;
+    this[title$1] = title;
+    this[imageUrl$1] = imageUrl;
+    this[synopsis$1] = synopsis;
+    this[airingStart$1] = airingStart;
+    this[episodes$1] = episodes;
+    this[members$1] = members;
+    this[score$1] = score;
+    ;
+  }).prototype = animecalendario.Wednesday.prototype;
+  (animecalendario.Wednesday.fromJson = function(json) {
+    this[type$0] = null;
+    this[score$1] = null;
+    this[members$1] = null;
+    this[episodes$1] = null;
+    this[airingStart$1] = null;
+    this[synopsis$1] = null;
+    this[imageUrl$1] = null;
+    this[title$1] = null;
+    this[url$1] = null;
+    this[malId$1] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Wednesday.prototype;
+  dart.addTypeTests(animecalendario.Wednesday);
+  dart.addTypeCaches(animecalendario.Wednesday);
+  dart.setMethodSignature(animecalendario.Wednesday, () => ({
+    __proto__: dart.getMethods(animecalendario.Wednesday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Wednesday, I[0]);
+  dart.setFieldSignature(animecalendario.Wednesday, () => ({
+    __proto__: dart.getFields(animecalendario.Wednesday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$2 = dart.privateName(animecalendario, "Thursday.malId");
+  var url$2 = dart.privateName(animecalendario, "Thursday.url");
+  var title$2 = dart.privateName(animecalendario, "Thursday.title");
+  var imageUrl$2 = dart.privateName(animecalendario, "Thursday.imageUrl");
+  var synopsis$2 = dart.privateName(animecalendario, "Thursday.synopsis");
+  var type$1 = dart.privateName(animecalendario, "Thursday.type");
+  var airingStart$2 = dart.privateName(animecalendario, "Thursday.airingStart");
+  var episodes$2 = dart.privateName(animecalendario, "Thursday.episodes");
+  var members$2 = dart.privateName(animecalendario, "Thursday.members");
+  var score$2 = dart.privateName(animecalendario, "Thursday.score");
+  animecalendario.Thursday = class Thursday extends core.Object {
+    get malId() {
+      return this[malId$2];
+    }
+    set malId(value) {
+      this[malId$2] = value;
+    }
+    get url() {
+      return this[url$2];
+    }
+    set url(value) {
+      this[url$2] = value;
+    }
+    get title() {
+      return this[title$2];
+    }
+    set title(value) {
+      this[title$2] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$2];
+    }
+    set imageUrl(value) {
+      this[imageUrl$2] = value;
+    }
+    get synopsis() {
+      return this[synopsis$2];
+    }
+    set synopsis(value) {
+      this[synopsis$2] = value;
+    }
+    get type() {
+      return this[type$1];
+    }
+    set type(value) {
+      this[type$1] = value;
+    }
+    get airingStart() {
+      return this[airingStart$2];
+    }
+    set airingStart(value) {
+      this[airingStart$2] = value;
+    }
+    get episodes() {
+      return this[episodes$2];
+    }
+    set episodes(value) {
+      this[episodes$2] = value;
+    }
+    get members() {
+      return this[members$2];
+    }
+    set members(value) {
+      this[members$2] = value;
+    }
+    get score() {
+      return this[score$2];
+    }
+    set score(value) {
+      this[score$2] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Thursday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$1] = null;
+    this[malId$2] = malId;
+    this[url$2] = url;
+    this[title$2] = title;
+    this[imageUrl$2] = imageUrl;
+    this[synopsis$2] = synopsis;
+    this[airingStart$2] = airingStart;
+    this[episodes$2] = episodes;
+    this[members$2] = members;
+    this[score$2] = score;
+    ;
+  }).prototype = animecalendario.Thursday.prototype;
+  (animecalendario.Thursday.fromJson = function(json) {
+    this[type$1] = null;
+    this[score$2] = null;
+    this[members$2] = null;
+    this[episodes$2] = null;
+    this[airingStart$2] = null;
+    this[synopsis$2] = null;
+    this[imageUrl$2] = null;
+    this[title$2] = null;
+    this[url$2] = null;
+    this[malId$2] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Thursday.prototype;
+  dart.addTypeTests(animecalendario.Thursday);
+  dart.addTypeCaches(animecalendario.Thursday);
+  dart.setMethodSignature(animecalendario.Thursday, () => ({
+    __proto__: dart.getMethods(animecalendario.Thursday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Thursday, I[0]);
+  dart.setFieldSignature(animecalendario.Thursday, () => ({
+    __proto__: dart.getFields(animecalendario.Thursday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$3 = dart.privateName(animecalendario, "Friday.malId");
+  var url$3 = dart.privateName(animecalendario, "Friday.url");
+  var title$3 = dart.privateName(animecalendario, "Friday.title");
+  var imageUrl$3 = dart.privateName(animecalendario, "Friday.imageUrl");
+  var synopsis$3 = dart.privateName(animecalendario, "Friday.synopsis");
+  var type$2 = dart.privateName(animecalendario, "Friday.type");
+  var airingStart$3 = dart.privateName(animecalendario, "Friday.airingStart");
+  var episodes$3 = dart.privateName(animecalendario, "Friday.episodes");
+  var members$3 = dart.privateName(animecalendario, "Friday.members");
+  var score$3 = dart.privateName(animecalendario, "Friday.score");
+  animecalendario.Friday = class Friday extends core.Object {
+    get malId() {
+      return this[malId$3];
+    }
+    set malId(value) {
+      this[malId$3] = value;
+    }
+    get url() {
+      return this[url$3];
+    }
+    set url(value) {
+      this[url$3] = value;
+    }
+    get title() {
+      return this[title$3];
+    }
+    set title(value) {
+      this[title$3] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$3];
+    }
+    set imageUrl(value) {
+      this[imageUrl$3] = value;
+    }
+    get synopsis() {
+      return this[synopsis$3];
+    }
+    set synopsis(value) {
+      this[synopsis$3] = value;
+    }
+    get type() {
+      return this[type$2];
+    }
+    set type(value) {
+      this[type$2] = value;
+    }
+    get airingStart() {
+      return this[airingStart$3];
+    }
+    set airingStart(value) {
+      this[airingStart$3] = value;
+    }
+    get episodes() {
+      return this[episodes$3];
+    }
+    set episodes(value) {
+      this[episodes$3] = value;
+    }
+    get members() {
+      return this[members$3];
+    }
+    set members(value) {
+      this[members$3] = value;
+    }
+    get score() {
+      return this[score$3];
+    }
+    set score(value) {
+      this[score$3] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Friday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$2] = null;
+    this[malId$3] = malId;
+    this[url$3] = url;
+    this[title$3] = title;
+    this[imageUrl$3] = imageUrl;
+    this[synopsis$3] = synopsis;
+    this[airingStart$3] = airingStart;
+    this[episodes$3] = episodes;
+    this[members$3] = members;
+    this[score$3] = score;
+    ;
+  }).prototype = animecalendario.Friday.prototype;
+  (animecalendario.Friday.fromJson = function(json) {
+    this[type$2] = null;
+    this[score$3] = null;
+    this[members$3] = null;
+    this[episodes$3] = null;
+    this[airingStart$3] = null;
+    this[synopsis$3] = null;
+    this[imageUrl$3] = null;
+    this[title$3] = null;
+    this[url$3] = null;
+    this[malId$3] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Friday.prototype;
+  dart.addTypeTests(animecalendario.Friday);
+  dart.addTypeCaches(animecalendario.Friday);
+  dart.setMethodSignature(animecalendario.Friday, () => ({
+    __proto__: dart.getMethods(animecalendario.Friday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Friday, I[0]);
+  dart.setFieldSignature(animecalendario.Friday, () => ({
+    __proto__: dart.getFields(animecalendario.Friday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$4 = dart.privateName(animecalendario, "Saturday.malId");
+  var url$4 = dart.privateName(animecalendario, "Saturday.url");
+  var title$4 = dart.privateName(animecalendario, "Saturday.title");
+  var imageUrl$4 = dart.privateName(animecalendario, "Saturday.imageUrl");
+  var synopsis$4 = dart.privateName(animecalendario, "Saturday.synopsis");
+  var type$3 = dart.privateName(animecalendario, "Saturday.type");
+  var airingStart$4 = dart.privateName(animecalendario, "Saturday.airingStart");
+  var episodes$4 = dart.privateName(animecalendario, "Saturday.episodes");
+  var members$4 = dart.privateName(animecalendario, "Saturday.members");
+  var score$4 = dart.privateName(animecalendario, "Saturday.score");
+  animecalendario.Saturday = class Saturday extends core.Object {
+    get malId() {
+      return this[malId$4];
+    }
+    set malId(value) {
+      this[malId$4] = value;
+    }
+    get url() {
+      return this[url$4];
+    }
+    set url(value) {
+      this[url$4] = value;
+    }
+    get title() {
+      return this[title$4];
+    }
+    set title(value) {
+      this[title$4] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$4];
+    }
+    set imageUrl(value) {
+      this[imageUrl$4] = value;
+    }
+    get synopsis() {
+      return this[synopsis$4];
+    }
+    set synopsis(value) {
+      this[synopsis$4] = value;
+    }
+    get type() {
+      return this[type$3];
+    }
+    set type(value) {
+      this[type$3] = value;
+    }
+    get airingStart() {
+      return this[airingStart$4];
+    }
+    set airingStart(value) {
+      this[airingStart$4] = value;
+    }
+    get episodes() {
+      return this[episodes$4];
+    }
+    set episodes(value) {
+      this[episodes$4] = value;
+    }
+    get members() {
+      return this[members$4];
+    }
+    set members(value) {
+      this[members$4] = value;
+    }
+    get score() {
+      return this[score$4];
+    }
+    set score(value) {
+      this[score$4] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Saturday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$3] = null;
+    this[malId$4] = malId;
+    this[url$4] = url;
+    this[title$4] = title;
+    this[imageUrl$4] = imageUrl;
+    this[synopsis$4] = synopsis;
+    this[airingStart$4] = airingStart;
+    this[episodes$4] = episodes;
+    this[members$4] = members;
+    this[score$4] = score;
+    ;
+  }).prototype = animecalendario.Saturday.prototype;
+  (animecalendario.Saturday.fromJson = function(json) {
+    this[type$3] = null;
+    this[score$4] = null;
+    this[members$4] = null;
+    this[episodes$4] = null;
+    this[airingStart$4] = null;
+    this[synopsis$4] = null;
+    this[imageUrl$4] = null;
+    this[title$4] = null;
+    this[url$4] = null;
+    this[malId$4] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Saturday.prototype;
+  dart.addTypeTests(animecalendario.Saturday);
+  dart.addTypeCaches(animecalendario.Saturday);
+  dart.setMethodSignature(animecalendario.Saturday, () => ({
+    __proto__: dart.getMethods(animecalendario.Saturday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Saturday, I[0]);
+  dart.setFieldSignature(animecalendario.Saturday, () => ({
+    __proto__: dart.getFields(animecalendario.Saturday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  var malId$5 = dart.privateName(animecalendario, "Sunday.malId");
+  var url$5 = dart.privateName(animecalendario, "Sunday.url");
+  var title$5 = dart.privateName(animecalendario, "Sunday.title");
+  var imageUrl$5 = dart.privateName(animecalendario, "Sunday.imageUrl");
+  var synopsis$5 = dart.privateName(animecalendario, "Sunday.synopsis");
+  var type$4 = dart.privateName(animecalendario, "Sunday.type");
+  var airingStart$5 = dart.privateName(animecalendario, "Sunday.airingStart");
+  var episodes$5 = dart.privateName(animecalendario, "Sunday.episodes");
+  var members$5 = dart.privateName(animecalendario, "Sunday.members");
+  var score$5 = dart.privateName(animecalendario, "Sunday.score");
+  animecalendario.Sunday = class Sunday extends core.Object {
+    get malId() {
+      return this[malId$5];
+    }
+    set malId(value) {
+      this[malId$5] = value;
+    }
+    get url() {
+      return this[url$5];
+    }
+    set url(value) {
+      this[url$5] = value;
+    }
+    get title() {
+      return this[title$5];
+    }
+    set title(value) {
+      this[title$5] = value;
+    }
+    get imageUrl() {
+      return this[imageUrl$5];
+    }
+    set imageUrl(value) {
+      this[imageUrl$5] = value;
+    }
+    get synopsis() {
+      return this[synopsis$5];
+    }
+    set synopsis(value) {
+      this[synopsis$5] = value;
+    }
+    get type() {
+      return this[type$4];
+    }
+    set type(value) {
+      this[type$4] = value;
+    }
+    get airingStart() {
+      return this[airingStart$5];
+    }
+    set airingStart(value) {
+      this[airingStart$5] = value;
+    }
+    get episodes() {
+      return this[episodes$5];
+    }
+    set episodes(value) {
+      this[episodes$5] = value;
+    }
+    get members() {
+      return this[members$5];
+    }
+    set members(value) {
+      this[members$5] = value;
+    }
+    get score() {
+      return this[score$5];
+    }
+    set score(value) {
+      this[score$5] = value;
+    }
+    toJson() {
+      let data = new (T.LinkedMapOfString$dynamic()).new();
+      data[$_set]("mal_id", this.malId);
+      data[$_set]("url", this.url);
+      data[$_set]("title", this.title);
+      data[$_set]("image_url", this.imageUrl);
+      data[$_set]("synopsis", this.synopsis);
+      data[$_set]("airing_start", this.airingStart);
+      data[$_set]("episodes", this.episodes);
+      data[$_set]("members", this.members);
+      data[$_set]("score", this.score);
+      return data;
+    }
+  };
+  (animecalendario.Sunday.new = function(opts) {
+    let malId = opts && 'malId' in opts ? opts.malId : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let imageUrl = opts && 'imageUrl' in opts ? opts.imageUrl : null;
+    let synopsis = opts && 'synopsis' in opts ? opts.synopsis : null;
+    let airingStart = opts && 'airingStart' in opts ? opts.airingStart : null;
+    let episodes = opts && 'episodes' in opts ? opts.episodes : null;
+    let members = opts && 'members' in opts ? opts.members : null;
+    let score = opts && 'score' in opts ? opts.score : null;
+    this[type$4] = null;
+    this[malId$5] = malId;
+    this[url$5] = url;
+    this[title$5] = title;
+    this[imageUrl$5] = imageUrl;
+    this[synopsis$5] = synopsis;
+    this[airingStart$5] = airingStart;
+    this[episodes$5] = episodes;
+    this[members$5] = members;
+    this[score$5] = score;
+    ;
+  }).prototype = animecalendario.Sunday.prototype;
+  (animecalendario.Sunday.fromJson = function(json) {
+    this[type$4] = null;
+    this[score$5] = null;
+    this[members$5] = null;
+    this[episodes$5] = null;
+    this[airingStart$5] = null;
+    this[synopsis$5] = null;
+    this[imageUrl$5] = null;
+    this[title$5] = null;
+    this[url$5] = null;
+    this[malId$5] = null;
+    this.malId = T.intN().as(json[$_get]("mal_id"));
+    this.url = T.StringN().as(json[$_get]("url"));
+    this.title = T.StringN().as(json[$_get]("title"));
+    this.imageUrl = T.StringN().as(json[$_get]("image_url"));
+    this.synopsis = T.StringN().as(json[$_get]("synopsis"));
+    this.airingStart = T.StringN().as(json[$_get]("airing_start"));
+    this.episodes = T.intN().as(json[$_get]("episodes"));
+    this.members = T.intN().as(json[$_get]("members"));
+    this.score = T.doubleN().as(json[$_get]("score"));
+  }).prototype = animecalendario.Sunday.prototype;
+  dart.addTypeTests(animecalendario.Sunday);
+  dart.addTypeCaches(animecalendario.Sunday);
+  dart.setMethodSignature(animecalendario.Sunday, () => ({
+    __proto__: dart.getMethods(animecalendario.Sunday.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setLibraryUri(animecalendario.Sunday, I[0]);
+  dart.setFieldSignature(animecalendario.Sunday, () => ({
+    __proto__: dart.getFields(animecalendario.Sunday.__proto__),
+    malId: dart.fieldType(dart.nullable(core.int)),
+    url: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    imageUrl: dart.fieldType(dart.nullable(core.String)),
+    synopsis: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    airingStart: dart.fieldType(dart.nullable(core.String)),
+    episodes: dart.fieldType(dart.nullable(core.int)),
+    members: dart.fieldType(dart.nullable(core.int)),
+    score: dart.fieldType(dart.nullable(core.double))
+  }));
+  dart.trackLibraries("packages/animelife/Modules/repositories/animecalendario.dart", {
+    "package:animelife/Modules/repositories/animecalendario.dart": animecalendario
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["staggered_grid_view.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../../packages/flutter_staggered_grid_view/src/widgets/staggered_grid_view.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["animecalendario.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IACU;;;;;;IACF;;;;;;IACD;;;;;;IACS;;;;;;IACC;;;;;;IACE;;;;;;IACD;;;;;;IACF;;;;;;IACE;;;;;;IACF;;;;;;;AAgEe,iBAAW;AACC,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACe,MAA3C,AAAI,IAAA,QAAC,kBAAyB;AACwB,MAAtD,AAAI,IAAA,QAAC,wBAA+B;AACpC,UAAS;AACsD,QAA7D,AAAI,IAAA,QAAC,UAAuB,AAAE,AAAuB,eAA/B,4CAAY,QAAC,KAAM,AAAE,CAAD;;AAE5C,UAAS;AACwD,QAA/D,AAAI,IAAA,QAAC,WAAyB,AAAE,AAAuB,eAAhC,6CAAa,QAAC,KAAM,AAAE,CAAD;;AAE9C,UAAS;AAC4D,QAAnE,AAAI,IAAA,QAAC,aAA6B,AAAE,AAAuB,eAAlC,+CAAe,QAAC,KAAM,AAAE,CAAD;;AAElD,UAAS;AAC0D,QAAjE,AAAI,IAAA,QAAC,YAA2B,AAAE,AAAuB,eAAjC,8CAAc,QAAC,KAAM,AAAE,CAAD;;AAEhD,UAAS;AACsD,QAA7D,AAAI,IAAA,QAAC,UAAuB,AAAE,AAAuB,eAA/B,4CAAY,QAAC,KAAM,AAAE,CAAD;;AAE5C,UAAS;AAC0D,QAAjE,AAAI,IAAA,QAAC,YAA2B,AAAE,AAAuB,eAAjC,8CAAc,QAAC,KAAM,AAAE,CAAD;;AAEhD,UAAS;AACsD,QAA7D,AAAI,IAAA,QAAC,UAAuB,AAAE,AAAuB,eAA/B,4CAAY,QAAC,KAAM,AAAE,CAAD;;AAE5C,YAAO,KAAI;IACb;;;QAvFgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IATA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;uDAE4C;;;;;;;;;;;AACV,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACmB,yBAAtC,aAAgB,AAAI,IAAA,QAAC;AAC4B,8BAAjD,YAAqB,AAAI,IAAA,QAAC;AAC1B,QAAI,AAAI,IAAA,QAAC;AACY,MAAnB,cAAiB;AAGf,MAFa,WAAf,AAAI,IAAA,QAAC,uBAAkB,QAAC;AACa,UAA7B,AAAE,eAAR,mBAAgB,+DAAgB,CAAC;;;AAGrC,QAAI,AAAI,IAAA,QAAC;AACc,MAArB,eAAmB;AAGjB,MAFc,WAAhB,AAAI,IAAA,QAAC,wBAAmB,QAAC;AACc,UAA9B,AAAE,eAAT,oBAAiB,gEAAiB,CAAC;;;AAGvC,QAAI,AAAI,IAAA,QAAC;AACkB,MAAzB,iBAAuB;AAGrB,MAFgB,WAAlB,AAAI,IAAA,QAAC,0BAAqB,QAAC;AACgB,UAAhC,AAAE,eAAX,sBAAmB,kEAAmB,CAAC;;;AAG3C,QAAI,AAAI,IAAA,QAAC;AACgB,MAAvB,gBAAqB;AAGnB,MAFe,WAAjB,AAAI,IAAA,QAAC,yBAAoB,QAAC;AACe,UAA/B,AAAE,eAAV,qBAAkB,iEAAkB,CAAC;;;AAGzC,QAAI,AAAI,IAAA,QAAC;AACY,MAAnB,cAAiB;AAGf,MAFa,WAAf,AAAI,IAAA,QAAC,uBAAkB,QAAC;AACa,UAA7B,AAAE,eAAR,mBAAgB,+DAAgB,CAAC;;;AAGrC,QAAI,AAAI,IAAA,QAAC;AACgB,MAAvB,gBAAqB;AAGnB,MAFe,WAAjB,AAAI,IAAA,QAAC,yBAAoB,QAAC;AACe,UAA/B,AAAE,eAAV,qBAAkB,iEAAkB,CAAC;;;AAGzC,QAAI,AAAI,IAAA,QAAC;AACY,MAAnB,cAAiB;AAGf,MAFa,WAAf,AAAI,IAAA,QAAC,uBAAkB,QAAC;AACa,UAA7B,AAAE,eAAR,mBAAgB,+DAAgB,CAAC;;;EAGvC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAiCK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;8CAEmC;IAlB7B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;+CAEoC;IAlB9B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;iDAEsC;IAlBhC;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;gDAEqC;IAlB/B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;8CAEmC;IAlB7B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;gDAEqC;IAlB/B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkBK;;;;;;IACG;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACH;;;;;;IACA;;;;;;IACG;;;;;;;AA2BqB,iBAAW;AACX,MAA3B,AAAI,IAAA,QAAC,UAAiB;AACA,MAAtB,AAAI,IAAA,QAAC,OAAc;AACO,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACY,MAAjC,AAAI,IAAA,QAAC,aAAoB;AACO,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACe,MAAvC,AAAI,IAAA,QAAC,gBAAuB;AACI,MAAhC,AAAI,IAAA,QAAC,YAAmB;AACM,MAA9B,AAAI,IAAA,QAAC,WAAkB;AACG,MAA1B,AAAI,IAAA,QAAC,SAAgB;AACrB,YAAO,KAAI;IACb;;;QAnCgB;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;IAfR;IAOQ;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EACd;8CAEmC;IAlB7B;;;;;;;;;;AAmBgB,iBAAtB,YAAQ,AAAI,IAAA,QAAC;AACI,eAAjB,eAAM,AAAI,IAAA,QAAC;AACU,iBAArB,eAAQ,AAAI,IAAA,QAAC;AACe,oBAA5B,eAAW,AAAI,IAAA,QAAC;AACW,oBAA3B,eAAW,AAAI,IAAA,QAAC;AACkB,uBAAlC,eAAc,AAAI,IAAA,QAAC;AACQ,oBAA3B,YAAW,AAAI,IAAA,QAAC;AACS,mBAAzB,YAAU,AAAI,IAAA,QAAC;AACM,iBAArB,eAAQ,AAAI,IAAA,QAAC;EACf","file":"../../../../../../../../packages/animelife/Modules/repositories/animecalendario.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__staggered_grid_view: staggered_grid_view
+    Modules__repositories__animecalendario: animecalendario
   };
 }));
 
-//# sourceMappingURL=staggered_grid_view.dart.lib.js.map
+//# sourceMappingURL=animecalendario.dart.lib.js.map

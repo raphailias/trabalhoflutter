@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
 
-class TelaInfo extends StatelessWidget {
-  const TelaInfo({Key? key}) : super(key: key);
+class TelaInfo extends StatefulWidget {
+  final String texto;
+  final String imageurl;
+  final String descricao;
+  final String nota;
+  final String membros;
 
+  const TelaInfo(
+      {Key? key,
+      required this.texto,
+      required this.imageurl,
+      required this.descricao,
+      required this.membros,
+      required this.nota})
+      : super(key: key);
+
+  @override
+  _TelaInfoState createState() => _TelaInfoState();
+}
+
+class _TelaInfoState extends State<TelaInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +62,7 @@ class TelaInfo extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Text(
-                                                'Shigatsu kimi no uso',
+                                                widget.texto,
                                                 style: TextStyle(
                                                     color: Colors.white70),
                                                 textAlign: TextAlign.start,
