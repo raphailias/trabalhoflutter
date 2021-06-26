@@ -16,9 +16,10 @@ Com auxílio da API Jikan, é possível obter informações necessárias sobre o
 
 ## O que foi utilizado?
 
-- Plataforma MyAnimeList: resgatar os dados do usuário para a criação do modelo (https://myanimelist.net/);
+- Plataforma MyAnimeList: para acesso inicial do usuário e recomendações(https://myanimelist.net/);
 - API Jikan: onde é possível resgatar as infromações dos animes (https://jikan.docs.apiary.io/#);
 - Plataforma Marvel: criação do Wireframe para auxílio na elaboração das telas do projeto (https://marvelapp.com/);
 - Documentação Flutter: auxílio na criação do projeto(https://flutter.dev/docs);
-- Dio: cliente HTTP para Dart(https://pub.dev/packages/dio).
+- Dio: cliente HTTP para Dart(https://pub.dev/packages/dio);
+- Auto Size Text: ajudar a ajustar textos muito grandes(https://pub.dev/packages/auto_size_text).
 
